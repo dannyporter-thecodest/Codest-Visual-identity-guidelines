@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Codest components</title>
+<link rel="stylesheet" href="tokens/tokens.css">
+<link rel="stylesheet" href="components/bundle.css">
+<style>
+  body { margin: 0; background: var(--primary-white); color: var(--complementary-text); font-family: var(--font-body); }
+  main { max-width: var(--content-desktop); margin: 0 auto; padding: 48px var(--space-inset) 96px; }
+  section { padding: 32px 0; border-top: 1px solid var(--border-subtle); }
+  h1.page { font-family: var(--font-display); font-weight: 900; color: var(--primary-navy); font-size: 36px; margin: 0 0 8px; }
+  h2.sec { font-family: var(--font-display); font-weight: 900; color: var(--primary-navy); font-size: 22px; margin: 0 0 20px; }
+  .row { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+  .dark { background: var(--primary-navy); padding: 0 0 24px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+<main>
+  <h1 class="page">The Codest components</h1>
+  <p>Reference renders of every component in components/bundle.js. All copy here is placeholder text.</p>
+  <div id="root"></div>
+</main>
+<div id="bottom"></div>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="components/bundle.js"></script>
+<script>
+  var h = React.createElement, C = window.Codest;
+  function Sec(title, child) { return h("section", null, h("h2", { className: "sec" }, title), child); }
+  function Tags() {
+    var s = React.useState({ Culture: true }), sel = s[0], set = s[1];
+    return h("div", { className: "cd-tags" }, ["All", "Culture", "Product design", "News"].map(function (n) {
+      return h(C.Tag, { key: n, selected: !!sel[n], onClick: function () { var c = Object.assign({}, sel); c[n] = !c[n]; set(c); } }, n);
+    }));
+  }
+  var nav = [{ label: "About us", href: "#" }, { label: "Services", href: "#" }, { label: "Our team", href: "#" }, { label: "Case studies", href: "#" }, { label: "Know how", href: "#" }];
+  ReactDOM.createRoot(document.getElementById("top")).render(
+    h(C.Header, { logoSrc: "assets/logo/the-codest-logo-black.svg", links: nav, secondary: { label: "Careers", href: "#" }, primary: { label: "Get in touch", href: "#" } }));
+  ReactDOM.createRoot(document.getElementById("root")).render(h(React.Fragment, null,
+    Sec("Button", h("div", { className: "row" },
+      h(C.Button, null, "Contact us"), h(C.Button, { variant: "secondary" }, "Careers"),
+      h(C.Button, { size: "small" }, "Subscribe"), h(C.Button, { size: "small", variant: "secondary" }, "Set up meeting"))),
+    Sec("SliderButton, TextLink, CategoryLabel", h("div", { className: "row" },
+      h(C.SliderButton, { direction: "prev" }), h(C.SliderButton, { direction: "next" }),
+      h(C.TextLink, { href: "#" }, "Read case study"), h(C.CategoryLabel, null, "Software development"))),
+    Sec("Tag and Tabs", h("div", { style: { display: "grid", gap: 24 } }, h(Tags), h(C.Tabs, { items: ["All (7)", "Front-end (2)", "Back-end (5)"] }))),
+    Sec("Input, Checkbox, TechOption", h("div", { className: "row" },
+      h("div", { style: { width: 360, display: "grid", gap: 16 } },
+        h(C.Input, { placeholder: "Search", search: true }), h(C.Input, { id: "email", label: "E-mail", type: "email" }),
+        h(C.Checkbox, null, "I agree to the Website Terms of Use and Privacy Policy.")),
+      h(C.TechOption, { label: "React", defaultChecked: true }), h(C.TechOption, { label: "Vue" }))),
+    Sec("Stat", h("div", { className: "cd-stats", style: { padding: "40px" } }, h(C.Stat, { value: "00", label: "Sourced claim" }), h(C.Stat, { value: "00", label: "Sourced claim" }))),
+    Sec("TestimonialCard and BlogCard", h("div", { className: "row" },
+      h(C.TestimonialCard, { quote: "Placeholder quote. Use a client review only once reuse and attribution are cleared.", name: "Client name", role: "Role, Company" }),
+      h(C.BlogCard, { author: "Author name", authorRole: "Role", category: "Software development", title: "Article title on up to two lines", excerpt: "A short excerpt of the article, clamped to three lines so cards stay the same height in a row." }))),
+    Sec("JobCard", h(C.JobCard, { title: "Job title", skills: ["Vue.js", "React.js", "TypeScript"], pay: "Salary range (B2B)", payNote: "(or the equivalent in another currency)", terms: "Full-time contract, 100% remote" })),
+    Sec("ProcessSteps", h(C.ProcessSteps, { steps: [{ title: "Discovery call", meta: "(1 hour)", text: "What happens in this step, in one or two sentences." }, { title: "Proposal", text: "What happens in this step." }, { title: "Kick-off", text: "What happens in this step." }] }))
+  ));
+  ReactDOM.createRoot(document.getElementById("bottom")).render(
+    h(C.Footer, { about: "One or two sentences about The Codest.", offices: [{ place: "Poland", address: "Office address" }],
+      columns: [{ title: "The Codest", links: nav }, { title: "Services", links: [{ label: "Service one", href: "#" }, { label: "Service two", href: "#" }] }, { title: "Resources", links: [{ label: "Press kit", href: "#" }] }],
+      copyright: "Copyright © The Codest. All rights reserved.", legal: "Privacy policy · Website terms of use" }));
+</script>
+</body>
+</html>
