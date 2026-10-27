@@ -5,6 +5,7 @@
 <title>The Codest: visual identity guidelines</title>
 <link rel="stylesheet" href="../design-system/tokens/tokens.css">
 <link rel="stylesheet" href="../design-system/components/bundle.css">
+<link rel="stylesheet" href="../design-system/components/sections.css">
 <style>
   @page { size: 297mm 210mm; margin: 0; }
   * { box-sizing: border-box; }
@@ -87,7 +88,7 @@
     <rect x="162" y="34" width="50" height="37" fill="var(--primary-pink)"/>
     <rect x="199" y="150" width="12" height="12" fill="var(--complementary-purple)"/>
   </svg>
-  <div class="meta">Visual identity guidelines · Version 1.0 · October 2026</div>
+  <div class="meta">Visual identity guidelines · Version 1.1 · October 2026</div>
   <h1 class="title">The Codest</h1>
   <div class="sub">In code we trust</div>
 </section>
@@ -297,6 +298,7 @@
         <li>Primary: pink fill, white uppercase label. One per view.</li>
         <li>Secondary: white fill, pink label and border. The second action beside a primary.</li>
         <li>Big: 18px label, 40px sides, 50px tall. Small: 16px label, 20px sides, 40px tall.</li>
+        <li>Hover and pressed turn button and outline darker pink (#CC085D, white on it passes AA); pressed drops the outline. Disabled is all grey.</li>
       </ul>
     </div>
     <div class="demo">
@@ -309,6 +311,11 @@
         <span class="cd-wrap"><span class="cd-slider"><img src="../design-system/assets/icons/arrow-right.svg" width="30" height="30" alt=""></span></span>
       </div>
       <div><span class="cd-link">Read case study <img src="../design-system/assets/icons/arrow-up-right.svg" width="18" height="18" alt=""></span><div class="cap">Text link: for "read more" inside content</div></div>
+      <div style="width:100%;border-top:1px solid var(--border-subtle);padding-top:5mm;display:flex;gap:8mm;flex-wrap:wrap;align-items:flex-start">
+        <div><span class="cd-wrap"><span class="cd-btn cd-btn--small">Default</span></span><div class="cap">Default</div></div>
+        <div><span class="cd-wrap" style="--x:1"><span class="cd-btn cd-btn--small" style="background:var(--pink-hover);border-color:var(--pink-hover)">Hover</span></span><div class="cap">Hover #CC085D</div></div>
+        <div><span class="cd-wrap"><span class="cd-btn cd-btn--small" style="background:var(--state-disabled);border-color:var(--state-disabled)">Disabled</span></span><div class="cap">Disabled #E4E4E4</div></div>
+      </div>
     </div>
   </div>
   <div class="foot"><span>The Codest · Visual identity guidelines</span><span>9</span></div>
@@ -326,7 +333,7 @@
       <h3 style="margin-top:6mm">Inputs</h3>
       <div class="cd-field" style="max-width:110mm"><span class="cd-field__label">E-mail</span><span class="cd-input-wrap"><span class="cd-input" style="color:rgba(13,18,76,.8)">name@company.com</span></span></div>
       <p class="small" style="margin-top:2mm">2px subtle border, 13 by 16px padding, 14px Fira Sans in navy. Label above in medium 14px.</p>
-      <p class="small muted" style="margin-top:6mm">Also in the design system with exact specs: header, footer, tabs, checkbox, technology option, blog card, job card and process steps. See design-system/examples.html.</p>
+      <p class="small muted" style="margin-top:6mm">Inputs also have focus, error (#D41515 message) and disabled states. The design system has 70 components; all are rendered in design-system/examples.html.</p>
     </div>
     <div>
       <h3>Stats strip</h3>
@@ -345,6 +352,34 @@
   <div class="foot"><span>The Codest · Visual identity guidelines</span><span>10</span></div>
 </section>
 
+
+
+<!-- SECTIONS -->
+<section class="page">
+  <p class="eyebrow">Page sections</p>
+  <h2>How pages are put together</h2>
+  <div style="display:grid;grid-template-columns:44mm 44mm 1fr;gap:8mm;align-items:start">
+    <div><img src="../design-system/reference/home.png" style="width:100%;height:142mm;object-fit:cover;object-position:top;border:1px solid var(--border-subtle)" alt=""><div class="cap">Home (Figma)</div></div>
+    <div><img src="../design-system/reference/service-detail.png" style="width:100%;height:142mm;object-fit:cover;object-position:top;border:1px solid var(--border-subtle)" alt=""><div class="cap">Service page (Figma)</div></div>
+    <div>
+      <p>Every page is a stack of full-width sections that alternate white and a pale tint, with a few navy bands for contrast. The design system builds each of these as a ready component, and two templates show the order used on the Home and service pages.</p>
+      <table style="margin-top:3mm">
+        <tr><th>Section</th><th>Where it appears</th></tr>
+        <tr><td>Header, mobile menu, footer</td><td>Every page</td></tr>
+        <tr><td>Home hero / navy page hero / case study hero</td><td>Top of every page</td></tr>
+        <tr><td>Service tabs, values grid, process</td><td>Home, services</td></tr>
+        <tr><td>Stats band, client stories, team quotes</td><td>Navy bands</td></tr>
+        <tr><td>Case study panel, image and text, opinion</td><td>Home, services, about</td></tr>
+        <tr><td>Testimonial and content carousels</td><td>Home, services</td></tr>
+        <tr><td>Banner, light banner, closing CTA band</td><td>Before the footer, mid-page</td></tr>
+        <tr><td>Listings, pagination, article layout</td><td>Blog, webinars, meetups, resources</td></tr>
+        <tr><td>Forms, side panel, timeline, perks</td><td>Contact, careers, jobs</td></tr>
+      </table>
+      <p class="small muted" style="margin-top:4mm">Specs and props: design-system/README.md. Templates: design-system/templates/. Screenshots of all 19 Figma pages: design-system/reference/.</p>
+    </div>
+  </div>
+  <div class="foot"><span>The Codest · Visual identity guidelines</span><span>11</span></div>
+</section>
 
 <!-- ICONS -->
 <section class="page">
@@ -368,7 +403,7 @@
       <p class="small muted">Files: design-system/assets/icons/ (24 SVG, 3 service icons as 4x PNG). Technology logos, Clutch and social icons appear on the site but are third-party marks and are not part of the brand.</p>
     </div>
   </div>
-  <div class="foot"><span>The Codest · Visual identity guidelines</span><span>11</span></div>
+  <div class="foot"><span>The Codest · Visual identity guidelines</span><span>12</span></div>
 </section>
 
 <!-- 10 PATTERN & IMAGERY -->
@@ -388,16 +423,18 @@
       <p class="small muted">Shown above at their on-site strength, which is deliberately faint. Files: design-system/assets/patterns/ (transparent PNG). Vector originals stay in Figma.</p>
     </div>
     <div>
-      <h3>Photography</h3>
-      <p>Real team photos, not stock. In the hero the photo is slightly rotated with a thin purple frame offset behind it, echoing the button outline. Inner page heroes put white display text over a team photo with a dark navy overlay.</p>
+      <h3>Colour orbs and gradient</h3>
+      <svg viewBox="0 0 140 20" preserveAspectRatio="none" style="display:block;width:100%;height:20mm;margin-bottom:3mm"><defs><radialGradient id="o1"><stop offset="0" stop-color="#b87dff" stop-opacity=".9"/><stop offset="1" stop-color="#b87dff" stop-opacity="0"/></radialGradient><radialGradient id="o2"><stop offset="0" stop-color="#ff584d" stop-opacity=".9"/><stop offset="1" stop-color="#ff584d" stop-opacity="0"/></radialGradient></defs><rect width="140" height="20" fill="#f6f7ff"/><ellipse cx="14" cy="2" rx="26" ry="16" fill="url(#o1)"/><ellipse cx="128" cy="19" rx="26" ry="16" fill="url(#o2)"/></svg>
+      <p>Soft purple or orange orbs sit half off a section edge, at most two per section. The one gradient (orange to purple) is only for the bar on pull quotes and the areas-of-expertise graphic.</p>
+      <svg viewBox="0 0 100 2" preserveAspectRatio="none" style="display:block;width:100%;height:3mm;margin-top:2mm"><defs><linearGradient id="bg1" x1="0" x2="1"><stop offset="0" stop-color="#ff584d"/><stop offset=".5" stop-color="#de4aa2"/><stop offset="1" stop-color="#b87cff"/></linearGradient></defs><rect width="100" height="2" fill="url(#bg1)"/></svg><div class="cap">Brand gradient, as the pull-quote bar</div>
     </div>
     <div>
       <h3>Product and icons</h3>
-      <p>Case studies show the client's product inside a laptop or phone frame on a pale tint panel.</p>
+      <p>Real team photos, never stock, in tilted frames. Case studies show the client's product in a laptop or phone frame on a pale tint panel.</p>
       <p>Icons are thin pink line drawings (person, people, shield, diamond for the values) and small single-colour technology marks.</p>
     </div>
   </div>
-  <div class="foot"><span>The Codest · Visual identity guidelines</span><span>12</span></div>
+  <div class="foot"><span>The Codest · Visual identity guidelines</span><span>13</span></div>
 </section>
 
 <!-- 11 FIXES -->
@@ -409,7 +446,7 @@
       <li><b>Pink fails text contrast</b> at 4.17:1 (page 5).</li>
       <li><b>MUFG logo</b> in the Home page client strip. Blocked from any public use until written consent exists.</li>
       <li><b>Mockup copy breaks the content guide:</b> "top-level", "top notch", "true code masters", "awesome devs", "empower".</li>
-      <li><b>Unsourced numbers</b> in the stats strip are not in the claims register.</li>
+      <li><b>Unsourced numbers</b> in the stats strips ("10+", "40+", "50+", "80%", "100+ partners", "15 countries") and the Clutch rating are not in the claims register.</li>
       <li><b>Placeholder duplication:</b> seven identical job cards, repeated contact-card text.</li>
       <li><b>Real client quotes</b> from Clutch in testimonial cards need consent and attribution checks.</li>
       <li><b>Copyright line</b> reads 2022.</li>
@@ -419,13 +456,13 @@
       <ul>
         <li>Iosevka Extended font file (standard width bundled).</li>
         <li>No standalone mark, favicon, navy logo or dark theme.</li>
-        <li>No hover, focus or disabled states.</li>
-        <li>Wave artwork supplied as PNG; vectors stay in Figma.</li>
-        <li>Not yet built as components: mobile nav drawer, case study panel, values grid, service tabs, file upload, webinar and meetup cards.</li>
+        <li>No focus state (an accessible focus ring was added).</li>
+        <li>Large wave artwork supplied as PNG; vectors stay in Figma.</li>
+        <li>No photography bundled.</li>
       </ul>
     </div>
   </div>
-  <div class="foot"><span>The Codest · Visual identity guidelines</span><span>13</span></div>
+  <div class="foot"><span>The Codest · Visual identity guidelines</span><span>14</span></div>
 </section>
 
 </body>

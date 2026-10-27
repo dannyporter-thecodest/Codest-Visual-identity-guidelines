@@ -1,6 +1,6 @@
 # The Codest Design System
 
-The build kit for The Codest's visual identity: tokens, fonts, logo, icons, patterns and 16 components. Rules for when and why to use each piece are in `../visual-identity/guidelines.md`; this file covers how.
+The build kit for The Codest's visual identity: tokens, fonts, logo, icons, textures, graphics, 70 components, interaction states, two page templates and reference screenshots of every page in the Figma file. Rules for when and why are in `../visual-identity/guidelines.md`; this file covers how.
 
 ```
 tokens/
@@ -10,79 +10,150 @@ tokens/
 fonts/                   Iosevka Heavy, Fira Sans (latin + latin-ext), OFL licences
 assets/
   logo/                  the-codest-logo-black.svg, the-codest-logo-white.svg
-  icons/                 24 SVG icons + 3 service icons as 4x PNG
-  patterns/              3 line-wave textures, transparent PNG at 3x
+  icons/                 28 SVG icons + 3 service icons as 4x PNG
+  patterns/              5 line-wave textures (transparent PNG)
+  graphics/              areas-of-expertise infographic, world map
 components/
-  bundle.js              16 React 18 components on window.Codest, no build step
-  bundle.css             Component styles, built on tokens.css variables
+  bundle.js              70 React 18 components on window.Codest, no build step
+  bundle.css             Base component styles
+  sections.css           Interaction states, page sections, responsive rules
   index.d.ts             Props for every component
+templates/
+  landing-page.html      Reference landing page (Home structure), built only from the system
+  service-page.html      Reference service/campaign page (Services/PHP structure)
+reference/               Screenshots of 19 Figma pages: the visual target to compare against
 examples.html            Every component rendered on one page
 ```
 
-## Tokens
+## Building a page
 
-```html
-<link rel="stylesheet" href="design-system/tokens/tokens.css">
-```
+1. Start from a template in `templates/`. Copy it, keep the section order unless the brief says otherwise, change content only.
+2. Need a different section? Pick it from the Sections table below. Do not build a new one if one exists.
+3. Compare the result with the matching screenshot in `reference/` before handing it over.
 
-Every colour, space, shadow and layout value is a CSS variable named after its token: `var(--primary-pink)`, `var(--space-section)`, `var(--shadow-card)`. Every type style is a class: `.display-xl`, `.text-md-regular`, `.button-small`. Families: `var(--font-display)`, `var(--font-body)`.
-
-| Family | Tokens |
-|---|---|
-| Colour | primary-navy, primary-pink, primary-white, complementary-text, complementary-purple, complementary-orange, complementary-light-blue, complementary-light-pink, tint-peach, border-subtle, line-subtle, on-navy-border, on-navy-muted, logo-ink |
-| Type | display-xl, display-lg, display-md, display-sm, display-xs, button-big, button-small, text-lg-regular, text-lg-bold, text-md-regular, text-md-bold, text-md-italic, text-sm-regular, text-sm-medium, text-sm-bold-uppercase, text-xs-regular |
-| Spacing | space-tag-y 8, space-btn-small-y 10, space-input-y 13, space-tag-gap 15, space-inset 16, space-card 20, space-btn-small-x 20, space-quote-x 30, space-quote-y 40, space-job 50, space-btn-big-x 40, space-section 120, space-offset 4 |
-| Other | radius-none, shadow-card, shadow-chip, border-width, frame-desktop, content-desktop, frame-mobile, header-desktop, header-mobile |
-
-To change a value: edit `tokens/tokens.json`, run `python3 design-system/tokens/build_tokens_css.py`, commit both files.
-
-## Components
-
-Load React 18, the bundle and both stylesheets. Components are on `window.Codest`.
+Every page loads these, in this order:
 
 ```html
 <link rel="stylesheet" href="design-system/tokens/tokens.css">
 <link rel="stylesheet" href="design-system/components/bundle.css">
+<link rel="stylesheet" href="design-system/components/sections.css">
+<script>window.CodestConfig = { assetBase: "design-system/assets/" };</script>
 <script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
 <script src="design-system/components/bundle.js"></script>
 ```
 
-Not using React? Every component is plain HTML with the `cd-` classes from `bundle.css`; copy the markup from `examples.html` (inspect it in a browser) and the styles work the same.
+`assetBase` tells components where the logo and icons are, relative to the page. Not using React? Every component is plain HTML with `cd-` classes; render `examples.html` in a browser and copy the markup.
 
-| Component | What it is | Key props | Spec from Figma |
+## Tokens
+
+Every value is a CSS variable named after its token (`var(--primary-pink)`, `var(--space-section)`) and every type style is a class (`.display-xl`, `.text-md-regular`). Families: `var(--font-display)`, `var(--font-body)`.
+
+| Family | Tokens |
+|---|---|
+| Brand colour | primary-navy, primary-pink, primary-white, complementary-text, complementary-purple, complementary-orange |
+| Tints | complementary-light-blue, complementary-light-pink, tint-peach |
+| States | pink-hover #CC085D, state-disabled #E4E4E4, state-disabled-text, state-error #D41515, border-focus |
+| Lines | border-subtle, line-subtle, border-upload, checkbox-border, on-navy-border, on-navy-muted |
+| Gradient | gradient-orange, gradient-magenta, gradient-purple, gradient-brand |
+| Effects | orb-blur, orb-size, shadow-card, shadow-chip |
+| Type (desktop) | display-xl 46, display-lg 36, display-md 28, display-sm 22, display-xs 16, button-big 18, button-small 16, text-lg 20, text-md 16, text-sm 14, text-xs 11 |
+| Type (mobile) | display-xl-mobile 32, display-lg-mobile 26, display-md-mobile 22, display-sm-mobile 18, text-lg-mobile 17, text-md-mobile 15 |
+| Spacing | space-tag-y 8, space-btn-small-y 10, space-input-y 13, space-tag-gap 15, space-inset 16, space-card 20, space-btn-small-x 20, space-card-x 30, space-quote-x 30, space-quote-y 40, space-btn-big-x 40, space-job 50, space-section 120, space-offset 4 |
+| Layout | radius-none, border-width 2, frame-desktop 1440, content-desktop 1200, frame-mobile 375, header-desktop 100, header-mobile 70, photo-tilt -5deg |
+
+To change a value: edit `tokens/tokens.json`, run `python3 design-system/tokens/build_tokens_css.py`, commit both files.
+
+## Interaction states
+
+From the Button and input component sets in the Figma library, built into `sections.css`:
+
+| Element | Hover / pressed | Disabled | Error |
 |---|---|---|---|
-| `Header` | Site header with logo, nav, two actions | `logoSrc`, `links[]`, `primary`, `secondary`, `dark` | 100px tall, nav Iosevka 16 uppercase navy, burger under 1024px (70px tall) |
-| `Footer` | Navy footer with about, offices, link columns | `about`, `offices[]`, `columns[]`, `copyright`, `legal` | Headings Iosevka 22 purple, links Fira 14 white 80% |
-| `Button` | Primary or secondary action with offset outline | `variant`, `size`, `href`, `onClick` | Big 18px / 40px sides / 50px; small 16px / 20px sides / 40px |
-| `SliderButton` | Carousel arrow | `direction`, `label`, `onClick` | 50px square, 2px pink border, arrow from the file |
-| `TextLink` | Uppercase pink link with north-east arrow | `href` | Iosevka 16 uppercase pink, 18px arrow |
-| `Tag` | Filter tag, toggles | `selected`, `onClick` | 2px subtle border, 8 × 16px; selected navy fill, white medium |
-| `CategoryLabel` | Article category | children | 1px purple border, 6 × 10px, Fira bold 14 uppercase purple |
-| `Tabs` | Filter tabs | `items[]`, `defaultIndex`, `onChange` | 23 × 40px, Fira 16; active bold with 2px pink underline, inactive 70% with navy 15% underline |
-| `Input` | Text field, optional search icon | `label`, `placeholder`, `search`, `type`, `id` | 2px subtle border, 13 × 16px, Fira 14 navy, placeholder 80% |
-| `Checkbox` | Consent or option checkbox | `defaultChecked`, `onChange`, children | 16px box, 2px border (pink when checked), pink tick |
-| `TechOption` | Selectable technology box in the contact form | `label`, `iconSrc`, `defaultChecked` | 120 × 99px, 2px border, pink when selected, checkbox top-left |
-| `Stat` | Number in the navy stats strip (wrap in `.cd-stats`) | `value`, `label`, `plus` | Number Iosevka 46 white with purple plus, label Fira 16 white |
-| `TestimonialCard` | Client quote on navy | `quote`, `name`, `role` | 486 × 330px, padding 40 × 30, quote Fira 16 italic, name purple bold uppercase |
-| `BlogCard` | Article card | `imageSrc`, `avatarSrc`, `author`, `authorRole`, `category`, `title`, `excerpt` | 486px wide, 280px image with 10% navy overlay, author chip, 20px padding |
-| `JobCard` | Job listing row | `title`, `skills[]`, `pay`, `payNote`, `terms`, `href`, `cta` | 1200px wide, 50px padding, three columns, `shadow-card` |
-| `ProcessSteps` | Numbered process list | `steps[{title, meta, text}]` | 60px navy circle, white number, 2px navy 15% connector |
+| Primary button | Fill, border and outline turn `pink-hover`. Pressed: outline disappears, button shifts 4px into its place | Grey `state-disabled` fill, border and outline, white label | |
+| Secondary button | Fills `pink-hover`, label turns white | As primary | |
+| Slider arrow | Fills `pink-hover`, arrow white | Grey fill | |
+| Text link | Text turns `pink-hover` | | |
+| Tag | Fills navy, label white | | |
+| Input | Border `border-focus` (navy 25%) | Grey fill, grey text | Red message under the field (11px) |
 
-Measured, not from file variables: stats strip padding and gaps, footer column layout, header nav spacing, job card column gaps. Everything else is from the file's variables or layer properties.
+White on `pink-hover` is 5.6:1 and passes AA. The 2px navy focus ring is added for keyboard users; the file has none.
 
-Not built yet (seen in the file): mobile navigation drawer, case study panel, values grid, service tabs with icons, file upload, download pop-up, webinar and meetup cards.
+## Components
+
+### Actions and labels
+| Component | Use |
+|---|---|
+| `Button` | Primary or secondary action with the offset outline. Big (50px) or small (40px). One primary per view |
+| `SliderButton` | 50px arrow for carousels and pagination |
+| `TextLink` | Uppercase pink "read more" link with arrow |
+| `SocialButton`, `ShareBar` | 40px outlined social link; vertical share links beside articles |
+| `Tag`, `CategoryLabel`, `Pill`, `Eyebrow` | Filter tag; purple category label; purple status label; uppercase label above headings |
+| `Bullets`, `Checklist`, `Author`, `Meta` | Pink square bullets (nested purple); check-circle list; avatar with name and role; icon + date or duration |
+
+### Forms
+| Component | Use |
+|---|---|
+| `Input` | Text field with label, optional/required marker, search icon, error and disabled states |
+| `Textarea`, `FileUpload`, `Checkbox`, `TechOption` | Message field; dashed upload field; checkbox; 120×99 selectable technology box |
+| `Tabs` | Underlined tabs, optional icons |
+
+### Cards
+| Component | Use |
+|---|---|
+| `ContentCard` | Technology, advantage or value card (bordered or raised). 3 per row in `.cd-cards` |
+| `FeatureItem` | Icon, small display title, text. 2 per row in `.cd-features` |
+| `FrameworkTile` | Greyed tool logo tile. 6 per row in `.cd-tiles` |
+| `TestimonialCard`, `TeamQuoteCard` | Client quote on solid navy; employee quote, outlined on navy |
+| `BlogCard`, `FeaturedArticle`, `ArticleCard` | Home "latest content" card; wide blog feature; blog listing card |
+| `UpcomingWebinar`, `WebinarCard`, `MeetupCard`, `ResourceCard` | Know-how listing cards |
+| `JobCard`, `PersonCard`, `Stat` | Job row; team portrait; stat number |
+
+### Sections
+| Component | What it is | Figma source |
+|---|---|---|
+| `Header` (+ `MobileMenu`) | Logo, nav, two actions; burger and full-screen menu under 1024px. `dark` for navy heroes | header_desktop, Nav-open |
+| `Footer` | Newsletter row, about, offices, link columns, legal | footer_desktop |
+| `HeroHome` | White hero: headline, intro, CTA, rating, framed photo, purple orb, logo strip | Home / hero |
+| `HeroPage` | Navy centred hero, optional photo under navy 80%, orb, `short` variant | Services, About, Contact heroes |
+| `HeroCaseStudy` | Navy hero with back link, share bar, facts row | Case studies_detail / hero |
+| `Section` + `SectionHead` | Any section: tone white/blue/pink/peach/navy, 120px padding, optional orb; heading block | All pages |
+| `ServiceTabs` | Centred heading, icon tabs, technology list, CTA | Home / services |
+| `StatsBand` | Navy band of stats with optional caption | Home / facts |
+| `CasePanel` | Tinted 480px case study panel, alternating pink/peach and sides | Home / cases |
+| `ValuesGrid` | Heading left, 2×2 value icons right with pink cross | Home / values |
+| `Carousel` | Scroller with arrows and "read all" link (testimonials, team quotes, articles) | Home / testimonials, blog |
+| `ImageText` (+ `Framed`, `Collage`) | Text beside a tilted framed photo or a two-photo collage | Home / about us, Services / values |
+| `ProcessSection` (+ `ProcessSteps`) | Copy left, numbered steps right | Services / process |
+| `Banner`, `BannerLight`, `ClientStories` | Navy box with waves; peach full-width band; navy band with wave | Services / baner, Our team / baner, client stories |
+| `CtaBand` | Closing light-blue band with two orbs and waves. One per page, above the footer | Home / contact |
+| `Opinion`, `PullQuote` | Expert quote with portrait; quote with gradient bar | Service detail / opinion, case detail / quote |
+| `LogoStrip`, `Rating` | Greyscale client logos; review-site stars | Home / hero, Services / logo |
+| `ListingHeader`, `Pagination` | Listing title with search; numbered pages with arrows | Blog, Webinars, Meetups, Resources |
+| `ArticleHeader`, `Panel`, `ContactPerson` | Article top; light pink side panel; contact person with email/LinkedIn | Blog_article, Job opportunity, Contact |
+| `Timeline`, `Perks` | Recruitment steps; perks grid | Our team |
+| `DownloadModal`, `Graphic` | Resource download pop-up; infographic and world map images | Resources_download_popup, About us |
+
+Layout helper classes (in `sections.css`): `.cd-container`, `.cd-split`, `.cd-cards`, `.cd-features`, `.cd-tiles`, `.cd-grid3`, `.cd-articles`, `.cd-webinars`, `.cd-people`, `.cd-two-col`, `.cd-h1` to `.cd-h5`, `.cd-text`, `.cd-lead`, `.cd-small`.
+
+Values marked "measured" in `tokens.json` (stats band padding, orb blur equivalent, some section gaps) were read from layer positions, not file variables.
 
 ## Assets
 
 | Path | Notes |
 |---|---|
-| `assets/logo/the-codest-logo-black.svg` | On white and pale tints. Fill #231F20 as drawn |
-| `assets/logo/the-codest-logo-white.svg` | On navy and dark photos |
-| `assets/icons/*.svg` | Exported from Figma at drawn size with their brand colour baked in. To recolour inline, replace the `fill` value with a token colour |
+| `assets/logo/*.svg` | Black on white and tints (fill #231F20 as drawn); white on navy and dark photos |
+| `assets/icons/*.svg` | Exported from Figma with brand colour baked in. Social icons and quote-mark included |
 | `assets/icons/service-*@4x.png` | service-frontend, service-backend, service-qa. Display at 30, 30 and 40px |
-| `assets/patterns/*@3x.png` | Transparent, on-site opacity already applied. Display at one third of pixel size |
+| `assets/patterns/` | wave-lines, wave-rings, wave-ribbon (3x), wave-banner (2x, white lines for navy boxes), wave-case-panel (1.5x). On-site opacity applied |
+| `assets/graphics/` | areas-infographic@2x.png (technology circles on the brand gradient), world-map@1.5x.png |
+
+Photography is not included: the Figma file uses real team and product photos that belong to The Codest's media library. Components show a grey placeholder until an `imageSrc` is passed.
+
+## Reference screenshots
+
+`reference/` holds a screenshot of every main page in the Figma file: home, home-mobile, mobile-menu, services, service-detail, case-studies, case-study-detail, blog, blog-article, webinars, meetups, resources, resource-download, careers, job-detail, about-us, our-team, contact, know-how. Use them as the visual target. Do not copy their text: it is mockup copy and breaks the content guide.
 
 ## Accessibility
 
-Pink on white is 4.17:1 and fails AA for normal-size text, which affects every button and link in the current design. Do not put pink text on the pale tints. Focus rings in `bundle.css` (2px navy, 4px offset) were added for accessibility and are not in the file.
+Pink on white is 4.17:1 and fails AA for normal-size text, which affects every default button and link. Hover pink passes (5.6:1). Do not put pink text on the pale tints.

@@ -32,7 +32,7 @@ for t in tokens["color"]["tokens"]:
     out.append(f"  --{t['name']}: {t['value']};")
 for key, stack in tokens["type"]["families"].items():
     out.append(f"  --font-{key}: {stack};")
-for family in ("spacing", "radius", "shadow", "borderWidth", "layout"):
+for family in ("spacing", "radius", "shadow", "borderWidth", "layout", "gradient", "effect"):
     for t in tokens.get(family, {}).get("tokens", []):
         out.append(f"  --{t['name']}: {t['value']};")
 out += ["}", ""]

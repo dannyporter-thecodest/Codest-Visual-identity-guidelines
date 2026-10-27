@@ -12,6 +12,10 @@
 :root {
   --primary-navy: #0d124c;
   --primary-pink: #f2096e;
+  --pink-hover: #cc085d;
+  --state-disabled: #e4e4e4;
+  --state-disabled-text: #909090;
+  --state-error: #d41515;
   --primary-white: #ffffff;
   --complementary-text: #3e4070;
   --complementary-purple: #b87dff;
@@ -24,6 +28,12 @@
   --line-subtle: rgba(13, 18, 76, 0.15);
   --on-navy-border: rgba(255, 255, 255, 0.4);
   --on-navy-muted: rgba(255, 255, 255, 0.8);
+  --border-focus: rgba(13, 18, 76, 0.25);
+  --border-upload: rgba(13, 18, 76, 0.2);
+  --checkbox-border: rgba(62, 64, 112, 0.4);
+  --gradient-purple: #b87cff;
+  --gradient-magenta: #de4aa2;
+  --gradient-orange: #ff584d;
   --font-display: "Iosevka Extended", "Iosevka", ui-monospace, monospace;
   --font-body: "Fira Sans", system-ui, sans-serif;
   --space-tag-y: 8px;
@@ -35,6 +45,7 @@
   --space-btn-small-x: 20px;
   --space-quote-x: 30px;
   --space-quote-y: 40px;
+  --space-card-x: 30px;
   --space-job: 50px;
   --space-btn-big-x: 40px;
   --space-section: 120px;
@@ -48,6 +59,10 @@
   --frame-mobile: 375px;
   --header-desktop: 100px;
   --header-mobile: 70px;
+  --photo-tilt: -5deg;
+  --gradient-brand: linear-gradient(90deg, #ff584d 0%, #de4aa2 50%, #b87cff 100%);
+  --orb-blur: blur(160px);
+  --orb-size: 320px;
 }
 
 .display-xl { font-family: var(--font-display); font-size: 46px; line-height: 1.35; font-weight: 900; }
@@ -66,3 +81,9 @@
 .text-sm-medium { font-family: var(--font-body); font-size: 14px; line-height: 1.4; font-weight: 500; }
 .text-sm-bold-uppercase { font-family: var(--font-body); font-size: 14px; line-height: 1.4; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
 .text-xs-regular { font-family: var(--font-body); font-size: 11px; line-height: 1.5; font-weight: 400; }
+.display-xl-mobile { font-family: var(--font-display); font-size: 32px; line-height: 1.35; font-weight: 900; }
+.display-lg-mobile { font-family: var(--font-display); font-size: 26px; line-height: 1.35; font-weight: 900; }
+.display-md-mobile { font-family: var(--font-display); font-size: 22px; line-height: 1.35; font-weight: 900; }
+.display-sm-mobile { font-family: var(--font-display); font-size: 18px; line-height: 1.35; font-weight: 900; }
+.text-md-mobile { font-family: var(--font-body); font-size: 15px; line-height: 1.5; font-weight: 400; }
+.text-lg-mobile { font-family: var(--font-body); font-size: 17px; line-height: 1.5; font-weight: 400; }
