@@ -1,6 +1,6 @@
 {
   "name": "The Codest brand",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-27",
   "scope": "Documents the current visual identity from the website design file. Not a rebrand. Copy and claims are governed by the content guide.",
   "source": {
@@ -45,6 +45,7 @@
     "AGENT_GUIDE.md",
     "visual-identity/guidelines.md",
     "design-system/README.md",
+    "creatives/README.md",
     "design-system/templates/landing-page.html",
     "design-system/tokens/tokens.json"
   ],
@@ -74,7 +75,14 @@
     "design-system/assets/patterns/wave-banner@2x.png": "White wave lines for navy banner boxes",
     "design-system/assets/patterns/wave-case-panel@1.5x.png": "Wave texture for case study panels",
     "design-system/assets/graphics/areas-infographic@2x.png": "Areas-of-expertise graphic: technology circles on the brand gradient",
-    "design-system/assets/graphics/world-map@1.5x.png": "World map with project countries in pink"
+    "design-system/assets/graphics/world-map@1.5x.png": "World map with project countries in pink",
+    "creatives/README.md": "How to make images: formats, setup, render commands, rules in short",
+    "creatives/templates.json": "Machine-readable list of creative formats: size, fields, line limits, use",
+    "creatives/render.js": "Fills a creative template from JSON and exports a PNG; warns on long copy (Node + Playwright)",
+    "creatives/creatives.css": "Shared creative styles built on design-system tokens",
+    "creatives/fill.js": "Fills a template from JSON or URL parameters",
+    "creatives/build_templates.py": "Template definitions; regenerates creatives/templates/*.html",
+    "creatives/examples/examples.json": "Batch file that renders every example; copy its format for batches"
   },
   "icons": {
     "path": "design-system/assets/icons/",
@@ -215,5 +223,215 @@
       "webinars.png"
     ],
     "note": "Screenshots of the Figma pages. Visual target only; their copy is mockup text and must not be reused."
+  },
+  "creatives": {
+    "path": "creatives/templates/",
+    "templates": [
+      {
+        "name": "social-square",
+        "title": "Social post, square",
+        "width": 1080,
+        "height": 1080,
+        "tone": "light",
+        "fields": [
+          "cta",
+          "eyebrow",
+          "headline",
+          "text"
+        ],
+        "maxLines": {
+          "headline": 4,
+          "text": 2
+        },
+        "use": "LinkedIn, Instagram and Meta feed posts. Statements, announcements, hiring, content promotion."
+      },
+      {
+        "name": "social-portrait",
+        "title": "Social post, portrait 4:5",
+        "width": 1080,
+        "height": 1350,
+        "tone": "light",
+        "fields": [
+          "cta",
+          "eyebrow",
+          "headline",
+          "photo",
+          "text"
+        ],
+        "maxLines": {
+          "headline": 4,
+          "text": 3
+        },
+        "use": "LinkedIn and Instagram feed posts where a photo or more text is needed. Takes the most feed space."
+      },
+      {
+        "name": "story",
+        "title": "Story, 9:16",
+        "width": 1080,
+        "height": 1920,
+        "tone": "navy",
+        "fields": [
+          "cta",
+          "eyebrow",
+          "headline",
+          "photo",
+          "text"
+        ],
+        "maxLines": {
+          "headline": 4,
+          "text": 2
+        },
+        "use": "Instagram, Facebook and LinkedIn stories, Reels covers. Keep everything inside the safe area: the top 250px and bottom 340px are covered by the app."
+      },
+      {
+        "name": "link-image",
+        "title": "Link image / Open Graph",
+        "width": 1200,
+        "height": 627,
+        "tone": "white",
+        "fields": [
+          "eyebrow",
+          "headline",
+          "photo"
+        ],
+        "maxLines": {
+          "headline": 3
+        },
+        "use": "Shared links on LinkedIn, X, Slack and messengers; Open Graph image for web pages; LinkedIn sponsored single-image ads."
+      },
+      {
+        "name": "article-cover",
+        "title": "Article and case study cover",
+        "width": 1200,
+        "height": 630,
+        "tone": "pink",
+        "fields": [
+          "author",
+          "author_photo",
+          "author_role",
+          "category",
+          "headline"
+        ],
+        "maxLines": {
+          "headline": 3
+        },
+        "use": "Blog article and case study header images, and their social share image."
+      },
+      {
+        "name": "event-promo",
+        "title": "Webinar and meetup promo",
+        "width": 1080,
+        "height": 1080,
+        "tone": "navy",
+        "fields": [
+          "cta",
+          "date",
+          "headline",
+          "label",
+          "time",
+          "people[]"
+        ],
+        "maxLines": {
+          "headline": 3
+        },
+        "use": "Webinar, meetup and event announcements on social. Pair with link-image for the registration link."
+      },
+      {
+        "name": "quote-card",
+        "title": "Quote card",
+        "width": 1080,
+        "height": 1080,
+        "tone": "navy",
+        "fields": [
+          "name",
+          "photo",
+          "quote",
+          "role"
+        ],
+        "maxLines": {
+          "quote": 7
+        },
+        "use": "Client or employee quotes on social. Only cleared quotes with approved attribution. Pink tone adds the gradient bar used on pull quotes."
+      },
+      {
+        "name": "linkedin-banner",
+        "title": "LinkedIn page banner",
+        "width": 1584,
+        "height": 396,
+        "tone": "navy",
+        "fields": [
+          "headline",
+          "text"
+        ],
+        "maxLines": {
+          "headline": 1,
+          "text": 1
+        },
+        "use": "LinkedIn company page and employee profile background. The page logo or profile photo covers the bottom-left, so content sits on the right. No wordmark: the page already shows it."
+      },
+      {
+        "name": "email-header",
+        "title": "Email header",
+        "width": 1200,
+        "height": 400,
+        "tone": "light",
+        "fields": [
+          "headline"
+        ],
+        "maxLines": {
+          "headline": 2
+        },
+        "use": "Newsletter and campaign email header. Exported at 1200x400, displayed at 600x200 in the email."
+      },
+      {
+        "name": "ad-300x250",
+        "title": "Display ad, medium rectangle",
+        "width": 300,
+        "height": 250,
+        "tone": "light",
+        "fields": [
+          "cta",
+          "headline"
+        ],
+        "maxLines": {
+          "headline": 3
+        },
+        "use": "Google Display and programmatic medium rectangle."
+      },
+      {
+        "name": "ad-728x90",
+        "title": "Display ad, leaderboard",
+        "width": 728,
+        "height": 90,
+        "tone": "light",
+        "fields": [
+          "cta",
+          "headline"
+        ],
+        "maxLines": {
+          "headline": 2
+        },
+        "use": "Google Display and programmatic leaderboard."
+      },
+      {
+        "name": "ad-300x600",
+        "title": "Display ad, half page",
+        "width": 300,
+        "height": 600,
+        "tone": "navy",
+        "fields": [
+          "cta",
+          "eyebrow",
+          "headline",
+          "text"
+        ],
+        "maxLines": {
+          "headline": 5,
+          "text": 3
+        },
+        "use": "Google Display and programmatic half page."
+      }
+    ],
+    "status": "Layout rules proposed, pending brand-owner sign-off (guidelines section 12)"
   }
 }

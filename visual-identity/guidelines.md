@@ -1,10 +1,10 @@
 # The Codest: Visual Identity Guidelines
 
-Version 1.1 · October 2026 · Documents the identity as it exists today
+Version 1.2 · October 2026 · Documents the identity as it exists today
 
 These guidelines record The Codest's current visual identity, taken from the website design file in Figma. They are a record of what exists, not a rebrand. Where something in the current design breaks accessibility or the 2026 brand strategy, it is flagged in place and left as it is (see section 11).
 
-The design system in `../design-system/` is the build kit for everything described here: tokens, fonts, logo, icons, textures, 70 components, page templates and reference screenshots. Where this document names a token (for example `primary-pink`), its exact value is in `../design-system/tokens/tokens.json`.
+The design system in `../design-system/` is the build kit for everything described here: tokens, fonts, logo, icons, textures, 70 components, page templates and reference screenshots. Image templates for social, ads and email are in `../creatives/`. Where this document names a token (for example `primary-pink`), its exact value is in `../design-system/tokens/tokens.json`.
 
 **Words are out of scope.** Copy, claims, tone and which clients may be named are governed by The Codest content guide. Several headlines in the Figma mockups break that guide.
 
@@ -229,7 +229,38 @@ Two page templates (`design-system/templates/`) show how sections combine into a
 6. **Placeholder duplication:** seven identical job cards, repeated contact-card text.
 7. **Copyright line** reads 2022.
 
-## 12. Gaps
+## 12. Creatives (proposed)
+
+**Status: proposed.** The Figma file is a website and contains no social posts, ads or other creatives. The rules below apply the documented identity to those formats. They need sign-off from the brand owner before they are treated as final. Templates: `../creatives/`.
+
+### Formats
+
+| Format | Size (px) | Use |
+|---|---|---|
+| Social post, square | 1080 × 1080 | LinkedIn, Instagram, Meta feed |
+| Social post, portrait | 1080 × 1350 | Feed posts with a photo or more text |
+| Story | 1080 × 1920 | Stories, Reels covers |
+| Link image | 1200 × 627 | Shared links, Open Graph, LinkedIn single-image ads |
+| Article and case study cover | 1200 × 630 | Blog and case study headers |
+| Event promo | 1080 × 1080 | Webinars, meetups, events |
+| Quote card | 1080 × 1080 | Cleared client or employee quotes |
+| LinkedIn banner | 1584 × 396 | Company page and employee profiles |
+| Email header | 1200 × 400 | Newsletters and campaigns |
+| Display ads | 300 × 250, 728 × 90, 300 × 600 | Google Display and programmatic |
+
+### Composition
+
+- **One idea per creative.** Eyebrow, headline, at most one supporting sentence, one action.
+- **Safe margin** about 6.5% of the short side (72px on a 1080px post, 56px on a link image, 18px on a 300px ad). Nothing important outside it. Stories keep the top 250px and bottom 340px clear for app controls.
+- **Logo** top-left, about 20% of the width on social formats, always the supplied file: black on light tones, white on navy. The LinkedIn banner has no logo because the page avatar already shows it.
+- **Headline** in the display face at weight 900, navy on light tones and white on navy. Short: up to eight words on posts, six on small ads and stories. Each template sets a line limit and the render script warns when copy runs over.
+- **Pink** stays the single accent: the button, with its offset outline scaled to the format. Formats that are not clicked as a whole (link images, covers, quote cards, banners) have no button.
+- **Tones** follow the website: pale blue, white, light pink, peach or navy. Navy suits events, quotes and stories; light tones suit statements and content promotion. Alternate tones across a series so a feed does not repeat.
+- **Decoration** sits behind content and bleeds off an edge: one wave texture (white lines on navy), at most two orbs. The gradient appears only as the bar on a quote card.
+- **Photos** only of real people and real work, in the tilted frame. No stock photography, no client logos or product screenshots without written consent.
+- **Copy** comes from the content guide; numbers need a claims-register entry. Bracketed placeholders never ship.
+
+## 13. Gaps
 
 - Iosevka Extended font file (standard width bundled).
 - No standalone mark, favicon or navy logo in the file.
@@ -237,3 +268,4 @@ Two page templates (`design-system/templates/`) show how sections combine into a
 - Focus states are not in the file (an accessible focus ring was added); hover, pressed, disabled and error states are.
 - Large wave artwork is supplied as PNG; vectors remain in Figma.
 - No photography bundled.
+- Creative rules are proposed, not from the source file (section 12).
