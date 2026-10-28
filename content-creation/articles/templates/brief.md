@@ -6,7 +6,11 @@ Cody fills this in during weekly topic research (`rules/09-weekly-topic-research
 
 | Field | Answer |
 |---|---|
-| Title question (7 to 14 words, ends with ?) | |
+| Buyer question (the question they ask, ends with ?) | |
+| Title option A (pattern 1 to 4, 7 to 14 words) | |
+| Title option B | |
+| Chosen title, and why | |
+| Hook (1 to 3 sentences, 12 to 45 words) | |
 | Category | buyer-questions / ai-in-industry |
 | Topic area | capacity / vendor-choice / delivery-handover / regulated-finance / modernisation / ai-in-industry |
 | Industry (category 2: required) | fintech / payments / digital-banking / marketplaces / internet / saas / all |

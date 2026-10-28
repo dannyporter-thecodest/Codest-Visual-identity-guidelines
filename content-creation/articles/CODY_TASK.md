@@ -18,7 +18,7 @@ Create this week's blog article for The Codest.
 5. Find 2 to 5 primary sources from at least 2 publishers (`rules/06-sources-and-claims.md`). Open each page and copy figures exactly, with their year. If you cannot open a primary page, leave the figure out and note it.
 6. Find the public Codest material that fits: a live case study, a service page, or a published post or talk.
 7. Write `content-creation/articles/output/<slug>/content.json` following `templates/content.schema.json` and `templates/content.example.json`:
-   - The answer comes first, in the lead and under every heading.
+   - Title from one of the four patterns (`rules/03-titles-and-headings.md`), then a hook, then the answer straight away in the lead and under every heading.
    - Build the information gain element from your sources and record it in `information_gain`.
    - Follow problem, responsibility, model (`rules/10-messaging.md`), and record the pillars, models, limits and responsibility section in `messaging`.
    - Never invent a figure, a quote or an experience.
@@ -27,7 +27,7 @@ Create this week's blog article for The Codest.
 10. Set the topic to `status: finished` in `topics.json`.
 11. Record each step with `./cody task action --files ...` and the build with `./cody task test`.
 12. Report back:
-    - the question and its score
+    - the buyer question, the title and its score
     - the status line from `report.md`
     - the files in `output/<slug>/`
     - anything you could not verify

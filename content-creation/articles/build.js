@@ -57,6 +57,9 @@ function range(name, s, min, max, level) {
   if (n < min || n > max) (level === "error" ? err : warn)(`${name}: ${n} words (target ${min} to ${max})`);
   return n;
 }
+// figures like 57.5%, EUR 120K, 10+, 3x, 2023 (numbers inside words are ignored)
+const FIG = /(?<![\w-])\d[\d.,]*(?:\s?(?:%|x\b|K\b|M\b))?\+?(?![\w-])/g;
+const figures = (t) => (plain(t).match(FIG) || []).map((f) => f.trim().replace(/[.,]$/, ""));
 const isDate = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s || "") && !isNaN(Date.parse(s));
 const addMonths = (s, m) => { const x = new Date(s + "T00:00:00Z"); x.setUTCMonth(x.getUTCMonth() + m); return x.toISOString().slice(0, 10); };
 const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return ""; } };
@@ -64,7 +67,7 @@ const isInternal = (u) => u.startsWith("/") || host(u) === host(site.origin);
 const onDomain = (u, list) => list.some((dm) => host(u) === dm || host(u).endsWith("." + dm));
 
 // ---------- required fields ----------
-const req = ["slug", "category", "topic_area", "title", "lead", "tldr", "published", "updated", "review_by", "seo", "sections", "key_insights", "information_gain", "messaging", "related_case", "cta", "sources", "meta", "report"];
+const req = ["slug", "category", "topic_area", "question", "title", "hook", "lead", "tldr", "published", "updated", "review_by", "seo", "sections", "key_insights", "information_gain", "messaging", "related_case", "cta", "sources", "meta", "report"];
 for (const k of req) if (d[k] === undefined || d[k] === null || d[k] === "") err(`Missing field: ${k}`);
 if (errors.length) return finishEarly();
 d.related_questions = d.related_questions || [];
@@ -78,6 +81,7 @@ const sectionText = (s) => [s.answer, ...(s.paragraphs || []), ...(s.subsections
   ...(s.bullets || []).map((b) => (b.bold ? b.bold + " " : "") + b.text), s.table ? [s.table.caption, ...s.table.columns, ...s.table.rows.flat()].join(" ") : "", s.takeaway || ""].join(" ");
 const texts = {
   title: d.title,
+  hook: d.hook,
   lead: d.lead,
   tldr: d.tldr.join(" "),
   ...Object.fromEntries(S.map((s, i) => [`section ${i + 1}`, s.heading + " " + sectionText(s)])),
@@ -85,7 +89,7 @@ const texts = {
   related_questions: d.related_questions.map((q) => q.question + " " + q.answer).join(" "),
   cta: [d.cta.title, d.cta.text, d.cta.label].join(" "),
 };
-const bodyWords = words(d.lead) + words(texts.tldr) + S.reduce((n, s) => n + words(s.heading) + words(sectionText(s)), 0) + words("Key insights " + texts.key_insights) + words(texts.related_questions);
+const bodyWords = words(d.hook) + words(d.lead) + words(texts.tldr) + S.reduce((n, s) => n + words(s.heading) + words(sectionText(s)), 0) + words("Key insights " + texts.key_insights) + words(texts.related_questions);
 const allText = Object.values(texts).join(" ");
 
 // ---------- hard rules (07) ----------
@@ -127,14 +131,15 @@ if (d.category === "ai-in-industry") {
 }
 const topics = reg.topics.filter((t) => t.status !== "retired");
 if (!topics.some((t) => t.slug === d.slug)) warn(`topics.json: add "${d.slug}" to the register`);
-const tw = new Set(mainWords(d.title).map(stem));
+const tw = new Set(mainWords(d.question).map(stem));
 for (const t of topics) {
   if (t.slug === d.slug) continue;
-  const ow = new Set(mainWords(t.title).map(stem));
+  const tq = t.question || t.title || "";
+  const ow = new Set(mainWords(tq).map(stem));
   const inter = [...tw].filter((w) => ow.has(w)).length;
   const j = inter / new Set([...tw, ...ow]).size;
-  if (j >= 0.6) err(`Duplicate topic: the title is too close to "${t.title}" (${t.status}). Update that article instead, or change the question (rules/01-categories-and-topics.md)`);
-  else if (j >= 0.45) warn(`Possible duplicate: close to "${t.title}" (${t.status}). Explain the difference in the brief`);
+  if (j >= 0.6) err(`Duplicate topic: the buyer question is too close to "${tq}" (${t.status}). Update that article instead, or change the question (rules/01-categories-and-topics.md)`);
+  else if (j >= 0.45) warn(`Possible duplicate: close to "${tq}" (${t.status}). Explain the difference in the brief`);
 }
 const pool = topics.some((t) => t.slug === d.slug) ? topics : [...topics, d];
 const share2 = pool.filter((t) => t.category === "ai-in-industry").length / pool.length;
@@ -181,15 +186,31 @@ const allSent = paras.flatMap(([, p]) => sentencesOf(p));
 const avgSent = allSent.reduce((n, s) => n + words(s), 0) / Math.max(allSent.length, 1);
 if (avgSent > 22) warn(`Average sentence length: ${avgSent.toFixed(1)} words (target 22 or fewer)`);
 
-// ---------- titles and headings (03) ----------
+// ---------- titles, hooks and headings (03) ----------
 const title = d.title.trim();
-if (!/\?$/.test(title)) err("Title: must be a question ending with ?");
+const question = d.question.trim();
+if (!/\?$/.test(question)) err("question: the buyer question must end with ?");
+range("Buyer question", question, 5, 20, "error");
+if (/\?/.test(title)) err("Title: must be a statement, not a question. Keep the question in `question` and use one of the four title patterns (rules/03-titles-and-headings.md)");
+if (/^(Should|Is|Are|Do|Does|Can|Could|Would|Will)\b/.test(title)) err("Title: reads as a question. Use a pattern: How to [outcome] without [fear], Why your [thing]..., the answer as a statement, or a named problem");
 range("Title", title, 7, 14, "error");
 if (title.length > 70) err(`Title: ${title.length} characters (max 70)`);
-if (!/^(How|What|When|Why|Should|Can|Is|Are|Do|Does|Where|Which|Who)\b/.test(title)) err("Title: must start with How, What, When, Why, Should, Can, Is, Are, Do, Does, Where, Which or Who");
-if (/\bThe Codest\b/i.test(title)) err("Title: must not name The Codest");
+if (/\bThe Codest\b|\bCodest\b/i.test(title)) err("Title: must not name The Codest. The reader's outcome is the subject");
 if (/\b20\d\d\b/.test(title)) warn("Title: contains a year. Keep it only if the answer changes by year");
 if (/ultimate guide|you won't believe|the secret|must-know|everything you need/i.test(title)) err("Title: clickbait phrasing");
+const ONESIDED = /\bbetter than\b|\bmore beneficial\b|\bthe best\b|\balways\b|\bbeats?\b|\bsuperior\b|\boutperforms?\b|\bthe only\b/i;
+if (ONESIDED.test(title)) warn(`Title: "${title.match(ONESIDED)[0]}" is a one-sided claim. Fix it, or show in the article the proof and the conditions (rules/03-titles-and-headings.md)`);
+const pattern = /^How to\b/.test(title) ? "how to" : /^Why\b/.test(title) ? "why" : /,? and how to (solve|close|fix|avoid|prevent)\b/i.test(title) ? "named problem" : "statement";
+// the hook
+const hook = (d.hook || "").trim();
+const hookS = sentencesOf(hook).length;
+range("Hook", hook, 12, 45, "error");
+if (hookS < 1 || hookS > 3) err(`Hook: ${hookS} sentences (must be 1 to 3)`);
+if (/\?/.test(hook)) err("Hook: no questions. State the situation (messaging-guidelines/04-voice.md)");
+if (/^(picture this|imagine|think about|let me|let's|let us|in today's|nowadays|have you ever|as we all know|in the world of|in recent years|it's no secret|we all know)/i.test(hook)) err("Hook: filler or label opener. Start inside the scene or with the fact");
+if (/\b(disaster|nightmare|on fire|crisis|catastroph|rescue|saved the day|game over|chaos)/i.test(hook)) warn("Hook: dramatic language. Keep it calm and specific (Guardian, not Hero)");
+const bodyOnly = S.map((s) => sectionText(s)).join(" ");
+for (const f of figures(hook)) if (!plain(bodyOnly).includes(f)) err(`Hook: the figure "${f}" must also appear in a body section, next to its source`);
 S.forEach((s, i) => {
   if (!/\?$/.test((s.heading || "").trim())) err(`Section ${i + 1} heading: must be a question ending with ? ("${s.heading}")`);
   range(`Section ${i + 1} heading`, s.heading, 5, 14);
@@ -274,10 +295,22 @@ for (const s of d.sources) {
   if (s.accessed && !isDate(s.accessed)) err(`Source ${s.id}: accessed must be YYYY-MM-DD`);
   const years = (String(s.date || "").match(/\b(19|20)\d\d\b/g) || []).map(Number);
   if (!years.length) warn(`Source ${s.id}: date has no year`);
-  else if (Math.max(...years) < thisYear - 3 && s.type !== "law") warn(`Source ${s.id}: last dated ${Math.max(...years)}. Use a source from the last 3 years, or set type "law" for a law or standard in force`);
+  else if (Math.max(...years) < thisYear - 2 && s.type !== "law" && !s.no_newer_edition) warn(`Source ${s.id}: data from ${Math.max(...years)}. Use the newest edition (last 2 years), or set no_newer_edition: true after checking, or type "law" for a law or standard in force`);
+  if (s.latest_checked && !isDate(s.latest_checked)) err(`Source ${s.id}: latest_checked must be YYYY-MM-DD`);
+  if (s.years && (!Array.isArray(s.years) || s.years.some((y) => !Number.isInteger(y)))) err(`Source ${s.id}: years must be a list of years, e.g. [2021, 2023]`);
 }
 for (const u of external) if (!d.sources.some((s) => s.url === u)) err(`External link not listed in sources: ${u}`);
 for (const [k, v] of Object.entries(d.report.claim_ids)) if (!/^CLM-\d{3}$/.test(v)) err(`Claims register: "${k}" has an invalid ID "${v}" (expected CLM-000)`);
+
+// dating figures (06): no "latest" or periods the sources do not support
+const allYears = new Set(d.sources.flatMap((s) => s.years || []));
+const LATEST = /\b(latest|most recent|newest)\b/i;
+const PERIOD = /\b(over|in|during) the (last|past) (\w+ )?(years|surveys|editions)\b|\blast (two|three|four|five|\d+) (surveys|years|editions)\b|\bevery year since\b|\bin recent years\b|\brecently\b/i;
+for (const [k, v] of Object.entries(texts)) {
+  const t = plain(v);
+  if (LATEST.test(t) && !d.sources.some((s) => s.latest_checked)) err(`${k}: says "${t.match(LATEST)[0]}" but no source has latest_checked. Check for a newer edition first (rules/06-sources-and-claims.md, Dating figures)`);
+  if (PERIOD.test(t) && allYears.size < 2) err(`${k}: "${t.match(PERIOD)[0]}" describes a period, but the sources cover ${allYears.size} year(s). List each source's years, or give the single year instead (rules/06-sources-and-claims.md, Dating figures)`);
+}
 
 // ---------- AEO/GEO (05) ----------
 const BASED = /^(general|case:[a-z0-9-]+|codest:https:\/\/\S+|src:.+)$/;
@@ -371,7 +404,7 @@ for (const [k, v] of Object.entries(texts)) for (const m of plain(v).matchAll(ne
 if (named.length && !Object.values(d.report.claim_ids).includes("CLM-003")) err("report.claim_ids: the article names The Codest's services, so list CLM-003");
 // acronyms spelled out the first time (04-voice.md, rule 5)
 const OKACR = new Set(["AI", "EU", "UK", "CTO", "CEO", "VP", "IT", "API", "TL", "DR", "SaaS", "HR", "OK", "PDF", "URL"]);
-const reading = plain([d.lead, texts.tldr, ...S.map((s) => s.heading + " " + sectionText(s)), texts.key_insights, texts.related_questions].join(" "));
+const reading = plain([d.hook, d.lead, texts.tldr, ...S.map((s) => s.heading + " " + sectionText(s)), texts.key_insights, texts.related_questions].join(" "));
 const seenAcr = new Set();
 for (const m of reading.matchAll(/\b[A-Z]{2,6}\b/g)) {
   const a = m[0];
@@ -413,6 +446,7 @@ function articleHtml(ds) {
   L.push(`${I}  <div class="ar-people">`, person(d.author, ""), ...(hasReviewer ? [person(d.reviewer, "Reviewed by ")] : []), `${I}  </div>`);
   L.push(`${I}  <p class="ar-updated">Last updated <time datetime="${d.updated}">${fmtDate(d.updated)}</time></p>`);
   L.push(`${I}</header>`);
+  L.push(`${I}<p class="ar-hook">${inline(d.hook)}</p>`);
   L.push(`${I}<p class="cd-lead ar-lead">${inline(d.lead)}</p>`);
   L.push(`${I}<section class="ar-tldr" aria-label="TL;DR"><h2>TL;DR</h2><ul class="cd-bullets">${d.tldr.map((b) => `<li>${inline(b)}</li>`).join("")}</ul></section>`);
   for (const s of S) {
@@ -444,7 +478,7 @@ function jsonLd() {
   const person = (p) => Object.assign({ "@type": "Person", name: p.name, jobTitle: p.role, worksFor: { "@type": "Organization", name: "The Codest" } }, p.linkedin ? { sameAs: [p.linkedin] } : {});
   const blog = {
     "@context": "https://schema.org", "@type": "BlogPosting",
-    headline: d.title, description: seo.meta_description, url: canonical, mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+    headline: d.title, alternativeHeadline: question, description: seo.meta_description, url: canonical, mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
     datePublished: d.published, dateModified: d.updated, inLanguage: "en", wordCount: bodyWords,
     author: person(d.author), ...(hasReviewer ? { contributor: person(d.reviewer) } : {}),
     publisher: { "@type": "Organization", name: "The Codest", url: site.origin + "/" },
@@ -477,12 +511,12 @@ function page() {
 
 function md() {
   const L = [];
-  L.push("---", `title: "${d.title}"`, `slug: ${d.slug}`, `canonical: ${canonical}`, `meta_title: "${seo.meta_title}"`, `meta_description: "${seo.meta_description}"`,
+  L.push("---", `title: "${d.title}"`, `question: "${question}"`, `title_pattern: ${pattern}`, `slug: ${d.slug}`, `canonical: ${canonical}`, `meta_title: "${seo.meta_title}"`, `meta_description: "${seo.meta_description}"`,
     `primary_query: ${pq}`, `secondary_queries: [${sq.join(", ")}]`, `category: ${d.category}`, `topic_area: ${d.topic_area}`, ...(d.industry ? [`industry: ${d.industry}`] : []),
     `author: ${d.author.name}, ${d.author.role}`, ...(hasReviewer ? [`reviewer: ${d.reviewer.name}, ${d.reviewer.role}`] : []), `published: ${d.published}`, `updated: ${d.updated}`, `review_by: ${d.review_by}`,
     `audience_group: ${M.audience_group}`, `buying_role: ${M.buying_role}`, `funnel_stage: ${M.funnel_stage}`, `cta: ${d.cta.label}`,
     `claims_used: [${Object.values(d.report.claim_ids).join(", ")}]`, `open_questions: ${d.report.open_questions.length ? d.report.open_questions.length + " (see report.md)" : "none"}`, "---", "");
-  L.push(`# ${d.title}`, "", d.lead, "", "**TL;DR**", "", ...d.tldr.map((b) => `- ${b}`), "");
+  L.push(`# ${d.title}`, "", `*${d.hook}*`, "", d.lead, "", "**TL;DR**", "", ...d.tldr.map((b) => `- ${b}`), "");
   for (const s of S) {
     L.push(`## ${s.heading}`, "", s.answer, "");
     if (s.bullets) L.push(...s.bullets.map((b) => `- ${b.bold ? `**${b.bold}** ` : ""}${b.text}`), "");
@@ -513,7 +547,9 @@ function report() {
     `| Category | ${d.category} / ${d.topic_area}${d.industry ? " / " + d.industry : ""} |`, `| Words | ${bodyWords} (${readMin()} min read) |`, `| Review by | ${d.review_by} |`, "",
     "## SEO and AEO/GEO checks", "",
     "| Check | Result |", "| --- | --- |",
-    `| Title is a question with the primary query | ${yes(/\?$/.test(title) && hasAll(title, pq))} |`,
+    `| Title is a statement (pattern: ${pattern}) with the primary query | ${yes(!/\?/.test(title) && hasAll(title, pq))} |`,
+    `| Hook (12 to 45 words, no question, no filler opener) | ${words(hook)} words |`,
+    `| Buyer question recorded (alternativeHeadline) | ${question} |`,
     `| Lead answers the question (40 to 70 words) | ${words(d.lead)} words |`,
     `| Every H2 is a question with a 20 to 45 word answer first | ${yes(S.every((s) => /\?$/.test(s.heading.trim()) && words(s.answer) >= 20 && words(s.answer) <= 45))} |`,
     `| TL;DR bullets | ${d.tldr.length} |`, `| Table with caption | ${tables} |`,
@@ -533,7 +569,7 @@ function report() {
     "## Open questions", "", list(d.report.open_questions), "",
     "## Self-check (rules/08-checks.md)", "", Object.keys(d.report.self_check).length ? Object.entries(d.report.self_check).map(([k, v]) => `- ${k}: ${v}`).join("\n") : "- Not answered", "",
     "## Build", "", `- Errors: ${errors.length}`, ...errors.map((e) => `  - ${e}`), `- Warnings: ${warnings.length}`, ...warnings.map((w) => `  - ${w}`), "",
-    "## AI citation log (fill in monthly)", "", "| Date | Assistant | Question asked | Cited? | Notes |", "| --- | --- | --- | --- | --- |", "| | Google AI Overview / AI Mode | " + d.title + " | | |", "| | ChatGPT | | | |", "| | Perplexity | | | |", "| | Gemini | | | |", "| | Claude | | | |", "| | Copilot | | | |", "",
+    "## AI citation log (fill in monthly)", "", "| Date | Assistant | Question asked | Cited? | Notes |", "| --- | --- | --- | --- | --- |", "| | Google AI Overview / AI Mode | " + d.question + " | | |", "| | ChatGPT | | | |", "| | Perplexity | | | |", "| | Gemini | | | |", "| | Claude | | | |", "| | Copilot | | | |", "",
     ...(d.report.notes ? ["## Notes", "", d.report.notes, ""] : []),
   ].join("\n");
 }

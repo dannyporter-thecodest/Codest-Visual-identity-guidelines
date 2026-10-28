@@ -20,7 +20,7 @@ Every rule below is checked by the build where it can be checked mechanically. T
 
 | # | Rule | Check |
 |---|---|---|
-| A1 | The title is the buyer's question. The lead answer (40 to 70 words) answers it directly | error |
+| A1 | The buyer question is recorded in `question` (and in the JSON-LD as `alternativeHeadline`). The title states the outcome or insight. After a short hook, the lead answer (40 to 70 words) answers the buyer question directly | error |
 | A2 | Every body H2 is a question. Its first sentence answers it | error (question mark, banned openings) |
 | A3 | The answer paragraph under each H2 is 20 to 45 words and makes sense on its own. No "this", "these", "as mentioned above" pointing back to an earlier section in its first sentence | error |
 | A4 | A TL;DR of 3 to 5 bullets that each stand alone | error |
@@ -40,7 +40,8 @@ Every rule below is checked by the build where it can be checked mechanically. T
 | B4 | At least three sections rest on an outside source (`based_on: src:<id>`). No more than two sections rest on `general` alone | error |
 | B5 | At least one clear position, including when **not** to do something. Category 2 always has a "when AI is the wrong choice" section | self-check; error for category 2 without `limits_section` |
 | B6 | Figures appear with their source and year in the same sentence or the next: "57.5% of EU enterprises that recruited or tried to recruit ICT specialists in 2023 had difficulties filling the vacancies (Eurostat)" | self-check |
-| B7 | Sources are recent: published or updated in the last 3 years, unless the source is a law or standard still in force | warning |
+| B7 | Sources are recent: data from the last 2 years where it exists. Cody searches for the newest edition before using a figure, and records the date it checked in `latest_checked`. Older data needs a note that no newer edition exists. Laws and standards in force are exempt | warning |
+| B7a | Every figure keeps its real year. Never re-date it, drop the year to make it look current, or stretch one year into a period. How to keep articles from looking dated without misleading: `06-sources-and-claims.md`, "Dating figures" | error for unsupported "latest" or time-range wording |
 | B8 | A named author for the byline (set in `topics.json`, `site.default_author`, unless the brief names another) | error if missing |
 | B9 | No hype, no superlatives, no claims without a register entry. AI systems and buyers both discount marketing language | warning per avoid-list word |
 
@@ -69,5 +70,5 @@ When a buyer asks an AI assistant "which software partners in the Nordics are go
 ## Measuring
 
 - **Search Console:** impressions and clicks for the primary and secondary queries.
-- **AI citations:** once a month, ask the main assistants the article's title question and log whether we are cited (the table in `report.md`).
+- **AI citations:** once a month, ask the main assistants the article's buyer question and log whether we are cited (the table in `report.md`).
 - **The contact form:** add "AI assistant" to "How did you hear about us?". AI answers often send no click.

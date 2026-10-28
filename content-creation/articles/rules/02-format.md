@@ -14,9 +14,10 @@ Copy the patterns, never the text.
 
 | # | Section | Required | Size | Notes |
 |---|---|---|---|---|
-| 1 | Title (H1) | yes | 7 to 14 words, max 70 characters | One buyer question (`03-titles-and-headings.md`) |
+| 1 | Title (H1) | yes | 7 to 14 words, max 70 characters | An outcome-led or insight statement, not a question (`03-titles-and-headings.md`). The buyer question it answers is kept in `question` |
 | 2 | Byline | yes | | Author name and role (`site.default_author` in `topics.json` unless the brief names another), published date, updated date, reading time |
-| 3 | Lead answer | yes | 40 to 70 words, 2 or 3 sentences | Answers the title question directly. No scene-setting |
+| 3a | Hook | yes | 1 to 3 sentences, 12 to 45 words | A concrete scene, a sourced figure, the cost of waiting or a true surprise. No questions, no filler openers (`03-titles-and-headings.md`) |
+| 3b | Lead answer | yes | 40 to 70 words, 2 or 3 sentences | Straight after the hook. Answers the buyer question directly and delivers on the title. No scene-setting |
 | 4 | TL;DR | yes | 3 to 5 bullets, 8 to 22 words each | Each bullet makes sense on its own. The first may carry a sourced figure |
 | 5 | Body sections (H2) | yes | 4 to 6 sections | Every H2 is a question. The first paragraph answers it in 20 to 45 words |
 | 6 | Table | yes, exactly one | 2 to 4 columns, 3 to 6 rows, with a caption | A comparison the buyer can reuse: options, failure modes, criteria |
@@ -25,7 +26,7 @@ Copy the patterns, never the text.
 | 9 | Related case study | yes | | One live case study that shows the topic in practice |
 | 10 | CTA | yes | title 3 to 10 words, text 10 to 30 words | One small next step (`01-categories-and-topics.md`) |
 
-**Article length:** 900 to 1,400 words for sections 3 to 8 together. Below 700 or above 1,800 is an error. Answer articles win by being precise, not long.
+**Article length:** 900 to 1,400 words for sections 3a to 8 together. Below 700 or above 1,800 is an error. Answer articles win by being precise, not long.
 
 ## Inside a body section
 

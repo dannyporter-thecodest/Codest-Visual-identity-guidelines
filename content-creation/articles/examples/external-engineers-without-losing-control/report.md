@@ -1,4 +1,4 @@
-# Article report: Should you hire in-house or extend your engineering team?
+# Article report: How to bring external engineers into your team without losing control
 
 Status: **finished**. Ready for the publishing workflow
 
@@ -8,27 +8,29 @@ Publishing is outside this workflow. Whatever publishes it must meet Article 50 
 
 | Field | Value |
 | --- | --- |
-| URL | https://thecodest.co/en/blog/hire-or-extend-engineering-team/ |
-| Meta title (59 chars) | Hire in-house or extend your engineering team? | The Codest |
-| Meta description (151 chars) | Extend your engineering team when work cannot wait for hiring; hire in-house for long-term core roles. A comparison table and the risks to agree first. |
-| Primary query | extend engineering team |
-| Secondary queries | team extension vs hiring; hire developers in-house; hard to fill engineering roles |
+| URL | https://thecodest.co/en/blog/external-engineers-without-losing-control/ |
+| Meta title (57 chars) | How to bring in external engineers without losing control |
+| Meta description (150 chars) | Bring in external engineers when work cannot wait for hiring, and keep control by agreeing the people, access and exit first. With a comparison table. |
+| Primary query | external engineers |
+| Secondary queries | staff augmentation; team extension vs hiring; extend engineering team; hire developers in-house |
 | Query source | topic-list (volume not checked) |
 | Category | buyer-questions / capacity / all |
-| Words | 1321 (7 min read) |
+| Words | 1379 (7 min read) |
 | Review by | 2027-10-28 |
 
 ## SEO and AEO/GEO checks
 
 | Check | Result |
 | --- | --- |
-| Title is a question with the primary query | yes |
-| Lead answers the question (40 to 70 words) | 58 words |
+| Title is a statement (pattern: how to) with the primary query | yes |
+| Hook (12 to 45 words, no question, no filler opener) | 37 words |
+| Buyer question recorded (alternativeHeadline) | Should you hire in-house or extend your engineering team? |
+| Lead answers the question (40 to 70 words) | 52 words |
 | Every H2 is a question with a 20 to 45 word answer first | yes |
 | TL;DR bullets | 5 |
 | Table with caption | 1 |
 | Internal links (service page included) | 4 (yes) |
-| Outside sources (publishers) | 3 (3) |
+| Outside sources (publishers) | 4 (3) |
 | Sections resting on outside sources / Codest material / general only | 4 / 2 / 0 of 5 |
 | Information gain | table: Compares hiring, team extension and handing over an area by best fit, main risk and what to agree first, combining EU and Austrian hiring data, DORA exit plan practice and two public Codest cases. |
 | Named author | Danny Porter, AI Marketing Automation Specialist, The Codest |
@@ -45,6 +47,7 @@ Publishing is outside this workflow. Whatever publishes it must meet Article 50 
 ## Sources
 
 - eurostat-ict-vacancies: Eurostat, "ICT specialists - statistics on hard-to-fill vacancies in enterprises", Data extracted June 2025, reference year 2023. https://ec.europa.eu/eurostat/statistics-explained/index.php?title=ICT_specialists_-_statistics_on_hard-to-fill_vacancies_in_enterprises (accessed 2026-10-28)
+- eurostat-ict-2021: Eurostat, "EU companies face difficulties in hiring ICT experts", 12 July 2023, reference year 2021. https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20230712-1 (accessed 2026-10-28)
 - statistik-austria-ict: Statistics Austria, "20% of enterprises employ ICT specialists", 27 January 2025, reference year 2023. https://www.statistik.at/fileadmin/announcement/2025/01/20250127IKTFachkraefteUnternehmen2024EN.pdf (accessed 2026-10-28)
 - fma-dora-third-party: Financial Market Authority (FMA), Austria, "DORA - Managing of ICT third-party risk", 2026 (register of information dates 16.02.2026 to 13.03.2026). https://www.fma.gv.at/en/?p=158458 (accessed 2026-10-28)
 
@@ -59,7 +62,7 @@ Publishing is outside this workflow. Whatever publishes it must meet Article 50 
 
 ## Self-check (rules/08-checks.md)
 
-- 1 lead answers the question: yes
+- 1 lead answers the question: yes: the hook sets the scene in two sentences, the lead answers the buyer question and says how to keep control, as the title promises
 - 2 every section adds something specific: yes: sourced figures in sections 1 and 3, DORA exit plan practice in section 5, cases in sections 2 and 4
 - 3 a clear position, including when not to: yes: section 3 and the CTA say when to hire instead
 - 4 information gain is real: yes: the comparison combines hiring data, DORA exit plan practice and two cases that no single source covers
@@ -95,4 +98,4 @@ Publishing is outside this workflow. Whatever publishes it must meet Article 50 
 
 ## Notes
 
-Test article for the ruleset, written without input from people. Eurostat and Statistics Austria report the same EU survey (ICT usage in enterprises), so they count as one piece of evidence on hiring difficulty; Statistics Austria adds the reasons. No case study figures used, because none has a claims register entry yet. The logistics case is outside our ICP industries; it is used because no public fintech or payments case shows a handed-over area, and the article says what transfers.
+Test article for the ruleset, written without input from people. Eurostat (2023 and 2021 editions) and Statistics Austria report the same EU survey (ICT usage in enterprises), so they count as one piece of evidence on hiring difficulty; Statistics Austria adds the reasons. No case study figures used, because none has a claims register entry yet. The logistics case is outside our ICP industries; it is used because no public fintech or payments case shows a handed-over area, and the article says what transfers. 2023 is the most recent year Eurostat has published for hard-to-fill ICT vacancies (checked 2026-10-28), so the hook says "last two surveys" and the body gives both years.

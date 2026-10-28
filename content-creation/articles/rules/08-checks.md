@@ -10,7 +10,7 @@ Then Cody answers every item below in `report.self_check` (in `content.json`) wi
 
 ## Substance
 
-1. Does the lead answer the title question, so a reader could stop there?
+1. Does the hook make a CTO want to read on, and does the lead then answer the buyer question, so a reader could stop there? Does the title name an outcome or insight the article delivers?
 2. Does every section add something a generic article on this topic would not have (a sourced figure, a condition, an example, a clear view)?
 3. Is there at least one clear position, including when not to do something?
 4. Is the information gain real: would a reader need several of the sources to get it themselves?
