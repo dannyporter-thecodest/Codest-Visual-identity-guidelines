@@ -82,6 +82,9 @@ for (const [k, v] of copy) if (/\b(organiz|optimiz|prioritiz|centraliz|standardi
 // ---------- format ----------
 range("Title", d.title, 10, 19, "error");
 if (/\bThe Codest\b/i.test(d.title)) err("Title: The Codest must not be named in the title");
+const OUTCOME = /^(reduced|reduces|reduce|increased|increases|boosted|cut|cuts|saved|improved|enabled|delivered|deployed|launched|scaled|automated|augmented|expanded|unified|accelerated)\b/i;
+if (/^[€$£]?\d/.test(d.title.trim()) || OUTCOME.test(d.title.trim())) err("Title: must start with the client or a descriptor, not a number or an outcome verb. Name what was built (rules/02-titles.md)");
+if (/\d[\d.,]*\s?%|\bby\s+[€$£]?\d|\bfrom\s+[€$£]?\d[^\s]*\s+to\b|[€$£]\d/i.test(d.title)) err("Title: a statistic is the point of the title. Move it to Results and name what was built instead (rules/02-titles.md)");
 if (d.client.named && d.client.name && !d.title.includes(d.client.name)) warn("Title: does not start with or include the client's name");
 range("Problem hook", d.problem_hook, 20, 35);
 range("Impact statement", d.impact_statement, 20, 35);

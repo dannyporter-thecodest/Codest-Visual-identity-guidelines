@@ -27,9 +27,9 @@ There is no table of contents and no tab bar. `templates/case-study-page.html` a
 ## Section by section
 
 ### 1. Case study title
-- Use one formula from `02-titles.md`.
+- Names what was built or changed: client, verb, the system. Use a formula from `02-titles.md`.
 - Client first. The Codest is not named in the title.
-- One number at most, and only a figure that also appears in Results.
+- Never leads with a statistic. A number only as the scale of the thing built, and it also appears in Results.
 
 ### 2. Problem hook
 - One sentence, 20 to 35 words, the first line below the hero.

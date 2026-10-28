@@ -10,9 +10,11 @@ Look in every part of the old page: the headline, the hero, the stats band, the 
 
 | The source has | Results | Stats band | Title |
 |---|---|---|---|
-| Headline or results statistics | One bullet per statistic, first in the list, the figure in bold | No (unless also in a stats band) | Optional: one figure, with formula 1 or 2 |
-| A stats band | Optional | Yes, under Challenge, the same figures | Optional |
-| No statistics | 3 capability bullets: what the client or its users can now do | Leave out | Formula 3 to 6 |
+| Headline or results statistics | One bullet per statistic, first in the list, the figure in bold | No (unless also in a stats band) | No. The title names what was built; old headline statistics move to Results |
+| A stats band | Optional | Yes, under Challenge, the same figures | No |
+| No statistics | 3 capability bullets: what the client or its users can now do | Leave out | No |
+
+Statistics are never the point of the title (`02-titles.md`). A number may appear there only as the scale of the thing built ("for 30,000 customers").
 
 Every statistic in `report.source_statistics` must appear in Results or the stats band. The build fails if one is missing.
 

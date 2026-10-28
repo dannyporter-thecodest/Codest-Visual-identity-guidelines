@@ -4,7 +4,7 @@ Every current case study has roughly the same parts. Move each one as below, the
 
 | Old thecodest.co section | New section | Rule |
 |---|---|---|
-| Headline (often "The Codest Value" + a statistic) | Case study title | Rewrite with a formula from `02-titles.md`. Every statistic in the old headline moves to Results. |
+| Headline (often "The Codest Value" + a statistic) | Case study title | Replace with a title that names what was built or changed (`02-titles.md`). Never keep the old statistic-first headline; its statistics move to Results unchanged. |
 | Hero facts (Industry, HQ, Tech stack) | Stats figure | Copy as is. |
 | Intro or summary | Problem hook and impact statement | Split into the problem (hook) and the value delivered (impact). |
 | About the client | About [Client name] | Trim to 40 to 65 words. Keep facts, drop praise. |
