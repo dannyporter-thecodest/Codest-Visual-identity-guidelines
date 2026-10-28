@@ -35,7 +35,7 @@ How to cut a wordy title, in order (cut words, never rewrite source terms):
 | Wordy | Catchy |
 |---|---|
 | Estimote turned its sensor-based technology into a space management application for social distancing during the COVID-19 pandemic (17 words, 4 lines) | Estimote turned its sensors into a contact tracing system during COVID-19 (11 words, 2 lines) |
-| A major logistics company built a custom logistics platform to automate order processing and route planning (16 words, 3 lines) | A major logistics company built a custom logistics platform to automate manual processes (13 words, 2 lines) |
+| A major logistics company built a custom logistics platform to automate order processing and route planning (16 words, 3 lines) | A major logistics company built a custom logistics platform to automate manual processes (13 words, 3 lines) |
 
 ## Formulas
 
