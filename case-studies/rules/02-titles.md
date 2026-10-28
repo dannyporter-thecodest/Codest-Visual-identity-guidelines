@@ -14,7 +14,7 @@ Statistics never lead the title. They go in Results and the stats band (`04-stat
 |---|---|---|---|---|
 | 1 | An existing system became something new | [Client] turned [old thing] into [new thing] | Reservix turned its CMS into a sales engine with AI suggestions and third-party automations | Estimote turned its Bluetooth sensor technology into a workplace safety platform during the COVID-19 pandemic |
 | 2 | A new product or platform was built | [Client] built [system] for [purpose] | Bakkt built Zaira for agentic payments across 63+ countries with anti-hallucination payment guardrails | [Client] built [platform] for [purpose] |
-| 3 | A manual or legacy process was replaced | [Client] automated/replaced [process] with [system] | (closest: Mr & Mrs Smith modernized its hotel platform and integrated it with its new parent) | A Central European logistics company automated order processing and route planning with one real-time supply chain platform |
+| 3 | A manual or legacy process was replaced | [Client] automated/replaced [process] with [system] | (closest: Mr & Mrs Smith modernized its hotel platform and integrated it with its new parent) | A Central European logistics company automated order processing and route planning with a custom logistics platform |
 | 4 | A legacy platform was modernised | [Client] modernised [platform] [and what else] | A bank modernized its legacy platform for 30,000 customers without a single disruption | [Client] modernised its [platform] and [result in words] |
 | 5 | Team extension or a placed specialist | [Client] [scaled/extended] its [team] to [deliver what] | A banking tech provider quickly scales the e-Wallet team to deliver high-complexity services in parallel | [Client] extended its [product] team with senior [technology] developers to [deliver what] |
 | 6 | Unnamed client | Any formula above, with a factual descriptor as the subject | One FinTech gained a competitive edge with an MCP-based AI chatbot | A Nordic payments company replaced its legacy ledger with [system] |
@@ -34,6 +34,6 @@ Statistics never lead the title. They go in Results and the stats band (`04-stat
 | Old thecodest.co headline | New title |
 |---|---|
 | Enabled 60% faster occupancy tracking and saved €120K annually through an IoT office management platform | Estimote turned its Bluetooth sensor technology into a workplace safety platform during the COVID-19 pandemic |
-| Reduced operational costs by 38% and delivery time by 45% with a custom logistics platform | A Central European logistics company automated order processing and route planning with one real-time supply chain platform |
+| Reduced operational costs by 38% and delivery time by 45% with a custom logistics platform | A Central European logistics company automated order processing and route planning with a custom logistics platform |
 
 In both, the old statistics move to Results unchanged.
