@@ -36,7 +36,7 @@ Simple and to the point, but every term stays exactly as the source writes it.
 
 | Wrong: terminology changed | Why |
 |---|---|
-| Estimote turned its sensor-based technology into a space management application | "sensors" shortens "sensor-based technology"; "COVID-19" shortens the source's phrase; the context is waffle |
+| Estimote turned its sensors into a space management application during COVID-19 | "sensors" shortens "sensor-based technology"; "COVID-19" shortens the source's phrase; the context is waffle |
 | Estimote turned its sensors into a contact tracing system during COVID-19 | names a secondary feature instead of the main deliverable |
 
 ## Formulas
