@@ -97,10 +97,20 @@ if (/\bGFT\b/.test(allText)) warn("GFT is mentioned. GFT is not a client: check 
 const codyBad = [...new Set([...blob].filter((c) => c.charCodeAt(0) > 127 && !/\p{P}/u.test(c)))];
 if (codyBad.length) err(`Characters Cody's repository rejects: ${codyBad.map((c) => "U+" + c.codePointAt(0).toString(16).toUpperCase().padStart(4, "0")).join(", ")}. Write EUR/GBP, x for multiplication, plain letters`);
 if (/\bUSA?\b|United States|\bU\.S\.|\bAmerican market|\bSOX\b|Sarbanes|\bCCPA\b|\bGLBA\b|FedNow/.test(allText)) err("US market, regulation or data mentioned. The US is not our market (rules/07-hard-rules.md)");
-const AVOID = ["top-notch", "top-tier", "world-class", "unparalleled", "best-in-class", "cutting-edge", "state-of-the-art", "game-changing", "game-changer", "revolutionary", "revolutionis", "revolutioniz", "boost", "supercharge", "unlock", "seamless", "effortless", "frictionless", "AI-powered", "AI-driven", "AI-first", "AI-native", "10x", "rockstar", "ninja", "resources", "the best developers", "guaranteed", "risk-free", "premium", "leverage", "empower", "delve", "landscape", "navigate the", "fast-paced", "ever-evolving", "in today's", "significantly", "incredibly", "truly", "senior-only"];
+const AVOID = ["top-notch", "top-tier", "world-class", "unparalleled", "best-in-class", "cutting-edge", "state-of-the-art", "game-changing", "game-changer", "revolutionary", "revolutionis", "revolutioniz", "boost", "supercharge", "unlock", "seamless", "effortless", "frictionless", "AI-powered", "AI-driven", "AI-first", "AI-native", "10x", "rockstar", "ninja", "resources", "the best developers", "guaranteed", "risk-free", "premium", "leverage", "empower", "delve", "landscape", "navigate the", "fast-paced", "ever-evolving", "in today's", "significantly", "incredibly", "truly", "senior-only",
+  // added for consistency in messaging-guidelines/04-voice.md
+  "innovative", "groundbreaking", "disruptive", "transformative", "bleeding-edge", "next-generation", "utilise", "utilize", "facilitate", "robust", "holistic", "synergy", "paradigm", "streamline", "impactful", "actionable", "learnings", "digital transformation partner", "trusted partner", "A-players", "top talent", "journey", "serves as", "functions as", "stands as", "dive in", "dive into", "hope this helps", "feel free to", "studies show", "experts agree", "could potentially", "may possibly", "pivotal"];
 for (const [k, v] of Object.entries(texts)) for (const a of AVOID) if (new RegExp("(^|[^\\w-])" + a.replace(/[-]/g, "\\-"), "i").test(plain(v))) (/^AI-|^10x$|senior-only/i.test(a) ? err : warn)(`${k}: uses "${a}" (messaging-guidelines/04-voice.md)`);
 for (const [k, v] of Object.entries(texts)) if (/!/.test(plain(v))) warn(`${k}: exclamation mark`);
 for (const [k, v] of Object.entries(texts)) if (/\b(organiz|optimiz|prioritiz|centraliz|standardiz|utiliz|minimiz|maximiz|modeliz|analyz)/i.test(plain(v))) warn(`${k}: American spelling (use British English)`);
+
+// company name (messaging-guidelines/04-voice.md, style notes)
+for (const [k, v] of Object.entries(texts)) {
+  const t = plain(v);
+  if (/(^|[^\w])the Codest\b/.test(t)) err(`${k}: write "The Codest" with a capital T`);
+  if (/(?<!The )\bCodest\b/.test(t.replace(/The Codest/g, ""))) err(`${k}: write "The Codest", not "Codest" alone`);
+  if (/\bTheCodest\b/i.test(t)) err(`${k}: write "The Codest" as two words`);
+}
 
 // ---------- categories and topics (01) ----------
 const CATS = ["buyer-questions", "ai-in-industry"];
