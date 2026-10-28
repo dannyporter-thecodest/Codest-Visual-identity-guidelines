@@ -1,0 +1,53 @@
+{
+  "slug": "[short-kebab-case-name]",
+  "source_url": "[Converting: https://thecodest.co/en/case-studies/... | Creating: null]",
+  "intake": "[Creating: intake.md | Converting: null]",
+  "client": { "name": "[Client name, or null if not named on the source]", "named": true },
+  "category": "[Industry tag, e.g. Fintech]",
+  "title": "[8 to 14 words, max 3 lines: company, technology, outcome. rules/02-titles.md]",
+  "facts": {
+    "industry": "[from the source hero]",
+    "headquarters": "[City, Country]",
+    "tech_stack": "[main technologies]"
+  },
+  "problem_hook": "[One sentence, 20 to 35 words: the problem the client had]",
+  "impact_statement": "[One sentence, 20 to 35 words: the value The Codest delivered]",
+  "about": "[40 to 65 words: what the company does, who it serves, where it is based]",
+  "challenge": {
+    "paragraphs": [
+      "[Business context and the problem]",
+      "[What the client needed]"
+    ],
+    "key_challenges": [
+      { "label": "[Label]", "text": "[one sentence, lower case start, ending with a full stop.]" },
+      { "label": "[Label]", "text": "[...]" },
+      { "label": "[Label]", "text": "[...]" }
+    ],
+    "stakes": "[One sentence: what failure or delay would have cost]"
+  },
+  "stats_band": [],
+  "project_description": ["[100 to 150 words: what was built and what it does]"],
+  "approach": ["[Responsibilities]", "[How it was delivered. Team in one line if known.]"],
+  "results": {
+    "summary": "[15 to 25 words]",
+    "bullets": [
+      { "bold": "[Source statistic, exactly as written, or a capability]", "text": "[context]" },
+      { "bold": "[...]", "text": "[...]" },
+      { "bold": "[...]", "text": "[...]" }
+    ]
+  },
+  "quote": { "text": "[verbatim]", "name": "[Name]", "role": "[Role]", "company": "[Company]" },
+  "cta": {
+    "title": "[Question in the client's terms]",
+    "text": "[One or two sentences]",
+    "label": "Let's talk through the problem"
+  },
+  "other_case": null,
+  "report": {
+    "source_statistics": [],
+    "source_quote": "[the quote exactly as on the source, or null]",
+    "facts_left_out": [],
+    "facts_missing": [],
+    "questions_for_delivery": []
+  }
+}
