@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Landing page template · The Codest</title>
+<!--
+  REFERENCE LANDING PAGE
+  Built only from the design system: tokens.css, bundle.css, sections.css and bundle.js.
+  Structure follows the Home page in the Figma file (screenshot archived in the source repository).
+  Copy below is PLACEHOLDER. Replace it with copy from the messaging guidelines; every number needs a claims-register entry.
+  To make a new landing page: copy this file, keep the section order unless the brief says otherwise, and change content only.
+-->
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../components/bundle.css">
+<link rel="stylesheet" href="../components/sections.css">
+<style>body { margin: 0; background: var(--primary-white); }</style>
+</head>
+<body>
+<div id="root"></div>
+<script>window.CodestConfig = { assetBase: "../assets/" };</script>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="../components/bundle.js"></script>
+<script>
+  var h = React.createElement, C = window.Codest;
+  var ICON = function (n) { return "../assets/icons/" + n; };
+  var PH = "[Placeholder: one or two sentences from the messaging guidelines.]";
+
+  var nav = [
+    { label: "About us", href: "#" }, { label: "Services", href: "#" }, { label: "Our team", href: "#" }, { label: "Case studies", href: "#" },
+    { label: "Know how", href: "#", children: [{ label: "Blog", href: "#" }, { label: "Case studies", href: "#" }, { label: "Webinars", href: "#" }, { label: "Meetups", href: "#" }] }
+  ];
+
+  function Page() {
+    return h(React.Fragment, null,
+      // 1. Header
+      h(C.Header, { links: nav, secondary: { label: "Careers", href: "#" }, primary: { label: "Get in touch", href: "#" } }),
+
+      // 2. Hero: headline, intro, one primary action, framed team photo
+      h(C.HeroHome, {
+        title: "[Headline: what we do, for whom, in one line or two]",
+        text: PH,
+        cta: { label: "Read case studies", href: "#" },
+        imageSrc: null, imageAlt: "Team photo"
+      }),
+
+      // 3. Service tabs
+      h(C.Section, null, h(C.ServiceTabs, {
+        title: "[Section heading as a question]", text: PH,
+        groups: [
+          { label: "Front-end", iconSrc: ICON("service-frontend@4x.png"), items: [{ label: "React" }, { label: "Vue" }, { label: "TypeScript" }] },
+          { label: "Back-end", iconSrc: ICON("service-backend@4x.png"), items: [{ label: "Java" }, { label: "PHP" }, { label: "Python" }, { label: "Ruby on Rails" }] },
+          { label: "Other", iconSrc: ICON("service-other.svg"), items: [{ label: "QA Engineer", iconSrc: ICON("service-qa@4x.png") }, { label: "DevOps", iconSrc: ICON("service-devops.svg") }] }
+        ],
+        cta: { label: "Discover our services", href: "#" }
+      })),
+
+      // 4. Stats band: only numbers with a claims-register entry
+      h(C.StatsBand, { stats: [{ value: "[00]", label: "[Sourced claim]" }, { value: "[00]", label: "[Sourced claim]" }, { value: "[00]", label: "[Sourced claim]" }, { value: "[00]", label: "[Sourced claim]" }] }),
+
+      // 5. Case studies: alternating tint panels
+      h(C.Section, null, h("div", { className: "cd-cases" },
+        h(C.CasePanel, { category: "[Industry]", title: "[Case study outcome headline]", href: "#" }),
+        h(C.CasePanel, { category: "[Industry]", title: "[Case study outcome headline]", href: "#", tone: "peach", reverse: true })
+      )),
+
+      // 6. Values
+      h(C.Section, { tone: "pink", orb: { color: "orange", style: { right: -175, top: -106 } } }, h(C.ValuesGrid, {
+        title: "[Why work with us, as a question]", cta: { label: "Contact us", href: "#" },
+        items: [
+          { label: "[Value one]", iconSrc: ICON("value-customer.svg") }, { label: "[Value two]", iconSrc: ICON("value-partnership.svg") },
+          { label: "[Value three]", iconSrc: ICON("value-trust.svg") }, { label: "[Value four]", iconSrc: ICON("value-quality.svg") }
+        ]
+      })),
+
+      // 7. Client testimonials: only cleared quotes
+      h(C.Section, null, h(C.Carousel, { title: "[Testimonials heading]", link: { label: "Read all reviews", href: "#" } },
+        [1, 2, 3].map(function (i) { return h("div", { key: i, style: { width: 486, maxWidth: "85vw" } }, h(C.TestimonialCard, { quote: "[Cleared client quote]", name: "[Client name]", role: "[Role, Company]" })); })
+      )),
+
+      // 8. Culture: image and text
+      h(C.Section, { tone: "blue" }, h(C.ImageText, { title: "[Culture heading]", text: PH, cta: { label: "About us", href: "#", link: true }, collage: {} })),
+
+      // 9. Team quotes on navy
+      h(C.Section, { tone: "navy" }, h(C.Carousel, { title: "[Team heading]", titleClass: "cd-h2", link: { label: "Read more about our team", href: "#" } },
+        h(C.TeamQuoteCard, { quote: "[Employee quote]", name: "[Employee name]", role: "[Role]" }),
+        h(C.TeamQuoteCard, { quote: "[Employee quote]", name: "[Employee name]", role: "[Role]", dimmed: true })
+      )),
+
+      // 10. Latest content
+      h(C.Section, null, h(C.Carousel, { title: "[Latest content heading]", titleClass: "cd-h2" },
+        [1, 2, 3].map(function (i) { return h("div", { key: i, style: { width: 486, maxWidth: "85vw" } }, h(C.BlogCard, { author: "[Author]", authorRole: "[Role]", category: "[Category]", title: "[Article title]", excerpt: PH })); })
+      )),
+
+      // 11. Contact band: the closing call to action
+      h(C.CtaBand, { title: "[Closing call to action]", text: PH, cta: { label: "Contact us", href: "#" } }),
+
+      // 12. Footer
+      h(C.Footer, {
+        newsletterTitle: "[Newsletter invitation]", consent: "[Consent text from legal]",
+        about: PH, offices: [{ place: "[Country]", address: "[Office address]" }],
+        columns: [
+          { title: "The Codest", links: [{ label: "Home", href: "#" }, { label: "About us", href: "#" }, { label: "Services", href: "#" }, { label: "Case studies", href: "#" }, { label: "Career", href: "#" }] },
+          { title: "Services", links: [{ label: "[Service]", href: "#" }, { label: "[Service]", href: "#" }] },
+          { title: "Resources", links: [{ label: "Press kit", href: "#" }, { label: "Culture book", href: "#" }] }
+        ],
+        legal: "Privacy policy · Website terms of use", copyright: "Copyright \u00a9 [year] The Codest. All rights reserved."
+      })
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(h(Page));
+</script>
+</body>
+</html>

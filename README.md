@@ -1,75 +1,11 @@
-# The Codest brand
+# The Codest visual identity, design system and case studies
 
-The Codest's **Visual Identity Guidelines** and **Design System**, documented from the current website design in Figma (October 2026). This records the identity as it exists today; it is not a rebrand.
+Staging copy of two folders in Cody's repository (`codesthq/cody-agent`). The layout and paths match Cody's repository exactly, so a reviewed change here can be copied into Cody unchanged.
 
-| | What | Start here |
+| Folder | What it is | Start here |
 |---|---|---|
-| Visual Identity Guidelines | The rules: logo, colour, states, type, layout, the offset outline, icons, waves and orbs, imagery, known issues | `visual-identity/guidelines.md` (or the PDF beside it) |
-| Design System | The build kit: tokens, fonts, logo, icons, textures, graphics, 70 components, 2 page templates, 19 reference screenshots | `design-system/README.md` |
-| Creatives | Image templates for social posts, stories, ads, link images, covers, banners and email headers, with a render script | `creatives/README.md` |
-| Case studies | The case study format (based on TSH), shared rules, page template and build script, plus two workflows: converting old case studies, and creating new ones from Delivery's intake form | `case-studies/README.md` |
-| AI agents (Cody) | How to build a page, the rules that are easy to break, a pre-delivery checklist | `AGENT_GUIDE.md` |
-| Machine-readable index | Every file with its purpose and Figma source | `manifest.json` |
+| `visual-identity-and-design-system/` | Visual identity guidelines, design system (tokens, fonts, assets, components, page templates), creative templates and the agent guide | [`visual-identity-and-design-system/README.md`](visual-identity-and-design-system/README.md) |
+| `content-creation/case-studies/` | Case study rules, templates, build and check script, convert and create workflows, the Delivery intake form and the Estimote example | [`content-creation/case-studies/README.md`](content-creation/case-studies/README.md) |
+| `archive/` | Files kept here only, not in Cody: Figma page screenshots and rendered creative examples | [`archive/README.md`](archive/README.md) |
 
-```
-README.md
-AGENT_GUIDE.md
-manifest.json
-visual-identity/
-  guidelines.md
-  the-codest-visual-identity.pdf
-  guidelines-print.html          (source of the PDF)
-creatives/
-  README.md
-  templates/   12 fixed-size formats (social, story, ads, link image, cover, banner, email)
-  render.js    fills a template and exports a PNG
-  examples/    every format rendered
-case-studies/
-  README.md      shared rules, outcomes, the two workflows
-  build.js       checks content.json and builds the page
-  rules/  templates/  examples/estimote/
-  convert/       old case studies into the new format (CODY_TASK.md, mapping.md, inventory.json)
-  create/        new case studies (delivery-intake.md, rules.md, CODY_TASK.md)
-design-system/
-  README.md
-  examples.html                  every component on one page
-  templates/   landing-page.html, service-page.html
-  reference/   screenshots of every Figma page
-  tokens/      tokens.json, tokens.css, build_tokens_css.py
-  fonts/       Iosevka, Fira Sans, licences
-  assets/      logo/, icons/, patterns/, graphics/
-  components/  bundle.js, bundle.css, sections.css, index.d.ts
-```
-
-## Quick start
-
-To make a page, copy `design-system/templates/landing-page.html`, set `assetBase`, and replace the bracketed placeholders. Open it in a browser next to `design-system/reference/home.png`.
-
-To make an image, pick a format in `creatives/templates.json` and run `node creatives/render.js social-square content.json --out post.png` (setup in `creatives/README.md`).
-
-To convert or create a case study, follow `case-studies/README.md` and run `node case-studies/build.js case-studies/output/<slug>/content.json`.
-
-Plain HTML without React works too:
-
-```html
-<link rel="stylesheet" href="design-system/tokens/tokens.css">
-<link rel="stylesheet" href="design-system/components/bundle.css">
-<link rel="stylesheet" href="design-system/components/sections.css">
-<section class="cd-section cd-section--blue">
-  <div class="cd-container cd-stack">
-    <h2 class="cd-h2">Heading</h2>
-    <p class="cd-text">Body text.</p>
-    <span class="cd-wrap"><a class="cd-btn cd-btn--big" href="#">Get in touch</a></span>
-  </div>
-</section>
-```
-
-## Source and scope
-
-- Figma file "Untitled (Copy)", key `BYcWQ1snBegdWVqrvUt7kQ`, Page 1, plus its linked Button and input component sets (for states).
-- Copy, claims, tone and client names are governed by The Codest content guide, not by this repository.
-- Fonts are under the SIL Open Font License (see `design-system/fonts/`). The logo, icons and graphics are The Codest's own.
-
-## Keeping it current
-
-Change values in `design-system/tokens/tokens.json`, then run `python3 design-system/tokens/build_tokens_css.py`. If the Figma file changes, update tokens first, then components, then the guidelines, then regenerate the PDF by printing `visual-identity/guidelines-print.html` to PDF (A4 landscape, backgrounds on).
+Paths in the documents (for example `messaging-guidelines/`) are written from the root of Cody's repository. Run commands from the repository root, for example `node content-creation/case-studies/build.js content-creation/case-studies/examples/estimote/content.json`.

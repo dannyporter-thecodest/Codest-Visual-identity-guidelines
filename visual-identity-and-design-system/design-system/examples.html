@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Codest components</title>
+<link rel="stylesheet" href="tokens/tokens.css">
+<link rel="stylesheet" href="components/bundle.css">
+<link rel="stylesheet" href="components/sections.css">
+<style>
+  body { margin: 0; background: var(--primary-white); }
+  .ex-head { padding: 48px 0 24px; }
+  .ex-label { margin: 0 0 20px; font-family: var(--font-body); font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--complementary-purple); }
+  .ex-block { padding: 48px 0; border-top: 1px solid var(--border-subtle); }
+  .ex-row { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+  @media (max-width: 1023px) { .ex-block [style*="grid-template-columns"] { grid-template-columns: 1fr !important; } .ex-block [style*="grid-column"] { grid-column: auto !important; } }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>window.CodestConfig = { assetBase: "assets/" };</script>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="components/bundle.js"></script>
+<script>
+  var h = React.createElement, C = window.Codest, F = React.Fragment;
+  function Block(label, child, opts) { opts = opts || {}; return h("div", { className: "ex-block", style: opts.bg ? { background: opts.bg } : null }, h("div", { className: "cd-container" }, h("p", { className: "ex-label" }, label), child)); }
+  function Raw(label, child) { return h(F, null, h("div", { className: "cd-container" }, h("p", { className: "ex-label", style: { margin: "48px 0 20px" } }, label)), child); }
+  var nav = [{ label: "About us", href: "#" }, { label: "Services", href: "#" }, { label: "Our team", href: "#" }, { label: "Case studies", href: "#" },
+             { label: "Know how", href: "#", children: [{ label: "Blog", href: "#", current: true }, { label: "Case studies", href: "#" }, { label: "Webinars", href: "#" }, { label: "Meetups", href: "#" }] }];
+  var I = function (n) { return "assets/icons/" + n + ".svg"; };
+  var lorem = "Placeholder copy. Real text must come from the messaging guidelines and claims register.";
+  function Modal() { var s = React.useState(false); return h(F, null, h(C.Button, { onClick: function () { s[1](true); } }, "Open download modal"), s[0] ? h(C.DownloadModal, { onClose: function () { s[1](false); } }) : null); }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(h(F, null,
+    h(C.Header, { links: nav, secondary: { label: "Careers", href: "#" }, primary: { label: "Get in touch", href: "#" } }),
+    h("div", { className: "cd-container ex-head" }, h("h1", { className: "cd-h1" }, "The Codest components"), h("p", { className: "cd-text" }, "Every component in components/bundle.js. Hover the buttons, links and tags to see the states from the Figma component set. All copy is placeholder.")),
+
+    Block("Buttons and states", h("div", { style: { display: "grid", gap: 24 } },
+      h("div", { className: "ex-row" }, h(C.Button, null, "Contact us"), h(C.Button, { variant: "secondary" }, "Careers"), h(C.Button, { size: "small" }, "Subscribe"), h(C.Button, { size: "small", variant: "secondary" }, "Set up meeting"), h(C.Button, { disabled: true }, "Disabled")),
+      h("div", { className: "ex-row", style: { alignItems: "center" } }, h(C.SliderButton, { direction: "prev" }), h(C.SliderButton, { direction: "next" }), h(C.SliderButton, { direction: "next", disabled: true }),
+        h(C.TextLink, null, "Read case study"), h(C.SocialButton, { icon: "linkedin", label: "LinkedIn" }), h(C.ShareBar, null)))),
+
+    Block("Labels, lists, meta", h("div", { style: { display: "grid", gap: 24 } },
+      h("div", { className: "ex-row", style: { alignItems: "center" } }, h(C.Tag, null, "Tag"), h(C.Tag, { selected: true }, "Selected"), h(C.CategoryLabel, null, "Software development"), h(C.Pill, null, "Coming soon"), h(C.Eyebrow, null, "E-commerce"), h(C.Eyebrow, { purple: true }, "Episode #4"),
+        h(C.Meta, { icon: "time" }, "01:17:49"), h(C.Meta, { icon: "calendar" }, "2026-06-10")),
+      h("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 40 } },
+        h(C.Bullets, { items: ["First point", { text: "Second point with sub-items", items: ["sub-item", "sub-item"] }, "Third point"] }),
+        h(C.Checklist, { items: ["Checked item one", "Checked item two"] }),
+        h(C.Author, { name: "Author name", role: "Role" })))),
+
+    Block("Form fields and states", h("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, alignItems: "start" } },
+      h(C.Input, { id: "a", label: "Full name", optional: true }), h(C.Input, { id: "b", label: "Email", required: true, error: "Error message" }), h(C.Input, { id: "c", label: "Disabled", disabled: true, defaultValue: "Text" }),
+      h(C.Input, { placeholder: "Search", search: true }), h(C.FileUpload, { id: "d", label: "Attachment", hint: "(brief, schematics or a specification of the project, up to 5MB)" }), h(C.Checkbox, null, "I agree with the Website Terms of Use and Privacy Policy."),
+      h("div", { style: { gridColumn: "span 2" } }, h(C.Textarea, { id: "e", label: "Message" })),
+      h("div", { className: "cd-tech-grid", style: { gridTemplateColumns: "repeat(2, 120px)" } }, h(C.TechOption, { label: "React", defaultChecked: true }), h(C.TechOption, { label: "Other", iconSrc: I("dots") })))),
+
+    Block("Tabs", h("div", { style: { display: "grid", gap: 30 } }, h(C.Tabs, { items: ["All (7)", "Front-end (2)", "Back-end (5)"] }),
+      h(C.ServiceTabs, { title: "How can we help you reach your goals?", text: lorem, groups: [{ label: "Front-end", iconSrc: "assets/icons/service-frontend@4x.png", items: [{ label: "React" }, { label: "Vue" }, { label: "TypeScript" }] }, { label: "Back-end", iconSrc: "assets/icons/service-backend@4x.png", items: [{ label: "Java" }, { label: "PHP" }] }, { label: "Other", iconSrc: I("service-other"), items: [{ label: "QA Engineer", iconSrc: "assets/icons/service-qa@4x.png" }, { label: "DevOps", iconSrc: I("service-devops") }] }], cta: { label: "Discover our services", href: "#" } }))),
+
+    Raw("HeroHome", h(C.HeroHome, { title: "Headline on up to three lines", text: lorem, cta: { label: "Read case studies", href: "#" }, rating: { score: "4.8", count: "(18 reviews)", source: "Review site" } })),
+    Raw("HeroPage (navy, with orb)", h(C.HeroPage, { title: "Page headline on up to two lines", text: lorem, cta: { label: "Let's talk", href: "#" }, orb: true })),
+    Raw("HeroPage short", h(C.HeroPage, { title: "Let's talk", short: true })),
+    Raw("HeroCaseStudy", h(C.HeroCaseStudy, { category: "Development", title: "Case study title on up to two lines", text: lorem, facts: [{ label: "Industry", value: "E-commerce" }, { label: "Headquarters", value: "City, Country" }, { label: "Scope", value: "Frontend, Backend" }] })),
+    Raw("StatsBand", h(C.StatsBand, { caption: "Optional caption", stats: [{ value: "00", label: "Sourced claim" }, { value: "00", label: "Sourced claim" }, { value: "00", label: "Sourced claim" }, { value: "00%", label: "Sourced claim", plus: false }] })),
+
+    Block("CasePanel (light pink, and peach reversed)", h("div", { className: "cd-cases" }, h(C.CasePanel, { category: "Cleaning", title: "Case study headline on up to three lines" }), h(C.CasePanel, { category: "E-commerce", title: "Case study headline on up to three lines", tone: "peach", reverse: true }))),
+    Block("ValuesGrid", h(C.ValuesGrid, { title: "What makes our services bring value to your project?", cta: { label: "Contact us", href: "#" }, items: [{ label: "Customer first approach", iconSrc: I("value-customer") }, { label: "Partnership relations", iconSrc: I("value-partnership") }, { label: "Trust and reliability", iconSrc: I("value-trust") }, { label: "Care about the quality", iconSrc: I("value-quality") }] }), { bg: "var(--complementary-light-pink)" }),
+    Block("FeatureItem grid", h("div", { className: "cd-features" }, h(C.FeatureItem, { iconSrc: I("value-customer"), title: "Customer first approach", text: lorem }), h(C.FeatureItem, { iconSrc: I("value-partnership"), title: "Partnership relations", text: lorem }))),
+    Block("ContentCard (bordered and raised)", h("div", { className: "cd-cards" }, h(C.ContentCard, { title: "React", text: lorem, linkLabel: "Read more", raised: true }), h(C.ContentCard, { title: "Vue", text: lorem, linkLabel: "Read more" }), h(C.ContentCard, { iconSrc: I("check"), title: "Cost efficiency", text: lorem }))),
+    Block("FrameworkTile", h("div", { className: "cd-tiles" }, ["Symfony", "Laravel", "Phalcon", "CodeIgniter", "CakePHP", "Other"].map(function (n) { return h(C.FrameworkTile, { key: n, label: n }); }))),
+    Block("Carousel with TestimonialCard", h(C.Carousel, { title: "See how our partners evaluate cooperation with us", link: { label: "Read all reviews", href: "#" } }, [1, 2, 3].map(function (i) { return h("div", { key: i, style: { width: 486 } }, h(C.TestimonialCard, { quote: lorem, name: "Client name", role: "Role, Company" })); }))),
+    Raw("TeamQuoteCard on navy", h("section", { className: "cd-section cd-section--navy" }, h("div", { className: "cd-container" }, h(C.Carousel, { title: "Section heading", titleClass: "cd-h2", link: { label: "Read more about our team", href: "#" } },
+      h(C.TeamQuoteCard, { quote: lorem, name: "Employee name", role: "Role" }), h(C.TeamQuoteCard, { quote: lorem, name: "Employee name", role: "Role", dimmed: true }))))),
+    Block("ImageText (collage) and ImageText (framed, reversed)", h("div", { style: { display: "grid", gap: 120 } },
+      h(C.ImageText, { title: "Our culture is built for software development", text: lorem, cta: { label: "About us", href: "#", link: true }, collage: {} }),
+      h(C.ImageText, { title: "Meet your new extended family members", text: lorem, cta: { label: "Meet our team", href: "#", variant: "secondary" }, reverse: true }))),
+    Block("ProcessSection", h(C.ProcessSection, { title: "A fast and well-prepared process", text: lorem, cta: { label: "Let's talk", href: "#" }, steps: [{ title: "Discovery call", meta: "(1 hour)", text: lorem }, { title: "Shortlisting engineers", meta: "(2 days)", text: lorem }, { title: "Technical fit verification", text: lorem }, { title: "Agreement and kick-off", text: lorem }] })),
+    Block("Opinion and PullQuote", h("div", { style: { display: "grid", gap: 40 } }, h(C.Opinion, { quote: "“" + lorem + "”", name: "Name", role: "Head of department" }), h("div", { style: { maxWidth: 792 } }, h(C.PullQuote, { quote: lorem, name: "Client name", role: "CEO" })))),
+    Block("Banner (navy box)", h(C.Banner, { title: "Interested in expanding your team?", cta: { label: "Let's talk", href: "#" } })),
+    Raw("ClientStories", h(C.ClientStories, { title: "Client stories", text: lorem, cta: { label: "See our case studies", href: "#" } })),
+    Raw("BannerLight", h(C.BannerLight, { title: "Ready for a new professional adventure?", cta: { label: "See open positions", href: "#" } })),
+    Raw("CtaBand", h(C.CtaBand, { title: "Let's talk about your technology needs", text: lorem, cta: { label: "Contact us", href: "#" } })),
+    Block("LogoStrip (client logos only with written consent)", h(C.LogoStrip, { title: "Trusted by partners:", logos: [] })),
+    Block("Listing: header, featured article, cards, pagination", h("div", null, h(C.ListingHeader, { title: "Blog" }),
+      h(C.FeaturedArticle, { category: "Development", title: "Featured article title", excerpt: lorem, author: "Author name", authorRole: "Role" }),
+      h("div", { className: "cd-tags", style: { margin: "40px 0" } }, h(C.Tag, null, "All"), h(C.Tag, { selected: true }, "Culture"), h(C.Tag, null, "News")),
+      h("div", { className: "cd-articles" }, h(C.ArticleCard, { category: "Development", title: "Article title", excerpt: lorem, author: "Author", authorRole: "Role" }), h(C.ArticleCard, { category: "Development", title: "Article title", excerpt: lorem, author: "Author", authorRole: "Role" })),
+      h(C.Pagination, null))),
+    Block("BlogCard row", h("div", { className: "ex-row" }, h(C.BlogCard, { author: "Author", authorRole: "Role", category: "Software development", title: "Article title", excerpt: lorem }))),
+    Block("Webinars", h("div", { style: { display: "grid", gap: 24 } }, h(C.UpcomingWebinar, { date: "22 November 2026", title: "Upcoming webinar title" }),
+      h("div", { className: "cd-webinars" }, h(C.WebinarCard, { episode: "Episode #4", title: "Webinar title", text: lorem, duration: "01:17:49" }), h(C.WebinarCard, { episode: "Episode #3", title: "Webinar title", text: lorem, duration: "01:05:34" })))),
+    Block("Meetups and resources", h("div", { style: { display: "grid", gap: 24 } }, h("div", { className: "cd-grid3" },
+      h(C.MeetupCard, { variant: "upcoming", date: "22 November 2026", title: "Upcoming meetup title" }), h(C.MeetupCard, { variant: "featured", series: "#5 Meetup series", title: "Meetup title", text: lorem, duration: "01:17:49", author: "Speaker", authorRole: "Role" }),
+      h(C.MeetupCard, { series: "#5 Meetup series", title: "Meetup title", text: lorem, duration: "01:17:49", author: "Speaker", authorRole: "Role" })),
+      h("div", { className: "cd-grid3" }, h(C.ResourceCard, { title: "Resource title", text: lorem }), h(C.ResourceCard, { title: "Resource title", text: lorem }), h(C.ResourceCard, { title: "Resource title", text: lorem })))),
+    Block("Article page parts", h("div", { className: "cd-article-page", style: { padding: 0 } }, h("div", { className: "cd-article-page__aside" }, h("a", { className: "cd-back", href: "#", style: { color: "var(--primary-pink)" } }, h("img", { src: I("arrow-left"), alt: "" }), "Go back"), h(C.ShareBar, null)),
+      h("div", { className: "cd-article-page__body" }, h(C.ArticleHeader, { date: "2026-06-10", category: "Development", title: "Article title on up to two lines", author: "Author", authorRole: "Role" }),
+        h("p", null, lorem), h("h2", null, "Sub-heading"), h(C.PullQuote, { quote: lorem }), h(C.Bullets, { items: ["First point", "Second point"] }), h(C.Banner, { title: "Download our report", text: lorem, cta: { label: "Download PDF", href: "#" }, align: "left" })))),
+    Block("Recruitment: Timeline, Perks, People", h("div", { style: { display: "grid", gap: 80 } }, h(C.Timeline, { steps: ["Send your application", "HR screening", "Technical call", "Job offer"] }),
+      h(C.Perks, { items: [{ title: "Perk title", text: lorem }, { title: "Perk title", text: lorem }, { title: "Perk title", text: lorem }, { title: "Perk title", text: lorem }] }),
+      h("div", { className: "cd-people" }, [1, 2, 3, 4].map(function (i) { return h(C.PersonCard, { key: i, name: "Name Surname", role: "Role" }); })))),
+    Block("JobCard", h(C.JobCard, { title: "Job title", skills: ["Vue.js", "React.js"], pay: "Salary range (B2B)", payNote: "(or the equivalent in another currency)", terms: "Full-time contract, 100% remote" })),
+    Block("Two-column page: content and side panel", h("div", { className: "cd-two-col--contact cd-two-col" },
+      h("div", { style: { display: "grid", gap: 30 } }, h("h2", { className: "cd-h2" }, "We'd love to know more about your project"), h("h3", { className: "cd-h4" }, "Services you are interested in"),
+        h("div", { className: "cd-tech-grid" }, ["React", "Vue", "TypeScript", "Java"].map(function (n, i) { return h(C.TechOption, { key: n, label: n, defaultChecked: i === 0 }); })),
+        h("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 } }, h(C.Input, { id: "n", label: "Full name", optional: true }), h(C.Input, { id: "m", label: "E-mail" })), h(C.Textarea, { id: "t", label: "Message" }),
+        h(C.FileUpload, { id: "f", label: "Attachment", hint: "(brief, schematics or a specification of the project, up to 5MB)" }), h(C.Checkbox, null, "I agree with the Website Terms of Use and Privacy Policy."), h("div", null, h(C.Button, { type: "submit" }, "Send message"))),
+      h(C.Panel, null, h("h2", { className: "cd-h3" }, "Any questions or doubts?"), h("p", { className: "cd-small" }, lorem), h("div", null, h(C.Button, { variant: "secondary" }, "Set up meeting")),
+        h("p", { className: "cd-small" }, "If you want to know more, please feel free to contact me:"), h(C.ContactPerson, { name: "Name Surname", role: "Head of Growth", email: "name@example.com", linkedin: "#" })))),
+    Block("Graphics: areas infographic and world map", h("div", { style: { display: "grid", gap: 60 } }, h(C.Graphic, { name: "areas-infographic@2x.png", alt: "" }), h("div", { style: { maxWidth: 950, margin: "0 auto" } }, h(C.Graphic, { name: "world-map@1.5x.png", alt: "World map" })))),
+    Block("DownloadModal and MobileMenu (open the header menu under 1024px)", h(Modal)),
+    h(C.Footer, { about: "One or two sentences about The Codest.", offices: [{ place: "Poland", address: "Office address" }], newsletterTitle: "Subscribe to our knowledge base and stay up to date.",
+      columns: [{ title: "The Codest", links: nav.slice(0, 4) }, { title: "Services", links: [{ label: "Service", href: "#" }] }, { title: "Resources", links: [{ label: "Press kit", href: "#" }] }], copyright: "Copyright \u00a9 The Codest.", legal: "Privacy policy · Website terms of use" })
+  ));
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+{
+  "slug": "estimote",
+  "source_url": "https://thecodest.co/en/case-studies/scaling-iot-solutions-for-office-space-management/",
+  "client": {
+    "name": "Estimote",
+    "named": true
+  },
+  "category": "IoT",
+  "title": "Estimote turned its sensor-based technology into a space management application",
+  "facts": {
+    "industry": "IoT",
+    "headquarters": "New York, United States",
+    "tech_stack": "Bluetooth Smart (BLE)"
+  },
+  "problem_hook": "At the height of the COVID-19 pandemic, Estimote required a space management application that would help organisations comply with social distancing guidelines and enable rapid contact tracing.",
+  "impact_statement": "The Codest delivered the frontend and backend of a space management application that alerts employees to unsafe proximity and enables administrators to immediately identify close contacts.",
+  "about": "Estimote, Inc. develops sensor-based technology that transforms how businesses interact with customers in physical spaces. Using Bluetooth Smart, its devices enable interaction between smartphones and real-world environments. The company is headquartered in New York.",
+  "challenge": {
+    "paragraphs": [
+      "The COVID-19 pandemic required organisations to maintain physical distancing in the workplace and to respond quickly to confirmed cases. Without a dedicated system, identifying close contacts and issuing quarantine notices was a slow, manual process.",
+      "Estimote's sensor technology could already measure the distance between individuals. The company required a complete space management application built on that technology, delivered within the timeframe of the pandemic response."
+    ],
+    "key_challenges": [
+      {
+        "label": "Time pressure",
+        "text": "development and deployment had to be completed during the peak of the pandemic to meet immediate social distancing requirements."
+      },
+      {
+        "label": "Real-time monitoring",
+        "text": "the system had to track interactions and distances between users in real time across large office spaces."
+      },
+      {
+        "label": "Scalability",
+        "text": "the application had to scale efficiently as the number of users, devices and data points increased."
+      },
+      {
+        "label": "Data security",
+        "text": "the application processed health-related data, requiring strong encryption, strict access controls and ongoing regulatory compliance."
+      }
+    ],
+    "stakes": "Any delay in delivery would have reduced the application's value to organisations complying with social distancing guidelines during the pandemic."
+  },
+  "stats_band": [
+    {
+      "value": "1M+",
+      "label": "sensor data points processed daily"
+    },
+    {
+      "value": "30%",
+      "label": "reduction in manual facility tasks"
+    },
+    {
+      "value": "10+",
+      "label": "locations managed via a unified platform"
+    }
+  ],
+  "project_description": [
+    "Estimote partnered with The Codest to develop a space management application that helped organisations comply with social distancing guidelines. The application used sensors to measure the distance between employees and triggered an audible alert whenever two people came within two metres of each other. An integrated contact tracing system enabled administrators to immediately identify individuals who had been in proximity to a confirmed COVID-19 case, accelerating the issue of quarantine notices. The architecture was designed for high performance and real-time data processing across large user bases."
+  ],
+  "approach": [
+    "The Codest was responsible for both frontend and backend development. On the frontend, we delivered a clear, intuitive interface that allows office managers and staff to operate the system without technical support.",
+    "The backend was engineered for scalability, supporting high volumes of real-time sensor data while maintaining consistent performance. Given the sensitivity of health data, we implemented strong encryption and strict access controls, supported by a programme of regular updates to maintain compliance with current regulations and health standards.",
+    "Development followed Estimote's wireframes and specifications, with transparent estimates provided for each stage of work."
+  ],
+  "results": {
+    "summary": "Estimote deployed its space management application during the peak of the pandemic, delivered in line with its specifications.",
+    "bullets": [
+      {
+        "bold": "60% faster occupancy tracking",
+        "text": "across the client's office spaces."
+      },
+      {
+        "bold": "EUR 120K saved annually",
+        "text": "through the IoT office management platform."
+      },
+      {
+        "bold": "Automated proximity alerts and immediate contact tracing",
+        "text": "enabled office managers to identify close contacts and issue quarantine notices faster."
+      },
+      {
+        "bold": "Delivered within three months,",
+        "text": "from development to deployment, under pandemic deadlines."
+      }
+    ]
+  },
+  "quote": {
+    "text": "The solution followed wireframes and met the specifications. The Codest produces high-quality deliverables and their developers implement an excellent work ethic. They're effective communicators and transparent in their estimations. Professionalism and company culture are hallmarks of their work.",
+    "name": "Jakub Krzych",
+    "role": "CEO",
+    "company": "Estimote"
+  },
+  "cta": {
+    "title": "Delivering a critical platform under a fixed deadline?",
+    "text": "Tell us what needs to be delivered and by when. We will propose the team and the scope to get there.",
+    "label": "Let's talk through the problem"
+  },
+  "other_case": null,
+  "report": {
+    "source_statistics": [
+      "60%",
+      "EUR 120K",
+      "1M+",
+      "30%",
+      "10+"
+    ],
+    "source_quote": "The solution followed wireframes and met the specifications. The Codest produces high-quality deliverables and their developers implement an excellent work ethic. They're effective communicators and transparent in their estimations. Professionalism and company culture are hallmarks of their work.",
+    "facts_left_out": [
+      "Partnership goal section (its facts are in Challenge and Project description)",
+      "FAQ section (no new facts)"
+    ],
+    "facts_missing": [
+      "About, Project description and Approach are below the target length. The source has no further facts, so they were not padded."
+    ],
+    "questions_for_delivery": [
+      "Confirm the baseline and source for: 60% faster occupancy tracking, EUR 120K saved annually, 1M+ data points daily, 30% fewer manual tasks, 10+ locations.",
+      "Confirm the three-month delivery timeline."
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+# The Codest brand
+
+The Codest's **Visual Identity Guidelines** and **Design System**, documented from the current website design in Figma (October 2026). This records the identity as it exists today; it is not a rebrand.
+
+| | What | Start here |
+|---|---|---|
+| Visual Identity Guidelines | The rules: logo, colour, states, type, layout, the offset outline, icons, waves and orbs, imagery, known issues | `visual-identity/guidelines.md` |
+| Design System | The build kit: tokens, fonts, logo, icons, textures, graphics, 70 components, 2 page templates | `design-system/README.md` |
+| Creatives | Image templates for social posts, stories, ads, link images, covers, banners and email headers, with a render script | `creatives/README.md` |
+| Case studies (in `../content-creation/case-studies/`) | The case study format (based on TSH), shared rules, page template and build script, plus two workflows: converting old case studies, and creating new ones from Delivery's intake form | `../content-creation/case-studies/README.md` |
+| AI agents (Cody) | How to build a page, the rules that are easy to break, a pre-delivery checklist | `AGENT_GUIDE.md` |
+| Machine-readable index | Every file with its purpose and Figma source | `manifest.json` |
+
+```
+README.md
+AGENT_GUIDE.md
+manifest.json
+visual-identity/
+  guidelines.md
+  guidelines-print.html          (print layout; open in a browser and print to PDF when a PDF is needed)
+creatives/
+  README.md
+  templates/   12 fixed-size formats (social, story, ads, link image, cover, banner, email)
+  render.js    fills a template and exports a PNG
+  examples/    every format rendered
+design-system/
+  README.md
+  examples.html                  every component on one page
+  templates/   landing-page.html, service-page.html
+  tokens/      tokens.json, tokens.css, build_tokens_css.py
+  fonts/       Iosevka, Fira Sans, licences
+  assets/      logo/, icons/, patterns/, graphics/
+  components/  bundle.js, bundle.css, sections.css, index.d.ts
+```
+
+## Quick start
+
+To make a page, copy `design-system/templates/landing-page.html`, set `assetBase`, and replace the bracketed placeholders. Open it in a browser and compare it with the template it came from.
+
+To make an image, pick a format in `creatives/templates.json` and run `node creatives/render.js social-square content.json --out post.png` (setup in `creatives/README.md`).
+
+To convert or create a case study, follow `../content-creation/case-studies/README.md` and run `node content-creation/case-studies/build.js content-creation/case-studies/output/<slug>/content.json`.
+
+Plain HTML without React works too:
+
+```html
+<link rel="stylesheet" href="design-system/tokens/tokens.css">
+<link rel="stylesheet" href="design-system/components/bundle.css">
+<link rel="stylesheet" href="design-system/components/sections.css">
+<section class="cd-section cd-section--blue">
+  <div class="cd-container cd-stack">
+    <h2 class="cd-h2">Heading</h2>
+    <p class="cd-text">Body text.</p>
+    <span class="cd-wrap"><a class="cd-btn cd-btn--big" href="#">Get in touch</a></span>
+  </div>
+</section>
+```
+
+## Source and scope
+
+- Figma file "Untitled (Copy)", key `BYcWQ1snBegdWVqrvUt7kQ`, Page 1, plus its linked Button and input component sets (for states).
+- Copy, claims, tone and client names are governed by the messaging guidelines (`messaging-guidelines/`), not by this repository.
+- Fonts are under the SIL Open Font License (see `design-system/fonts/`). The logo, icons and graphics are The Codest's own.
+
+## Keeping it current
+
+Change values in `design-system/tokens/tokens.json`, then run `python3 design-system/tokens/build_tokens_css.py`. If the Figma file changes, update tokens first, then components, then the guidelines. When a PDF is needed, print `visual-identity/guidelines-print.html` to PDF (A4 landscape, backgrounds on); the PDF is not kept in the repository.
+
+## Archive
+
+The Figma page screenshots and rendered creative examples are not needed to build anything and are not in Cody's repository. They are kept in the `archive/` folder of the source repository, `dannyporter-thecodest/Codest-Visual-identity-guidelines`.
