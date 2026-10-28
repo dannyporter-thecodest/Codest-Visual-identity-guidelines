@@ -1,0 +1,171 @@
+{
+  "slug": "",
+  "category": "buyer-questions",
+  "topic_area": "",
+  "industry": "all",
+  "title": "",
+  "lead": "",
+  "tldr": [
+    "",
+    "",
+    ""
+  ],
+  "author": {
+    "name": "",
+    "role": ""
+  },
+  "published": "YYYY-MM-DD",
+  "updated": "YYYY-MM-DD",
+  "review_by": "YYYY-MM-DD",
+  "seo": {
+    "primary_query": "",
+    "secondary_queries": [
+      "",
+      ""
+    ],
+    "query_source": "topic-list",
+    "meta_title": "",
+    "meta_description": ""
+  },
+  "sections": [
+    {
+      "heading": "?",
+      "answer": "",
+      "bullets": [],
+      "paragraphs": [
+        ""
+      ],
+      "takeaway": "",
+      "based_on": [
+        "src:<id>"
+      ]
+    },
+    {
+      "heading": "?",
+      "answer": "",
+      "table": {
+        "caption": "",
+        "columns": [
+          "",
+          ""
+        ],
+        "rows": [
+          [
+            "",
+            ""
+          ],
+          [
+            "",
+            ""
+          ],
+          [
+            "",
+            ""
+          ]
+        ]
+      },
+      "paragraphs": [
+        ""
+      ],
+      "based_on": [
+        "src:<id>",
+        "case:<slug>"
+      ]
+    },
+    {
+      "heading": "?",
+      "answer": "",
+      "paragraphs": [
+        ""
+      ],
+      "based_on": [
+        "src:<id>"
+      ]
+    },
+    {
+      "heading": "?",
+      "answer": "",
+      "paragraphs": [
+        ""
+      ],
+      "based_on": [
+        "codest:https://thecodest.co/en/services/<page>/"
+      ]
+    }
+  ],
+  "limits_section": null,
+  "key_insights": [
+    "",
+    "",
+    ""
+  ],
+  "information_gain": {
+    "type": "table",
+    "description": "",
+    "built_from": [
+      "src:<id>",
+      "src:<id>"
+    ]
+  },
+  "messaging": {
+    "pillars": [
+      1
+    ],
+    "models": [],
+    "limits": {},
+    "responsibility_section": 0
+  },
+  "related_questions": [
+    {
+      "question": "?",
+      "answer": ""
+    },
+    {
+      "question": "?",
+      "answer": ""
+    }
+  ],
+  "related_case": {
+    "title": "",
+    "category": "",
+    "href": "https://thecodest.co/en/case-studies/<slug>/"
+  },
+  "cta": {
+    "title": "",
+    "text": "",
+    "label": "Let's talk through the problem",
+    "href": "https://thecodest.co/en/contact/"
+  },
+  "sources": [
+    {
+      "id": "",
+      "publisher": "",
+      "title": "",
+      "url": "",
+      "date": "",
+      "accessed": "YYYY-MM-DD",
+      "type": "data"
+    },
+    {
+      "id": "",
+      "publisher": "",
+      "title": "",
+      "url": "",
+      "date": "",
+      "accessed": "YYYY-MM-DD",
+      "type": "data"
+    }
+  ],
+  "brief": "brief.md",
+  "meta": {
+    "audience_group": "3",
+    "buying_role": "",
+    "funnel_stage": "signal"
+  },
+  "report": {
+    "claim_ids": {},
+    "open_questions": [],
+    "self_check": {},
+    "notes": ""
+  }
+}
