@@ -12,7 +12,7 @@ The job is to make the source better, not to re-create it. Rewrite sentences for
 - **The client:** use the source's description. "A major logistics company operating across multiple regions" is not reworded into a new descriptor with new claims.
 - **Processes and outcomes:** "order processing and route planning" stays "order processing and route planning".
 
-Allowed: fixing grammar and spelling (British English), splitting or joining sentences, removing filler ("powerful", "significantly"), and choosing which source term to use where the source uses more than one for the same thing.
+Allowed: fixing grammar and spelling (British English), splitting or joining sentences, removing filler and waffle ("powerful", "significantly"), and choosing which source term to use where the source uses more than one for the same thing. Never shorten a source term ("sensor-based technology" is not "sensors").
 
 Not allowed: a new name, a new category ("platform" for an "application"), a broader or narrower claim than the source makes, or a term from another case study.
 
@@ -45,7 +45,7 @@ These were flagged in review. Use the right-hand column as the standard.
 | Sensitive data: contact and health information needed strong protection from day one. | Data security: the application processed health-related data, requiring strong encryption, strict access controls and ongoing regulatory compliance. |
 | We built both the frontend and the backend. | The Codest was responsible for both frontend and backend development. |
 | The backend was built for scale: it takes in sensor data as it arrives... | The backend was engineered for scalability, supporting high volumes of real-time sensor data while maintaining consistent performance. |
-| ...a workplace safety platform in about 3 months | ...a space management application during COVID-19 (timeline goes in Results, from the source) |
+| ...a workplace safety platform in about 3 months | ...turned its sensor-based technology into a space management application (timeline goes in Results, from the source) |
 | ...with The Codest owning the software | (The Codest is not named in the title) |
 
 ## Key challenge bullets

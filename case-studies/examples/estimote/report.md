@@ -36,7 +36,7 @@ Source: https://thecodest.co/en/case-studies/scaling-iot-solutions-for-office-sp
 
 | Section | Words |
 | --- | --- |
-| Title | 11 |
+| Title | 10 |
 | Problem hook | 27 |
 | Impact statement | 26 |
 | About | 34 |
