@@ -1,0 +1,152 @@
+{
+  "_about": "Register of every article idea, draft and published article. The build reads it to block near-duplicate titles and to check the 2:1 category balance. Add a row when a brief is approved; update status when the article moves on. status: idea | brief | draft | review | published | retired.",
+  "site": {
+    "_note": "article_base is the assumed blog URL pattern. Confirm it with the web team before the first article goes live.",
+    "origin": "https://thecodest.co",
+    "article_base": "https://thecodest.co/en/blog/",
+    "service_pages": {
+      "buyer-questions": [
+        "https://thecodest.co/en/services/staff-augmentation/",
+        "https://thecodest.co/en/services/product-development/"
+      ],
+      "ai-in-industry": [
+        "https://thecodest.co/en/services/ai-services/",
+        "https://thecodest.co/en/services/ai-services/rapid-ai-prototyping/",
+        "https://thecodest.co/en/services/ai-services/ai-solutions-integration/",
+        "https://thecodest.co/en/services/ai-services/ai-assisted-engineering/"
+      ]
+    },
+    "contact": "https://thecodest.co/en/contact/",
+    "case_studies": "https://thecodest.co/en/case-studies/",
+    "competitor_domains": [
+      "tsh.io",
+      "netguru.com",
+      "stxnext.com",
+      "10clouds.com",
+      "softjourn.com",
+      "modeso.ch",
+      "zuehlke.com",
+      "netlight.com",
+      "futurice.com",
+      "reaktor.com",
+      "bjss.com",
+      "scottlogic.com",
+      "endava.com",
+      "spyro-soft.com",
+      "brainhub.eu",
+      "monterail.com",
+      "miquido.com",
+      "future-processing.com",
+      "softwaremind.com",
+      "polcode.com",
+      "boldare.com",
+      "itcraft.pl",
+      "vstorm.co",
+      "medium.com",
+      "dev.to",
+      "hashnode.com",
+      "wikipedia.org"
+    ],
+    "us_domains": [
+      "sec.gov",
+      "ftc.gov",
+      "federalreserve.gov",
+      "consumerfinance.gov",
+      "fdic.gov",
+      "occ.gov",
+      "finra.org",
+      "irs.gov",
+      "bls.gov"
+    ]
+  },
+  "topics": [
+    {
+      "slug": "hire-or-extend-engineering-team",
+      "title": "Should you hire in-house or extend your engineering team?",
+      "category": "buyer-questions",
+      "topic_area": "capacity",
+      "status": "draft"
+    },
+    {
+      "slug": "first-30-days-external-engineering-team",
+      "title": "What should the first 30 days with an external engineering team look like?",
+      "category": "buyer-questions",
+      "topic_area": "capacity",
+      "status": "idea"
+    },
+    {
+      "slug": "check-vendor-team-will-deliver",
+      "title": "How do you check that a vendor's team is the team that will deliver?",
+      "category": "buyer-questions",
+      "topic_area": "vendor-choice",
+      "status": "idea"
+    },
+    {
+      "slug": "software-vendor-exit-plan",
+      "title": "What should an exit plan with a software vendor include?",
+      "category": "buyer-questions",
+      "topic_area": "vendor-choice",
+      "status": "idea"
+    },
+    {
+      "slug": "hand-over-delivery-stream-governance",
+      "title": "How do you hand a delivery stream to an external team without losing governance?",
+      "category": "buyer-questions",
+      "topic_area": "delivery-handover",
+      "status": "idea"
+    },
+    {
+      "slug": "compare-software-vendor-offers",
+      "title": "How do you compare software vendor offers beyond the day rate?",
+      "category": "buyer-questions",
+      "topic_area": "delivery-handover",
+      "status": "idea"
+    },
+    {
+      "slug": "dora-software-development-vendors",
+      "title": "What does DORA mean for your software development vendors?",
+      "category": "buyer-questions",
+      "topic_area": "regulated-finance",
+      "status": "idea"
+    },
+    {
+      "slug": "modernise-or-rebuild-payment-platform",
+      "title": "When should you modernise a payment platform instead of rebuilding it?",
+      "category": "buyer-questions",
+      "topic_area": "modernisation",
+      "status": "idea"
+    },
+    {
+      "slug": "ai-worth-testing-payments-platform",
+      "title": "Where is AI worth testing in a payments platform, and where is it not?",
+      "category": "ai-in-industry",
+      "topic_area": "ai-in-industry",
+      "industry": "payments",
+      "status": "idea"
+    },
+    {
+      "slug": "test-ai-feature-marketplace-budget",
+      "title": "How do you test an AI feature for a marketplace before committing a budget?",
+      "category": "ai-in-industry",
+      "topic_area": "ai-in-industry",
+      "industry": "marketplaces",
+      "status": "idea"
+    },
+    {
+      "slug": "eu-ai-act-fintech-ai-feature",
+      "title": "What does the EU AI Act mean for an AI feature in a fintech product?",
+      "category": "ai-in-industry",
+      "topic_area": "ai-in-industry",
+      "industry": "fintech",
+      "status": "idea"
+    },
+    {
+      "slug": "validate-ai-assisted-code-banking",
+      "title": "How should an external team validate AI-assisted code on a banking system?",
+      "category": "ai-in-industry",
+      "topic_area": "ai-in-industry",
+      "industry": "digital-banking",
+      "status": "idea"
+    }
+  ]
+}

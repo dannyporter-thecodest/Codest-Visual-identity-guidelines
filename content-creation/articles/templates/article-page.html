@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+__HEAD__
+<!--
+  ARTICLE PAGE TEMPLATE
+  Do not edit per article. build.js fills in the head tags, the article HTML and the design system path.
+  The article itself is plain HTML (no JavaScript needed to read it), so search engines and AI crawlers see the full text.
+  Only the site header, share bar, case study panel, CTA band and footer are drawn by the design system's React components.
+  Rules: content-creation/articles/rules/.
+-->
+<link rel="stylesheet" href="__DS__tokens/tokens.css">
+<link rel="stylesheet" href="__DS__components/bundle.css">
+<link rel="stylesheet" href="__DS__components/sections.css">
+<style>
+  body { margin: 0; background: var(--primary-white); }
+  .ar-top { background: var(--primary-navy); height: 96px; }
+  .ar-body { gap: 0 !important; }
+  .ar-body > * + * { margin-top: 30px; }
+  .ar-body h2 { margin: 0 !important; }
+  .ar-body > section { display: grid; gap: 16px; }
+  .ar-body > section + section { margin-top: 56px; }
+  .ar-body > section.ar-tldr { gap: 15px; }
+  .ar-body > .ar-tldr + section { margin-top: 56px; }
+  .ar-body h3 { margin: 10px 0 0; font-family: var(--font-display); font-weight: 900; font-size: 20px; line-height: 1.4; color: var(--primary-navy); }
+  .ar-head .cd-article-head__meta { flex-wrap: wrap; row-gap: 10px; }
+  .ar-people { display: flex; flex-wrap: wrap; gap: 20px 40px; }
+  .ar-people .cd-author__img { display: grid; place-items: center; font-family: var(--font-display); font-weight: 900; font-size: 16px; color: var(--primary-navy); }
+  .ar-updated { margin: -10px 0 0; font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--complementary-text); }
+  .ar-lead { font-size: 20px !important; }
+  .ar-body > .ar-lead { margin-top: 30px !important; }
+  .ar-tldr { box-sizing: border-box; display: grid; gap: 15px; padding: 30px; background: var(--complementary-light-pink); }
+  .ar-tldr h2 { margin: 0 !important; font-size: 20px !important; }
+  .ar-answer { font-size: 17px !important; color: var(--primary-navy) !important; }
+  .ar-takeaway { padding: 4px 0 4px 20px; border-left: 4px solid var(--primary-pink); color: var(--primary-navy) !important; }
+  .ar-takeaway strong { font-weight: 700; }
+  .ar-body .cd-bullets a, .ar-body td a { color: var(--primary-pink); }
+  .ar-table-wrap { overflow-x: auto; }
+  .ar-table { width: 100%; border-collapse: collapse; font-family: var(--font-body); font-size: 15px; line-height: 1.45; color: var(--complementary-text); }
+  .ar-table caption { caption-side: top; text-align: left; padding-bottom: 12px; font-weight: 700; color: var(--primary-navy); }
+  .ar-table th { text-align: left; vertical-align: bottom; padding: 12px 14px; background: var(--primary-navy); color: var(--primary-white); font-weight: 700; }
+  .ar-table td { vertical-align: top; padding: 12px 14px; border-bottom: 1px solid rgba(13, 18, 76, .12); }
+  .ar-table tbody tr:nth-child(even) td { background: rgba(13, 18, 76, .03); }
+  .ar-table td:first-child { font-weight: 700; color: var(--primary-navy); }
+  .ar-faq { display: grid; gap: 20px; }
+  .ar-faq h3 { margin: 0; }
+  .ar-sources { font-size: 14px !important; }
+  .ar-sources ol { margin: 10px 0 0; padding-left: 20px; font-family: var(--font-body); font-size: 14px; line-height: 1.5; color: var(--complementary-text); }
+  .ar-sources a { color: var(--primary-pink); word-break: break-word; }
+  .ar-case { margin-bottom: 60px; }
+  @media (max-width: 760px) {
+    .cd-article-page__aside { display: none; }
+    .ar-lead { font-size: 18px !important; }
+    .ar-head h1 { font-size: 28px; }
+    .ar-table { font-size: 14px; }
+    .ar-table th, .ar-table td { padding: 10px 8px; }
+  }
+</style>
+</head>
+<body>
+<div id="site-header" class="ar-top"></div>
+<main>
+<div class="cd-container">
+<div class="cd-article-page">
+  <div class="cd-article-page__aside"><div id="share"></div></div>
+__ARTICLE__
+</div>
+</div>
+<div id="related-case"></div>
+<div id="cta"></div>
+</main>
+<div id="site-footer"></div>
+<script>window.CodestConfig = { assetBase: "__DS__assets/" };</script>
+<script id="page-data" type="application/json">/*__PAGE_DATA__*/</script>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="__DS__components/bundle.js"></script>
+<script>
+  var h = React.createElement, F = React.Fragment, C = window.Codest;
+  var d = JSON.parse(document.getElementById("page-data").textContent);
+  var nav = [{ label: "About us", href: "#" }, { label: "Services", href: "#" }, { label: "Our team", href: "#" }, { label: "Case studies", href: "#" }, { label: "Know how", href: "#" }];
+  function mount(id, el) { ReactDOM.createRoot(document.getElementById(id)).render(el); }
+
+  mount("site-header", h(C.Header, { dark: true, links: nav, secondary: { label: "Careers", href: "#" }, primary: { label: "Get in touch", href: d.contact } }));
+  mount("share", h(C.ShareBar, { items: [
+    { icon: "linkedin", label: "Share on LinkedIn", href: "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(d.url) },
+    { icon: "facebook", label: "Share on Facebook", href: "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(d.url) },
+    { icon: "twitter", label: "Share on X", href: "https://twitter.com/intent/tweet?url=" + encodeURIComponent(d.url) }
+  ] }));
+  mount("related-case", h(C.Section, { style: { paddingTop: 0 } }, h("div", { className: "ar-case" },
+    h("h2", { className: "cd-h2", style: { marginBottom: 30 } }, "Related case study"),
+    h(C.CasePanel, { category: d.related_case.category, title: d.related_case.title, href: d.related_case.href }))));
+  mount("cta", h(C.CtaBand, { title: d.cta.title, text: d.cta.text, cta: { label: d.cta.label, href: d.cta.href } }));
+  mount("site-footer", h(C.Footer, {
+    newsletterTitle: "Subscribe to our knowledge base and stay up to date on the expertise from the IT sector.",
+    consent: "I agree to receive marketing and sales communications from The Codest and to allow The Codest to store and process my personal data as explained in our Privacy Policy.",
+    about: "We take responsibility for the systems your business makes money on, as if they were our own.",
+    offices: [
+      { place: "United Kingdom", address: h(F, null, "Office 303B, 182-184 High Street North E6 2JA", h("br"), "London, England") },
+      { place: "Poland", address: h(F, null, "Fabryczna Office Park, Aleja Pokoju 18, 31-564 Krak\u00f3w", h("br"), "Brain Embassy, Konstruktorska 11, 02-673 Warsaw") }
+    ],
+    columns: [
+      { title: "The Codest", links: nav },
+      { title: "Services", links: [{ label: "Staff Augmentation", href: "#" }, { label: "Product Development", href: "#" }, { label: "AI Services", href: "#" }] },
+      { title: "Know how", links: [{ label: "Blog", href: "#" }, { label: "Meetups", href: "#" }, { label: "Webinars", href: "#" }, { label: "Resources", href: "#" }] }
+    ],
+    legal: "Privacy policy \u00b7 Website terms of use",
+    copyright: "Copyright \u00a9 2026 The Codest. All rights reserved."
+  }));
+</script>
+</body>
+</html>

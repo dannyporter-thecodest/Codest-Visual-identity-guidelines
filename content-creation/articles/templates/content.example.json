@@ -1,0 +1,152 @@
+{
+  "slug": "",
+  "category": "buyer-questions",
+  "topic_area": "",
+  "industry": "all",
+  "title": "",
+  "lead": "",
+  "tldr": [
+    "",
+    "",
+    ""
+  ],
+  "author": {
+    "name": "",
+    "role": ""
+  },
+  "reviewer": {
+    "name": "",
+    "role": "",
+    "linkedin": ""
+  },
+  "published": "YYYY-MM-DD",
+  "updated": "YYYY-MM-DD",
+  "review_by": "YYYY-MM-DD",
+  "seo": {
+    "primary_query": "",
+    "secondary_queries": [
+      "",
+      ""
+    ],
+    "query_source": "topic-list",
+    "meta_title": "",
+    "meta_description": ""
+  },
+  "sections": [
+    {
+      "heading": "?",
+      "answer": "",
+      "bullets": [],
+      "paragraphs": [
+        ""
+      ],
+      "takeaway": "",
+      "based_on": [
+        "expert"
+      ]
+    },
+    {
+      "heading": "?",
+      "answer": "",
+      "table": {
+        "caption": "",
+        "columns": [
+          "",
+          ""
+        ],
+        "rows": [
+          [
+            "",
+            ""
+          ],
+          [
+            "",
+            ""
+          ],
+          [
+            "",
+            ""
+          ]
+        ]
+      },
+      "paragraphs": [
+        ""
+      ],
+      "based_on": [
+        "case:<slug>"
+      ]
+    },
+    {
+      "heading": "?",
+      "answer": "",
+      "paragraphs": [
+        ""
+      ],
+      "based_on": [
+        "src:<id>"
+      ]
+    },
+    {
+      "heading": "?",
+      "answer": "",
+      "paragraphs": [
+        ""
+      ],
+      "based_on": [
+        "general"
+      ]
+    }
+  ],
+  "limits_section": null,
+  "key_insights": [
+    "",
+    "",
+    ""
+  ],
+  "related_questions": [
+    {
+      "question": "?",
+      "answer": ""
+    },
+    {
+      "question": "?",
+      "answer": ""
+    }
+  ],
+  "related_case": {
+    "title": "",
+    "category": "",
+    "href": "https://thecodest.co/en/case-studies/<slug>/"
+  },
+  "cta": {
+    "title": "",
+    "text": "",
+    "label": "",
+    "href": "https://thecodest.co/en/contact/"
+  },
+  "sources": [
+    {
+      "id": "",
+      "publisher": "",
+      "title": "",
+      "url": "",
+      "date": "",
+      "accessed": "YYYY-MM-DD"
+    }
+  ],
+  "expert_input": "expert-input.md",
+  "brief": "brief.md",
+  "meta": {
+    "audience_group": "3",
+    "buying_role": "",
+    "funnel_stage": "signal"
+  },
+  "report": {
+    "claim_ids": {},
+    "quotes_to_approve": [],
+    "quotes_approved": false,
+    "questions_for_reviewer": [],
+    "self_check": {},
+    "notes": ""
+  }
+}
