@@ -40,12 +40,12 @@ These were flagged in review. Use the right-hand column as the standard.
 
 | Too casual | Professional |
 |---|---|
-| A safety platform that arrived after the peak would have arrived too late to protect anyone. | Any delay in delivery would have reduced the platform's value to organisations managing workplace safety during the pandemic. |
+| A safety platform that arrived after the peak would have arrived too late to protect anyone. | Any delay in delivery would have reduced the application's value to organisations complying with social distancing guidelines during the pandemic. |
 | ...built and running while the need was urgent. | ...delivered within the timeframe of the pandemic response. |
-| Sensitive data: contact and health information needed strong protection from day one. | Data security: the platform processed health-related data, requiring strong encryption, strict access controls and ongoing regulatory compliance. |
+| Sensitive data: contact and health information needed strong protection from day one. | Data security: the application processed health-related data, requiring strong encryption, strict access controls and ongoing regulatory compliance. |
 | We built both the frontend and the backend. | The Codest was responsible for both frontend and backend development. |
 | The backend was built for scale: it takes in sensor data as it arrives... | The backend was engineered for scalability, supporting high volumes of real-time sensor data while maintaining consistent performance. |
-| ...a workplace safety platform in about 3 months | ...a workplace safety platform during the COVID-19 pandemic (timeline goes in Results, from the source) |
+| ...a workplace safety platform in about 3 months | ...a space management application for social distancing during the COVID-19 pandemic (timeline goes in Results, from the source) |
 | ...with The Codest owning the software | (The Codest is not named in the title) |
 
 ## Key challenge bullets

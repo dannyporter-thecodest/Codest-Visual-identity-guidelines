@@ -34,12 +34,12 @@ There is no table of contents and no tab bar. `templates/case-study-page.html` a
 ### 2. Problem hook
 - One sentence, 20 to 35 words, the first line below the hero.
 - States the problem the client had, in business terms, not the technology.
-- Example: "At the height of the COVID-19 pandemic, Estimote required a software platform that would enforce social distancing in the workplace and enable rapid contact tracing."
+- Example: "At the height of the COVID-19 pandemic, Estimote required a space management application that would help organisations comply with social distancing guidelines and enable rapid contact tracing."
 
 ### 3. Impact statement
 - One sentence, 20 to 35 words, shown in bold navy under the hook.
 - States the value The Codest delivered. Names The Codest in the third person.
-- Example: "The Codest delivered the frontend and backend of a sensor-based platform that alerts employees to unsafe proximity and gives office managers immediate visibility of close contacts."
+- Example: "The Codest delivered the frontend and backend of a space management application that alerts employees to unsafe proximity and enables administrators to immediately identify close contacts."
 
 ### 4. About the client
 - What the company does, who it serves, where it is based.

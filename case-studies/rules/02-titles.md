@@ -4,23 +4,30 @@
 
 Statistics never lead the title. They go in Results and the stats band (`04-statistics.md`). A number may appear in the title only to describe the scale of the thing that was built ("across 63+ countries", "for 13 million travellers"), and it must also appear in Results.
 
-## Shape
+## Shape: company, technology, outcome
 
-`[Client or descriptor] + [verb] + [the system or product] + [optional: for whom, or what it does]`
+`[Company or descriptor] + [the technology or system, in the source's words] + [the outcome or purpose]`
+
+- Company: "Estimote", "A major logistics company"
+- Technology: "turned its sensor-based technology into a space management application", "built a custom logistics platform"
+- Outcome: "for social distancing during the COVID-19 pandemic", "to automate order processing and route planning"
+
+The technology comes before the outcome, so the reader learns what was built first and what it achieved second.
 
 ## Formulas
 
 | # | Use when | Formula | TSH example | Codest pattern |
 |---|---|---|---|---|
-| 1 | An existing system became something new | [Client] turned [old thing] into [new thing] | Reservix turned its CMS into a sales engine with AI suggestions and third-party automations | Estimote turned its Bluetooth sensor technology into a workplace safety platform during the COVID-19 pandemic |
+| 1 | An existing system became something new | [Client] turned [old thing] into [new thing] | Reservix turned its CMS into a sales engine with AI suggestions and third-party automations | Estimote turned its sensor-based technology into a space management application for social distancing during the COVID-19 pandemic |
 | 2 | A new product or platform was built | [Client] built [system] for [purpose] | Bakkt built Zaira for agentic payments across 63+ countries with anti-hallucination payment guardrails | [Client] built [platform] for [purpose] |
-| 3 | A manual or legacy process was replaced | [Client] automated/replaced [process] with [system] | (closest: Mr & Mrs Smith modernized its hotel platform and integrated it with its new parent) | A major logistics company automated order processing and route planning with a custom logistics platform |
+| 3 | A manual or legacy process was replaced | [Client] built/replaced [system] to automate [process] | (closest: Mr & Mrs Smith modernized its hotel platform and integrated it with its new parent) | A major logistics company built a custom logistics platform to automate order processing and route planning |
 | 4 | A legacy platform was modernised | [Client] modernised [platform] [and what else] | A bank modernized its legacy platform for 30,000 customers without a single disruption | [Client] modernised its [platform] and [result in words] |
 | 5 | Team extension or a placed specialist | [Client] [scaled/extended] its [team] to [deliver what] | A banking tech provider quickly scales the e-Wallet team to deliver high-complexity services in parallel | [Client] extended its [product] team with senior [technology] developers to [deliver what] |
 | 6 | Unnamed client | Any formula above, with a factual descriptor as the subject | One FinTech gained a competitive edge with an MCP-based AI chatbot | A Nordic payments company replaced its legacy ledger with [system] |
 
 ## Check every title
 
+- Follows company, technology, outcome, in that order.
 - Names the system, product or team that was built, changed or extended.
 - Uses the source's own name for the system where it has one ("a custom logistics platform", "an IoT office management platform"). Do not invent a new description of it.
 - Client first. The Codest is not named.
@@ -34,7 +41,7 @@ Statistics never lead the title. They go in Results and the stats band (`04-stat
 
 | Old thecodest.co headline | New title |
 |---|---|
-| Enabled 60% faster occupancy tracking and saved €120K annually through an IoT office management platform | Estimote turned its Bluetooth sensor technology into a workplace safety platform during the COVID-19 pandemic |
-| Reduced operational costs by 38% and delivery time by 45% with a custom logistics platform | A major logistics company automated order processing and route planning with a custom logistics platform |
+| Enabled 60% faster occupancy tracking and saved €120K annually through an IoT office management platform | Estimote turned its sensor-based technology into a space management application for social distancing during the COVID-19 pandemic |
+| Reduced operational costs by 38% and delivery time by 45% with a custom logistics platform | A major logistics company built a custom logistics platform to automate order processing and route planning |
 
 In both, the old statistics move to Results unchanged.

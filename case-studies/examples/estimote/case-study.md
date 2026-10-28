@@ -1,10 +1,10 @@
-# Estimote turned its Bluetooth sensor technology into a workplace safety platform during the COVID-19 pandemic
+# Estimote turned its sensor-based technology into a space management application for social distancing during the COVID-19 pandemic
 
 Industry: IoT | Headquarters: New York, United States | Tech stack: Bluetooth Smart (BLE)
 
-At the height of the COVID-19 pandemic, Estimote required a software platform that would enforce social distancing in the workplace and enable rapid contact tracing.
+At the height of the COVID-19 pandemic, Estimote required a space management application that would help organisations comply with social distancing guidelines and enable rapid contact tracing.
 
-**The Codest delivered the frontend and backend of a sensor-based platform that alerts employees to unsafe proximity and gives office managers immediate visibility of close contacts.**
+**The Codest delivered the frontend and backend of a space management application that alerts employees to unsafe proximity and enables administrators to immediately identify close contacts.**
 
 ## About Estimote
 
@@ -14,16 +14,16 @@ Estimote, Inc. develops sensor-based technology that transforms how businesses i
 
 The COVID-19 pandemic required organisations to maintain physical distancing in the workplace and to respond quickly to confirmed cases. Without a dedicated system, identifying close contacts and issuing quarantine notices was a slow, manual process.
 
-Estimote's sensor technology could already measure the distance between individuals. The company required a complete software platform built on that technology, delivered within the timeframe of the pandemic response.
+Estimote's sensor technology could already measure the distance between individuals. The company required a complete space management application built on that technology, delivered within the timeframe of the pandemic response.
 
 **Key challenges:**
 
-- **Time pressure:** development and deployment had to be completed during the peak of the pandemic to meet immediate workplace safety requirements.
+- **Time pressure:** development and deployment had to be completed during the peak of the pandemic to meet immediate social distancing requirements.
 - **Real-time monitoring:** the system had to track interactions and distances between users in real time across large office spaces.
-- **Scalability:** the platform had to scale efficiently as the number of users, devices and data points increased.
-- **Data security:** the platform processed health-related data, requiring strong encryption, strict access controls and ongoing regulatory compliance.
+- **Scalability:** the application had to scale efficiently as the number of users, devices and data points increased.
+- **Data security:** the application processed health-related data, requiring strong encryption, strict access controls and ongoing regulatory compliance.
 
-Any delay in delivery would have reduced the platform's value to organisations managing workplace safety during the pandemic.
+Any delay in delivery would have reduced the application's value to organisations complying with social distancing guidelines during the pandemic.
 
 **Stats band:** 1M+ sensor data points processed daily · 30% reduction in manual facility tasks · 10+ locations managed via a unified platform
 
@@ -41,7 +41,7 @@ Development followed Estimote's wireframes and specifications, with transparent 
 
 ## Results
 
-Estimote deployed its workplace safety platform during the peak of the pandemic, delivered in line with its specifications.
+Estimote deployed its space management application during the peak of the pandemic, delivered in line with its specifications.
 
 - **60% faster occupancy tracking** across the client's office spaces.
 - **€120K saved annually** through the IoT office management platform.
