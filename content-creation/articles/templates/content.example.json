@@ -107,6 +107,14 @@
       "src:<id>"
     ]
   },
+  "messaging": {
+    "pillars": [
+      1
+    ],
+    "models": [],
+    "limits": {},
+    "responsibility_section": 0
+  },
   "related_questions": [
     {
       "question": "?",
@@ -125,7 +133,7 @@
   "cta": {
     "title": "",
     "text": "",
-    "label": "",
+    "label": "Let's talk through the problem",
     "href": "https://thecodest.co/en/contact/"
   },
   "sources": [

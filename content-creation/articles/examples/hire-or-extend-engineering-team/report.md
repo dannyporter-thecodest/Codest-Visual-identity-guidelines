@@ -15,7 +15,7 @@ Publishing is outside this workflow. Whatever publishes it must meet Article 50 
 | Secondary queries | team extension vs hiring; hire developers in-house; hard to fill engineering roles |
 | Query source | topic-list (volume not checked) |
 | Category | buyer-questions / capacity / all |
-| Words | 1200 (6 min read) |
+| Words | 1321 (7 min read) |
 | Review by | 2027-10-28 |
 
 ## SEO and AEO/GEO checks
@@ -50,7 +50,7 @@ Publishing is outside this workflow. Whatever publishes it must meet Article 50 
 
 ## Claims register
 
-- No claims about The Codest used
+- Names The Codest's services (Staff Augmentation, Product Development): CLM-003
 
 ## Open questions
 
@@ -73,6 +73,8 @@ Publishing is outside this workflow. Whatever publishes it must meet Article 50 
 - 12 no blocked clients, US market, invented experience or blocked claims: yes
 - 13 different from every topic in topics.json: yes: first-30-days is a different question
 - 14 page checked at 1440px and 375px: yes
+- 15 problem, responsibility, model, with limits: yes: problem in sections 1 to 3, responsibility in section 4, models named with their limits in sections 2 and 4
+- 16 Guardian and Sage voice, no internal language, claims only CLM-001 or CLM-003: yes: names risks and the exit, recommends hiring when it fits; only CLM-003 used
 
 ## Build
 
@@ -93,4 +95,4 @@ Publishing is outside this workflow. Whatever publishes it must meet Article 50 
 
 ## Notes
 
-Test article for the ruleset, written without input from people. Eurostat and Statistics Austria report the same EU survey (ICT usage in enterprises), so they count as one piece of evidence on hiring difficulty; Statistics Austria adds the reasons. No case study figures used, because none has a claims register entry yet.
+Test article for the ruleset, written without input from people. Eurostat and Statistics Austria report the same EU survey (ICT usage in enterprises), so they count as one piece of evidence on hiring difficulty; Statistics Austria adds the reasons. No case study figures used, because none has a claims register entry yet. The logistics case is outside our ICP industries; it is used because no public fintech or payments case shows a handed-over area, and the article says what transfers.

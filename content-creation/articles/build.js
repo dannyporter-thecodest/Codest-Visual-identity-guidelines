@@ -64,7 +64,7 @@ const isInternal = (u) => u.startsWith("/") || host(u) === host(site.origin);
 const onDomain = (u, list) => list.some((dm) => host(u) === dm || host(u).endsWith("." + dm));
 
 // ---------- required fields ----------
-const req = ["slug", "category", "topic_area", "title", "lead", "tldr", "published", "updated", "review_by", "seo", "sections", "key_insights", "information_gain", "related_case", "cta", "sources", "meta", "report"];
+const req = ["slug", "category", "topic_area", "title", "lead", "tldr", "published", "updated", "review_by", "seo", "sections", "key_insights", "information_gain", "messaging", "related_case", "cta", "sources", "meta", "report"];
 for (const k of req) if (d[k] === undefined || d[k] === null || d[k] === "") err(`Missing field: ${k}`);
 if (errors.length) return finishEarly();
 d.related_questions = d.related_questions || [];
@@ -333,8 +333,46 @@ if (!["1", "2", "3", "all"].includes(String(M.audience_group))) err("meta.audien
 if (!M.buying_role) err("meta.buying_role: missing");
 if (!["signal", "qualified conversation"].includes(M.funnel_stage)) err("meta.funnel_stage: signal or qualified conversation");
 
+// ---------- messaging (10) ----------
+const MSG = d.messaging || {};
+if (!d.messaging) err("messaging: missing (rules/10-messaging.md)");
+const MODELS = { "staff-augmentation": /\bStaff Augmentation\b/, "product-development": /\bProduct Development\b/, "ai-services": /\bAI Services\b|Rapid AI Prototyping|AI Solutions (&|and) Integration|AI-Assisted Engineering/ };
+const named = Object.keys(MODELS).filter((m) => MODELS[m].test(allText));
+const listed = MSG.models || [];
+for (const m of listed) if (!MODELS[m]) err(`messaging.models: "${m}" (staff-augmentation, product-development or ai-services)`);
+for (const m of named) {
+  if (!listed.includes(m)) err(`messaging.models: the article names ${m} but does not list it`);
+  const lim = (MSG.limits || {})[m];
+  if (!lim) err(`messaging.limits: ${m} is named without its limit (rules/10-messaging.md, section 2)`);
+  else if (!norm(allText).replace(/\s+/g, " ").includes(norm(lim).replace(/\s+/g, " ").trim())) err(`messaging.limits: the limit for ${m} ("${lim}") does not appear in the article`);
+}
+const ri = MSG.responsibility_section;
+if (ri == null || !S[ri]) err("messaging.responsibility_section: set the index of the section that says who is responsible for what (problem, responsibility, model)");
+else if (!/responsib|\bowner\b|\bowns\b/i.test(plain(S[ri].heading + " " + sectionText(S[ri])))) err(`messaging.responsibility_section: section ${ri + 1} does not say who is responsible (responsibility, owner, owns)`);
+const pil = MSG.pillars || [];
+if (!pil.length || pil.some((x) => ![1, 2, 3, 4, 5].includes(x))) err("messaging.pillars: list 1 to 5 pillar numbers the article carries (rules/10-messaging.md, section 3)");
+const CTAS = { "Let's talk through the problem": ["CTO/VP Eng"], "Let's test the direction on a prototype": ["CTO/VP Eng", "Financial buyer"], "Let's plan the responsibility and the team model": ["Head of Delivery/PMO"], "Let's check the fit with your programme and procurement process": ["Procurement"], "Start an evidence review": ["Risk/Security"] };
+if (!CTAS[d.cta.label]) err(`cta.label: "${d.cta.label}" is not an approved CTA (${Object.keys(CTAS).join(" / ")})`);
+else if (!CTAS[d.cta.label].includes(M.buying_role)) warn(`cta.label: "${d.cta.label}" is meant for ${CTAS[d.cta.label].join(" or ")}, not ${M.buying_role}`);
+const JARGON = /\bICP\b|anti-ICP|audience group|\bGroup [123]\b|buying committee|white space|\bour (core |target )?markets?\b|\btarget markets?\b|\bfunnel\b|accountable product and engineering partner|\bpremium\b/i;
+for (const [k, v] of Object.entries(texts)) for (const m of plain(v).matchAll(new RegExp(JARGON.source, "gi"))) err(`${k}: internal strategy language "${m[0]}" (rules/10-messaging.md, section 5)`);
+const COND = /senior-only|\b24 hours\b|\b(in|within|under) 30 days\b|start in (2|two) weeks|teams? (that )?stays? (with [a-z ]+ )?for years|\bISO 27001\b/i;
+for (const [k, v] of Object.entries(texts)) for (const m of plain(v).matchAll(new RegExp(COND.source, "gi"))) err(`${k}: "${m[0]}" is a conditional or blocked claim (messaging-guidelines/05-claims.md)`);
+if (named.length && !Object.values(d.report.claim_ids).includes("CLM-003")) err("report.claim_ids: the article names The Codest's services, so list CLM-003");
+// acronyms spelled out the first time (04-voice.md, rule 5)
+const OKACR = new Set(["AI", "EU", "UK", "CTO", "CEO", "VP", "IT", "API", "TL", "DR", "SaaS", "HR", "OK", "PDF", "URL"]);
+const reading = plain([d.lead, texts.tldr, ...S.map((s) => s.heading + " " + sectionText(s)), texts.key_insights, texts.related_questions].join(" "));
+const seenAcr = new Set();
+for (const m of reading.matchAll(/\b[A-Z]{2,6}\b/g)) {
+  const a = m[0];
+  if (OKACR.has(a) || seenAcr.has(a)) continue;
+  seenAcr.add(a);
+  const i = m.index, before = reading.slice(Math.max(0, i - 1), i), after = reading.slice(i + a.length, i + a.length + 2);
+  if (!(before === "(" || after === " (")) warn(`Acronym ${a}: spell it out the first time it appears, e.g. "full name (${a})" (messaging-guidelines/04-voice.md)`);
+}
+
 // ---------- self-check (08) ----------
-const SELF = 14;
+const SELF = 16;
 const answered = Object.values(d.report.self_check).filter((v) => /^(yes|no|n\/a)\b/i.test(String(v))).length;
 if (answered < SELF) block(`Self-check: ${answered} of ${SELF} items answered (rules/08-checks.md)`);
 if (Object.values(d.report.self_check).some((v) => /^no\b/i.test(String(v)))) warn("Self-check: at least one item answered 'no'. Fix it or explain it");

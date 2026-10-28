@@ -37,4 +37,9 @@ Then Cody answers every item below in `report.self_check` (in `content.json`) wi
 
 14. Have you looked at the page at 1440px and 375px (`shot-1440.png`, `shot-375.png`)? Title, table and CTA readable on mobile?
 
-An article is **finished** when the build reports 0 errors, every warning is fixed or explained in `report.notes`, and all 14 self-check items are answered. `report.md` then says `Status: finished`, and the article can go to whatever workflow publishes it.
+## Messaging (rules/10-messaging.md)
+
+15. Does the article follow problem, responsibility, model, with the limit stated next to every model it names?
+16. Does it sound like the Guardian and the Sage, with no internal strategy language, and no claims beyond CLM-001 and CLM-003 unless their condition is cleared?
+
+An article is **finished** when the build reports 0 errors, every warning is fixed or explained in `report.notes`, and all 16 self-check items are answered. `report.md` then says `Status: finished`, and the article can go to whatever workflow publishes it.

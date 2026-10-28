@@ -17,6 +17,7 @@
     "sections",
     "key_insights",
     "information_gain",
+    "messaging",
     "related_case",
     "cta",
     "sources",
@@ -317,7 +318,13 @@
           "type": "string"
         },
         "label": {
-          "type": "string"
+          "enum": [
+            "Let's talk through the problem",
+            "Let's test the direction on a prototype",
+            "Let's plan the responsibility and the team model",
+            "Let's check the fit with your programme and procurement process",
+            "Start an evidence review"
+          ]
         },
         "href": {
           "type": "string"
@@ -455,6 +462,52 @@
             "type": "string",
             "description": "src:<id>, case:<slug> or codest:<url>, as used in based_on"
           }
+        }
+      }
+    },
+    "messaging": {
+      "type": "object",
+      "required": [
+        "pillars",
+        "models",
+        "limits",
+        "responsibility_section"
+      ],
+      "description": "rules/10-messaging.md",
+      "properties": {
+        "pillars": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "models": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "staff-augmentation",
+              "product-development",
+              "ai-services"
+            ]
+          }
+        },
+        "limits": {
+          "type": "object",
+          "description": "For each model named: the limit sentence as it appears in the article",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "responsibility_section": {
+          "type": "integer",
+          "description": "Index of the section that says who is responsible for what"
         }
       }
     }

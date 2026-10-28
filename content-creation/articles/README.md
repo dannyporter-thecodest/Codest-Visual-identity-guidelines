@@ -26,7 +26,7 @@ The prompt is in `CODY_TASK.md`.
 2. **Brief.** Cody fills in `templates/brief.md` and registers the topic in `topics.json`.
 3. **Research.** 2 to 5 primary sources from at least 2 publishers, opened and read, plus the public Codest material that fits.
 4. **Write.** `content.json`, following the rules and `templates/content.schema.json`.
-5. **Build and check.** Fix every error, fix or explain every warning, answer the 14 self-check items (`rules/08-checks.md`).
+5. **Build and check.** Fix every error, fix or explain every warning, answer the 16 self-check items (`rules/08-checks.md`).
 6. **Hand over.** The finished article in `output/<slug>/`, ready for the publishing workflow.
 
 ## Rules (read in this order)
@@ -42,8 +42,9 @@ The prompt is in `CODY_TASK.md`.
 | 7 | `rules/07-hard-rules.md` | Rules that are never broken |
 | 8 | `rules/08-checks.md` | The self-check before handing an article over |
 | 9 | `rules/09-weekly-topic-research.md` | How Cody finds and scores the week's topic |
+| 10 | `rules/10-messaging.md` | How The Codest talks about itself: problem, responsibility, model; the three ways we help and their limits; pillars; CTAs by role; claims |
 
-Voice and claims come from `messaging-guidelines/` (02-icp.md, 04-voice.md, 05-claims.md). These rules add to them and never override them.
+Positioning, voice and claims come from `messaging-guidelines/` (01-positioning.md, 02-icp.md, 03-messaging.md, 04-voice.md, 05-claims.md). These rules add to them and never override them.
 
 ## Outcomes: what every article must produce
 
@@ -78,6 +79,12 @@ Over 100 checks, including:
   - at least three sections resting on sources, and one on public Codest material
   - an information gain element built from at least 2 sources or cases
 - no invented experience ("in our experience" without a public Codest source)
+- messaging:
+  - problem, responsibility, model, with a limit next to every model named
+  - an approved CTA for the buying role
+  - CLM-003 listed when services are named
+  - no internal strategy language or conditional claims
+  - acronyms spelled out
 - a named author, and `review_by` within 6 or 12 months
 - near-duplicate titles against `topics.json`, and the 2:1 category balance
 - blocked clients, the US market, avoid-list words, em and en dashes, and characters Cody's repository rejects
@@ -90,7 +97,7 @@ articles/
   CODY_TASK.md             the weekly prompt for Cody
   build.js                 checks content.json and builds article.md, page.html, report.md
   topics.json              register of every topic, plus site URLs, default author and blocked source domains
-  rules/                   01 to 09
+  rules/                   01 to 10
   templates/
     brief.md               the article brief (Cody fills it in)
     content.schema.json    the shape of content.json
