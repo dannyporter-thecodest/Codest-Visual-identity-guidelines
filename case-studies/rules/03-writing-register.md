@@ -45,7 +45,7 @@ These were flagged in review. Use the right-hand column as the standard.
 | Sensitive data: contact and health information needed strong protection from day one. | Data security: the application processed health-related data, requiring strong encryption, strict access controls and ongoing regulatory compliance. |
 | We built both the frontend and the backend. | The Codest was responsible for both frontend and backend development. |
 | The backend was built for scale: it takes in sensor data as it arrives... | The backend was engineered for scalability, supporting high volumes of real-time sensor data while maintaining consistent performance. |
-| ...a workplace safety platform in about 3 months | ...a contact tracing system during COVID-19 (timeline goes in Results, from the source) |
+| ...a workplace safety platform in about 3 months | ...a space management application during COVID-19 (timeline goes in Results, from the source) |
 | ...with The Codest owning the software | (The Codest is not named in the title) |
 
 ## Key challenge bullets

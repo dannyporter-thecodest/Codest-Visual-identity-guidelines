@@ -9,7 +9,7 @@ Statistics never lead the title. They go in Results and the stats band (`04-stat
 `[Company or descriptor] + [the technology or system, in the source's words] + [the outcome or purpose]`
 
 - Company: "Estimote", "A major logistics company"
-- Technology: "turned its sensors into a contact tracing system", "built a custom logistics platform"
+- Technology: "turned its sensors into a space management application", "built a custom logistics platform"
 - Outcome: "during COVID-19", "to automate manual processes"
 
 The technology comes before the outcome, so the reader learns what was built first and what it achieved second.
@@ -20,7 +20,8 @@ A title is a headline, not a summary. It should read in one breath.
 
 - **8 to 14 words, 3 lines at most** at desktop width (44 characters a line, so about 100 characters). *(build)*
 - **One idea:** company, what was built, one outcome or context. Never two outcomes, never a feature list.
-- **The shortest source term.** Where the source names the same thing several ways, use the shortest one that is still accurate. Estimote's source says "sensor-based technology", "sensors", "space management application" and "contact tracing system": the title uses "its sensors" and "a contact tracing system".
+- **The main deliverable, in the source's words.** The title names the ultimate outcome the source describes, not a secondary feature. Estimote's source built a "space management application"; contact tracing was one feature of it, so the title says "space management application", not "contact tracing system". Secondary features go in Project description and Results.
+- **The shortest source term for everything else.** Where the source names the same thing several ways, use the shortest one that is still accurate: "its sensors", not "its sensor-based technology".
 - **Short context.** "during COVID-19", not "during the COVID-19 pandemic". "for retailers", not "for companies operating in the retail sector".
 - **Concrete nouns and a strong verb.** turned, built, replaced, rebuilt, scaled. No "helped", "enabled", "in order to", "which", "that".
 - **Read it aloud.** If you need a breath, it is too long. If a word can go without losing a fact, it goes.
@@ -28,20 +29,20 @@ A title is a headline, not a summary. It should read in one breath.
 How to cut a wordy title, in order (cut words, never rewrite source terms):
 
 1. Keep one outcome or context phrase. "for social distancing during the COVID-19 pandemic" becomes "during COVID-19".
-2. Swap a long source term for a shorter one the source also uses. "sensor-based technology" becomes "sensors".
+2. Swap a long source term for a shorter one the source also uses ("sensor-based technology" becomes "sensors"). Never swap the main deliverable for a secondary feature to save words.
 3. Drop feature lists and anything the hook or Project description already covers.
 4. Drop repeated and filler words.
 
 | Wordy | Catchy |
 |---|---|
-| Estimote turned its sensor-based technology into a space management application for social distancing during the COVID-19 pandemic (17 words, 4 lines) | Estimote turned its sensors into a contact tracing system during COVID-19 (11 words, 2 lines) |
+| Estimote turned its sensor-based technology into a space management application for social distancing during the COVID-19 pandemic (17 words, 4 lines) | Estimote turned its sensors into a space management application during COVID-19 (12 words, 2 lines) |
 | A major logistics company built a custom logistics platform to automate order processing and route planning (16 words, 3 lines) | A major logistics company built a custom logistics platform to automate manual processes (13 words, 3 lines) |
 
 ## Formulas
 
 | # | Use when | Formula | TSH example | Codest pattern |
 |---|---|---|---|---|
-| 1 | An existing system became something new | [Client] turned [old thing] into [new thing] | Reservix turned its CMS into a sales engine with AI suggestions and third-party automations | Estimote turned its sensors into a contact tracing system during COVID-19 |
+| 1 | An existing system became something new | [Client] turned [old thing] into [new thing] | Reservix turned its CMS into a sales engine with AI suggestions and third-party automations | Estimote turned its sensors into a space management application during COVID-19 |
 | 2 | A new product or platform was built | [Client] built [system] for [purpose] | Bakkt built Zaira for agentic payments across 63+ countries with anti-hallucination payment guardrails | [Client] built [platform] for [purpose] |
 | 3 | A manual or legacy process was replaced | [Client] built/replaced [system] to automate [process] | (closest: Mr & Mrs Smith modernized its hotel platform and integrated it with its new parent) | A major logistics company built a custom logistics platform to automate manual processes |
 | 4 | A legacy platform was modernised | [Client] modernised [platform] [and what else] | A bank modernized its legacy platform for 30,000 customers without a single disruption | [Client] modernised its [platform] and [result in words] |
@@ -64,7 +65,7 @@ How to cut a wordy title, in order (cut words, never rewrite source terms):
 
 | Old thecodest.co headline | New title |
 |---|---|
-| Enabled 60% faster occupancy tracking and saved €120K annually through an IoT office management platform | Estimote turned its sensors into a contact tracing system during COVID-19 |
+| Enabled 60% faster occupancy tracking and saved €120K annually through an IoT office management platform | Estimote turned its sensors into a space management application during COVID-19 |
 | Reduced operational costs by 38% and delivery time by 45% with a custom logistics platform | A major logistics company built a custom logistics platform to automate manual processes |
 
 In both, the old statistics move to Results unchanged.
