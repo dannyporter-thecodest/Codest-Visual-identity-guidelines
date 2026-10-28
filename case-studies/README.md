@@ -2,7 +2,7 @@
 
 This folder is everything Cody (or any AI agent) needs to convert The Codest's case studies into the new case study format and build each one as a page in the design system.
 
-The format copies The Software House (tsh.io) case studies: their section order, section sizes and title formulas. The Codest's own rules sit on top (no invented facts, statistics carried over, verbatim quotes, blocked clients).
+The format copies The Software House (tsh.io) case studies: their section order, section sizes and title formulas. The Codest's own rules sit on top (no invented facts, the source's own terms kept, statistics carried over, verbatim quotes, blocked clients). The aim is to improve each case study, not re-create it.
 
 ## Read in this order
 

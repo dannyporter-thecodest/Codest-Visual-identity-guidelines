@@ -2,6 +2,8 @@
 
 Every current case study has roughly the same parts. Move each one as below, then drop the old structure.
 
+Whatever you move keeps the source's own terms for the client, what was built, its features and its technologies (`05-hard-rules.md`, rule 2). Rewrite the sentences, not the facts.
+
 | Old thecodest.co section | New section | Rule |
 |---|---|---|
 | Headline (often "The Codest Value" + a statistic) | Case study title | Replace with a title that names what was built or changed (`02-titles.md`). Never keep the old statistic-first headline; its statistics move to Results unchanged. |

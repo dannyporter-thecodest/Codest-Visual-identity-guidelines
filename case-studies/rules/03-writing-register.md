@@ -2,6 +2,26 @@
 
 Formal, precise and professional. Write as a senior consultancy reporting to a client's board, not as a blog or a sales page.
 
+## Improve the writing, keep the terms
+
+The job is to make the source better, not to re-create it. Rewrite sentences for clarity, structure and register, but keep the source's own terms for everything factual:
+
+- **What was built:** keep the source's name for it. Source "custom logistics platform" stays "custom logistics platform", not "real-time supply chain platform".
+- **Features and capabilities:** keep the source's wording. "Predictive analytics for inventory management" stays as is, not "AI demand forecasting".
+- **Technologies, systems and integrations:** exactly as named on the source (ERP, WMS, Bluetooth Smart).
+- **The client:** use the source's description. "A major logistics company operating across multiple regions" is not reworded into a new descriptor with new claims.
+- **Processes and outcomes:** "order processing and route planning" stays "order processing and route planning".
+
+Allowed: fixing grammar and spelling (British English), splitting or joining sentences, removing filler ("powerful", "significantly"), and choosing which source term to use where the source uses more than one for the same thing.
+
+Not allowed: a new name, a new category ("platform" for an "application"), a broader or narrower claim than the source makes, or a term from another case study.
+
+| Source | Re-created (wrong) | Improved (right) |
+|---|---|---|
+| a custom logistics platform | one real-time supply chain platform | a custom logistics platform |
+| a centralized hub for tracking shipments | one central control tower | a centralised hub for tracking shipments |
+| predictive analytics features enabled the client to forecast inventory needs | AI-driven demand forecasting | predictive analytics enabled the client to forecast inventory needs |
+
 ## Rules
 
 - Full, complete sentences. No casual idioms, dramatic phrasing or rhetorical lines.

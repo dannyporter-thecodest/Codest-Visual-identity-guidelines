@@ -17,6 +17,7 @@ Paste this to Cody as is. To convert only some cases, change the "Scope" line.
 3. If the case names or describes MUFG or Allegro, stop. Set status `blocked`, note why, and move to the next case.
 4. Write `case-studies/output/<slug>/content.json` from `case-studies/templates/content.example.json`, following the rules:
    - Use only facts in `source.md`. Never invent a fact, number, technology, timeline or quote.
+   - Keep the source's own terms for the client, what was built, its features and technologies. Improve the sentences; never rename or re-describe the facts.
    - List every statistic on the source in `report.source_statistics`, exactly as written, and show each one in Results (and in `stats_band` if the source has a stats band).
    - No statistics on the source: no stats band, and capability bullets in Results.
    - Copy the quote exactly into both `quote.text` and `report.source_quote`.
