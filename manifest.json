@@ -1,7 +1,7 @@
 {
   "name": "The Codest brand",
-  "version": "1.2.0",
-  "date": "2026-10-27",
+  "version": "1.3.0",
+  "date": "2026-10-28",
   "scope": "Documents the current visual identity from the website design file. Not a rebrand. Copy and claims are governed by the content guide.",
   "source": {
     "tool": "figma",
@@ -46,6 +46,7 @@
     "visual-identity/guidelines.md",
     "design-system/README.md",
     "creatives/README.md",
+    "case-studies/README.md",
     "design-system/templates/landing-page.html",
     "design-system/tokens/tokens.json"
   ],
@@ -82,7 +83,23 @@
     "creatives/creatives.css": "Shared creative styles built on design-system tokens",
     "creatives/fill.js": "Fills a template from JSON or URL parameters",
     "creatives/build_templates.py": "Template definitions; regenerates creatives/templates/*.html",
-    "creatives/examples/examples.json": "Batch file that renders every example; copy its format for batches"
+    "creatives/examples/examples.json": "Batch file that renders every example; copy its format for batches",
+    "case-studies/README.md": "Case study ruleset: outcomes per case, workflow, read order",
+    "case-studies/CODY_TASK.md": "Prompt for Cody to convert every case study in inventory.json",
+    "case-studies/inventory.json": "Every live thecodest.co case study with URL and conversion status",
+    "case-studies/build.js": "Checks content.json against the rules and builds case-study.md, page.html and report.md",
+    "case-studies/rules/01-format.md": "The 10 sections, order, word counts, page layout",
+    "case-studies/rules/02-titles.md": "Title formulas and checks",
+    "case-studies/rules/03-writing-register.md": "Formal professional register, with flagged examples",
+    "case-studies/rules/04-statistics.md": "Where statistics go; capability bullets when there are none",
+    "case-studies/rules/05-hard-rules.md": "Rules never broken: no invented facts, blocked clients, verbatim quotes",
+    "case-studies/rules/06-conversion-mapping.md": "Old thecodest.co sections mapped to the new format",
+    "case-studies/rules/07-checks.md": "Self-check before handing back",
+    "case-studies/templates/content.schema.json": "Shape of a case study content.json",
+    "case-studies/templates/content.example.json": "Blank content.json to start from",
+    "case-studies/templates/case-study.md": "Plain text skeleton",
+    "case-studies/templates/case-study-page.html": "Case study page template built from design system components",
+    "case-studies/examples/estimote/": "Approved reference conversion: content.json, case-study.md, page.html, report.md"
   },
   "icons": {
     "path": "design-system/assets/icons/",

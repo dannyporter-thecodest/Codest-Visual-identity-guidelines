@@ -11,6 +11,7 @@ For Cody and any other AI agent working in this repository. Read this file befor
 | CSS for a web build | `tokens.css`, `components/bundle.css`, `components/sections.css` | Edit `tokens.css` by hand (it is generated) |
 | A component or section | `design-system/README.md` (tables) and `design-system/components/index.d.ts` (props) | Rebuild one that already exists |
 | A page structure | `design-system/templates/` | Start from a blank file |
+| A case study | `case-studies/README.md`, its `rules/` and the Estimote example | Write one from the landing or service template |
 | A social post, ad, banner, cover or email header | `creatives/` (templates, `render.js`, `templates.json`) | Design an image from scratch |
 | What it should look like | `design-system/reference/*.png` (screenshots of every Figma page) | Copy the text in them |
 | Logo, icons, textures, graphics | `design-system/assets/` | Redraw, retype or approximate any of them |
@@ -27,6 +28,10 @@ If two sources disagree, `tokens.json` wins for values and `guidelines.md` wins 
 4. **Fill content.** Replace every `[bracketed placeholder]` with copy from the content guide. Numbers need a claims-register entry. Use real photos if the brief supplies them; otherwise leave the grey placeholders and say so.
 5. **Compare.** Render the page at 1440px and 375px wide. Put it next to `reference/home.png` (or `service-detail.png`) and check spacing, colour, type and the offset outlines match. Fix differences before handing back.
 6. **Report** what you used, what you left as placeholder, and anything the system did not cover.
+
+## How to make a case study
+
+Follow `case-studies/README.md`. In short: copy the old page into `case-studies/output/<slug>/source.md`, write `content.json` by the rules in `case-studies/rules/`, run `node case-studies/build.js <content.json> --shot`, fix every error and warning, and look at the page. Never invent facts; every statistic on the source is carried over; quotes are verbatim. To convert all of them, use `case-studies/CODY_TASK.md`.
 
 ## How to make an image (social, ads, covers, banners, email headers)
 
