@@ -4,7 +4,7 @@ The Codest's **Visual Identity Guidelines** and **Design System**, documented fr
 
 | | What | Start here |
 |---|---|---|
-| Visual Identity Guidelines | The rules: logo, colour, states, type, layout, the offset outline, icons, waves and orbs, imagery, known issues | `visual-identity/guidelines.md` (or the PDF beside it) |
+| Visual Identity Guidelines | The rules: logo, colour, states, type, layout, the offset outline, icons, waves and orbs, imagery, known issues | `visual-identity/guidelines.md` |
 | Design System | The build kit: tokens, fonts, logo, icons, textures, graphics, 70 components, 2 page templates, 19 reference screenshots | `design-system/README.md` |
 | Creatives | Image templates for social posts, stories, ads, link images, covers, banners and email headers, with a render script | `creatives/README.md` |
 | Case studies | The case study format (based on TSH), shared rules, page template and build script, plus two workflows: converting old case studies, and creating new ones from Delivery's intake form | `case-studies/README.md` |
@@ -17,8 +17,7 @@ AGENT_GUIDE.md
 manifest.json
 visual-identity/
   guidelines.md
-  the-codest-visual-identity.pdf
-  guidelines-print.html          (source of the PDF)
+  guidelines-print.html          (print layout; open in a browser and print to PDF when a PDF is needed)
 creatives/
   README.md
   templates/   12 fixed-size formats (social, story, ads, link image, cover, banner, email)
@@ -72,4 +71,4 @@ Plain HTML without React works too:
 
 ## Keeping it current
 
-Change values in `design-system/tokens/tokens.json`, then run `python3 design-system/tokens/build_tokens_css.py`. If the Figma file changes, update tokens first, then components, then the guidelines, then regenerate the PDF by printing `visual-identity/guidelines-print.html` to PDF (A4 landscape, backgrounds on).
+Change values in `design-system/tokens/tokens.json`, then run `python3 design-system/tokens/build_tokens_css.py`. If the Figma file changes, update tokens first, then components, then the guidelines. When a PDF is needed, print `visual-identity/guidelines-print.html` to PDF (A4 landscape, backgrounds on); the PDF is not kept in the repository.
