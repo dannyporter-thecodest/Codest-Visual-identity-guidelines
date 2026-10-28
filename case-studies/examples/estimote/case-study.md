@@ -44,7 +44,7 @@ Development followed Estimote's wireframes and specifications, with transparent 
 Estimote deployed its space management application during the peak of the pandemic, delivered in line with its specifications.
 
 - **60% faster occupancy tracking** across the client's office spaces.
-- **€120K saved annually** through the IoT office management platform.
+- **EUR 120K saved annually** through the IoT office management platform.
 - **Automated proximity alerts and immediate contact tracing** enabled office managers to identify close contacts and issue quarantine notices faster.
 - **Delivered within three months,** from development to deployment, under pandemic deadlines.
 

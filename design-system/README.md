@@ -95,7 +95,7 @@ White on `pink-hover` is 5.6:1 and passes AA. The 2px navy focus ring is added f
 | Component | Use |
 |---|---|
 | `Input` | Text field with label, optional/required marker, search icon, error and disabled states |
-| `Textarea`, `FileUpload`, `Checkbox`, `TechOption` | Message field; dashed upload field; checkbox; 120×99 selectable technology box |
+| `Textarea`, `FileUpload`, `Checkbox`, `TechOption` | Message field; dashed upload field; checkbox; 120x99 selectable technology box |
 | `Tabs` | Underlined tabs, optional icons |
 
 ### Cards
@@ -121,7 +121,7 @@ White on `pink-hover` is 5.6:1 and passes AA. The 2px navy focus ring is added f
 | `ServiceTabs` | Centred heading, icon tabs, technology list, CTA | Home / services |
 | `StatsBand` | Navy band of stats with optional caption | Home / facts |
 | `CasePanel` | Tinted 480px case study panel, alternating pink/peach and sides | Home / cases |
-| `ValuesGrid` | Heading left, 2×2 value icons right with pink cross | Home / values |
+| `ValuesGrid` | Heading left, 2x2 value icons right with pink cross | Home / values |
 | `Carousel` | Scroller with arrows and "read all" link (testimonials, team quotes, articles) | Home / testimonials, blog |
 | `ImageText` (+ `Framed`, `Collage`) | Text beside a tilted framed photo or a two-photo collage | Home / about us, Services / values |
 | `ProcessSection` (+ `ProcessSteps`) | Copy left, numbered steps right | Services / process |

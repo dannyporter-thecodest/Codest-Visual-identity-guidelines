@@ -25,6 +25,7 @@
 
 - [ ] No MUFG or Allegro, in any form. *(build, names only)*
 - [ ] No em dashes or en dashes. *(build)*
+- [ ] Plain characters only: no currency symbols, arrows, multiplication or copyright signs, or accented letters. *(build)*
 - [ ] No banned filler words. *(build, warning)*
 - [ ] Client named only if the source names them.
 

@@ -11,18 +11,18 @@ The layout rules for creatives are **proposed**, not documented from Figma: the 
 
 | Template | Size (px) | Default tone | Use |
 |---|---|---|---|
-| `social-square` | 1080 × 1080 | light | LinkedIn, Instagram, Meta feed posts |
-| `social-portrait` | 1080 × 1350 | light | Feed posts with a photo or more text (4:5) |
-| `story` | 1080 × 1920 | navy | Stories and Reels covers. Top 250px and bottom 340px are app UI |
-| `link-image` | 1200 × 627 | white | Shared links, Open Graph image, LinkedIn single-image ads |
-| `article-cover` | 1200 × 630 | pink | Blog and case study headers and their share image |
-| `event-promo` | 1080 × 1080 | navy | Webinar, meetup and event announcements |
-| `quote-card` | 1080 × 1080 | navy | Cleared client or employee quotes. Pink tone adds the gradient bar |
-| `linkedin-banner` | 1584 × 396 | navy | LinkedIn company page and employee profile background |
-| `email-header` | 1200 × 400 | light | Newsletter and campaign header (shown at 600 × 200) |
-| `ad-300x250` | 300 × 250 | light | Display medium rectangle |
-| `ad-728x90` | 728 × 90 | light | Display leaderboard |
-| `ad-300x600` | 300 × 600 | navy | Display half page |
+| `social-square` | 1080 x 1080 | light | LinkedIn, Instagram, Meta feed posts |
+| `social-portrait` | 1080 x 1350 | light | Feed posts with a photo or more text (4:5) |
+| `story` | 1080 x 1920 | navy | Stories and Reels covers. Top 250px and bottom 340px are app UI |
+| `link-image` | 1200 x 627 | white | Shared links, Open Graph image, LinkedIn single-image ads |
+| `article-cover` | 1200 x 630 | pink | Blog and case study headers and their share image |
+| `event-promo` | 1080 x 1080 | navy | Webinar, meetup and event announcements |
+| `quote-card` | 1080 x 1080 | navy | Cleared client or employee quotes. Pink tone adds the gradient bar |
+| `linkedin-banner` | 1584 x 396 | navy | LinkedIn company page and employee profile background |
+| `email-header` | 1200 x 400 | light | Newsletter and campaign header (shown at 600 x 200) |
+| `ad-300x250` | 300 x 250 | light | Display medium rectangle |
+| `ad-728x90` | 728 x 90 | light | Display leaderboard |
+| `ad-300x600` | 300 x 600 | navy | Display half page |
 
 Tones for every template: `light` (pale blue), `white`, `pink`, `peach`, `navy`. Fields and line limits per template are listed in `templates.json`.
 

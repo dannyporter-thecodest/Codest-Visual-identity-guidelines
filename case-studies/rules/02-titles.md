@@ -67,7 +67,7 @@ Simple and to the point, but every term stays exactly as the source writes it.
 
 | Old thecodest.co headline | New title |
 |---|---|
-| Enabled 60% faster occupancy tracking and saved €120K annually through an IoT office management platform | Estimote turned its sensor-based technology into a space management application |
+| Enabled 60% faster occupancy tracking and saved EUR 120K annually through an IoT office management platform | Estimote turned its sensor-based technology into a space management application |
 | Reduced operational costs by 38% and delivery time by 45% with a custom logistics platform | A major logistics company built a custom logistics platform to automate manual processes |
 
 In both, the old statistics move to Results unchanged.

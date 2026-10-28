@@ -26,7 +26,7 @@ Five things make something look like The Codest:
 
 ## 2. Logo
 
-**Files:** `design-system/assets/logo/the-codest-logo-black.svg` and `the-codest-logo-white.svg` (vector, 144 × 36 at 1x).
+**Files:** `design-system/assets/logo/the-codest-logo-black.svg` and `the-codest-logo-white.svg` (vector, 144 x 36 at 1x).
 
 The wordmark is THE C0DEST, with a zero for the O, over the strapline IN CODE WE TRUST in small spaced capitals.
 
@@ -36,7 +36,7 @@ The wordmark is THE C0DEST, with a zero for the O, over the strapline IN CODE WE
 | White | Navy, and dark photo heroes | #FFFFFF |
 
 - Use the files as they are. Never retype the wordmark, recolour it to pink or purple, add effects, or separate the strapline.
-- Size on the site: 144 × 36px in the desktop header, at the left content edge.
+- Size on the site: 144 x 36px in the desktop header, at the left content edge.
 - The file defines no minimum size or clear space. Recommended until the brand owners set one: no smaller than 96px wide (below that the strapline drops under 5px tall), and at least the strapline's height (about 8px at 1x) clear on every side. For smaller spaces there is no approved standalone mark.
 - Navy-coloured logo: not in the file. Do not create one.
 
@@ -72,7 +72,7 @@ The wordmark is THE C0DEST, with a zero for the O, over the strapline IN CODE WE
 | `pink-hover` | #CC085D | Hover and pressed state of every pink button, link, slider arrow and social button. White on it is 5.6:1 (passes AA) |
 | `state-disabled` | #E4E4E4 | Disabled buttons and inputs |
 | `state-error` | #D41515 | Input error message |
-| `gradient-brand` | #FF584D → #DE4AA2 → #B87CFF | The file's only gradient: the 6px bar on top of pull quotes and the band behind the areas-of-expertise graphic. Never for backgrounds, text or buttons |
+| `gradient-brand` | #FF584D -> #DE4AA2 -> #B87CFF | The file's only gradient: the 6px bar on top of pull quotes and the band behind the areas-of-expertise graphic. Never for backgrounds, text or buttons |
 
 ### How colour is used
 
@@ -136,7 +136,7 @@ The repository bundles Iosevka Heavy at standard width, because the Extended cut
 
 ### Mobile type (375px frames)
 
-Headings step down on phones: 46 → 32px, 36 → 26px, 28 → 22px, 22 → 18px. Body text 16 → 15px, intro 20 → 17px. Buttons, labels and small text keep their desktop size.
+Headings step down on phones: 46 -> 32px, 36 -> 26px, 28 -> 22px, 22 -> 18px. Body text 16 -> 15px, intro 20 -> 17px. Buttons, labels and small text keep their desktop size.
 
 ## 5. Layout and spacing
 
@@ -237,16 +237,16 @@ Two page templates (`design-system/templates/`) show how sections combine into a
 
 | Format | Size (px) | Use |
 |---|---|---|
-| Social post, square | 1080 × 1080 | LinkedIn, Instagram, Meta feed |
-| Social post, portrait | 1080 × 1350 | Feed posts with a photo or more text |
-| Story | 1080 × 1920 | Stories, Reels covers |
-| Link image | 1200 × 627 | Shared links, Open Graph, LinkedIn single-image ads |
-| Article and case study cover | 1200 × 630 | Blog and case study headers |
-| Event promo | 1080 × 1080 | Webinars, meetups, events |
-| Quote card | 1080 × 1080 | Cleared client or employee quotes |
-| LinkedIn banner | 1584 × 396 | Company page and employee profiles |
-| Email header | 1200 × 400 | Newsletters and campaigns |
-| Display ads | 300 × 250, 728 × 90, 300 × 600 | Google Display and programmatic |
+| Social post, square | 1080 x 1080 | LinkedIn, Instagram, Meta feed |
+| Social post, portrait | 1080 x 1350 | Feed posts with a photo or more text |
+| Story | 1080 x 1920 | Stories, Reels covers |
+| Link image | 1200 x 627 | Shared links, Open Graph, LinkedIn single-image ads |
+| Article and case study cover | 1200 x 630 | Blog and case study headers |
+| Event promo | 1080 x 1080 | Webinars, meetups, events |
+| Quote card | 1080 x 1080 | Cleared client or employee quotes |
+| LinkedIn banner | 1584 x 396 | Company page and employee profiles |
+| Email header | 1200 x 400 | Newsletters and campaigns |
+| Display ads | 300 x 250, 728 x 90, 300 x 600 | Google Display and programmatic |
 
 ### Composition
 

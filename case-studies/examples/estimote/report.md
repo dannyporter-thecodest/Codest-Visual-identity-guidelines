@@ -5,7 +5,7 @@ Source: https://thecodest.co/en/case-studies/scaling-iot-solutions-for-office-sp
 ## Statistics carried over
 
 - 60%
-- €120K
+- EUR 120K
 - 1M+
 - 30%
 - 10+
@@ -21,7 +21,7 @@ Source: https://thecodest.co/en/case-studies/scaling-iot-solutions-for-office-sp
 
 ## Questions for Delivery
 
-- Confirm the baseline and source for: 60% faster occupancy tracking, €120K saved annually, 1M+ data points daily, 30% fewer manual tasks, 10+ locations.
+- Confirm the baseline and source for: 60% faster occupancy tracking, EUR 120K saved annually, 1M+ data points daily, 30% fewer manual tasks, 10+ locations.
 - Confirm the three-month delivery timeline.
 
 ## Build
@@ -43,4 +43,4 @@ Source: https://thecodest.co/en/case-studies/scaling-iot-solutions-for-office-sp
 | Challenge | 159 |
 | Project description | 86 |
 | Approach | 94 |
-| Results | 66 |
+| Results | 67 |

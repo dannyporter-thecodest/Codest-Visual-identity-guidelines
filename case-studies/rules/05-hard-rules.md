@@ -10,6 +10,7 @@ The format copies TSH. These Codest rules apply on top and are never broken. The
 6. **Consent.** Name the client only if the source page names them. Otherwise use a factual descriptor and `About the client`.
 7. **Quotes are verbatim.** Copy the quote exactly, full length, with the name and role from the source. Never write, shorten, reword or combine quotes. *(checked against `report.source_quote`)*
 8. **No em dashes or en dashes** anywhere in the copy. *(checked by the build)*
-9. **Design system only.** Build the page with `templates/case-study-page.html` and `build.js`. Do not edit the template per case, add colours, or rebuild components. Follow `AGENT_GUIDE.md` at the repo root.
-10. **Photos.** Do not add photos or logos that are not supplied. Client logos need written consent.
-11. **Do not publish.** Output is for review and client sign-off. Nothing goes live on thecodest.co from this workflow.
+9. **Plain characters only (Cody's repository rule).** Files use plain ASCII text plus punctuation. No currency symbols (write EUR, GBP, USD), no x-style multiplication sign, arrows, copyright sign or accented letters. In page templates, put such characters in JavaScript strings as escapes (`\u00a9`). *(checked by the build)*
+10. **Design system only.** Build the page with `templates/case-study-page.html` and `build.js`. Do not edit the template per case, add colours, or rebuild components. Follow `AGENT_GUIDE.md` at the repo root.
+11. **Photos.** Do not add photos or logos that are not supplied. Client logos need written consent.
+12. **Do not publish.** Output is for review and client sign-off. Nothing goes live on thecodest.co from this workflow.

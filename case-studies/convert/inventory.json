@@ -13,7 +13,7 @@
     {
       "n": 2,
       "url": "https://thecodest.co/en/case-studies/scaling-iot-solutions-for-office-space-management/",
-      "current_headline": "Enabled 60% faster occupancy tracking and saved €120K annually through an IoT office management platform",
+      "current_headline": "Enabled 60% faster occupancy tracking and saved EUR 120K annually through an IoT office management platform",
       "status": "converted",
       "slug": "estimote",
       "notes": "Reference conversion: case-studies/examples/estimote/"
@@ -29,7 +29,7 @@
     {
       "n": 4,
       "url": "https://thecodest.co/en/case-studies/providing-a-team-of-ruby-developers-for-a-fintech-company/",
-      "current_headline": "Boosted cash flow by €2.5M and cut processing time by 67% with a secure invoice financing platform",
+      "current_headline": "Boosted cash flow by EUR 2.5M and cut processing time by 67% with a secure invoice financing platform",
       "status": "todo",
       "slug": null,
       "notes": ""
@@ -165,7 +165,7 @@
     {
       "n": 21,
       "url": "https://thecodest.co/en/case-studies/building-a-scalable-supply-chain-platform-for-global-operations/",
-      "current_headline": "Launched a global supply-chain platform in 5 months, enabling 3× volume growth",
+      "current_headline": "Launched a global supply-chain platform in 5 months, enabling 3x volume growth",
       "status": "todo",
       "slug": null,
       "notes": ""

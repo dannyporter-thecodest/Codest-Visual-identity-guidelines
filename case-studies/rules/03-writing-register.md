@@ -30,6 +30,7 @@ Not allowed: a new name, a new category ("platform" for an "application"), a bro
 - Facts stated plainly. If a sentence would need a fact the source does not have, leave the sentence out.
 - British English (organisation, programme, optimise).
 - No em dashes or en dashes. Use a comma, a colon or a new sentence.
+- Plain characters only: EUR not the euro sign, `x` not the multiplication sign, `->` or words not arrows, no accented letters (Cody's repository rule).
 - No exclamation marks.
 - No vague intensifiers: significantly, greatly, hugely, truly, incredibly.
 - No marketing filler: seamless, cutting-edge, state-of-the-art, game-changer, leverage, empower, top-notch, world-class, robust (unless technical and specific).

@@ -70,7 +70,7 @@
         "text": "across the client's office spaces."
       },
       {
-        "bold": "€120K saved annually",
+        "bold": "EUR 120K saved annually",
         "text": "through the IoT office management platform."
       },
       {
@@ -98,7 +98,7 @@
   "report": {
     "source_statistics": [
       "60%",
-      "€120K",
+      "EUR 120K",
       "1M+",
       "30%",
       "10+"
@@ -112,7 +112,7 @@
       "About, Project description and Approach are below the target length. The source has no further facts, so they were not padded."
     ],
     "questions_for_delivery": [
-      "Confirm the baseline and source for: 60% faster occupancy tracking, €120K saved annually, 1M+ data points daily, 30% fewer manual tasks, 10+ locations.",
+      "Confirm the baseline and source for: 60% faster occupancy tracking, EUR 120K saved annually, 1M+ data points daily, 30% fewer manual tasks, 10+ locations.",
       "Confirm the three-month delivery timeline."
     ]
   }

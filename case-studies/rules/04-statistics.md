@@ -4,7 +4,7 @@ The rule: **if the source case study has statistics, every one of them is shown.
 
 ## Where statistics come from
 
-Look in every part of the old page: the headline, the hero, the stats band, the results section, the FAQ and any callout. List every figure you find in `report.source_statistics` in `content.json`, written exactly as on the page (`60%`, `€120K`, `1M+`, `3×`, `from 5h to 23 min`).
+Look in every part of the old page: the headline, the hero, the stats band, the results section, the FAQ and any callout. List every figure you find in `report.source_statistics` in `content.json`, written exactly as on the page (`60%`, `EUR 120K`, `1M+`, `3x`, `from 5h to 23 min`).
 
 For new case studies, statistics come from section 6.1 of the intake form and need a before and after or a source (`../create/rules.md`).
 
@@ -24,11 +24,12 @@ Every statistic in `report.source_statistics` must appear in Results or the stat
 
 ## How to write them
 
-- Copy the figure exactly. Do not round, convert, combine or reword it (`€120K`, not `€120,000` or "over €100K").
+- Write currencies as their code: a source showing the euro sign becomes `EUR` (`EUR 120K`), the pound sign `GBP`, the dollar sign `USD`. Write the multiplication sign as `x` (`3x`). This is the only change allowed to a figure, because Cody's repository rejects these symbols.
+- Copy the figure exactly. Do not round, convert, combine or reword it (`EUR 120K`, not `EUR 120,000` or "over EUR 100K").
 - Keep the figure's meaning from the source. "60% faster occupancy tracking" stays about occupancy tracking.
 - Bold the figure and what it measures; follow with the context in plain text.
   - "**60% faster occupancy tracking** across the client's office spaces."
-  - "**€120K saved annually** through the IoT office management platform."
+  - "**EUR 120K saved annually** through the IoT office management platform."
 - A timeline from the source counts as a statistic: "**Delivered within three months,** from development to deployment, under pandemic deadlines."
 - Any figure in the title, hook or impact statement must also appear in Results. The build checks this.
 
@@ -43,4 +44,4 @@ Never write a vague result ("significantly improved efficiency"). Either a figur
 
 ## Flag for Delivery
 
-Most old statistics have no visible baseline or source. Keep them, and add one line to `report.questions_for_delivery`: "Confirm the baseline and source for: 60%, €120K, ...". The case study goes to the client for sign-off, which is where they are confirmed.
+Most old statistics have no visible baseline or source. Keep them, and add one line to `report.questions_for_delivery`: "Confirm the baseline and source for: 60%, EUR 120K, ...". The case study goes to the client for sign-off, which is where they are confirmed.

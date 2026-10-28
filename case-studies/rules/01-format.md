@@ -20,7 +20,7 @@ Nothing else goes on the page. When converting, the old pages' Partnership goal,
 
 ## Page layout
 
-Navy hero (category tag, title, stats figure) → problem hook and impact statement → About → Challenge → stats band → Project description → Approach → Results → Client's opinion → other case studies → closing CTA band → footer.
+Navy hero (category tag, title, stats figure) -> problem hook and impact statement -> About -> Challenge -> stats band -> Project description -> Approach -> Results -> Client's opinion -> other case studies -> closing CTA band -> footer.
 
 There is no table of contents and no tab bar. `templates/case-study-page.html` already builds this layout; do not change it per case study.
 

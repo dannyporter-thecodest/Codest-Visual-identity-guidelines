@@ -41,8 +41,8 @@ function range(name, s, min, max, level) {
   if (n < min || n > max) (level === "error" ? err : warn)(`${name}: ${n} words (target ${min} to ${max})`);
   return n;
 }
-// figures like 60%, €120K, 1M+, 10+, 3×, 5h, 23 min. Ignores numbers inside words (COVID-19).
-const FIG = /(?<![\w-])[€$£]?\d[\d.,]*(?:\s?(?:%|×|x\b|K\b|M\b|k\b|h\b))?\+?(?![\w-])/g;
+// figures like 60%, EUR 120K, 1M+, 10+, 3x, 5h, 23 min. Ignores numbers inside words (COVID-19).
+const FIG = /(?<![\w-])[\u20ac$\u00a3]?\d[\d.,]*(?:\s?(?:%|\u00d7|x\b|K\b|M\b|k\b|h\b))?\+?(?![\w-])/g;
 const figures = (s) => (String(s || "").match(FIG) || []).map((f) => f.trim());
 
 // ---------- required fields ----------
@@ -69,12 +69,15 @@ const copy = Object.entries(texts).filter(([k]) => k !== "quote");
 
 // ---------- hard rules ----------
 for (const [k, v] of Object.entries(texts)) {
-  if (/[—–]/.test(v)) err(`${k}: contains an em dash or en dash`);
+  if (/[\u2014\u2013]/.test(v)) err(`${k}: contains an em dash or en dash`);
 }
 const blob = JSON.stringify(d);
 if (/\bMUFG\b|Mitsubishi UFJ/i.test(blob)) err("Blocked client: MUFG is mentioned. Stop: mark the case 'blocked' (convert/inventory.json) or tell Danny.");
 if (/\ballegro\b/i.test(blob)) err("Blocked client: Allegro is mentioned. Stop: mark the case 'blocked' (convert/inventory.json) or tell Danny.");
 
+// Cody's repository accepts ASCII plus Unicode punctuation only (no symbols, accented letters or em dash).
+const codyBad = [...new Set([...blob].filter((c) => c.charCodeAt(0) > 127 && !/\p{P}/u.test(c)))];
+if (codyBad.length) err(`Characters Cody's repository rejects: ${codyBad.map((c) => "U+" + c.codePointAt(0).toString(16).toUpperCase().padStart(4, "0")).join(", ")}. Write EUR/GBP/USD for currency, x for multiplication, plain letters (rules/05-hard-rules.md)`);
 for (const [k, v] of copy) if (/!/.test(v)) warn(`${k}: exclamation mark`);
 const FILLER = ["significantly", "greatly", "hugely", "incredibly", "truly", "seamless", "seamlessly", "cutting-edge", "state-of-the-art", "game-changer", "game-changing", "leverage", "empower", "top-notch", "world-class", "awesome", "in about", "roughly", "revolutionis", "revolutioniz"];
 for (const [k, v] of copy) for (const f of FILLER) if (new RegExp("\\b" + f, "i").test(v)) warn(`${k}: uses "${f}" (rules/03-writing-register.md)`);
@@ -88,8 +91,8 @@ if (titleLines > 3) err(`Title: ${titleLines} lines at desktop width (max 3). Ma
 if (/\bThe Codest\b/i.test(d.title)) err("Title: The Codest must not be named in the title");
 const OUTCOME = /^(reduced|reduces|reduce|increased|increases|boosted|cut|cuts|saved|improved|enabled|delivered|deployed|launched|scaled|automated|augmented|expanded|unified|accelerated)\b/i;
 if (/\b(helped|helps|in order to|which|that)\b/i.test(d.title)) warn("Title: wordy phrasing (helped, in order to, which, that). Use a strong verb (rules/02-titles.md)");
-if (/^[€$£]?\d/.test(d.title.trim()) || OUTCOME.test(d.title.trim())) err("Title: must start with the client or a descriptor, not a number or an outcome verb. Name what was built (rules/02-titles.md)");
-if (/\d[\d.,]*\s?%|\bby\s+[€$£]?\d|\bfrom\s+[€$£]?\d[^\s]*\s+to\b|[€$£]\d/i.test(d.title)) err("Title: a statistic is the point of the title. Move it to Results and name what was built instead (rules/02-titles.md)");
+if (/^[\u20ac$\u00a3]?\d/.test(d.title.trim()) || OUTCOME.test(d.title.trim())) err("Title: must start with the client or a descriptor, not a number or an outcome verb. Name what was built (rules/02-titles.md)");
+if (/\d[\d.,]*\s?%|\bby\s+[\u20ac$\u00a3]?\d|\bfrom\s+[\u20ac$\u00a3]?\d[^\s]*\s+to\b|[\u20ac$\u00a3]\d/i.test(d.title)) err("Title: a statistic is the point of the title. Move it to Results and name what was built instead (rules/02-titles.md)");
 if (d.client.named && d.client.name && !d.title.includes(d.client.name)) warn("Title: does not start with or include the client's name");
 range("Problem hook", d.problem_hook, 20, 35);
 range("Impact statement", d.impact_statement, 20, 35);
