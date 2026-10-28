@@ -13,7 +13,7 @@ For Cody and any other AI agent working in this repository. Read this file befor
 | A page structure | `design-system/templates/` | Start from a blank file |
 | A case study | `case-studies/README.md`, its `rules/` and the Estimote example | Write one from the landing or service template |
 | A social post, ad, banner, cover or email header | `creatives/` (templates, `render.js`, `templates.json`) | Design an image from scratch |
-| What it should look like | `design-system/reference/*.png` (screenshots of every Figma page) | Copy the text in them |
+| What it should look like | `design-system/templates/` and `design-system/examples.html` (the Figma page screenshots are archived outside this folder) | Copy the placeholder text in them |
 | Logo, icons, textures, graphics | `design-system/assets/` | Redraw, retype or approximate any of them |
 | Every file, machine-readable | `manifest.json` | |
 | Words, claims, client names | The Codest content guide | Copy text from the Figma mockups |
@@ -26,7 +26,7 @@ If two sources disagree, `tokens.json` wins for values and `guidelines.md` wins 
 2. **Set `assetBase`** in the copied file so the logo and icons load from wherever `design-system/assets/` sits relative to the new page.
 3. **Keep the section order** unless the brief asks for a change. To add or swap a section, use a component from the Sections table in `design-system/README.md`. Alternate section tones (white, then a tint, then white); navy is for a few bands only.
 4. **Fill content.** Replace every `[bracketed placeholder]` with copy from the content guide. Numbers need a claims-register entry. Use real photos if the brief supplies them; otherwise leave the grey placeholders and say so.
-5. **Compare.** Render the page at 1440px and 375px wide. Put it next to `reference/home.png` (or `service-detail.png`) and check spacing, colour, type and the offset outlines match. Fix differences before handing back.
+5. **Compare.** Render the page at 1440px and 375px wide. Put it next to the matching template (`templates/landing-page.html` or `service-page.html`) and `examples.html`, and check spacing, colour, type and the offset outlines match. Fix differences before handing back.
 6. **Report** what you used, what you left as placeholder, and anything the system did not cover.
 
 ## How to make a case study
@@ -66,7 +66,7 @@ For other non-web output (slides, documents): use the same tokens, the logo file
 - [ ] Pink text only on white; text contrast at least 4.5:1 elsewhere.
 - [ ] Logo is the supplied file, correct version for the background.
 - [ ] Icons, textures and graphics come from `design-system/assets/`.
-- [ ] Pages: checked at 1440px and 375px against the matching `reference/` screenshot.
+- [ ] Pages: checked at 1440px and 375px against the matching template.
 - [ ] Images: rendered with `creatives/render.js` with no WARN, and looked at.
 - [ ] No mockup copy, unsourced numbers, client names or quotes.
 - [ ] Anything the guidelines do not cover is listed for a human to decide.

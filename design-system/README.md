@@ -21,7 +21,6 @@ components/
 templates/
   landing-page.html      Reference landing page (Home structure), built only from the system
   service-page.html      Reference service/campaign page (Services/PHP structure)
-reference/               Screenshots of 19 Figma pages: the visual target to compare against
 examples.html            Every component rendered on one page
 ```
 
@@ -29,7 +28,7 @@ examples.html            Every component rendered on one page
 
 1. Start from a template in `templates/`. Copy it, keep the section order unless the brief says otherwise, change content only.
 2. Need a different section? Pick it from the Sections table below. Do not build a new one if one exists.
-3. Compare the result with the matching screenshot in `reference/` before handing it over.
+3. Compare the result with the matching template before handing it over.
 
 Every page loads these, in this order:
 
@@ -152,7 +151,7 @@ Photography is not included: the Figma file uses real team and product photos th
 
 ## Reference screenshots
 
-`reference/` holds a screenshot of every main page in the Figma file: home, home-mobile, mobile-menu, services, service-detail, case-studies, case-study-detail, blog, blog-article, webinars, meetups, resources, resource-download, careers, job-detail, about-us, our-team, contact, know-how. Use them as the visual target. Do not copy their text: it is mockup copy and breaks the content guide.
+The screenshots of every main Figma page are archived in `archive/design-system-reference/` in the source repository (`dannyporter-thecodest/Codest-Visual-identity-guidelines`). They are not needed to build pages.
 
 ## Accessibility
 

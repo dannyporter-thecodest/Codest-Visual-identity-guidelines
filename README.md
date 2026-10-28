@@ -5,7 +5,7 @@ The Codest's **Visual Identity Guidelines** and **Design System**, documented fr
 | | What | Start here |
 |---|---|---|
 | Visual Identity Guidelines | The rules: logo, colour, states, type, layout, the offset outline, icons, waves and orbs, imagery, known issues | `visual-identity/guidelines.md` |
-| Design System | The build kit: tokens, fonts, logo, icons, textures, graphics, 70 components, 2 page templates, 19 reference screenshots | `design-system/README.md` |
+| Design System | The build kit: tokens, fonts, logo, icons, textures, graphics, 70 components, 2 page templates | `design-system/README.md` |
 | Creatives | Image templates for social posts, stories, ads, link images, covers, banners and email headers, with a render script | `creatives/README.md` |
 | Case studies | The case study format (based on TSH), shared rules, page template and build script, plus two workflows: converting old case studies, and creating new ones from Delivery's intake form | `case-studies/README.md` |
 | AI agents (Cody) | How to build a page, the rules that are easy to break, a pre-delivery checklist | `AGENT_GUIDE.md` |
@@ -33,7 +33,6 @@ design-system/
   README.md
   examples.html                  every component on one page
   templates/   landing-page.html, service-page.html
-  reference/   screenshots of every Figma page
   tokens/      tokens.json, tokens.css, build_tokens_css.py
   fonts/       Iosevka, Fira Sans, licences
   assets/      logo/, icons/, patterns/, graphics/
@@ -42,7 +41,7 @@ design-system/
 
 ## Quick start
 
-To make a page, copy `design-system/templates/landing-page.html`, set `assetBase`, and replace the bracketed placeholders. Open it in a browser next to `design-system/reference/home.png`.
+To make a page, copy `design-system/templates/landing-page.html`, set `assetBase`, and replace the bracketed placeholders. Open it in a browser and compare it with the template it came from.
 
 To make an image, pick a format in `creatives/templates.json` and run `node creatives/render.js social-square content.json --out post.png` (setup in `creatives/README.md`).
 
@@ -72,3 +71,7 @@ Plain HTML without React works too:
 ## Keeping it current
 
 Change values in `design-system/tokens/tokens.json`, then run `python3 design-system/tokens/build_tokens_css.py`. If the Figma file changes, update tokens first, then components, then the guidelines. When a PDF is needed, print `visual-identity/guidelines-print.html` to PDF (A4 landscape, backgrounds on); the PDF is not kept in the repository.
+
+## Archive
+
+`archive/` keeps files that are not needed to build anything: the 19 screenshots of the Figma pages (`archive/design-system-reference/`) and the 18 rendered creative examples (`archive/creatives-examples/`). They are kept here so they can be re-added later, and are not moved into Cody's repository. See `archive/README.md`.

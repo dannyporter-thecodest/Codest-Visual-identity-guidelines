@@ -104,7 +104,10 @@
     "case-studies/create/delivery-intake.md": "The form Delivery fills in about the project and client",
     "case-studies/create/rules.md": "Rules for new case studies: intake as source, field-to-section map, consent, gaps and questions",
     "case-studies/create/example-intake.md": "A completed intake form (Estimote facts) and what Cody does with it",
-    "case-studies/create/CODY_TASK.md": "Prompt for Cody to create a case study from a completed intake form"
+    "case-studies/create/CODY_TASK.md": "Prompt for Cody to create a case study from a completed intake form",
+    "archive/README.md": "Files kept for later, not needed to build anything; not moved into Cody's repository",
+    "archive/design-system-reference/": "Screenshots of 19 Figma pages (archived)",
+    "archive/creatives-examples/": "18 rendered creative examples (archived; render.js recreates them)"
   },
   "icons": {
     "path": "design-system/assets/icons/",
@@ -222,7 +225,7 @@
     "No photography bundled"
   ],
   "reference": {
-    "path": "design-system/reference/",
+    "path": "archive/design-system-reference/",
     "files": [
       "about-us.png",
       "blog-article.png",
@@ -244,7 +247,7 @@
       "services.png",
       "webinars.png"
     ],
-    "note": "Screenshots of the Figma pages. Visual target only; their copy is mockup text and must not be reused."
+    "note": "Archived: not needed to build pages; kept in the source repository only"
   },
   "creatives": {
     "path": "creatives/templates/",

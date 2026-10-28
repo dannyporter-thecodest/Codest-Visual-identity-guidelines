@@ -4,8 +4,6 @@ Fixed-size image templates for social posts, ads, link previews, covers, banners
 
 The layout rules for creatives are **proposed**, not documented from Figma: the Figma file is a website and has no creative examples. They apply the existing identity to each format and need sign-off from the brand owner. See section 12 of `../visual-identity/guidelines.md`.
 
-![Social formats](examples/overview-social.png)
-![Wide formats](examples/overview-wide.png)
 
 ## Formats
 
@@ -65,7 +63,7 @@ To preview in a browser: open a template with URL parameters, e.g. `templates/so
 | `fill.js` | Fills a template from JSON or URL parameters |
 | `render.js` | Renders templates to PNG and checks copy length |
 | `templates.json` | Machine-readable list: sizes, fields, line limits, use |
-| `examples/` | Every template rendered with placeholder copy, plus `examples.json` |
+| `examples/` | `examples.json`: renders every template with placeholder copy (`--batch`). The rendered PNGs are archived in the source repository's `archive/creatives-examples/` |
 
 ## Rules in short
 
