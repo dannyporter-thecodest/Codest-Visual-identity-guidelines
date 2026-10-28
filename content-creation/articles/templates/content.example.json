@@ -14,11 +14,6 @@
     "name": "",
     "role": ""
   },
-  "reviewer": {
-    "name": "",
-    "role": "",
-    "linkedin": ""
-  },
   "published": "YYYY-MM-DD",
   "updated": "YYYY-MM-DD",
   "review_by": "YYYY-MM-DD",
@@ -42,7 +37,7 @@
       ],
       "takeaway": "",
       "based_on": [
-        "expert"
+        "src:<id>"
       ]
     },
     {
@@ -73,6 +68,7 @@
         ""
       ],
       "based_on": [
+        "src:<id>",
         "case:<slug>"
       ]
     },
@@ -93,7 +89,7 @@
         ""
       ],
       "based_on": [
-        "general"
+        "codest:https://thecodest.co/en/services/<page>/"
       ]
     }
   ],
@@ -103,6 +99,14 @@
     "",
     ""
   ],
+  "information_gain": {
+    "type": "table",
+    "description": "",
+    "built_from": [
+      "src:<id>",
+      "src:<id>"
+    ]
+  },
   "related_questions": [
     {
       "question": "?",
@@ -131,10 +135,19 @@
       "title": "",
       "url": "",
       "date": "",
-      "accessed": "YYYY-MM-DD"
+      "accessed": "YYYY-MM-DD",
+      "type": "data"
+    },
+    {
+      "id": "",
+      "publisher": "",
+      "title": "",
+      "url": "",
+      "date": "",
+      "accessed": "YYYY-MM-DD",
+      "type": "data"
     }
   ],
-  "expert_input": "expert-input.md",
   "brief": "brief.md",
   "meta": {
     "audience_group": "3",
@@ -143,9 +156,7 @@
   },
   "report": {
     "claim_ids": {},
-    "quotes_to_approve": [],
-    "quotes_approved": false,
-    "questions_for_reviewer": [],
+    "open_questions": [],
     "self_check": {},
     "notes": ""
   }

@@ -1,10 +1,12 @@
 # Articles
 
-Everything Cody (or any AI agent) needs to write The Codest's blog articles in one format, built for search (SEO) and for AI answers (AEO/GEO), and to build each one as a page in the design system.
+Everything Cody needs to create The Codest's blog articles on its own, each week, with no input from people: finding the topic, researching it, writing it, and building it as a page in the design system. The articles are built for search (SEO) and for AI answers (AEO/GEO).
 
-**What the blog is for:** bringing buyers from our ICP to the website and moving them towards a conversation. Every article answers one question a buyer asks while deciding whether to bring in outside help. It is measured by conversations, not page views.
+This workflow **creates** articles. It does not publish them. Publishing is handled by a separate workflow.
 
-**The format:** answer articles, following The Software House's (tsh.io) blog, with additions from Modeso, Netguru and Zuehlke. The answer comes first, in the lead and under every question heading. First-hand input from a Codest engineer is required, so each article says something competitors cannot copy.
+**What the blog is for:** bringing buyers from our ICP to the website and moving them towards a conversation. Every article answers one question a buyer asks while deciding whether to bring in outside help.
+
+**The format:** answer articles, following The Software House's (tsh.io) blog, with additions from Modeso, Netguru and Zuehlke. The answer comes first, in the lead and under every question heading. Substance comes from independent primary sources, The Codest's own public material (case studies, service pages, published posts), and an information gain element: something the article adds that none of its sources has on its own.
 
 ## Two categories, one format
 
@@ -16,16 +18,16 @@ Everything Cody (or any AI agent) needs to write The Codest's blog articles in o
 
 Details: `rules/01-categories-and-topics.md`.
 
-## Workflow
+## The weekly run
 
-1. **Pick the question.** From sales calls, Search Console or the topic areas. Check `topics.json` for anything close.
-2. **Write the brief** (`templates/brief.md`). Marketing approves it. Add the topic to `topics.json` with `status: brief`.
-3. **Get the expert input** (`templates/expert-input.md`). Written answers or a 10 to 15 minute call with the engineer or Delivery lead who will review the article.
-4. **Cody writes `content.json`** following the rules and `templates/content.schema.json`, and runs the build.
-5. **Fix every error.** Fix or explain every warning. Answer the self-check (`rules/08-checks.md`).
-6. **Review.** The reviewer checks the facts and approves any quotes. Marketing edits and runs the publishing path (`messaging-guidelines/06-publishing.md`).
-7. **Publish** (people, not Cody). The web team follows the checklist in `report.md`. Update `topics.json` to `published`.
-8. **Review on the `review_by` date.** Every 12 months, or 6 for regulated finance and AI articles.
+The prompt is in `CODY_TASK.md`.
+
+1. **Refresh or research.** If a published article is past its `review_by` date, refresh it. Otherwise collect 6 to 10 candidate questions, score them and pick the best (`rules/09-weekly-topic-research.md`). If nothing scores high enough, there is no article that week, and Cody says why.
+2. **Brief.** Cody fills in `templates/brief.md` and registers the topic in `topics.json`.
+3. **Research.** 2 to 5 primary sources from at least 2 publishers, opened and read, plus the public Codest material that fits.
+4. **Write.** `content.json`, following the rules and `templates/content.schema.json`.
+5. **Build and check.** Fix every error, fix or explain every warning, answer the 14 self-check items (`rules/08-checks.md`).
+6. **Hand over.** The finished article in `output/<slug>/`, ready for the publishing workflow.
 
 ## Rules (read in this order)
 
@@ -35,46 +37,48 @@ Details: `rules/01-categories-and-topics.md`.
 | 2 | `rules/02-format.md` | Sections, order, word counts, links, page layout |
 | 3 | `rules/03-titles-and-headings.md` | Question titles, question H2s, the first sentence under each heading |
 | 4 | `rules/04-seo.md` | Queries, meta title and description, slug, structured data, technical requirements |
-| 5 | `rules/05-aeo-geo.md` | Being the answer AI assistants quote: format, first-hand substance, freshness, what not to do |
-| 6 | `rules/06-sources-and-claims.md` | Outside sources, claims about The Codest, first-hand views and quotes |
+| 5 | `rules/05-aeo-geo.md` | Being the answer AI assistants quote: format, evidence, information gain, freshness, what not to do |
+| 6 | `rules/06-sources-and-claims.md` | Outside sources, public Codest material, claims, no invented experience |
 | 7 | `rules/07-hard-rules.md` | Rules that are never broken |
-| 8 | `rules/08-checks.md` | The self-check before handing anything back |
+| 8 | `rules/08-checks.md` | The self-check before handing an article over |
+| 9 | `rules/09-weekly-topic-research.md` | How Cody finds and scores the week's topic |
 
-Voice and claims come from `messaging-guidelines/` (04-voice.md, 05-claims.md). These rules add to them and never override them.
+Voice and claims come from `messaging-guidelines/` (02-icp.md, 04-voice.md, 05-claims.md). These rules add to them and never override them.
 
 ## Outcomes: what every article must produce
 
 One folder `content-creation/articles/output/<slug>/` with:
 
-| File | What it is | Who uses it |
-|---|---|---|
-| `brief.md` | The approved brief | Marketing |
-| `expert-input.md` | The engineer's answers, as given | Proof of every first-hand view |
-| `content.json` | The article as data (`templates/content.schema.json`) | Input to the build |
-| `article.md` | The article as plain text, with the SEO fields on top | Review, CMS entry |
-| `page.html` | The article page built from the design system. The article is plain HTML, readable without JavaScript, with JSON-LD | Web team, review |
-| `report.md` | Publication status, search fields, SEO and AEO/GEO checks, sources, claims, quotes to approve, questions for the reviewer, self-check, web team checklist, AI citation log | Danny, reviewer, web team |
+| File | What it is |
+|---|---|
+| `brief.md` | The topic, its scores, rejected candidates, the evidence plan |
+| `content.json` | The article as data (`templates/content.schema.json`) |
+| `article.md` | The article as plain text, with the SEO fields on top, ready to paste into a CMS |
+| `page.html` | The article page built from the design system. The article is plain HTML, readable without JavaScript, with JSON-LD |
+| `report.md` | Status, search fields, SEO and AEO/GEO checks, sources, claims, self-check, checklist for the live page, AI citation log |
 
-Cody writes `brief.md` (if asked), `content.json` and copies `expert-input.md`. The build generates the rest:
+Cody writes `brief.md` and `content.json`. The build generates the rest:
 
 ```
 node content-creation/articles/build.js content-creation/articles/output/<slug>/content.json --shot
 ```
 
-An article is **ready for review** when the build reports 0 errors, every warning is fixed or explained, and the self-check is answered. It is **ready to publish** only when `report.md` says `Publication: ready for review` (no blockers) and the publishing path approvals are done.
+An article is **finished** when the build reports 0 errors, every warning is fixed or explained, and the self-check is answered. `report.md` then says `Status: finished`.
 
 ## What the build checks
 
 Over 100 checks, including:
-- the title is a question with the primary query
-- the lead is 40 to 70 words
+- the title is a question with the primary query, and the lead is 40 to 70 words
 - every H2 is a question answered in its first 20 to 45 words, with no scene-setting or back-references
 - the TL;DR, exactly one table, paragraph length
 - meta title and description length, the slug, keyword stuffing
 - 3 to 6 internal links, including the category's service page
-- dated primary sources only, with no competitor blogs or US sources
-- at least two sections resting on first-hand input or a case study
-- named author and reviewer, `review_by` within 6 or 12 months
+- evidence:
+  - 2 to 5 primary sources from at least 2 publishers, with no competitor blogs or US sources
+  - at least three sections resting on sources, and one on public Codest material
+  - an information gain element built from at least 2 sources or cases
+- no invented experience ("in our experience" without a public Codest source)
+- a named author, and `review_by` within 6 or 12 months
 - near-duplicate titles against `topics.json`, and the 2:1 category balance
 - blocked clients, the US market, avoid-list words, em and en dashes, and characters Cody's repository rejects
 
@@ -83,16 +87,15 @@ Over 100 checks, including:
 ```
 articles/
   README.md                this file
-  CODY_TASK.md             the prompt to give Cody
+  CODY_TASK.md             the weekly prompt for Cody
   build.js                 checks content.json and builds article.md, page.html, report.md
-  topics.json              register of every topic, plus site URLs and blocked source domains
-  rules/                   01 to 08
+  topics.json              register of every topic, plus site URLs, default author and blocked source domains
+  rules/                   01 to 09
   templates/
-    brief.md               the article brief
-    expert-input.md        the questions for the engineer
+    brief.md               the article brief (Cody fills it in)
     content.schema.json    the shape of content.json
     content.example.json   a blank to start from
     article-page.html      the page template
-  examples/hire-or-extend-engineering-team/   a test article (blocked: no expert input yet)
+  examples/hire-or-extend-engineering-team/   a finished test article
   output/<slug>/           one folder per article
 ```

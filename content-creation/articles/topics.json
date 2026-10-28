@@ -1,9 +1,14 @@
 {
-  "_about": "Register of every article idea, draft and published article. The build reads it to block near-duplicate titles and to check the 2:1 category balance. Add a row when a brief is approved; update status when the article moves on. status: idea | brief | draft | review | published | retired.",
+  "_about": "Register of every article idea and article. The build reads it to block near-duplicate titles and to check the 2:1 category balance. Cody adds a row during weekly topic research and updates the status. status: idea | brief | finished | published | retired. Add review_by for published articles so the weekly run can refresh them.",
   "site": {
     "_note": "article_base is the assumed blog URL pattern. Confirm it with the web team before the first article goes live.",
     "origin": "https://thecodest.co",
     "article_base": "https://thecodest.co/en/blog/",
+    "default_author": {
+      "_note": "Byline used when the brief names no other author. Confirm who should be named on automated articles.",
+      "name": "Danny Porter",
+      "role": "AI Marketing Automation Specialist, The Codest"
+    },
     "service_pages": {
       "buyer-questions": [
         "https://thecodest.co/en/services/staff-augmentation/",
@@ -65,7 +70,7 @@
       "title": "Should you hire in-house or extend your engineering team?",
       "category": "buyer-questions",
       "topic_area": "capacity",
-      "status": "draft"
+      "status": "finished"
     },
     {
       "slug": "first-30-days-external-engineering-team",

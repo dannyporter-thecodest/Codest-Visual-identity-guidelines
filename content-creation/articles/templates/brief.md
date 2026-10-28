@@ -1,6 +1,6 @@
 # Article brief
 
-Marketing fills this in (Cody can draft it). Approve it before Cody writes the article. Save it as `content-creation/articles/output/<slug>/brief.md` and add the topic to `content-creation/articles/topics.json` with `status: brief`.
+Cody fills this in during weekly topic research (`rules/09-weekly-topic-research.md`). Save it as `content-creation/articles/output/<slug>/brief.md` and add the topic to `content-creation/articles/topics.json` with `status: brief`.
 
 ## The question
 
@@ -10,8 +10,27 @@ Marketing fills this in (Cody can draft it). Approve it before Cody writes the a
 | Category | buyer-questions / ai-in-industry |
 | Topic area | capacity / vendor-choice / delivery-handover / regulated-finance / modernisation / ai-in-industry |
 | Industry (category 2: required) | fintech / payments / digital-banking / marketplaces / internet / saas / all |
-| Where the question came from | sales call (who, when) / Search Console / keyword tool / topic list |
+| Where the question came from | search results / forum (link) / regulator news (link) / topics.json idea / given by a person |
 | Closest existing articles in topics.json, and why this one is different | |
+
+## Scores (rules/09-weekly-topic-research.md)
+
+| Criterion | Score (0 to 2) | Why |
+|---|---|---|
+| ICP fit | | |
+| Business link | | |
+| Evidence available | | |
+| Information gain | | |
+| Demand signal | | |
+| Our proof | | |
+| Freshness | | |
+| **Total (minimum 9 of 14)** | | |
+
+**Candidates not chosen this week, and why:**
+
+| Question | Total | Missing |
+|---|---|---|
+| | | |
 
 ## The buyer
 
@@ -30,19 +49,19 @@ Marketing fills this in (Cody can draft it). Approve it before Cody writes the a
 |---|---|
 | Primary query (2 to 6 words) | |
 | Secondary queries (2 to 5) | |
-| Search volume and difficulty, if known | |
+| Search volume and difficulty | not available / from <tool> |
 | Follow-up questions the buyer would ask next (3 to 6) | |
-| What the top results and AI answers say today, and what they miss | |
+| What the top 5 results say | |
+| What they miss or get wrong | |
 
-## Proof
+## Evidence
 
 | Field | Answer |
 |---|---|
-| Expert or reviewer (name, role) | |
-| Expert input received? (`expert-input.md`) | yes / requested on <date> |
-| Related live case study | |
-| Claims register IDs we may use | |
-| Outside sources to check (regulator, statistics, research) | |
+| Outside primary sources (at least 2 publishers), opened and read | |
+| Public Codest material (case study, service page, published post) | |
+| Claims register IDs needed | |
+| Planned information gain (table, checklist, framework, comparison) and what it is built from | |
 
 ## Links and CTA
 

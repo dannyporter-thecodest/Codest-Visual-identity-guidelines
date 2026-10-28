@@ -38,9 +38,9 @@ Not added:
 - `FAQPage`: Google only shows FAQ rich results for well-known government and health sites (since August 2023). The "Related questions" section is plain HTML, which AI systems read anyway.
 - Any "AI-specific" markup or files (llms.txt and similar): Google says it gives them no special treatment. Leave them out of the article workflow. A site-wide decision on llms.txt belongs to the web team.
 
-## Technical requirements for the web team
+## Technical requirements for the live page
 
-The report repeats these so they are checked when the article goes live:
+These are for whatever workflow publishes the article. The report repeats them so they are not lost:
 
 1. **The article text is in the HTML the server sends.** Not inserted by JavaScript after load. The page Cody builds already works this way. Check that the WordPress theme does too.
 2. **Indexable:** no `noindex`, the URL is in the XML sitemap, the canonical points to itself.

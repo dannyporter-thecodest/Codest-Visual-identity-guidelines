@@ -1,12 +1,8 @@
 # Test article: Should you hire in-house or extend your engineering team?
 
-A test of the ruleset, not an approved article. It passes the build with 0 errors. Publication is **blocked by design**:
+A finished test of the ruleset, written without input from people. The build reports 0 errors and `Status: finished`. One warning remains on purpose: search volume for the primary query has not been checked, because no keyword tool or Search Console is connected.
 
-- there is no expert input yet, so two sections rest on public case studies and the rest on general knowledge
-- the reviewer is not confirmed
-- the primary query's search volume has not been checked
-
-To finish it: send `../../templates/expert-input.md` to a Delivery lead, add their answers as `expert-input.md`, rewrite the sections that rest on `general` with their first-hand view, and rebuild.
+Evidence: Eurostat, Statistics Austria and Austria's Financial Market Authority (FMA), plus two public Codest case studies and two service pages.
 
 Rebuild:
 

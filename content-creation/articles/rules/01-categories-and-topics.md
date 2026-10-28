@@ -65,9 +65,6 @@ Google treats many near-identical pages made for search variations as scaled con
 
 ## Choosing the next topic
 
-Use, in this order:
-1. Questions buyers actually asked, from sales calls and the Business Growth & Partnerships Lead.
-2. Search Console queries that already bring ICP visitors (not in the repository yet; ask Marketing).
-3. The topic areas above.
+Cody picks the topic itself each week, following `09-weekly-topic-research.md`: refresh anything due for review first, then collect candidate questions, score them, and pick the best one that clears the minimum. If someone gives Cody a question directly, it still checks it against the same scores and `topics.json`.
 
-Record the source of the question in the brief (`templates/brief.md`).
+Record where the question came from, and its scores, in the brief (`templates/brief.md`).

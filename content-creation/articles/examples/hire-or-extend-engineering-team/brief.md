@@ -8,8 +8,23 @@
 | Category | buyer-questions |
 | Topic area | capacity |
 | Industry | all |
-| Where the question came from | topic list (rules/01-categories-and-topics.md). Not yet confirmed by a sales call or Search Console |
+| Where the question came from | topics.json idea (rules/01-categories-and-topics.md). Used to test the ruleset, not picked by a weekly run |
 | Closest existing articles in topics.json, and why this one is different | "What should the first 30 days with an external engineering team look like?" comes after this decision. This article is the decision itself |
+
+## Scores (rules/09-weekly-topic-research.md)
+
+| Criterion | Score (0 to 2) | Why |
+|---|---|---|
+| ICP fit | 2 | Group 3, CTO/VP Eng, trigger: slipping roadmap or failed hire |
+| Business link | 2 | Leads to Staff Augmentation and Product Development |
+| Evidence available | 2 | Eurostat, Statistics Austria and Austria's FMA, opened and read |
+| Information gain | 2 | A comparison of three models with hiring data, DORA exit plan practice and two cases |
+| Demand signal | 1 | Not checked against search results or forums for this test |
+| Our proof | 2 | SupplierPlus and the logistics platform case studies |
+| Freshness | 1 | Evergreen |
+| **Total (minimum 9 of 14)** | **12** | |
+
+**Candidates not chosen this week, and why:** not applicable (test article).
 
 ## The buyer
 
@@ -28,19 +43,19 @@
 |---|---|
 | Primary query | extend engineering team |
 | Secondary queries | team extension vs hiring; hire developers in-house; hard to fill engineering roles |
-| Search volume and difficulty | Not checked yet |
+| Search volume and difficulty | not available |
 | Follow-up questions | Why is hiring slow? When is extension right? When is hiring right? How do the options compare? What are the risks? Is it cheaper? Can they work in our process? |
-| What the top results and AI answers say today, and what they miss | Not checked yet. To do before publication |
+| What the top 5 results say | Not checked for this test |
+| What they miss or get wrong | Not checked for this test |
 
-## Proof
+## Evidence
 
 | Field | Answer |
 |---|---|
-| Expert or reviewer | To be confirmed (a Delivery lead) |
-| Expert input received? | No. Questions are in report.md |
-| Related live case study | SupplierPlus (team of Ruby developers for a fintech company) |
-| Claims register IDs we may use | None needed. No case study figures used |
-| Outside sources | Eurostat, ICT specialists: hard-to-fill vacancies in enterprises |
+| Outside primary sources | Eurostat (hard-to-fill ICT vacancies), Statistics Austria (reasons for difficulties), FMA Austria (DORA exit plans) |
+| Public Codest material | SupplierPlus case study, logistics platform case study, Staff Augmentation and Product Development pages |
+| Claims register IDs needed | None. No case study figures used |
+| Planned information gain | The comparison table of three models, built from the three sources and two cases |
 
 ## Links and CTA
 

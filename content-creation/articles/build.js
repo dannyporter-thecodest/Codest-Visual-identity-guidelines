@@ -64,13 +64,12 @@ const isInternal = (u) => u.startsWith("/") || host(u) === host(site.origin);
 const onDomain = (u, list) => list.some((dm) => host(u) === dm || host(u).endsWith("." + dm));
 
 // ---------- required fields ----------
-const req = ["slug", "category", "topic_area", "title", "lead", "tldr", "author", "reviewer", "published", "updated", "review_by", "seo", "sections", "key_insights", "related_case", "cta", "sources", "meta", "report"];
+const req = ["slug", "category", "topic_area", "title", "lead", "tldr", "published", "updated", "review_by", "seo", "sections", "key_insights", "information_gain", "related_case", "cta", "sources", "meta", "report"];
 for (const k of req) if (d[k] === undefined || d[k] === null || d[k] === "") err(`Missing field: ${k}`);
 if (errors.length) return finishEarly();
 d.related_questions = d.related_questions || [];
 d.report.claim_ids = d.report.claim_ids || {};
-d.report.quotes_to_approve = d.report.quotes_to_approve || [];
-d.report.questions_for_reviewer = d.report.questions_for_reviewer || [];
+d.report.open_questions = d.report.open_questions || [];
 d.report.self_check = d.report.self_check || {};
 
 // ---------- every text in the article ----------
@@ -251,44 +250,73 @@ if (!d.cta.href || !isInternal(d.cta.href)) err("cta.href: must be an internal p
 
 // ---------- sources and claims (06) ----------
 const ids = new Set();
-if (d.sources.length < 1 || d.sources.length > 4) err(`Sources: ${d.sources.length} (must be 1 to 4)`);
+if (d.sources.length < 2 || d.sources.length > 5) err(`Sources: ${d.sources.length} (must be 2 to 5)`);
+const publishers = new Set(d.sources.map((s) => String(s.publisher || "").trim().toLowerCase()).filter(Boolean));
+if (publishers.size < 2) err(`Sources: ${publishers.size} publisher(s). At least 2 different publishers are required (rules/05-aeo-geo.md B1)`);
+const thisYear = new Date().getUTCFullYear();
 for (const s of d.sources) {
   for (const f of ["id", "publisher", "title", "url", "date", "accessed"]) if (!s[f]) err(`Source ${s.id || "?"}: missing ${f}`);
   ids.add(s.id);
   if (s.url && onDomain(s.url, site.competitor_domains)) err(`Source ${s.id}: ${host(s.url)} is another agency, a blog platform or Wikipedia. Use a primary source (rules/06-sources-and-claims.md)`);
   if (s.url && (onDomain(s.url, site.us_domains) || /\.gov$/.test(host(s.url)))) err(`Source ${s.id}: ${host(s.url)} is a US source. The US is not our market`);
+  if (s.url && isInternal(s.url)) err(`Source ${s.id}: The Codest's own pages are not outside sources. Use based_on codest:<url> instead`);
   if (s.url && !external.includes(s.url)) err(`Source ${s.id}: not linked in the text. Cite it inline where the fact appears`);
   if (s.accessed && !isDate(s.accessed)) err(`Source ${s.id}: accessed must be YYYY-MM-DD`);
+  const years = (String(s.date || "").match(/\b(19|20)\d\d\b/g) || []).map(Number);
+  if (!years.length) warn(`Source ${s.id}: date has no year`);
+  else if (Math.max(...years) < thisYear - 3 && s.type !== "law") warn(`Source ${s.id}: last dated ${Math.max(...years)}. Use a source from the last 3 years, or set type "law" for a law or standard in force`);
 }
 for (const u of external) if (!d.sources.some((s) => s.url === u)) err(`External link not listed in sources: ${u}`);
 for (const [k, v] of Object.entries(d.report.claim_ids)) if (!/^CLM-\d{3}$/.test(v)) err(`Claims register: "${k}" has an invalid ID "${v}" (expected CLM-000)`);
-if (d.report.quotes_to_approve.length && !d.report.quotes_approved) block(`${d.report.quotes_to_approve.length} quote(s) need approval from the person quoted`);
 
 // ---------- AEO/GEO (05) ----------
-const BASED = /^(expert|general|case:[a-z0-9-]+|src:.+)$/;
-let firstHand = 0;
+const BASED = /^(general|case:[a-z0-9-]+|codest:https:\/\/\S+|src:.+)$/;
+let srcSections = 0, ownSections = 0, generalOnly = 0;
+const refs = new Set();
 S.forEach((s, i) => {
-  if (!Array.isArray(s.based_on) || !s.based_on.length) { err(`Section ${i + 1}: based_on is empty (expert, case:<slug>, src:<id> or general)`); return; }
+  if (!Array.isArray(s.based_on) || !s.based_on.length) { err(`Section ${i + 1}: based_on is empty (src:<id>, case:<slug>, codest:<url> or general)`); return; }
+  const st = sectionText(s);
   for (const b of s.based_on) {
+    if (b === "expert") { err(`Section ${i + 1}: based_on "expert" is no longer used. The workflow runs without people: use src:, case: or codest:`); continue; }
     if (!BASED.test(b)) err(`Section ${i + 1}: based_on "${b}" is not valid`);
     if (b.startsWith("src:") && !ids.has(b.slice(4))) err(`Section ${i + 1}: based_on "${b}" has no matching source id`);
+    if (b.startsWith("codest:") && !isInternal(b.slice(7))) err(`Section ${i + 1}: based_on "${b}" must be a thecodest.co page`);
+    if (b.startsWith("codest:") && !st.includes(b.slice(7))) err(`Section ${i + 1}: link ${b.slice(7)} inline where you use it`);
+    if (b.startsWith("case:") && !linksOf(st).some((l) => l.href.includes("/case-studies/"))) err(`Section ${i + 1}: based_on "${b}" but no case study is linked in the section`);
+    refs.add(b);
   }
-  if (s.based_on.some((b) => b === "expert" || b.startsWith("case:"))) firstHand++;
+  if (s.based_on.some((b) => b.startsWith("src:"))) srcSections++;
+  if (s.based_on.some((b) => b.startsWith("case:") || b.startsWith("codest:"))) ownSections++;
+  if (s.based_on.every((b) => b === "general")) generalOnly++;
 });
-if (firstHand < 2) err(`First-hand input: ${firstHand} section(s) rest on the expert input or a case study (at least 2 required, rules/05-aeo-geo.md B2)`);
-const usesExpert = S.some((s) => (s.based_on || []).includes("expert"));
-if (d.expert_input) {
-  if (!fs.existsSync(path.join(inDir, d.expert_input))) err(`expert_input: ${d.expert_input} not found next to content.json`);
-} else {
-  if (usesExpert) err("Sections are based_on expert, but expert_input is not set. Do not invent first-hand views");
-  warn("No expert input yet. The article can be reviewed, but not published (rules/05-aeo-geo.md B1)");
-  block("No first-hand input from a Codest engineer or Delivery lead (templates/expert-input.md)");
+if (srcSections < 3) err(`Evidence: ${srcSections} section(s) rest on an outside source (at least 3 required, rules/05-aeo-geo.md B4)`);
+if (ownSections < 1) err("Evidence: no section rests on a live case study or public Codest material (rules/05-aeo-geo.md B3)");
+if (generalOnly > 2) err(`Evidence: ${generalOnly} sections rest on general knowledge alone (max 2, rules/05-aeo-geo.md B4)`);
+// information gain (B2)
+const IG = d.information_gain;
+if (!IG) err("information_gain: missing. Say what the article adds that no single source has (rules/05-aeo-geo.md B2)");
+else {
+  if (!["table", "checklist", "framework", "comparison"].includes(IG.type)) err(`information_gain.type: "${IG.type}" (table, checklist, framework or comparison)`);
+  range("information_gain.description", IG.description || "", 15, 60, "error");
+  const bf = IG.built_from || [];
+  if (bf.length < 2) err(`information_gain.built_from: ${bf.length} item(s). Build it from at least 2 sources or cases`);
+  for (const b of bf) {
+    if (b.startsWith("src:") ? !ids.has(b.slice(4)) : !refs.has(b)) err(`information_gain.built_from: "${b}" is not a source id or a based_on reference in the article`);
+  }
 }
-for (const p of ["author", "reviewer"]) {
-  if (!d[p].name || !d[p].role) err(`${p}: needs name and role`);
-  if (d[p].linkedin && !/^https:\/\/(www\.)?linkedin\.com\//.test(d[p].linkedin)) err(`${p}.linkedin: must be a linkedin.com URL`);
-}
-if (/to be confirmed|tbc|tbd/i.test(d.reviewer.name || "")) block("Reviewer not confirmed");
+// no invented experience (06)
+const EXP = /\b(in our experience|our (engineers|teams|developers|clients|customers) (often|usually|always|typically|tend)|we have (found|seen|learned|learnt)|we've (found|seen|learned|learnt)|we (often|usually|typically) see|from what we have seen|time and again we)\b/i;
+const expHit = (t) => (plain(t).match(EXP) || [])[0];
+S.forEach((s, i) => {
+  const hit = expHit(s.heading + " " + sectionText(s));
+  if (hit && !s.based_on.some((b) => b.startsWith("case:") || b.startsWith("codest:"))) err(`Section ${i + 1}: "${hit}" claims experience with no public Codest source in the section. Write it as advice (rules/06-sources-and-claims.md)`);
+});
+for (const k of ["lead", "tldr", "key_insights", "related_questions", "cta"]) { const hit = expHit(texts[k]); if (hit) err(`${k}: "${hit}" claims experience. Write it as advice, or move it into a section with a public Codest source`); }
+// byline (B8)
+if (!d.author || !d.author.name) d.author = site.default_author || {};
+if (!d.author.name || !d.author.role) err("author: needs name and role (or set site.default_author in topics.json)");
+for (const p of ["author", "reviewer"]) if (d[p] && d[p].linkedin && !/^https:\/\/(www\.)?linkedin\.com\//.test(d[p].linkedin)) err(`${p}.linkedin: must be a linkedin.com URL`);
+const hasReviewer = !!(d.reviewer && d.reviewer.name);
 
 // ---------- dates (05 C) ----------
 for (const k of ["published", "updated", "review_by"]) if (!isDate(d[k])) err(`${k}: must be YYYY-MM-DD`);
@@ -334,7 +362,7 @@ function articleHtml(ds) {
   L.push(`${I}<header class="cd-article-head ar-head">`);
   L.push(`${I}  <div class="cd-article-head__meta"><span class="cd-meta"><img src="${ds}assets/icons/calendar.svg" alt=""><time datetime="${d.published}">${fmtDate(d.published)}</time></span><p class="cd-eyebrow cd-eyebrow--purple">${esc(label)}</p><span class="cd-meta"><img src="${ds}assets/icons/time.svg" alt="">${readMin()} min read</span></div>`);
   L.push(`${I}  <h1 class="cd-h2">${esc(d.title)}</h1>`);
-  L.push(`${I}  <div class="ar-people">`, person(d.author, ""), person(d.reviewer, "Reviewed by "), `${I}  </div>`);
+  L.push(`${I}  <div class="ar-people">`, person(d.author, ""), ...(hasReviewer ? [person(d.reviewer, "Reviewed by ")] : []), `${I}  </div>`);
   L.push(`${I}  <p class="ar-updated">Last updated <time datetime="${d.updated}">${fmtDate(d.updated)}</time></p>`);
   L.push(`${I}</header>`);
   L.push(`${I}<p class="cd-lead ar-lead">${inline(d.lead)}</p>`);
@@ -370,7 +398,7 @@ function jsonLd() {
     "@context": "https://schema.org", "@type": "BlogPosting",
     headline: d.title, description: seo.meta_description, url: canonical, mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
     datePublished: d.published, dateModified: d.updated, inLanguage: "en", wordCount: bodyWords,
-    author: person(d.author), contributor: person(d.reviewer),
+    author: person(d.author), ...(hasReviewer ? { contributor: person(d.reviewer) } : {}),
     publisher: { "@type": "Organization", name: "The Codest", url: site.origin + "/" },
     about: pq, keywords: [pq, ...sq].join(", "), articleSection: label,
   };
@@ -403,9 +431,9 @@ function md() {
   const L = [];
   L.push("---", `title: "${d.title}"`, `slug: ${d.slug}`, `canonical: ${canonical}`, `meta_title: "${seo.meta_title}"`, `meta_description: "${seo.meta_description}"`,
     `primary_query: ${pq}`, `secondary_queries: [${sq.join(", ")}]`, `category: ${d.category}`, `topic_area: ${d.topic_area}`, ...(d.industry ? [`industry: ${d.industry}`] : []),
-    `author: ${d.author.name}, ${d.author.role}`, `reviewer: ${d.reviewer.name}, ${d.reviewer.role}`, `published: ${d.published}`, `updated: ${d.updated}`, `review_by: ${d.review_by}`,
+    `author: ${d.author.name}, ${d.author.role}`, ...(hasReviewer ? [`reviewer: ${d.reviewer.name}, ${d.reviewer.role}`] : []), `published: ${d.published}`, `updated: ${d.updated}`, `review_by: ${d.review_by}`,
     `audience_group: ${M.audience_group}`, `buying_role: ${M.buying_role}`, `funnel_stage: ${M.funnel_stage}`, `cta: ${d.cta.label}`,
-    `claims_used: [${Object.values(d.report.claim_ids).join(", ")}]`, `open_questions: ${d.report.questions_for_reviewer.length ? d.report.questions_for_reviewer.length + " (see report.md)" : "none"}`, "---", "");
+    `claims_used: [${Object.values(d.report.claim_ids).join(", ")}]`, `open_questions: ${d.report.open_questions.length ? d.report.open_questions.length + " (see report.md)" : "none"}`, "---", "");
   L.push(`# ${d.title}`, "", d.lead, "", "**TL;DR**", "", ...d.tldr.map((b) => `- ${b}`), "");
   for (const s of S) {
     L.push(`## ${s.heading}`, "", s.answer, "");
@@ -425,11 +453,12 @@ function md() {
 function report() {
   const list = (a) => (a && a.length ? a.map((x) => `- ${x}`).join("\n") : "- None");
   const yes = (b) => (b ? "yes" : "no");
-  const status = errors.length ? "**blocked**: build errors" : blockers.length ? `**blocked** until: ${blockers.join("; ")}` : "**ready for review** by the people in messaging-guidelines/06-publishing.md";
+  const status = errors.length ? "**not finished**: build errors" : blockers.length ? `**not finished**: ${blockers.join("; ")}` : "**finished**. Ready for the publishing workflow";
   return [
     `# Article report: ${d.title}`, "",
-    `Publication: ${status}`, "",
-    "## Search fields (for the web team)", "",
+    `Status: ${status}`, "",
+    "Publishing is outside this workflow. Whatever publishes it must meet Article 50 of the EU AI Act: human review with named editorial responsibility, or a disclosure that the text is AI-generated (rules/06-sources-and-claims.md).", "",
+    "## Search fields (for the CMS)", "",
     "| Field | Value |", "| --- | --- |",
     `| URL | ${canonical} |`, `| Meta title (${(seo.meta_title || "").length} chars) | ${seo.meta_title} |`, `| Meta description (${(seo.meta_description || "").length} chars) | ${seo.meta_description} |`,
     `| Primary query | ${pq} |`, `| Secondary queries | ${sq.join("; ")} |`, `| Query source | ${seo.query_source}${seo.query_source === "topic-list" ? " (volume not checked)" : ""} |`,
@@ -441,19 +470,19 @@ function report() {
     `| Every H2 is a question with a 20 to 45 word answer first | ${yes(S.every((s) => /\?$/.test(s.heading.trim()) && words(s.answer) >= 20 && words(s.answer) <= 45))} |`,
     `| TL;DR bullets | ${d.tldr.length} |`, `| Table with caption | ${tables} |`,
     `| Internal links (service page included) | ${internal.length} (${yes(internal.some((u) => svc.includes(abs(u))))}) |`,
-    `| Outside sources, all primary and dated | ${d.sources.length} |`,
-    `| Sections resting on first-hand input or a case | ${firstHand} of ${S.length} |`,
-    `| Expert input | ${d.expert_input ? "yes" : "**missing**"} |`, `| Named author and reviewer | ${d.author.name}; ${d.reviewer.name} |`,
+    `| Outside sources (publishers) | ${d.sources.length} (${publishers.size}) |`,
+    `| Sections resting on outside sources / Codest material / general only | ${srcSections} / ${ownSections} / ${generalOnly} of ${S.length} |`,
+    `| Information gain | ${IG ? IG.type + ": " + IG.description : "missing"} |`,
+    `| Named author | ${d.author.name}, ${d.author.role} |`,
     `| Article text in the HTML without JavaScript | yes (built in) |`, `| JSON-LD | BlogPosting, BreadcrumbList |`, "",
-    "## For the web team before it goes live", "",
+    "## For the publishing workflow: checks on the live page", "",
     "- Publish the text in the page HTML (not rendered by JavaScript). Check the WordPress theme does this.",
     "- Indexable, in the XML sitemap, canonical as above, published and updated dates visible and matching the JSON-LD.",
     `- Add a link to this article from ${svc[0]} ("Read more" block).`,
     "- One h1; real h2/h3 tags; the table as a real table with caption and th.", "",
     "## Sources", "", ...d.sources.map((s) => `- ${s.id}: ${s.publisher}, "${s.title}", ${s.date}. ${s.url} (accessed ${s.accessed})`), "",
     "## Claims register", "", Object.keys(d.report.claim_ids).length ? Object.entries(d.report.claim_ids).map(([k, v]) => `- ${k}: ${v}`).join("\n") : "- No claims about The Codest used", "",
-    "## Quotes to approve", "", list(d.report.quotes_to_approve), "",
-    "## Questions for the reviewer", "", list(d.report.questions_for_reviewer), "",
+    "## Open questions", "", list(d.report.open_questions), "",
     "## Self-check (rules/08-checks.md)", "", Object.keys(d.report.self_check).length ? Object.entries(d.report.self_check).map(([k, v]) => `- ${k}: ${v}`).join("\n") : "- Not answered", "",
     "## Build", "", `- Errors: ${errors.length}`, ...errors.map((e) => `  - ${e}`), `- Warnings: ${warnings.length}`, ...warnings.map((w) => `  - ${w}`), "",
     "## AI citation log (fill in monthly)", "", "| Date | Assistant | Question asked | Cited? | Notes |", "| --- | --- | --- | --- | --- |", "| | Google AI Overview / AI Mode | " + d.title + " | | |", "| | ChatGPT | | | |", "| | Perplexity | | | |", "| | Gemini | | | |", "| | Claude | | | |", "| | Copilot | | | |", "",
@@ -490,7 +519,7 @@ function finish() {
   console.log(`${d.slug || input}: ${errors.length} errors, ${warnings.length} warnings, ${bodyWords} words`);
   for (const e of errors) console.log("  ERROR " + e);
   for (const w of warnings) console.log("  WARN  " + w);
-  if (!errors.length) console.log(`  Publication: ${blockers.length ? "blocked (" + blockers.join("; ") + ")" : "ready for review"}`);
+  if (!errors.length) console.log(`  Status: ${blockers.length ? "not finished (" + blockers.join("; ") + ")" : "finished"}`);
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, "report.md"), report());
   if (errors.length) { console.log("  Fix the errors, then build again. Only report.md was written."); process.exit(1); }

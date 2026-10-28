@@ -5,7 +5,8 @@ The format follows The Software House's answer articles (for example "Why paymen
 - a "What this means for you" line closing a section (from Modeso)
 - a bold "The fix" label in lists of problems (from Netguru)
 - regulators as sources for regulated topics (from Zuehlke)
-- **our addition:** the first sentence under every heading answers it. None of the reviewed competitors does this consistently. It is the single most important AEO/GEO rule (`05-aeo-geo.md`).
+- **our addition:** the first sentence under every heading answers it. None of the reviewed competitors does this consistently. It is the single most important AEO/GEO formatting rule (`05-aeo-geo.md`).
+- **our addition:** an information gain element in every article: a comparison, checklist or framework built from several sources (`05-aeo-geo.md`, B2).
 
 Copy the patterns, never the text.
 
@@ -14,7 +15,7 @@ Copy the patterns, never the text.
 | # | Section | Required | Size | Notes |
 |---|---|---|---|---|
 | 1 | Title (H1) | yes | 7 to 14 words, max 70 characters | One buyer question (`03-titles-and-headings.md`) |
-| 2 | Byline | yes | | Author name and role, reviewer name and role, published date, updated date, reading time |
+| 2 | Byline | yes | | Author name and role (`site.default_author` in `topics.json` unless the brief names another), published date, updated date, reading time |
 | 3 | Lead answer | yes | 40 to 70 words, 2 or 3 sentences | Answers the title question directly. No scene-setting |
 | 4 | TL;DR | yes | 3 to 5 bullets, 8 to 22 words each | Each bullet makes sense on its own. The first may carry a sourced figure |
 | 5 | Body sections (H2) | yes | 4 to 6 sections | Every H2 is a question. The first paragraph answers it in 20 to 45 words |
@@ -36,7 +37,7 @@ In this order:
    - the table (exactly one in the article)
 3. **Detail** (up to 4 paragraphs). Why, how, conditions, an example. Optional H3 sub-points (max 4 per section).
 4. **What this means for you** (optional): one sentence, 10 to 30 words, saying what the buyer should do or check.
-5. `based_on`: what the section rests on. One or more of `expert` (the first-hand input), `case:<slug>` (a live case study), `src:<id>` (an outside source), `general` (common knowledge). At least two sections must rest on `expert` or `case:` (`05-aeo-geo.md`).
+5. `based_on`: what the section rests on. One or more of `src:<id>` (an outside source), `case:<slug>` (a live case study), `codest:<url>` (other public Codest material), `general` (common knowledge or reasoning). At least three sections rest on `src:`, at least one on `case:` or `codest:`, and at most two on `general` alone (`05-aeo-geo.md`).
 
 ## Paragraphs and sentences
 
@@ -67,5 +68,5 @@ The page is built from the design system (`visual-identity-and-design-system/des
 - No "In today's fast-paced world" openings, and no history of the topic.
 - No "Top 10" lists, trend round-ups or definition-only posts.
 - No table of contents (the articles are short enough).
-- No author interview series (not doable for now).
+- No interviews or input from colleagues. The workflow runs without people (`05-aeo-geo.md`).
 - No sections about The Codest. The Codest appears where it helps the answer: one example, the case study, the CTA.

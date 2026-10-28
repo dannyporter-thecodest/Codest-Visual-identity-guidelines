@@ -12,8 +12,6 @@
     "The real risk of extending is losing control, so agree the people, the access and the exit first.",
     "Handing over a whole defined area is a third option when you want one owner for an outcome."
   ],
-  "author": { "name": "Danny Porter", "role": "AI Marketing Automation Specialist, The Codest" },
-  "reviewer": { "name": "To be confirmed", "role": "Delivery lead, The Codest" },
   "published": "2026-10-28",
   "updated": "2026-10-28",
   "review_by": "2027-10-28",
@@ -30,11 +28,11 @@
       "answer": "Hiring is slow because engineering roles are hard to fill: in 2023, 57.5% of EU enterprises that recruited or tried to recruit ICT specialists had difficulties filling the vacancies, according to [Eurostat](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=ICT_specialists_-_statistics_on_hard-to-fill_vacancies_in_enterprises).",
       "paragraphs": [
         "The share is higher in some of our core markets. Eurostat reports 72.41% for Germany and 67.26% for Austria in the same year.",
-        "A hard-to-fill vacancy rarely stays a hiring problem. It becomes a roadmap problem: the feature waits, other engineers cover the gap, and the team loses focus on what matters most.",
-        "None of this means you should stop hiring. It means the hiring plan and the roadmap plan need to be decided separately."
+        "The reasons are not only a lack of people. For Austrian enterprises that recruited or tried to recruit ICT specialists, the greatest difficulties were a lack of applications (82%), a lack of professional experience (72%) and applicants' high salary expectations (62%), according to [Statistics Austria](https://www.statistik.at/fileadmin/announcement/2025/01/20250127IKTFachkraefteUnternehmen2024EN.pdf).",
+        "A hard-to-fill vacancy rarely stays a hiring problem. It becomes a roadmap problem: the feature waits, other engineers cover the gap, and the team loses focus on what matters most."
       ],
       "takeaway": "Plan the roadmap on the people you have today, and treat every open role as a date you cannot rely on.",
-      "based_on": ["src:eurostat-ict-vacancies"]
+      "based_on": ["src:eurostat-ict-vacancies", "src:statistik-austria-ict"]
     },
     {
       "heading": "When should you extend your engineering team instead of hiring?",
@@ -45,7 +43,7 @@
         "Extension also works as a bridge. External engineers carry the roadmap while you hire, then hand over context to the people you bring in."
       ],
       "takeaway": "Write down why the need cannot wait. If you cannot name the deadline or the missing skill, hiring may be the better route.",
-      "based_on": ["case:supplierplus", "general"]
+      "based_on": ["case:supplierplus", "codest:https://thecodest.co/en/services/staff-augmentation/"]
     },
     {
       "heading": "When is hiring in-house the better choice?",
@@ -56,9 +54,10 @@
         { "bold": "Time to choose well.", "text": "A rushed permanent hire is harder to undo than an external engineer who is not the right fit." }
       ],
       "paragraphs": [
+        "Expect the search to take effort. In the same Statistics Austria release, 72% of recruiting enterprises named a lack of qualifications as a difficulty, so a role that needs a rare skill is the hardest kind to hire for.",
         "Hiring is also how a team builds its own culture and standards. External engineers can follow and strengthen them, but they should not be the only people who hold them."
       ],
-      "based_on": ["general"]
+      "based_on": ["src:statistik-austria-ict", "general"]
     },
     {
       "heading": "How do hiring, team extension and handing over an area compare?",
@@ -76,7 +75,7 @@
         "The third option fits when you need an outcome rather than extra people. A major logistics company, for example, [built a custom logistics platform](https://thecodest.co/en/case-studies/transforming-logistics-with-a-custom-digital-platform/) with The Codest to automate manual order processing and route planning. That is the [Product Development](https://thecodest.co/en/services/product-development/) model."
       ],
       "takeaway": "Choose the model by the decision you need to make, not by the day rate. The cheapest option per month can be the most expensive per outcome.",
-      "based_on": ["case:transforming-logistics", "general"]
+      "based_on": ["case:transforming-logistics", "codest:https://thecodest.co/en/services/product-development/", "src:eurostat-ict-vacancies"]
     },
     {
       "heading": "What are the risks of extending your team, and how do you reduce them?",
@@ -87,7 +86,10 @@
         { "bold": "Knowledge leaves with the vendor.", "text": "The fix: agree documentation, code ownership and a handover period in the contract." },
         { "bold": "Nobody owns the outcome.", "text": "The fix: name one owner on each side for the agreed scope, and review it at a fixed rhythm." }
       ],
-      "based_on": ["general"]
+      "paragraphs": [
+        "Financial companies have a formal version of this. Under DORA (the Digital Operational Resilience Act), exit plans for ICT providers identify contingency measures, alternative solutions and transition plans, and are tested and regularly checked, as Austria's [Financial Market Authority](https://www.fma.gv.at/en/?p=158458) explains. It is a useful standard even outside finance."
+      ],
+      "based_on": ["src:fma-dora-third-party", "general"]
     }
   ],
   "key_insights": [
@@ -97,6 +99,11 @@
     "Hand over a defined area when you want one owner for an outcome.",
     "Agree the people, access, ownership and exit before an external engineer starts."
   ],
+  "information_gain": {
+    "type": "table",
+    "description": "Compares hiring, team extension and handing over an area by best fit, main risk and what to agree first, combining EU and Austrian hiring data, DORA exit plan practice and two public Codest cases.",
+    "built_from": ["src:eurostat-ict-vacancies", "src:statistik-austria-ict", "src:fma-dora-third-party", "case:supplierplus", "case:transforming-logistics"]
+  },
   "related_questions": [
     {
       "question": "Is extending a team cheaper than hiring?",
@@ -125,39 +132,52 @@
       "title": "ICT specialists - statistics on hard-to-fill vacancies in enterprises",
       "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=ICT_specialists_-_statistics_on_hard-to-fill_vacancies_in_enterprises",
       "date": "Data extracted June 2025, reference year 2023",
-      "accessed": "2026-10-28"
+      "accessed": "2026-10-28",
+      "type": "data"
+    },
+    {
+      "id": "statistik-austria-ict",
+      "publisher": "Statistics Austria",
+      "title": "20% of enterprises employ ICT specialists",
+      "url": "https://www.statistik.at/fileadmin/announcement/2025/01/20250127IKTFachkraefteUnternehmen2024EN.pdf",
+      "date": "27 January 2025, reference year 2023",
+      "accessed": "2026-10-28",
+      "type": "data"
+    },
+    {
+      "id": "fma-dora-third-party",
+      "publisher": "Financial Market Authority (FMA), Austria",
+      "title": "DORA - Managing of ICT third-party risk",
+      "url": "https://www.fma.gv.at/en/?p=158458",
+      "date": "2026 (register of information dates 16.02.2026 to 13.03.2026)",
+      "accessed": "2026-10-28",
+      "type": "regulation"
     }
   ],
-  "expert_input": null,
   "brief": "brief.md",
   "meta": { "audience_group": "3", "buying_role": "CTO/VP Eng", "funnel_stage": "signal" },
   "report": {
     "claim_ids": {},
-    "quotes_to_approve": [],
-    "questions_for_reviewer": [
-      "What is your short answer to the title question, in your own words? Where would you disagree with the article?",
-      "Can you give one real situation where a client should have hired in-house instead of extending? (No client names unless the case study is public.)",
-      "What is the first sign that an extension is going wrong, from what you have seen?",
-      "SupplierPlus case: may we say how the team was integrated (for example, worked in the client's repository and rituals)? That would make section 2 first-hand.",
-      "Logistics case: confirm it is fair to present it as an example of handing over a defined area (The Codest designed and built the platform).",
-      "Are you happy to be named as the reviewer, with a link to your LinkedIn?"
+    "open_questions": [
+      "Search volume for the primary query has not been checked (no keyword tool connected).",
+      "Logistics case: presented as an example of handing over a defined area, based on the case study saying The Codest designed and built the platform."
     ],
     "self_check": {
       "1 lead answers the question": "yes",
-      "2 every section adds something specific": "no: sections 3 and 5 rest on general knowledge until the expert input arrives",
+      "2 every section adds something specific": "yes: sourced figures in sections 1 and 3, DORA exit plan practice in section 5, cases in sections 2 and 4",
       "3 a clear position, including when not to": "yes: section 3 and the CTA say when to hire instead",
-      "4 first-hand views only from expert input": "n/a: no expert input yet, no first-hand views written",
-      "5 sources opened, figures exact with year": "yes: Eurostat page opened 2026-10-28, figures copied as written",
+      "4 information gain is real": "yes: the comparison combines hiring data, DORA exit plan practice and two cases that no single source covers",
+      "5 sources opened, figures exact with year": "yes: all three pages opened 2026-10-28, figures copied as written",
       "6 one audience group and role, their words": "yes: group 3, CTO/VP Eng",
       "7 leads with the buyer's problem": "yes",
       "8 one small next step as CTA": "yes",
       "9 each H2 readable on its own": "yes",
       "10 names used consistently": "yes",
       "11 follow-up questions covered": "yes: cost and working inside our process in related questions",
-      "12 no blocked clients, US market or blocked claims": "yes",
+      "12 no blocked clients, US market, invented experience or blocked claims": "yes",
       "13 different from every topic in topics.json": "yes: first-30-days is a different question",
       "14 page checked at 1440px and 375px": "yes"
     },
-    "notes": "Test article for the ruleset. Built without expert input, so publication is blocked by design. The primary query has not been checked for search volume (query_source: topic-list). Case study statistics were not used, because none has a claims register entry yet."
+    "notes": "Test article for the ruleset, written without input from people. Eurostat and Statistics Austria report the same EU survey (ICT usage in enterprises), so they count as one piece of evidence on hiring difficulty; Statistics Austria adds the reasons. No case study figures used, because none has a claims register entry yet."
   }
 }

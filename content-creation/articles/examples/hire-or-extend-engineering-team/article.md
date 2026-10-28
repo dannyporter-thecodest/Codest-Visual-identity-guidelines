@@ -10,7 +10,6 @@ category: buyer-questions
 topic_area: capacity
 industry: all
 author: Danny Porter, AI Marketing Automation Specialist, The Codest
-reviewer: To be confirmed, Delivery lead, The Codest
 published: 2026-10-28
 updated: 2026-10-28
 review_by: 2027-10-28
@@ -19,7 +18,7 @@ buying_role: CTO/VP Eng
 funnel_stage: signal
 cta: Let's talk through the problem
 claims_used: []
-open_questions: 6 (see report.md)
+open_questions: 2 (see report.md)
 ---
 
 # Should you hire in-house or extend your engineering team?
@@ -40,9 +39,9 @@ Hiring is slow because engineering roles are hard to fill: in 2023, 57.5% of EU 
 
 The share is higher in some of our core markets. Eurostat reports 72.41% for Germany and 67.26% for Austria in the same year.
 
-A hard-to-fill vacancy rarely stays a hiring problem. It becomes a roadmap problem: the feature waits, other engineers cover the gap, and the team loses focus on what matters most.
+The reasons are not only a lack of people. For Austrian enterprises that recruited or tried to recruit ICT specialists, the greatest difficulties were a lack of applications (82%), a lack of professional experience (72%) and applicants' high salary expectations (62%), according to [Statistics Austria](https://www.statistik.at/fileadmin/announcement/2025/01/20250127IKTFachkraefteUnternehmen2024EN.pdf).
 
-None of this means you should stop hiring. It means the hiring plan and the roadmap plan need to be decided separately.
+A hard-to-fill vacancy rarely stays a hiring problem. It becomes a roadmap problem: the feature waits, other engineers cover the gap, and the team loses focus on what matters most.
 
 **What this means for you:** Plan the roadmap on the people you have today, and treat every open role as a date you cannot rely on.
 
@@ -65,6 +64,8 @@ Hire in-house when the work is core to your product for years, when the knowledg
 - **Core, long-lived knowledge.** The people who own your architecture and product direction should usually be on your payroll.
 - **A stable, well-defined role.** If you can describe the job for the next two years, you can hire for it.
 - **Time to choose well.** A rushed permanent hire is harder to undo than an external engineer who is not the right fit.
+
+Expect the search to take effort. In the same Statistics Austria release, 72% of recruiting enterprises named a lack of qualifications as a difficulty, so a role that needs a rare skill is the hardest kind to hire for.
 
 Hiring is also how a team builds its own culture and standards. External engineers can follow and strengthen them, but they should not be the only people who hold them.
 
@@ -93,6 +94,8 @@ The main risk of extending your team is losing control: people you did not choos
 - **Knowledge leaves with the vendor.** The fix: agree documentation, code ownership and a handover period in the contract.
 - **Nobody owns the outcome.** The fix: name one owner on each side for the agreed scope, and review it at a fixed rhythm.
 
+Financial companies have a formal version of this. Under DORA (the Digital Operational Resilience Act), exit plans for ICT providers identify contingency measures, alternative solutions and transition plans, and are tested and regularly checked, as Austria's [Financial Market Authority](https://www.fma.gv.at/en/?p=158458) explains. It is a useful standard even outside finance.
+
 ## Key insights
 
 - Engineering vacancies are hard to fill across the EU, so do not plan the roadmap on open roles.
@@ -114,6 +117,8 @@ They should. Good team extension means external engineers use your repository, t
 ## Sources
 
 1. Eurostat, [ICT specialists - statistics on hard-to-fill vacancies in enterprises](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=ICT_specialists_-_statistics_on_hard-to-fill_vacancies_in_enterprises), Data extracted June 2025, reference year 2023.
+2. Statistics Austria, [20% of enterprises employ ICT specialists](https://www.statistik.at/fileadmin/announcement/2025/01/20250127IKTFachkraefteUnternehmen2024EN.pdf), 27 January 2025, reference year 2023.
+3. Financial Market Authority (FMA), Austria, [DORA - Managing of ICT third-party risk](https://www.fma.gv.at/en/?p=158458), 2026 (register of information dates 16.02.2026 to 13.03.2026).
 
 **Related case study:** [SupplierPlus built a secure invoice financing platform to release cash from unpaid invoices](https://thecodest.co/en/case-studies/providing-a-team-of-ruby-developers-for-a-fintech-company/)
 
