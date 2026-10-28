@@ -2,7 +2,7 @@
 /*
   Checks a case study against the ruleset and builds its outputs.
 
-  node case-studies/build.js <content.json> [--out <dir>] [--shot]
+  node content-creation/case-studies/build.js <content.json> [--out <dir>] [--shot]
 
   Writes next to content.json (or into --out):
     case-study.md   plain text for client sign-off
@@ -25,7 +25,7 @@ if (!DS) { console.error("Design system not found next to case-studies/ or in vi
 
 const args = process.argv.slice(2);
 const input = args.find((a) => !a.startsWith("--"));
-if (!input) { console.error("Usage: node case-studies/build.js <content.json> [--out <dir>] [--shot]"); process.exit(2); }
+if (!input) { console.error("Usage: node content-creation/case-studies/build.js <content.json> [--out <dir>] [--shot]"); process.exit(2); }
 const outIdx = args.indexOf("--out");
 const outDir = path.resolve(outIdx >= 0 ? args[outIdx + 1] : path.dirname(input));
 const shot = args.includes("--shot");

@@ -16,7 +16,7 @@ Turns a case study already live on thecodest.co into the new format. The old pag
    - FAQ answers are collapsed. Open every one.
 2. **Write `content.json`.** Start from `../templates/content.example.json`. Use only facts and terms in `source.md`.
 3. **Fill the report fields:** every statistic on the source (`report.source_statistics`), the quote exactly as on the source (`report.source_quote`), facts left out, gaps, questions for Delivery.
-4. **Build:** `node case-studies/build.js case-studies/output/<slug>/content.json --shot`
+4. **Build:** `node content-creation/case-studies/build.js content-creation/case-studies/output/<slug>/content.json --shot`
 5. **Fix every error and warning**, or explain the warning in the report. Never pad.
 6. **Look at the page** next to `../examples/estimote/page.html`.
 7. **Update `inventory.json`**: set the case to `converted` and add the slug.

@@ -29,7 +29,7 @@
   var nav = [{ label: "About us", href: "#" }, { label: "Services", href: "#" }, { label: "Our team", href: "#" }, { label: "Case studies", href: "#" },
              { label: "Know how", href: "#", children: [{ label: "Blog", href: "#", current: true }, { label: "Case studies", href: "#" }, { label: "Webinars", href: "#" }, { label: "Meetups", href: "#" }] }];
   var I = function (n) { return "assets/icons/" + n + ".svg"; };
-  var lorem = "Placeholder copy. Real text must come from the content guide and claims register.";
+  var lorem = "Placeholder copy. Real text must come from the messaging guidelines and claims register.";
   function Modal() { var s = React.useState(false); return h(F, null, h(C.Button, { onClick: function () { s[1](true); } }, "Open download modal"), s[0] ? h(C.DownloadModal, { onClose: function () { s[1](false); } }) : null); }
 
   ReactDOM.createRoot(document.getElementById("root")).render(h(F, null,

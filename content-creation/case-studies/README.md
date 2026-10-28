@@ -32,7 +32,7 @@ Both workflows use the same rules, templates, build script and output.
 
 ## Outcomes: what every case study must produce
 
-One folder `case-studies/output/<slug>/` with:
+One folder `content-creation/case-studies/output/<slug>/` with:
 
 | File | What it is | Who uses it |
 |---|---|---|
@@ -45,7 +45,7 @@ One folder `case-studies/output/<slug>/` with:
 Cody writes `source.md` or `intake.md`, and `content.json`. The build generates the rest:
 
 ```
-node case-studies/build.js case-studies/output/<slug>/content.json --shot
+node content-creation/case-studies/build.js content-creation/case-studies/output/<slug>/content.json --shot
 ```
 
 A case study is **done** when the build reports `0 errors`, every warning is fixed or explained in the report, and the page has been looked at at 1440px and 375px.

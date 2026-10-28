@@ -73,4 +73,4 @@ To preview in a browser: open a template with URL parameters, e.g. `templates/so
 - One pink element: the button with its offset outline. Link images, covers, quote cards and banners have no button.
 - Decoration stays behind content: one wave texture, at most two orbs, both bleeding off an edge.
 - Photos only of real people and real work, in the tilted frame. No stock, no client logos without written consent.
-- Copy and numbers come from the content guide and claims register. Placeholder text in brackets must never ship.
+- Copy and numbers come from the messaging guidelines and claims register. Placeholder text in brackets must never ship.

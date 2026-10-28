@@ -6,7 +6,7 @@ These guidelines record The Codest's current visual identity, taken from the web
 
 The design system in `../design-system/` is the build kit for everything described here: tokens, fonts, logo, icons, textures, 70 components, page templates and reference screenshots. Image templates for social, ads and email are in `../creatives/`. Where this document names a token (for example `primary-pink`), its exact value is in `../design-system/tokens/tokens.json`.
 
-**Words are out of scope.** Copy, claims, tone and which clients may be named are governed by The Codest content guide. Several headlines in the Figma mockups break that guide.
+**Words are out of scope.** Copy, claims, tone and which clients may be named are governed by the messaging guidelines (`messaging-guidelines/`). Several headlines in the Figma mockups break that guide.
 
 **Source.** Figma file "Untitled (Copy)" (`BYcWQ1snBegdWVqrvUt7kQ`), Page 1: every website page in desktop (1440px) and mobile (375px). Colour and type values are the file's own variables. Logo, icons and component specs were exported from the file's layers. Values that were measured rather than defined are marked "measured".
 
@@ -206,7 +206,7 @@ Soft circles of `complementary-purple` or `complementary-orange`, blurred until 
 - Real team photos, not stock. People working together, natural light. No photography is bundled in the repository; it belongs in The Codest's media library.
 - Framed photos: the photo is tilted about 5 degrees one way, with a 2px frame (purple in the Home hero, pink elsewhere) tilted the other way behind it. Culture sections use a two-photo collage with a pink frame. Team portraits are square with a pink frame offset 6px.
 - Inner page heroes put white display text over a team photo with a navy overlay.
-- Case studies show the client's product inside a laptop or phone frame on a pale tint panel. Only show clients with written consent (content guide).
+- Case studies show the client's product inside a laptop or phone frame on a pale tint panel. Only show clients with written consent (messaging guidelines).
 - Blog cards use a 280px illustration or photo with a 10% navy overlay.
 
 ## 10. Components and page sections
@@ -223,7 +223,7 @@ Two page templates (`design-system/templates/`) show how sections combine into a
 
 1. **Pink fails text contrast** at 4.17:1 (section 3).
 2. **MUFG logo** in the Home page client strip. Blocked from any public use until written consent exists. Remove before reuse.
-3. **Mockup copy breaks the content guide:** "top-level", "top notch", "true code masters", "awesome devs", "empower".
+3. **Mockup copy breaks the messaging guidelines:** "top-level", "top notch", "true code masters", "awesome devs", "empower".
 4. **Unsourced numbers** in the stats strips (10+ years, 40+ devs, 10+ technologies, 50+ clients, 80% senior, "100+ partners", "15 countries") are not in the claims register. The Clutch rating (4.8, 18 reviews) needs a current figure.
 5. **Real client quotes** from Clutch appear in testimonial cards; reuse needs consent and attribution checks.
 6. **Placeholder duplication:** seven identical job cards, repeated contact-card text.
@@ -258,7 +258,7 @@ Two page templates (`design-system/templates/`) show how sections combine into a
 - **Tones** follow the website: pale blue, white, light pink, peach or navy. Navy suits events, quotes and stories; light tones suit statements and content promotion. Alternate tones across a series so a feed does not repeat.
 - **Decoration** sits behind content and bleeds off an edge: one wave texture (white lines on navy), at most two orbs. The gradient appears only as the bar on a quote card.
 - **Photos** only of real people and real work, in the tilted frame. No stock photography, no client logos or product screenshots without written consent.
-- **Copy** comes from the content guide; numbers need a claims-register entry. Bracketed placeholders never ship.
+- **Copy** comes from the messaging guidelines; numbers need a claims-register entry. Bracketed placeholders never ship.
 
 ## 13. Gaps
 

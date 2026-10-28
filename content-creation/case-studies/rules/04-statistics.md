@@ -44,7 +44,7 @@ Never write a vague result ("significantly improved efficiency"). Either a figur
 
 ## Claims register before publication
 
-The messaging guidelines (`05-claims.md`, `claims-register.json`) rule that no fact, number, testimonial or case study is used publicly without a claims register entry. Old website statistics are named there as not reusable until they have one. So:
+The messaging guidelines (`messaging-guidelines/05-claims.md`, `messaging-guidelines/claims-register.json`) rule that no fact, number, testimonial or case study is used publicly without a claims register entry. Old website statistics are named there as not reusable until they have one. So:
 
 - Keep every source statistic in the draft and the report, exactly as above. The client confirms them at sign-off.
 - For each statistic and the quote, record its register ID in `report.claim_ids` (for example `{"60%": "CLM-023"}`) once Marketing has added it to the register.

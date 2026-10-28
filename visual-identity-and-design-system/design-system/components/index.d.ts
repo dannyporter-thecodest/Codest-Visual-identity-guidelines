@@ -1,5 +1,5 @@
 /* Props for every component on window.Codest. Documentation only (not type-checked).
-   All copy passed in must come from the content guide; numbers need a claims-register entry. */
+   All copy passed in must come from the messaging guidelines; numbers need a claims-register entry. */
 import type { ReactNode } from "react";
 
 interface Link { label: string; href: string; }
