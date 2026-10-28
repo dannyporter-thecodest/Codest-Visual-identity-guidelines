@@ -31,7 +31,7 @@ If two sources disagree, `tokens.json` wins for values and `guidelines.md` wins 
 
 ## How to make a case study
 
-Follow `case-studies/README.md`. In short: copy the old page into `case-studies/output/<slug>/source.md`, write `content.json` by the rules in `case-studies/rules/`, run `node case-studies/build.js <content.json> --shot`, fix every error and warning, and look at the page. Never invent facts; every statistic on the source is carried over; quotes are verbatim. To convert all of them, use `case-studies/CODY_TASK.md`.
+Follow `case-studies/README.md`. There are two workflows: `case-studies/convert/` turns an old thecodest.co case study into the new format, and `case-studies/create/` writes a new one from Delivery's intake form (`case-studies/create/delivery-intake.md`). In short: copy the source (old page or completed intake) into `case-studies/output/<slug>/`, write `content.json` by the rules in `case-studies/rules/`, run `node case-studies/build.js <content.json> --shot`, fix every error and warning, and look at the page. Never invent facts; every statistic on the source is carried over; quotes are verbatim. Prompts: `case-studies/convert/CODY_TASK.md` and `case-studies/create/CODY_TASK.md`.
 
 ## How to make an image (social, ads, covers, banners, email headers)
 

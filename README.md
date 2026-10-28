@@ -7,7 +7,7 @@ The Codest's **Visual Identity Guidelines** and **Design System**, documented fr
 | Visual Identity Guidelines | The rules: logo, colour, states, type, layout, the offset outline, icons, waves and orbs, imagery, known issues | `visual-identity/guidelines.md` (or the PDF beside it) |
 | Design System | The build kit: tokens, fonts, logo, icons, textures, graphics, 70 components, 2 page templates, 19 reference screenshots | `design-system/README.md` |
 | Creatives | Image templates for social posts, stories, ads, link images, covers, banners and email headers, with a render script | `creatives/README.md` |
-| Case studies | The case study format (based on TSH), ruleset, page template, build and check script, inventory of every live case, and the batch task for Cody | `case-studies/README.md` |
+| Case studies | The case study format (based on TSH), shared rules, page template and build script, plus two workflows: converting old case studies, and creating new ones from Delivery's intake form | `case-studies/README.md` |
 | AI agents (Cody) | How to build a page, the rules that are easy to break, a pre-delivery checklist | `AGENT_GUIDE.md` |
 | Machine-readable index | Every file with its purpose and Figma source | `manifest.json` |
 
@@ -25,10 +25,11 @@ creatives/
   render.js    fills a template and exports a PNG
   examples/    every format rendered
 case-studies/
-  README.md      ruleset, outcomes and workflow
-  CODY_TASK.md   prompt to convert every case study
+  README.md      shared rules, outcomes, the two workflows
   build.js       checks content.json and builds the page
-  rules/  templates/  examples/estimote/  inventory.json
+  rules/  templates/  examples/estimote/
+  convert/       old case studies into the new format (CODY_TASK.md, mapping.md, inventory.json)
+  create/        new case studies (delivery-intake.md, rules.md, CODY_TASK.md)
 design-system/
   README.md
   examples.html                  every component on one page
@@ -46,7 +47,7 @@ To make a page, copy `design-system/templates/landing-page.html`, set `assetBase
 
 To make an image, pick a format in `creatives/templates.json` and run `node creatives/render.js social-square content.json --out post.png` (setup in `creatives/README.md`).
 
-To convert a case study, follow `case-studies/README.md` and run `node case-studies/build.js case-studies/output/<slug>/content.json`.
+To convert or create a case study, follow `case-studies/README.md` and run `node case-studies/build.js case-studies/output/<slug>/content.json`.
 
 Plain HTML without React works too:
 

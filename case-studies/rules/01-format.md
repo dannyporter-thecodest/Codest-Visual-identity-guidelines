@@ -16,7 +16,7 @@ Ten sections, always in this order, plus a stats band when the source has statis
 | 9 | Results | `Results` | 60 to 110 words | Yes |
 | 10 | Client's opinion | `Client's opinion` | Verbatim quote | Only if the source has a quote |
 
-Nothing else goes on the page. Partnership goal, Solution, Process, FAQ and inline CTA blocks from the old pages are dropped after their facts are moved into the right section (see `06-conversion-mapping.md`).
+Nothing else goes on the page. When converting, the old pages' Partnership goal, Solution, Process, FAQ and inline CTA blocks are dropped after their facts are moved into the right section (see `../convert/mapping.md`).
 
 ## Page layout
 

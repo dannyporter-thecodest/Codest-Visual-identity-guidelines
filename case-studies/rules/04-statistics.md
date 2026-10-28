@@ -6,6 +6,8 @@ The rule: **if the source case study has statistics, every one of them is shown.
 
 Look in every part of the old page: the headline, the hero, the stats band, the results section, the FAQ and any callout. List every figure you find in `report.source_statistics` in `content.json`, written exactly as on the page (`60%`, `€120K`, `1M+`, `3×`, `from 5h to 23 min`).
 
+For new case studies, statistics come from section 6.1 of the intake form and need a before and after or a source (`../create/rules.md`).
+
 **Read stats band numbers only after they stop moving.** The old pages animate their counters up from 0 when the band scrolls into view. Scroll to it, wait, read twice a few seconds apart, and only copy the numbers when both reads match. A number copied mid-count is an invented statistic.
 
 ## Where they go

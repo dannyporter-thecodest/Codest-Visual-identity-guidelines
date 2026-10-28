@@ -46,8 +46,9 @@ const FIG = /(?<![\w-])[€$£]?\d[\d.,]*(?:\s?(?:%|×|x\b|K\b|M\b|k\b|h\b))?\+?
 const figures = (s) => (String(s || "").match(FIG) || []).map((f) => f.trim());
 
 // ---------- required fields ----------
-const req = ["slug", "source_url", "client", "category", "title", "facts", "problem_hook", "impact_statement", "about", "challenge", "project_description", "approach", "results", "cta", "report"];
+const req = ["slug", "client", "category", "title", "facts", "problem_hook", "impact_statement", "about", "challenge", "project_description", "approach", "results", "cta", "report"];
 for (const k of req) if (d[k] === undefined || d[k] === null || d[k] === "") err(`Missing field: ${k}`);
+if (!d.source_url && !d.intake) err("Missing source: set source_url (converting an old page) or intake (creating from a Delivery intake form)");
 if (errors.length) { console.log(`${input}: ${errors.length} errors`); errors.forEach((e) => console.log("  ERROR " + e)); process.exit(1); }
 
 // ---------- every text in the case study ----------
@@ -71,8 +72,8 @@ for (const [k, v] of Object.entries(texts)) {
   if (/[—–]/.test(v)) err(`${k}: contains an em dash or en dash`);
 }
 const blob = JSON.stringify(d);
-if (/\bMUFG\b|Mitsubishi UFJ/i.test(blob)) err("Blocked client: MUFG is mentioned. Stop and mark the case 'blocked' in inventory.json.");
-if (/\ballegro\b/i.test(blob)) err("Blocked client: Allegro is mentioned. Stop and mark the case 'blocked' in inventory.json.");
+if (/\bMUFG\b|Mitsubishi UFJ/i.test(blob)) err("Blocked client: MUFG is mentioned. Stop: mark the case 'blocked' (convert/inventory.json) or tell Danny.");
+if (/\ballegro\b/i.test(blob)) err("Blocked client: Allegro is mentioned. Stop: mark the case 'blocked' (convert/inventory.json) or tell Danny.");
 
 for (const [k, v] of copy) if (/!/.test(v)) warn(`${k}: exclamation mark`);
 const FILLER = ["significantly", "greatly", "hugely", "incredibly", "truly", "seamless", "seamlessly", "cutting-edge", "state-of-the-art", "game-changer", "game-changing", "leverage", "empower", "top-notch", "world-class", "awesome", "in about", "roughly", "revolutionis", "revolutioniz"];
@@ -172,7 +173,7 @@ function report() {
   ];
   return [
     `# Conversion report: ${d.client.name || d.slug}`, "",
-    `Source: ${d.source_url}`, "",
+    `Source: ${d.source_url || d.intake + " (Delivery intake form)"}`, "",
     "## Statistics carried over", "", list(d.report.source_statistics), "",
     "## Facts left out", "", list(d.report.facts_left_out), "",
     "## Missing from the source", "", list(d.report.facts_missing), "",

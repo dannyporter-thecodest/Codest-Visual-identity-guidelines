@@ -17,7 +17,7 @@
 - [ ] Any figure in the title, hook or impact statement is also in Results. *(build)*
 - [ ] Results has 3 to 5 bullets; stats band has 0 or 2 to 4 figures. *(build)*
 - [ ] Quote matches the source exactly. *(build)*
-- [ ] Every fact can be found in `source.md`.
+- [ ] Every fact can be found in `source.md` (converting) or `intake.md` (creating).
 - [ ] Every name for the client, the system, its features, technologies and processes uses the source's own words. Nothing renamed or re-described.
 - [ ] Reads as formal and professional: compare with `examples/estimote/case-study.md`.
 

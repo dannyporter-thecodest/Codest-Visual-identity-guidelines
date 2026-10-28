@@ -1,86 +1,323 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "The Codest case study content",
-  "description": "Input for case-studies/build.js. Rules for every field are in case-studies/rules/.",
+  "description": "Input for case-studies/build.js. Needs source_url (convert) or intake (create). Rules for every field are in case-studies/rules/.",
   "type": "object",
-  "required": ["slug", "source_url", "client", "category", "title", "facts", "problem_hook", "impact_statement", "about", "challenge", "stats_band", "project_description", "approach", "results", "quote", "cta", "report"],
+  "required": [
+    "slug",
+    "client",
+    "category",
+    "title",
+    "facts",
+    "problem_hook",
+    "impact_statement",
+    "about",
+    "challenge",
+    "stats_band",
+    "project_description",
+    "approach",
+    "results",
+    "quote",
+    "cta",
+    "report"
+  ],
   "properties": {
-    "slug": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "Folder name under case-studies/output/" },
-    "source_url": { "type": "string", "description": "The old thecodest.co page" },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Folder name under case-studies/output/"
+    },
+    "source_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Converting: the old thecodest.co page. Creating: null"
+    },
     "client": {
       "type": "object",
-      "required": ["name", "named"],
+      "required": [
+        "name",
+        "named"
+      ],
       "properties": {
-        "name": { "type": ["string", "null"], "description": "As on the source. null if the source does not name the client" },
-        "named": { "type": "boolean", "description": "false gives the heading 'About the client'" }
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "As on the source. null if the source does not name the client"
+        },
+        "named": {
+          "type": "boolean",
+          "description": "false gives the heading 'About the client'"
+        }
       }
     },
-    "category": { "type": "string", "description": "Tag above the title in the hero" },
-    "title": { "type": "string", "description": "8 to 14 words, max 3 lines. rules/02-titles.md" },
+    "category": {
+      "type": "string",
+      "description": "Tag above the title in the hero"
+    },
+    "title": {
+      "type": "string",
+      "description": "8 to 14 words, max 3 lines. rules/02-titles.md"
+    },
     "facts": {
       "type": "object",
-      "required": ["industry", "headquarters", "tech_stack"],
+      "required": [
+        "industry",
+        "headquarters",
+        "tech_stack"
+      ],
       "properties": {
-        "industry": { "type": "string" },
-        "headquarters": { "type": "string", "description": "City, Country" },
-        "tech_stack": { "type": "string" }
+        "industry": {
+          "type": "string"
+        },
+        "headquarters": {
+          "type": "string",
+          "description": "City, Country"
+        },
+        "tech_stack": {
+          "type": "string"
+        }
       }
     },
-    "problem_hook": { "type": "string", "description": "One sentence, 20 to 35 words" },
-    "impact_statement": { "type": "string", "description": "One sentence, 20 to 35 words" },
-    "about": { "type": "string", "description": "40 to 65 words" },
+    "problem_hook": {
+      "type": "string",
+      "description": "One sentence, 20 to 35 words"
+    },
+    "impact_statement": {
+      "type": "string",
+      "description": "One sentence, 20 to 35 words"
+    },
+    "about": {
+      "type": "string",
+      "description": "40 to 65 words"
+    },
     "challenge": {
       "type": "object",
-      "required": ["paragraphs", "key_challenges", "stakes"],
+      "required": [
+        "paragraphs",
+        "key_challenges",
+        "stakes"
+      ],
       "properties": {
-        "paragraphs": { "type": "array", "items": { "type": "string" }, "minItems": 1, "maxItems": 3 },
-        "key_challenges": {
-          "type": "array", "minItems": 3, "maxItems": 4,
-          "items": { "type": "object", "required": ["label", "text"], "properties": { "label": { "type": "string" }, "text": { "type": "string" } } }
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 3
         },
-        "stakes": { "type": "string" }
+        "key_challenges": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "text"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "stakes": {
+          "type": "string"
+        }
       }
     },
     "stats_band": {
-      "type": "array", "maxItems": 4, "description": "Empty if the source has no stats band. Otherwise 2 to 4, copied exactly",
-      "items": { "type": "object", "required": ["value", "label"], "properties": { "value": { "type": "string", "description": "e.g. 1M+, 30%, 10+" }, "label": { "type": "string" } } }
+      "type": "array",
+      "maxItems": 4,
+      "description": "Empty if the source has no stats band. Otherwise 2 to 4, copied exactly",
+      "items": {
+        "type": "object",
+        "required": [
+          "value",
+          "label"
+        ],
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "e.g. 1M+, 30%, 10+"
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      }
     },
-    "project_description": { "type": "array", "items": { "type": "string" }, "minItems": 1, "description": "Paragraphs. 100 to 150 words in total" },
-    "approach": { "type": "array", "items": { "type": "string" }, "minItems": 1, "description": "Paragraphs. 100 to 160 words in total" },
+    "project_description": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Paragraphs. 100 to 150 words in total"
+    },
+    "approach": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Paragraphs. 100 to 160 words in total"
+    },
     "results": {
       "type": "object",
-      "required": ["summary", "bullets"],
+      "required": [
+        "summary",
+        "bullets"
+      ],
       "properties": {
-        "summary": { "type": "string" },
+        "summary": {
+          "type": "string"
+        },
         "bullets": {
-          "type": "array", "minItems": 3, "maxItems": 5,
-          "items": { "type": "object", "required": ["bold", "text"], "properties": { "bold": { "type": "string" }, "text": { "type": "string" } } }
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": [
+              "bold",
+              "text"
+            ],
+            "properties": {
+              "bold": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            }
+          }
         }
       }
     },
     "quote": {
-      "type": ["object", "null"], "description": "null if the source has no quote",
-      "required": ["text", "name", "role"],
-      "properties": { "text": { "type": "string" }, "name": { "type": "string" }, "role": { "type": "string" }, "company": { "type": "string" } }
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "null if the source has no quote",
+      "required": [
+        "text",
+        "name",
+        "role"
+      ],
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        }
+      }
     },
     "cta": {
-      "type": "object", "required": ["title", "text", "label"],
-      "properties": { "title": { "type": "string" }, "text": { "type": "string" }, "label": { "type": "string" } }
+      "type": "object",
+      "required": [
+        "title",
+        "text",
+        "label"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
     },
     "other_case": {
-      "type": ["object", "null"], "description": "The next case study to link to. null leaves the section out",
-      "properties": { "category": { "type": "string" }, "title": { "type": "string" }, "href": { "type": "string" } }
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "The next case study to link to. null leaves the section out",
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        }
+      }
     },
     "report": {
       "type": "object",
-      "required": ["source_statistics", "source_quote", "facts_left_out", "facts_missing", "questions_for_delivery"],
+      "required": [
+        "source_statistics",
+        "source_quote",
+        "facts_left_out",
+        "facts_missing",
+        "questions_for_delivery"
+      ],
       "properties": {
-        "source_statistics": { "type": "array", "items": { "type": "string" }, "description": "Every figure on the old page, exactly as written. Each must appear in Results or the stats band" },
-        "source_quote": { "type": ["string", "null"], "description": "The quote exactly as on the source. Compared with quote.text" },
-        "facts_left_out": { "type": "array", "items": { "type": "string" } },
-        "facts_missing": { "type": "array", "items": { "type": "string" }, "description": "Sections the source could not fill" },
-        "questions_for_delivery": { "type": "array", "items": { "type": "string" } }
+        "source_statistics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Every figure on the old page, exactly as written. Each must appear in Results or the stats band"
+        },
+        "source_quote": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The quote exactly as on the source. Compared with quote.text"
+        },
+        "facts_left_out": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "facts_missing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Sections the source could not fill"
+        },
+        "questions_for_delivery": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
+    },
+    "intake": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Creating: intake.md, the completed Delivery intake form in the same folder. Converting: omit or null"
     }
   }
 }

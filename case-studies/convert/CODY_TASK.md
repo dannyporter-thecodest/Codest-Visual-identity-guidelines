@@ -6,9 +6,9 @@ Paste this to Cody as is. To convert only some cases, change the "Scope" line.
 
 **Goal.** Convert The Codest's case studies on thecodest.co into the new case study format, and build each one as a page in the design system. The output is for internal review and client sign-off. Do not publish anything.
 
-**Scope.** Every case in `case-studies/inventory.json` with status `todo`.
+**Scope.** Every case in `case-studies/convert/inventory.json` with status `todo`.
 
-**Read first, in this order.** `AGENT_GUIDE.md`, `case-studies/README.md`, every file in `case-studies/rules/` (01 to 07), then `case-studies/examples/estimote/` (`content.json`, `case-study.md`, `page.html`). The Estimote example is the approved standard for tone, length and structure.
+**Read first, in this order.** `AGENT_GUIDE.md`, `case-studies/README.md`, `case-studies/convert/README.md`, every file in `case-studies/rules/` (01 to 06), `case-studies/convert/mapping.md`, then `case-studies/examples/estimote/` (`content.json`, `case-study.md`, `page.html`). The Estimote example is the approved standard for tone, length and structure.
 
 **For each case:**
 

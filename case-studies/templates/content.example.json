@@ -1,6 +1,7 @@
 {
   "slug": "[short-kebab-case-name]",
-  "source_url": "[https://thecodest.co/en/case-studies/...]",
+  "source_url": "[Converting: https://thecodest.co/en/case-studies/... | Creating: null]",
+  "intake": "[Creating: intake.md | Converting: null]",
   "client": { "name": "[Client name, or null if not named on the source]", "named": true },
   "category": "[Industry tag, e.g. Fintech]",
   "title": "[8 to 14 words, max 3 lines: company, technology, outcome. rules/02-titles.md]",
