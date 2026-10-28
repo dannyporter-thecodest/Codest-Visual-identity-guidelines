@@ -22,6 +22,7 @@ Statistics never lead the title. They go in Results and the stats band (`04-stat
 ## Check every title
 
 - Names the system, product or team that was built, changed or extended.
+- Uses the source's own name for the system where it has one ("a custom logistics platform", "an IoT office management platform"). Do not invent a new description of it.
 - Client first. The Codest is not named.
 - 10 to 19 words.
 - Does not start with a number or an outcome verb (reduced, increased, boosted, cut, saved, improved, enabled, delivered). *(build)*
