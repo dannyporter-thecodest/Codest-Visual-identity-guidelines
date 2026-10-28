@@ -17,7 +17,11 @@ const fs = require("fs");
 const path = require("path");
 
 const HERE = __dirname;
-const DS = path.resolve(HERE, "..", "design-system");
+// The design system sits next to case-studies/ in the brand repository, and in
+// visual-identity-and-design-system/ in Cody's repository.
+const DS = [path.resolve(HERE, "..", "design-system"), path.resolve(HERE, "..", "..", "visual-identity-and-design-system", "design-system")]
+  .find((p) => fs.existsSync(path.join(p, "components", "bundle.js")));
+if (!DS) { console.error("Design system not found next to case-studies/ or in visual-identity-and-design-system/"); process.exit(2); }
 
 const args = process.argv.slice(2);
 const input = args.find((a) => !a.startsWith("--"));
