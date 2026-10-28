@@ -385,6 +385,22 @@
               "documentation"
             ],
             "description": "law: a law or standard in force, exempt from the 3-year recency warning"
+          },
+          "years": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "Reference years the source covers"
+          },
+          "latest_checked": {
+            "type": "string",
+            "format": "date",
+            "description": "Date Cody confirmed no newer edition exists. Required before the article says latest or most recent"
+          },
+          "no_newer_edition": {
+            "type": "boolean",
+            "description": "Data older than 2 years, checked: no newer edition exists"
           }
         }
       }

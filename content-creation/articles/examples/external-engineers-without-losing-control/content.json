@@ -1,16 +1,16 @@
 {
-  "slug": "extend-engineering-team-without-losing-control",
+  "slug": "external-engineers-without-losing-control",
   "category": "buyer-questions",
   "topic_area": "capacity",
   "industry": "all",
   "question": "Should you hire in-house or extend your engineering team?",
-  "title": "How to extend your engineering team without losing control",
-  "hook": "The roadmap is agreed and the funding is in, but the two engineers you need are still not hired. In 2023, more than half of EU companies recruiting tech specialists had the same problem.",
-  "lead": "Extend your engineering team when a roadmap item, a missing skill or a test of a new direction cannot wait for hiring, and hire in-house for work that stays core to your product for years. You keep control by agreeing the people, the access and the exit before anyone starts.",
+  "title": "How to bring external engineers into your team without losing control",
+  "hook": "The roadmap is agreed and the funding is in, but the two engineers you need are still not hired. In Eurostat's last two surveys, more than half of EU companies recruiting tech specialists had the same problem.",
+  "lead": "Bring external engineers into your team when a roadmap item, a missing skill or a test of a new direction cannot wait for hiring, and hire in-house for work that stays core to your product for years. You keep control by agreeing the people, the access and the exit before anyone starts.",
   "tldr": [
     "57.5% of EU enterprises that tried to recruit information and communication technology (ICT) specialists in 2023 found vacancies hard to fill.",
     "Hire in-house for long-term product knowledge, a clear role and enough time to choose well.",
-    "Extend your team when the work is urgent, needs a skill you lack, or is still uncertain.",
+    "Bring in external engineers when the work is urgent, needs a skill you lack, or is still uncertain.",
     "The real risk of extending is losing control, so agree the people, the access and the exit first.",
     "Handing over a whole defined area is a third option when you want one owner for an outcome."
   ],
@@ -18,22 +18,23 @@
   "updated": "2026-10-28",
   "review_by": "2027-10-28",
   "seo": {
-    "primary_query": "extend engineering team",
+    "primary_query": "external engineers",
     "secondary_queries": [
+      "staff augmentation",
       "team extension vs hiring",
-      "hire developers in-house",
-      "hard to fill engineering roles",
-      "keep control of external team"
+      "extend engineering team",
+      "hire developers in-house"
     ],
     "query_source": "topic-list",
-    "meta_title": "How to extend your engineering team without losing control",
-    "meta_description": "Extend your engineering team when work cannot wait for hiring, and keep control by agreeing the people, access and exit first. With a comparison table."
+    "meta_title": "How to bring in external engineers without losing control",
+    "meta_description": "Bring in external engineers when work cannot wait for hiring, and keep control by agreeing the people, access and exit first. With a comparison table."
   },
   "sections": [
     {
       "heading": "Why is hiring engineers in-house so slow in Europe?",
       "answer": "Hiring is slow because engineering roles are hard to fill: in 2023, 57.5% of EU enterprises that recruited or tried to recruit ICT specialists had difficulties filling the vacancies, according to [Eurostat](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=ICT_specialists_-_statistics_on_hard-to-fill_vacancies_in_enterprises).",
       "paragraphs": [
+        "It is not a one-off. In Eurostat's previous survey, covering 2021, the share was 62.8%, according to [Eurostat's 2023 news release](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20230712-1).",
         "The share is higher in Germany and Austria. Eurostat reports 72.41% for Germany and 67.26% for Austria in the same year.",
         "The reasons are not only a lack of people. For Austrian enterprises that recruited or tried to recruit ICT specialists, the greatest difficulties were a lack of applications (82%), a lack of professional experience (72%) and applicants' high salary expectations (62%), according to [Statistics Austria](https://www.statistik.at/fileadmin/announcement/2025/01/20250127IKTFachkraefteUnternehmen2024EN.pdf).",
         "A hard-to-fill vacancy rarely stays a hiring problem. It becomes a roadmap problem: the feature waits, other engineers cover the gap, and the team loses focus on what matters most."
@@ -41,16 +42,17 @@
       "takeaway": "Plan the roadmap on the people you have today, and treat every open role as a date you cannot rely on.",
       "based_on": [
         "src:eurostat-ict-vacancies",
+        "src:eurostat-ict-2021",
         "src:statistik-austria-ict"
       ]
     },
     {
-      "heading": "When should you extend your engineering team instead of hiring?",
-      "answer": "Extend your engineering team when the need is urgent, specific or uncertain: a roadmap item that cannot slip, a skill your team does not have, or a direction you want to test before committing to permanent roles.",
+      "heading": "When should you bring in external engineers instead of hiring?",
+      "answer": "Bring in external engineers when the need is urgent, specific or uncertain: a roadmap item that cannot slip, a skill your team does not have, or a direction you want to test before committing to permanent roles.",
       "paragraphs": [
         "Team extension means adding external engineers who work inside your team, your process and your tools, while you keep control of the product. Our [Staff Augmentation model](https://thecodest.co/en/services/staff-augmentation/) works this way. It adds capacity and skills, but adding a person does not fix an organisational problem, such as unclear priorities or missing product ownership.",
         "SupplierPlus, an invoice financing platform based in Tallinn, is one example. It needed a secure platform for digital documents, electronic signatures and automatic data exchange, and [brought in a team of Ruby developers](https://thecodest.co/en/case-studies/providing-a-team-of-ruby-developers-for-a-fintech-company/) from The Codest to build it.",
-        "Extension also works as a bridge. External engineers carry the roadmap while you hire, then hand over context to the people you bring in. Start with one bounded piece of work, and expand when it is working."
+        "Extension also works as a bridge. The extended team carries the roadmap while you hire, then hand over context to the people you bring in. Start with one bounded piece of work, and expand when it is working."
       ],
       "takeaway": "Write down why the need cannot wait. If you cannot name the deadline or the missing skill, hiring may be the better route.",
       "based_on": [
@@ -77,7 +79,7 @@
       ],
       "paragraphs": [
         "Expect the search to take effort. In the same Statistics Austria release, 72% of recruiting enterprises named a lack of qualifications as a difficulty, so a role that needs a rare skill is the hardest kind to hire for.",
-        "Hiring is also how a team builds its own culture and standards. External engineers can follow and strengthen them, but they should not be the only people who hold them."
+        "Hiring is also how a team builds its own culture and standards. An extended team can follow and strengthen them, but they should not be the only people who hold them."
       ],
       "based_on": [
         "src:statistik-austria-ict",
@@ -138,7 +140,7 @@
         },
         {
           "bold": "Work happens out of sight.",
-          "text": "The fix: external engineers work in your repository, tools and rituals, not in a separate queue."
+          "text": "The fix: the engineers work in your repository, tools and rituals, not in a separate queue."
         },
         {
           "bold": "Knowledge leaves with the vendor.",
@@ -163,13 +165,14 @@
     "Hire in-house for core, long-term roles you can describe and wait for.",
     "Extend your team for urgent, specialist or uncertain work, and keep control of the product.",
     "Hand over a defined area when you want one owner for an outcome.",
-    "Agree the people, access, ownership and exit before an external engineer starts."
+    "Agree the people, access, ownership and exit before anyone joins from outside."
   ],
   "information_gain": {
     "type": "table",
     "description": "Compares hiring, team extension and handing over an area by best fit, main risk and what to agree first, combining EU and Austrian hiring data, DORA exit plan practice and two public Codest cases.",
     "built_from": [
       "src:eurostat-ict-vacancies",
+      "src:eurostat-ict-2021",
       "src:statistik-austria-ict",
       "src:fma-dora-third-party",
       "case:supplierplus",
@@ -199,7 +202,7 @@
     },
     {
       "question": "Can external engineers work inside our own process?",
-      "answer": "They should. Good team extension means external engineers use your repository, tickets, reviews and meetings, follow your standards, and report to your engineering lead. If a vendor insists on its own separate process, you are buying a project, not an extension."
+      "answer": "They should. Good team extension means the engineers you bring in use your repository, tickets, reviews and meetings, follow your standards, and report to your engineering lead. If a vendor insists on its own separate process, you are buying a project, not an extension."
     }
   ],
   "related_case": {
@@ -221,7 +224,24 @@
       "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=ICT_specialists_-_statistics_on_hard-to-fill_vacancies_in_enterprises",
       "date": "Data extracted June 2025, reference year 2023",
       "accessed": "2026-10-28",
-      "type": "data"
+      "type": "data",
+      "years": [
+        2023
+      ],
+      "latest_checked": "2026-10-28"
+    },
+    {
+      "id": "eurostat-ict-2021",
+      "publisher": "Eurostat",
+      "title": "EU companies face difficulties in hiring ICT experts",
+      "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20230712-1",
+      "date": "12 July 2023, reference year 2021",
+      "accessed": "2026-10-28",
+      "type": "data",
+      "years": [
+        2021
+      ],
+      "no_newer_edition": true
     },
     {
       "id": "statistik-austria-ict",
@@ -230,7 +250,10 @@
       "url": "https://www.statistik.at/fileadmin/announcement/2025/01/20250127IKTFachkraefteUnternehmen2024EN.pdf",
       "date": "27 January 2025, reference year 2023",
       "accessed": "2026-10-28",
-      "type": "data"
+      "type": "data",
+      "years": [
+        2023
+      ]
     },
     {
       "id": "fma-dora-third-party",
@@ -274,6 +297,6 @@
       "15 problem, responsibility, model, with limits": "yes: problem in sections 1 to 3, responsibility in section 4, models named with their limits in sections 2 and 4",
       "16 Guardian and Sage voice, no internal language, claims only CLM-001 or CLM-003": "yes: names risks and the exit, recommends hiring when it fits; only CLM-003 used"
     },
-    "notes": "Test article for the ruleset, written without input from people. Eurostat and Statistics Austria report the same EU survey (ICT usage in enterprises), so they count as one piece of evidence on hiring difficulty; Statistics Austria adds the reasons. No case study figures used, because none has a claims register entry yet. The logistics case is outside our ICP industries; it is used because no public fintech or payments case shows a handed-over area, and the article says what transfers."
+    "notes": "Test article for the ruleset, written without input from people. Eurostat (2023 and 2021 editions) and Statistics Austria report the same EU survey (ICT usage in enterprises), so they count as one piece of evidence on hiring difficulty; Statistics Austria adds the reasons. No case study figures used, because none has a claims register entry yet. The logistics case is outside our ICP industries; it is used because no public fintech or payments case shows a handed-over area, and the article says what transfers. 2023 is the most recent year Eurostat has published for hard-to-fill ICT vacancies (checked 2026-10-28), so the hook says \"last two surveys\" and the body gives both years."
   }
 }

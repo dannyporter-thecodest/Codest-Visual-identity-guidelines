@@ -103,6 +103,6 @@ articles/
     content.schema.json    the shape of content.json
     content.example.json   a blank to start from
     article-page.html      the page template
-  examples/extend-engineering-team-without-losing-control/   a finished test article
+  examples/external-engineers-without-losing-control/   a finished test article
   output/<slug>/           one folder per article
 ```

@@ -25,13 +25,31 @@ Every article has **2 to 5 outside sources from at least 2 different publishers*
 - Wikipedia (follow it to the primary source instead)
 - US regulators and US-only data (sec.gov, ftc.gov, federalreserve.gov and similar). The US is not our market
 
-**Every source in `sources` has:** `id`, `publisher`, `title`, `url`, `date` (publication date, or the data's reference year) and `accessed` (when Cody read it).
+**Every source in `sources` has:** `id`, `publisher`, `title`, `url`, `date` (publication date, or the data's reference year) and `accessed` (when Cody read it). For data, also `years` (the reference years it covers) and, when the article says "latest", `latest_checked` (the date Cody confirmed no newer edition exists).
 
 **Reading sources:**
 - Cody opens the primary page and reads the figure there. A search snippet, or another site's summary of the source, is not enough.
 - Figures are copied exactly as written (57.5%, not "almost 60%"), with their reference year. Never rounded, combined or extrapolated into a new number.
 - If Cody cannot open the primary page, the figure does not go in, and `report.notes` says so.
 - Two sources reporting the same survey count as one piece of evidence. Say so if you use both (for example Eurostat and a national office publishing the same EU survey).
+
+## Dating figures
+
+Articles should not look dated, and they must never mislead about when a figure is from.
+
+| You may | Only when | Example |
+|---|---|---|
+| Give the year | Always allowed | "In 2023, 57.5% of EU enterprises that recruited or tried to recruit ICT specialists had difficulties filling the vacancies (Eurostat)." |
+| Say "latest" or "most recent" instead of leading with the year | Cody checked that no newer edition exists, and recorded the date in the source's `latest_checked`. The year still appears in the body next to the link | "In Eurostat's latest survey, more than half of EU companies recruiting tech specialists struggled to fill the roles." |
+| Describe a period ("in the last two surveys", "every year since 2019") | The sources show every year in that period. List the years in each source's `years` | "In Eurostat's last two surveys, more than half did (62.8% in 2021, 57.5% in 2023)." |
+| Keep the year out of the hook | The body section gives the exact year next to the link | Hook: "the latest figures"; body: "in 2023, 57.5%..." |
+
+**Never:**
+- "Over the last 3 years, more than half..." when the source covers one year. That stretches one data point into a trend (claims rule 6: no extrapolating).
+- Dropping the year so 2023 data reads as if it were this year's.
+- "Recently" or "in recent years" without a dated source covering that period.
+
+The build checks this: "latest", "most recent" and "newest" need a source with `latest_checked`; "last two surveys", "over the last X years", "every year since" and "in recent years" need sources covering at least two years.
 
 ## Public Codest material
 

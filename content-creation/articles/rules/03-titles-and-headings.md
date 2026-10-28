@@ -15,7 +15,7 @@ AI assistants do not lift answers from the title. They lift them from the questi
 
 | # | Pattern | Example | Best for |
 |---|---|---|---|
-| 1 | **How to [outcome] without [the buyer's biggest fear]** | How to extend your engineering team without losing control | Most buyer-questions articles. Use the fear from `messaging-guidelines/02-icp.md` |
+| 1 | **How to [outcome] without [the buyer's biggest fear]** | How to bring external engineers into your team without losing control | Most buyer-questions articles. Use the fear from `messaging-guidelines/02-icp.md` |
 | 2 | **Why your [thing] [is not working], and what to do instead** | Why your roadmap keeps waiting on hiring | A common problem the reader may not have named yet |
 | 3 | **The answer as a statement** | Extend your team for urgent work, hire in-house for the core | Clear decisions. The title is the answer, which AI answers can quote directly |
 | 4 | **[A named problem], and how to solve it** | The vendor handover gap, and how to close it | Giving a familiar pain a memorable name (only if the name is plain English, not jargon) |
@@ -36,7 +36,7 @@ Pattern 1 with "using [approach]" also works: "How to test an AI feature in a pa
 | No hype words from `messaging-guidelines/04-voice.md` | warning |
 
 **Good:**
-- How to extend your engineering team without losing control
+- How to bring external engineers into your team without losing control
 - Why your roadmap keeps waiting on hiring
 - Extend your team for urgent work, hire in-house for the core
 - How to test an AI feature in a payments platform before committing a budget
@@ -63,7 +63,7 @@ The first thing on the page, before the lead answer. Its job is to make the read
 | The lead answer comes immediately after, so the answer still lands in the first 100 or so words | built in |
 
 **Good:**
-- "The roadmap is agreed and the funding is in, but the two engineers you need are still not hired. In 2023, more than half of EU companies recruiting tech specialists had the same problem."
+- "The roadmap is agreed and the funding is in, but the two engineers you need are still not hired. In Eurostat's last two surveys, more than half of EU companies recruiting tech specialists had the same problem."
 - "Your vendor's pitch team was excellent. Three weeks in, you have not met any of them again."
 
 **Bad, and why:**

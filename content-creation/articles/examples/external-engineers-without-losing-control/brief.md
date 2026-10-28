@@ -5,10 +5,10 @@
 | Field | Answer |
 |---|---|
 | Buyer question | Should you hire in-house or extend your engineering team? |
-| Title option A | How to extend your engineering team without losing control (pattern 1) |
-| Title option B | Extend your team for urgent work, hire in-house for the core (pattern 3) |
-| Chosen title, and why | Option A: it names the outcome a CTO wants and the fear from the ICP file (losing control, the team in the pitch is not the team that delivers), and leads towards Staff Augmentation without a one-sided claim |
-| Hook | The roadmap is agreed and the funding is in, but the two engineers you need are still not hired. In 2023, more than half of EU companies recruiting tech specialists had the same problem. |
+| Title option A | How to bring external engineers into your team without losing control (pattern 1) |
+| Title option B | Bring in external engineers for urgent work, hire in-house for the core (pattern 3) |
+| Chosen title, and why | Option A: "external engineers" makes it clear this is about augmentation, not internal hiring; it names the fear from the ICP file (losing control, the team in the pitch is not the team that delivers) and leads towards Staff Augmentation without a one-sided claim |
+| Hook | The roadmap is agreed and the funding is in, but the two engineers you need are still not hired. In Eurostat's last two surveys, more than half of EU companies recruiting tech specialists had the same problem. |
 | Category | buyer-questions |
 | Topic area | capacity |
 | Industry | all |
@@ -45,8 +45,8 @@
 
 | Field | Answer |
 |---|---|
-| Primary query | extend engineering team |
-| Secondary queries | team extension vs hiring; hire developers in-house; hard to fill engineering roles |
+| Primary query | external engineers |
+| Secondary queries | staff augmentation; team extension vs hiring; extend engineering team; hire developers in-house |
 | Search volume and difficulty | not available |
 | Follow-up questions | Why is hiring slow? When is extension right? When is hiring right? How do the options compare? What are the risks? Is it cheaper? Can they work in our process? |
 | What the top 5 results say | Not checked for this test |
@@ -56,7 +56,7 @@
 
 | Field | Answer |
 |---|---|
-| Outside primary sources | Eurostat (hard-to-fill ICT vacancies), Statistics Austria (reasons for difficulties), FMA Austria (DORA exit plans) |
+| Outside primary sources | Eurostat (hard-to-fill ICT vacancies, 2023; news release for 2021), Statistics Austria (reasons for difficulties), FMA Austria (DORA exit plans) |
 | Public Codest material | SupplierPlus case study, logistics platform case study, Staff Augmentation and Product Development pages |
 | Claims register IDs needed | None. No case study figures used |
 | Planned information gain | The comparison table of three models, built from the three sources and two cases |

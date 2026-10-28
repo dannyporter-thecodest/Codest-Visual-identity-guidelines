@@ -66,12 +66,12 @@
   },
   "topics": [
     {
-      "slug": "extend-engineering-team-without-losing-control",
+      "slug": "external-engineers-without-losing-control",
       "question": "Should you hire in-house or extend your engineering team?",
       "category": "buyer-questions",
       "topic_area": "capacity",
       "status": "finished",
-      "title": "How to extend your engineering team without losing control"
+      "title": "How to bring external engineers into your team without losing control"
     },
     {
       "slug": "first-30-days-external-engineering-team",

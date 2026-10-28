@@ -1,13 +1,13 @@
 ---
-title: "How to extend your engineering team without losing control"
+title: "How to bring external engineers into your team without losing control"
 question: "Should you hire in-house or extend your engineering team?"
 title_pattern: how to
-slug: extend-engineering-team-without-losing-control
-canonical: https://thecodest.co/en/blog/extend-engineering-team-without-losing-control/
-meta_title: "How to extend your engineering team without losing control"
-meta_description: "Extend your engineering team when work cannot wait for hiring, and keep control by agreeing the people, access and exit first. With a comparison table."
-primary_query: extend engineering team
-secondary_queries: [team extension vs hiring, hire developers in-house, hard to fill engineering roles, keep control of external team]
+slug: external-engineers-without-losing-control
+canonical: https://thecodest.co/en/blog/external-engineers-without-losing-control/
+meta_title: "How to bring in external engineers without losing control"
+meta_description: "Bring in external engineers when work cannot wait for hiring, and keep control by agreeing the people, access and exit first. With a comparison table."
+primary_query: external engineers
+secondary_queries: [staff augmentation, team extension vs hiring, extend engineering team, hire developers in-house]
 category: buyer-questions
 topic_area: capacity
 industry: all
@@ -23,23 +23,25 @@ claims_used: [CLM-003]
 open_questions: 2 (see report.md)
 ---
 
-# How to extend your engineering team without losing control
+# How to bring external engineers into your team without losing control
 
-*The roadmap is agreed and the funding is in, but the two engineers you need are still not hired. In 2023, more than half of EU companies recruiting tech specialists had the same problem.*
+*The roadmap is agreed and the funding is in, but the two engineers you need are still not hired. In Eurostat's last two surveys, more than half of EU companies recruiting tech specialists had the same problem.*
 
-Extend your engineering team when a roadmap item, a missing skill or a test of a new direction cannot wait for hiring, and hire in-house for work that stays core to your product for years. You keep control by agreeing the people, the access and the exit before anyone starts.
+Bring external engineers into your team when a roadmap item, a missing skill or a test of a new direction cannot wait for hiring, and hire in-house for work that stays core to your product for years. You keep control by agreeing the people, the access and the exit before anyone starts.
 
 **TL;DR**
 
 - 57.5% of EU enterprises that tried to recruit information and communication technology (ICT) specialists in 2023 found vacancies hard to fill.
 - Hire in-house for long-term product knowledge, a clear role and enough time to choose well.
-- Extend your team when the work is urgent, needs a skill you lack, or is still uncertain.
+- Bring in external engineers when the work is urgent, needs a skill you lack, or is still uncertain.
 - The real risk of extending is losing control, so agree the people, the access and the exit first.
 - Handing over a whole defined area is a third option when you want one owner for an outcome.
 
 ## Why is hiring engineers in-house so slow in Europe?
 
 Hiring is slow because engineering roles are hard to fill: in 2023, 57.5% of EU enterprises that recruited or tried to recruit ICT specialists had difficulties filling the vacancies, according to [Eurostat](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=ICT_specialists_-_statistics_on_hard-to-fill_vacancies_in_enterprises).
+
+It is not a one-off. In Eurostat's previous survey, covering 2021, the share was 62.8%, according to [Eurostat's 2023 news release](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20230712-1).
 
 The share is higher in Germany and Austria. Eurostat reports 72.41% for Germany and 67.26% for Austria in the same year.
 
@@ -49,15 +51,15 @@ A hard-to-fill vacancy rarely stays a hiring problem. It becomes a roadmap probl
 
 **What this means for you:** Plan the roadmap on the people you have today, and treat every open role as a date you cannot rely on.
 
-## When should you extend your engineering team instead of hiring?
+## When should you bring in external engineers instead of hiring?
 
-Extend your engineering team when the need is urgent, specific or uncertain: a roadmap item that cannot slip, a skill your team does not have, or a direction you want to test before committing to permanent roles.
+Bring in external engineers when the need is urgent, specific or uncertain: a roadmap item that cannot slip, a skill your team does not have, or a direction you want to test before committing to permanent roles.
 
 Team extension means adding external engineers who work inside your team, your process and your tools, while you keep control of the product. Our [Staff Augmentation model](https://thecodest.co/en/services/staff-augmentation/) works this way. It adds capacity and skills, but adding a person does not fix an organisational problem, such as unclear priorities or missing product ownership.
 
 SupplierPlus, an invoice financing platform based in Tallinn, is one example. It needed a secure platform for digital documents, electronic signatures and automatic data exchange, and [brought in a team of Ruby developers](https://thecodest.co/en/case-studies/providing-a-team-of-ruby-developers-for-a-fintech-company/) from The Codest to build it.
 
-Extension also works as a bridge. External engineers carry the roadmap while you hire, then hand over context to the people you bring in. Start with one bounded piece of work, and expand when it is working.
+Extension also works as a bridge. The extended team carries the roadmap while you hire, then hand over context to the people you bring in. Start with one bounded piece of work, and expand when it is working.
 
 **What this means for you:** Write down why the need cannot wait. If you cannot name the deadline or the missing skill, hiring may be the better route.
 
@@ -71,7 +73,7 @@ Hire in-house when the work is core to your product for years, when the knowledg
 
 Expect the search to take effort. In the same Statistics Austria release, 72% of recruiting enterprises named a lack of qualifications as a difficulty, so a role that needs a rare skill is the hardest kind to hire for.
 
-Hiring is also how a team builds its own culture and standards. External engineers can follow and strengthen them, but they should not be the only people who hold them.
+Hiring is also how a team builds its own culture and standards. An extended team can follow and strengthen them, but they should not be the only people who hold them.
 
 ## How do hiring, team extension and handing over an area compare?
 
@@ -98,7 +100,7 @@ That is the [Product Development](https://thecodest.co/en/services/product-devel
 The main risk of extending your team is losing control: people you did not choose, work you cannot see, and knowledge that leaves with the vendor. Agree the people, the access and the exit before anyone starts.
 
 - **The team in the pitch is not the team that delivers.** The fix: meet and interview the engineers who will do the work, before you sign.
-- **Work happens out of sight.** The fix: external engineers work in your repository, tools and rituals, not in a separate queue.
+- **Work happens out of sight.** The fix: the engineers work in your repository, tools and rituals, not in a separate queue.
 - **Knowledge leaves with the vendor.** The fix: agree documentation, code ownership and a handover period in the contract.
 - **Nobody owns the outcome.** The fix: name one owner on each side for the agreed scope, and review it at a fixed rhythm.
 
@@ -110,7 +112,7 @@ Financial companies have a formal version of this. Under DORA (the Digital Opera
 - Hire in-house for core, long-term roles you can describe and wait for.
 - Extend your team for urgent, specialist or uncertain work, and keep control of the product.
 - Hand over a defined area when you want one owner for an outcome.
-- Agree the people, access, ownership and exit before an external engineer starts.
+- Agree the people, access, ownership and exit before anyone joins from outside.
 
 ## Related questions
 
@@ -120,13 +122,14 @@ Not always per month. Compare the total cost: time to hire, recruitment fees, on
 
 ### Can external engineers work inside our own process?
 
-They should. Good team extension means external engineers use your repository, tickets, reviews and meetings, follow your standards, and report to your engineering lead. If a vendor insists on its own separate process, you are buying a project, not an extension.
+They should. Good team extension means the engineers you bring in use your repository, tickets, reviews and meetings, follow your standards, and report to your engineering lead. If a vendor insists on its own separate process, you are buying a project, not an extension.
 
 ## Sources
 
 1. Eurostat, [ICT specialists - statistics on hard-to-fill vacancies in enterprises](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=ICT_specialists_-_statistics_on_hard-to-fill_vacancies_in_enterprises), Data extracted June 2025, reference year 2023.
-2. Statistics Austria, [20% of enterprises employ ICT specialists](https://www.statistik.at/fileadmin/announcement/2025/01/20250127IKTFachkraefteUnternehmen2024EN.pdf), 27 January 2025, reference year 2023.
-3. Financial Market Authority (FMA), Austria, [DORA - Managing of ICT third-party risk](https://www.fma.gv.at/en/?p=158458), 2026 (register of information dates 16.02.2026 to 13.03.2026).
+2. Eurostat, [EU companies face difficulties in hiring ICT experts](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20230712-1), 12 July 2023, reference year 2021.
+3. Statistics Austria, [20% of enterprises employ ICT specialists](https://www.statistik.at/fileadmin/announcement/2025/01/20250127IKTFachkraefteUnternehmen2024EN.pdf), 27 January 2025, reference year 2023.
+4. Financial Market Authority (FMA), Austria, [DORA - Managing of ICT third-party risk](https://www.fma.gv.at/en/?p=158458), 2026 (register of information dates 16.02.2026 to 13.03.2026).
 
 **Related case study:** [SupplierPlus built a secure invoice financing platform to release cash from unpaid invoices](https://thecodest.co/en/case-studies/providing-a-team-of-ruby-developers-for-a-fintech-company/)
 

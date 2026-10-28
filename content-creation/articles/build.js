@@ -295,10 +295,22 @@ for (const s of d.sources) {
   if (s.accessed && !isDate(s.accessed)) err(`Source ${s.id}: accessed must be YYYY-MM-DD`);
   const years = (String(s.date || "").match(/\b(19|20)\d\d\b/g) || []).map(Number);
   if (!years.length) warn(`Source ${s.id}: date has no year`);
-  else if (Math.max(...years) < thisYear - 3 && s.type !== "law") warn(`Source ${s.id}: last dated ${Math.max(...years)}. Use a source from the last 3 years, or set type "law" for a law or standard in force`);
+  else if (Math.max(...years) < thisYear - 2 && s.type !== "law" && !s.no_newer_edition) warn(`Source ${s.id}: data from ${Math.max(...years)}. Use the newest edition (last 2 years), or set no_newer_edition: true after checking, or type "law" for a law or standard in force`);
+  if (s.latest_checked && !isDate(s.latest_checked)) err(`Source ${s.id}: latest_checked must be YYYY-MM-DD`);
+  if (s.years && (!Array.isArray(s.years) || s.years.some((y) => !Number.isInteger(y)))) err(`Source ${s.id}: years must be a list of years, e.g. [2021, 2023]`);
 }
 for (const u of external) if (!d.sources.some((s) => s.url === u)) err(`External link not listed in sources: ${u}`);
 for (const [k, v] of Object.entries(d.report.claim_ids)) if (!/^CLM-\d{3}$/.test(v)) err(`Claims register: "${k}" has an invalid ID "${v}" (expected CLM-000)`);
+
+// dating figures (06): no "latest" or periods the sources do not support
+const allYears = new Set(d.sources.flatMap((s) => s.years || []));
+const LATEST = /\b(latest|most recent|newest)\b/i;
+const PERIOD = /\b(over|in|during) the (last|past) (\w+ )?(years|surveys|editions)\b|\blast (two|three|four|five|\d+) (surveys|years|editions)\b|\bevery year since\b|\bin recent years\b|\brecently\b/i;
+for (const [k, v] of Object.entries(texts)) {
+  const t = plain(v);
+  if (LATEST.test(t) && !d.sources.some((s) => s.latest_checked)) err(`${k}: says "${t.match(LATEST)[0]}" but no source has latest_checked. Check for a newer edition first (rules/06-sources-and-claims.md, Dating figures)`);
+  if (PERIOD.test(t) && allYears.size < 2) err(`${k}: "${t.match(PERIOD)[0]}" describes a period, but the sources cover ${allYears.size} year(s). List each source's years, or give the single year instead (rules/06-sources-and-claims.md, Dating figures)`);
+}
 
 // ---------- AEO/GEO (05) ----------
 const BASED = /^(general|case:[a-z0-9-]+|codest:https:\/\/\S+|src:.+)$/;

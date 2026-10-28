@@ -40,7 +40,8 @@ Every rule below is checked by the build where it can be checked mechanically. T
 | B4 | At least three sections rest on an outside source (`based_on: src:<id>`). No more than two sections rest on `general` alone | error |
 | B5 | At least one clear position, including when **not** to do something. Category 2 always has a "when AI is the wrong choice" section | self-check; error for category 2 without `limits_section` |
 | B6 | Figures appear with their source and year in the same sentence or the next: "57.5% of EU enterprises that recruited or tried to recruit ICT specialists in 2023 had difficulties filling the vacancies (Eurostat)" | self-check |
-| B7 | Sources are recent: published or updated in the last 3 years, unless the source is a law or standard still in force | warning |
+| B7 | Sources are recent: data from the last 2 years where it exists. Cody searches for the newest edition before using a figure, and records the date it checked in `latest_checked`. Older data needs a note that no newer edition exists. Laws and standards in force are exempt | warning |
+| B7a | Every figure keeps its real year. Never re-date it, drop the year to make it look current, or stretch one year into a period. How to keep articles from looking dated without misleading: `06-sources-and-claims.md`, "Dating figures" | error for unsupported "latest" or time-range wording |
 | B8 | A named author for the byline (set in `topics.json`, `site.default_author`, unless the brief names another) | error if missing |
 | B9 | No hype, no superlatives, no claims without a register entry. AI systems and buyers both discount marketing language | warning per avoid-list word |
 
