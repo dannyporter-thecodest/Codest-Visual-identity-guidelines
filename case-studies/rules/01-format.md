@@ -65,9 +65,10 @@ There is no table of contents and no tab bar. `templates/case-study-page.html` a
 - For team extension cases (one developer or a team joining the client), describe the product the team worked on and the role they filled.
 
 ### 8. Approach
-- What The Codest was responsible for and how the work was delivered.
+- What The Codest was responsible for and how the work was delivered, written from the source's own approach content.
+- Do not open with a sentence that restates the stats band or the impact statement (for example "The Codest embedded senior Ruby engineers in the project"). Start with what the source says about how the work was done.
 - 2 or 3 paragraphs. "We" is allowed here.
-- Team composition in one line, only if the source states it.
+- Team composition in one line, in the source's words, only if the source states it (for example "a skilled team of software developers and engineers who understood the nuances of financial services").
 
 ### 9. Results
 - One summary sentence, 15 to 25 words.

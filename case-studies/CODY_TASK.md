@@ -14,6 +14,8 @@ Paste this to Cody as is. To convert only some cases, change the "Scope" line.
 
 1. Set its status to `in_progress` in `inventory.json`. Choose a short slug from the client name (for example `yieldbird`), or from a descriptor if the client is not named.
 2. Open the case URL. Copy the page text into `case-studies/output/<slug>/source.md`: headline, hero facts, every section in order, every statistic (headline, stats band, results, FAQ), and the quote with name and role. Copy, do not summarise.
+   - **Stats band numbers are animated counters.** They count up from 0 when scrolled into view, so text copied too early is wrong (SupplierPlus showed "2+" and "4" instead of "5+" and "12"). Scroll the stats band into view, wait until the numbers stop, read them, wait a few seconds and read again. Only copy them when both reads match.
+   - **FAQ answers are hidden in collapsed sections.** Open every FAQ item, or read the page's full text, and copy every answer. They often hold the timeline and extra results.
 3. If the case names or describes MUFG or Allegro, stop. Set status `blocked`, note why, and move to the next case.
 4. Write `case-studies/output/<slug>/content.json` from `case-studies/templates/content.example.json`, following the rules:
    - Use only facts in `source.md`. Never invent a fact, number, technology, timeline or quote.
