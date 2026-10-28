@@ -7,7 +7,9 @@
     "slug",
     "category",
     "topic_area",
+    "question",
     "title",
+    "hook",
     "lead",
     "tldr",
     "published",
@@ -56,9 +58,17 @@
         "all"
       ]
     },
+    "question": {
+      "type": "string",
+      "description": "The buyer question the article answers, ends with ?. Used for the lead, duplicates, alternativeHeadline and the AI citation log"
+    },
     "title": {
       "type": "string",
-      "description": "One buyer question, 7 to 14 words, max 70 characters, ends with ?"
+      "description": "Outcome-led or insight statement, not a question: 7 to 14 words, max 70 characters (rules/03-titles-and-headings.md)"
+    },
+    "hook": {
+      "type": "string",
+      "description": "1 to 3 sentences, 12 to 45 words, before the lead. No questions, no filler openers"
     },
     "lead": {
       "type": "string",

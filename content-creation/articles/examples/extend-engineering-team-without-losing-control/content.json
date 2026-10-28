@@ -1,10 +1,12 @@
 {
-  "slug": "hire-or-extend-engineering-team",
+  "slug": "extend-engineering-team-without-losing-control",
   "category": "buyer-questions",
   "topic_area": "capacity",
   "industry": "all",
-  "title": "Should you hire in-house or extend your engineering team?",
-  "lead": "Hire in-house when the work is core to your product for years and you can wait for the right person. Extend your engineering team with an external one when a roadmap item, a missing skill or a test of a new direction cannot wait for hiring. Many teams do both: extend now, and hire for the long term.",
+  "question": "Should you hire in-house or extend your engineering team?",
+  "title": "How to extend your engineering team without losing control",
+  "hook": "The roadmap is agreed and the funding is in, but the two engineers you need are still not hired. In 2023, more than half of EU companies recruiting tech specialists had the same problem.",
+  "lead": "Extend your engineering team when a roadmap item, a missing skill or a test of a new direction cannot wait for hiring, and hire in-house for work that stays core to your product for years. You keep control by agreeing the people, the access and the exit before anyone starts.",
   "tldr": [
     "57.5% of EU enterprises that tried to recruit information and communication technology (ICT) specialists in 2023 found vacancies hard to fill.",
     "Hire in-house for long-term product knowledge, a clear role and enough time to choose well.",
@@ -20,11 +22,12 @@
     "secondary_queries": [
       "team extension vs hiring",
       "hire developers in-house",
-      "hard to fill engineering roles"
+      "hard to fill engineering roles",
+      "keep control of external team"
     ],
     "query_source": "topic-list",
-    "meta_title": "Hire in-house or extend your engineering team? | The Codest",
-    "meta_description": "Extend your engineering team when work cannot wait for hiring; hire in-house for long-term core roles. A comparison table and the risks to agree first."
+    "meta_title": "How to extend your engineering team without losing control",
+    "meta_description": "Extend your engineering team when work cannot wait for hiring, and keep control by agreeing the people, access and exit first. With a comparison table."
   },
   "sections": [
     {
@@ -254,7 +257,7 @@
       "Logistics case: presented as an example of handing over a defined area, based on the case study saying The Codest designed and built the platform."
     ],
     "self_check": {
-      "1 lead answers the question": "yes",
+      "1 lead answers the question": "yes: the hook sets the scene in two sentences, the lead answers the buyer question and says how to keep control, as the title promises",
       "2 every section adds something specific": "yes: sourced figures in sections 1 and 3, DORA exit plan practice in section 5, cases in sections 2 and 4",
       "3 a clear position, including when not to": "yes: section 3 and the CTA say when to hire instead",
       "4 information gain is real": "yes: the comparison combines hiring data, DORA exit plan practice and two cases that no single source covers",

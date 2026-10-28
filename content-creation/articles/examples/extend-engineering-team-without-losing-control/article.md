@@ -1,11 +1,13 @@
 ---
-title: "Should you hire in-house or extend your engineering team?"
-slug: hire-or-extend-engineering-team
-canonical: https://thecodest.co/en/blog/hire-or-extend-engineering-team/
-meta_title: "Hire in-house or extend your engineering team? | The Codest"
-meta_description: "Extend your engineering team when work cannot wait for hiring; hire in-house for long-term core roles. A comparison table and the risks to agree first."
+title: "How to extend your engineering team without losing control"
+question: "Should you hire in-house or extend your engineering team?"
+title_pattern: how to
+slug: extend-engineering-team-without-losing-control
+canonical: https://thecodest.co/en/blog/extend-engineering-team-without-losing-control/
+meta_title: "How to extend your engineering team without losing control"
+meta_description: "Extend your engineering team when work cannot wait for hiring, and keep control by agreeing the people, access and exit first. With a comparison table."
 primary_query: extend engineering team
-secondary_queries: [team extension vs hiring, hire developers in-house, hard to fill engineering roles]
+secondary_queries: [team extension vs hiring, hire developers in-house, hard to fill engineering roles, keep control of external team]
 category: buyer-questions
 topic_area: capacity
 industry: all
@@ -21,9 +23,11 @@ claims_used: [CLM-003]
 open_questions: 2 (see report.md)
 ---
 
-# Should you hire in-house or extend your engineering team?
+# How to extend your engineering team without losing control
 
-Hire in-house when the work is core to your product for years and you can wait for the right person. Extend your engineering team with an external one when a roadmap item, a missing skill or a test of a new direction cannot wait for hiring. Many teams do both: extend now, and hire for the long term.
+*The roadmap is agreed and the funding is in, but the two engineers you need are still not hired. In 2023, more than half of EU companies recruiting tech specialists had the same problem.*
+
+Extend your engineering team when a roadmap item, a missing skill or a test of a new direction cannot wait for hiring, and hire in-house for work that stays core to your product for years. You keep control by agreeing the people, the access and the exit before anyone starts.
 
 **TL;DR**
 

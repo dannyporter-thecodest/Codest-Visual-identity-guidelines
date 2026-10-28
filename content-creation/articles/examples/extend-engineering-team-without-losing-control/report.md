@@ -1,4 +1,4 @@
-# Article report: Should you hire in-house or extend your engineering team?
+# Article report: How to extend your engineering team without losing control
 
 Status: **finished**. Ready for the publishing workflow
 
@@ -8,22 +8,24 @@ Publishing is outside this workflow. Whatever publishes it must meet Article 50 
 
 | Field | Value |
 | --- | --- |
-| URL | https://thecodest.co/en/blog/hire-or-extend-engineering-team/ |
-| Meta title (59 chars) | Hire in-house or extend your engineering team? | The Codest |
-| Meta description (151 chars) | Extend your engineering team when work cannot wait for hiring; hire in-house for long-term core roles. A comparison table and the risks to agree first. |
+| URL | https://thecodest.co/en/blog/extend-engineering-team-without-losing-control/ |
+| Meta title (58 chars) | How to extend your engineering team without losing control |
+| Meta description (151 chars) | Extend your engineering team when work cannot wait for hiring, and keep control by agreeing the people, access and exit first. With a comparison table. |
 | Primary query | extend engineering team |
-| Secondary queries | team extension vs hiring; hire developers in-house; hard to fill engineering roles |
+| Secondary queries | team extension vs hiring; hire developers in-house; hard to fill engineering roles; keep control of external team |
 | Query source | topic-list (volume not checked) |
 | Category | buyer-questions / capacity / all |
-| Words | 1321 (7 min read) |
+| Words | 1347 (7 min read) |
 | Review by | 2027-10-28 |
 
 ## SEO and AEO/GEO checks
 
 | Check | Result |
 | --- | --- |
-| Title is a question with the primary query | yes |
-| Lead answers the question (40 to 70 words) | 58 words |
+| Title is a statement (pattern: how to) with the primary query | yes |
+| Hook (12 to 45 words, no question, no filler opener) | 34 words |
+| Buyer question recorded (alternativeHeadline) | Should you hire in-house or extend your engineering team? |
+| Lead answers the question (40 to 70 words) | 50 words |
 | Every H2 is a question with a 20 to 45 word answer first | yes |
 | TL;DR bullets | 5 |
 | Table with caption | 1 |
@@ -59,7 +61,7 @@ Publishing is outside this workflow. Whatever publishes it must meet Article 50 
 
 ## Self-check (rules/08-checks.md)
 
-- 1 lead answers the question: yes
+- 1 lead answers the question: yes: the hook sets the scene in two sentences, the lead answers the buyer question and says how to keep control, as the title promises
 - 2 every section adds something specific: yes: sourced figures in sections 1 and 3, DORA exit plan practice in section 5, cases in sections 2 and 4
 - 3 a clear position, including when not to: yes: section 3 and the CTA say when to hire instead
 - 4 information gain is real: yes: the comparison combines hiring data, DORA exit plan practice and two cases that no single source covers

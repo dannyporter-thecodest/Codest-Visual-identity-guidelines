@@ -29,6 +29,8 @@ __HEAD__
   .ar-people { display: flex; flex-wrap: wrap; gap: 20px 40px; }
   .ar-people .cd-author__img { display: grid; place-items: center; font-family: var(--font-display); font-weight: 900; font-size: 16px; color: var(--primary-navy); }
   .ar-updated { margin: -10px 0 0; font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--complementary-text); }
+  .ar-hook { margin-top: 30px !important; padding-left: 20px; border-left: 4px solid var(--primary-pink); font-family: var(--font-body); font-size: 22px !important; line-height: 1.45 !important; font-weight: 500; color: var(--primary-navy) !important; }
+  .ar-body > .ar-hook + .ar-lead { margin-top: 20px !important; }
   .ar-lead { font-size: 20px !important; }
   .ar-body > .ar-lead { margin-top: 30px !important; }
   .ar-tldr { box-sizing: border-box; display: grid; gap: 15px; padding: 30px; background: var(--complementary-light-pink); }
@@ -53,6 +55,7 @@ __HEAD__
   @media (max-width: 760px) {
     .cd-article-page__aside { display: none; }
     .ar-lead { font-size: 18px !important; }
+    .ar-hook { font-size: 19px !important; }
     .ar-head h1 { font-size: 28px; }
     .ar-table { font-size: 14px; }
     .ar-table th, .ar-table td { padding: 10px 8px; }

@@ -6,7 +6,7 @@ This workflow **creates** articles. It does not publish them. Publishing is hand
 
 **What the blog is for:** bringing buyers from our ICP to the website and moving them towards a conversation. Every article answers one question a buyer asks while deciding whether to bring in outside help.
 
-**The format:** answer articles, following The Software House's (tsh.io) blog, with additions from Modeso, Netguru and Zuehlke. The answer comes first, in the lead and under every question heading. Substance comes from independent primary sources, The Codest's own public material (case studies, service pages, published posts), and an information gain element: something the article adds that none of its sources has on its own.
+**The format:** answer articles, following The Software House's (tsh.io) blog, with additions from Modeso, Netguru and Zuehlke. An outcome-led title and a short hook earn the click, in the style of the LiftPilot blog. Then the answer comes first, in the lead and under every question heading. Substance comes from independent primary sources, The Codest's own public material (case studies, service pages, published posts), and an information gain element: something the article adds that none of its sources has on its own.
 
 ## Two categories, one format
 
@@ -35,7 +35,7 @@ The prompt is in `CODY_TASK.md`.
 |---|---|---|
 | 1 | `rules/01-categories-and-topics.md` | The two categories, topic areas, industries, markets, one question per article |
 | 2 | `rules/02-format.md` | Sections, order, word counts, links, page layout |
-| 3 | `rules/03-titles-and-headings.md` | Question titles, question H2s, the first sentence under each heading |
+| 3 | `rules/03-titles-and-headings.md` | Outcome-led titles (four patterns), hooks, question H2s, the first sentence under each heading |
 | 4 | `rules/04-seo.md` | Queries, meta title and description, slug, structured data, technical requirements |
 | 5 | `rules/05-aeo-geo.md` | Being the answer AI assistants quote: format, evidence, information gain, freshness, what not to do |
 | 6 | `rules/06-sources-and-claims.md` | Outside sources, public Codest material, claims, no invented experience |
@@ -69,7 +69,7 @@ An article is **finished** when the build reports 0 errors, every warning is fix
 ## What the build checks
 
 Over 100 checks, including:
-- the title is a question with the primary query, and the lead is 40 to 70 words
+- the title follows the patterns (not a question, primary query, no one-sided claims), the hook is 12 to 45 words with no filler opener, and the lead is 40 to 70 words
 - every H2 is a question answered in its first 20 to 45 words, with no scene-setting or back-references
 - the TL;DR, exactly one table, paragraph length
 - meta title and description length, the slug, keyword stuffing
@@ -103,6 +103,6 @@ articles/
     content.schema.json    the shape of content.json
     content.example.json   a blank to start from
     article-page.html      the page template
-  examples/hire-or-extend-engineering-team/   a finished test article
+  examples/extend-engineering-team-without-losing-control/   a finished test article
   output/<slug>/           one folder per article
 ```

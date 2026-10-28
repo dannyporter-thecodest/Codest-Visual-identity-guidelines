@@ -36,7 +36,7 @@ Each article carries at least one pillar, shown through the content rather than 
 
 ## 4. Messages and CTAs by buying role
 
-Use the role's message as the article's underlying point, and its CTA (`messaging-guidelines/03-messaging.md`):
+Use the role's message as the article's underlying point, its title direction and its CTA (`messaging-guidelines/03-messaging.md`). An outcome-led title is usually the role message turned into a "how to": for a CTO, "How to unblock your roadmap without buying an anonymous team".
 
 | `meta.buying_role` | Underlying message | CTA label |
 |---|---|---|

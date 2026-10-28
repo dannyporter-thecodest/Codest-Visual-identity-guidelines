@@ -50,6 +50,7 @@ Search the question and read the top 5 results. Note in the brief:
 ## Step 5: write the brief and register the topic
 
 - Fill in `templates/brief.md` yourself, including the scores, the rejected candidates and why, and the information gain you plan.
+- Write the title from the buyer question using one of the four patterns in `03-titles-and-headings.md`, and draft the hook. Offer two title options in the brief and pick the one that names the outcome most clearly.
 - Add the topic to `topics.json` with `status: brief`, today's date and the score.
 - Then write the article (`CODY_TASK.md`).
 

@@ -4,7 +4,11 @@
 
 | Field | Answer |
 |---|---|
-| Title question | Should you hire in-house or extend your engineering team? |
+| Buyer question | Should you hire in-house or extend your engineering team? |
+| Title option A | How to extend your engineering team without losing control (pattern 1) |
+| Title option B | Extend your team for urgent work, hire in-house for the core (pattern 3) |
+| Chosen title, and why | Option A: it names the outcome a CTO wants and the fear from the ICP file (losing control, the team in the pitch is not the team that delivers), and leads towards Staff Augmentation without a one-sided claim |
+| Hook | The roadmap is agreed and the funding is in, but the two engineers you need are still not hired. In 2023, more than half of EU companies recruiting tech specialists had the same problem. |
 | Category | buyer-questions |
 | Topic area | capacity |
 | Industry | all |
