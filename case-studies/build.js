@@ -80,9 +80,13 @@ for (const [k, v] of copy) for (const f of FILLER) if (new RegExp("\\b" + f, "i"
 for (const [k, v] of copy) if (/\b(organiz|optimiz|prioritiz|centraliz|standardiz|utiliz|minimiz|maximiz)/i.test(v)) warn(`${k}: American spelling (use British English)`);
 
 // ---------- format ----------
-range("Title", d.title, 10, 19, "error");
+range("Title", d.title, 8, 14, "error");
+// Hero title: monospaced display face, 36px in a 792px column = 44 characters per line at desktop width.
+const titleLines = (() => { let l = 1, c = 0; for (const w of d.title.trim().split(/\s+/)) { const add = c ? w.length + 1 : w.length; if (c + add > 44) { l++; c = w.length; } else c += add; } return l; })();
+if (titleLines > 3) err(`Title: ${titleLines} lines at desktop width (max 3). Make it shorter: one outcome or context phrase, the shortest source term, no feature lists (rules/02-titles.md)`);
 if (/\bThe Codest\b/i.test(d.title)) err("Title: The Codest must not be named in the title");
 const OUTCOME = /^(reduced|reduces|reduce|increased|increases|boosted|cut|cuts|saved|improved|enabled|delivered|deployed|launched|scaled|automated|augmented|expanded|unified|accelerated)\b/i;
+if (/\b(helped|helps|in order to|which|that)\b/i.test(d.title)) warn("Title: wordy phrasing (helped, in order to, which, that). Use a strong verb (rules/02-titles.md)");
 if (/^[€$£]?\d/.test(d.title.trim()) || OUTCOME.test(d.title.trim())) err("Title: must start with the client or a descriptor, not a number or an outcome verb. Name what was built (rules/02-titles.md)");
 if (/\d[\d.,]*\s?%|\bby\s+[€$£]?\d|\bfrom\s+[€$£]?\d[^\s]*\s+to\b|[€$£]\d/i.test(d.title)) err("Title: a statistic is the point of the title. Move it to Results and name what was built instead (rules/02-titles.md)");
 if (d.client.named && d.client.name && !d.title.includes(d.client.name)) warn("Title: does not start with or include the client's name");
@@ -189,6 +193,10 @@ async function screenshots(file) {
     p.on("requestfailed", (r) => errs.push("missing file: " + r.url()));
     await p.goto("file://" + file);
     await p.waitForTimeout(800);
+    if (w === 1440) {
+      const lines = await p.evaluate(() => { const el = document.querySelector("h1"); return el ? Math.round(el.getBoundingClientRect().height / parseFloat(getComputedStyle(el).lineHeight)) : 0; });
+      if (lines > 3) console.log(`  ERROR Title renders on ${lines} lines at 1440px (max 3)`);
+    }
     await p.screenshot({ path: path.join(outDir, `shot-${w}.png`), fullPage: true });
     if (errs.length) console.log(`  page errors at ${w}px: ${errs.join("; ")}`);
     await p.close();

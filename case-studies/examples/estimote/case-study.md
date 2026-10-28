@@ -1,4 +1,4 @@
-# Estimote turned its sensor-based technology into a space management application for social distancing during the COVID-19 pandemic
+# Estimote turned its sensors into a contact tracing system during COVID-19
 
 Industry: IoT | Headquarters: New York, United States | Tech stack: Bluetooth Smart (BLE)
 

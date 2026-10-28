@@ -16,7 +16,7 @@
       }
     },
     "category": { "type": "string", "description": "Tag above the title in the hero" },
-    "title": { "type": "string", "description": "10 to 19 words. rules/02-titles.md" },
+    "title": { "type": "string", "description": "8 to 14 words, max 3 lines. rules/02-titles.md" },
     "facts": {
       "type": "object",
       "required": ["industry", "headquarters", "tech_stack"],

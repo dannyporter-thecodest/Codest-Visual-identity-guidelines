@@ -4,7 +4,7 @@ Ten sections, always in this order, plus a stats band when the source has statis
 
 | # | Section | Heading on the page | Size | Required |
 |---|---|---|---|---|
-| 1 | Case study title | (the page title) | 10 to 19 words | Yes |
+| 1 | Case study title | (the page title) | 8 to 14 words, max 3 lines, catchy | Yes |
 | 2 | Problem hook | none | 1 sentence, 20 to 35 words | Yes |
 | 3 | Impact statement | none | 1 sentence, 20 to 35 words | Yes |
 | 4 | About the client | `About <Client name>`, or `About the client` if the client is not named | 40 to 65 words | Yes |

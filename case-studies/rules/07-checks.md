@@ -7,6 +7,7 @@
 - [ ] Every section is in the right order, with the right heading. *(build)*
 - [ ] Word counts inside the ranges in `01-format.md`, or the shortfall explained in the report. *(build, warning)*
 - [ ] Title names what was built or changed, follows a formula, client first, The Codest not named, past tense verb.
+- [ ] Title is 8 to 14 words and 3 lines or fewer, reads in one breath, one outcome only. *(build)*
 - [ ] Title does not start with a number or an outcome verb, and no statistic is its point. *(build)*
 - [ ] Hook states the problem; impact statement states the value delivered. One sentence each. *(build)*
 - [ ] About heading uses the client's name, or "About the client". *(build)*

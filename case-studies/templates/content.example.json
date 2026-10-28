@@ -3,7 +3,7 @@
   "source_url": "[https://thecodest.co/en/case-studies/...]",
   "client": { "name": "[Client name, or null if not named on the source]", "named": true },
   "category": "[Industry tag, e.g. Fintech]",
-  "title": "[10 to 19 words, a formula from rules/02-titles.md]",
+  "title": "[8 to 14 words, max 3 lines: company, technology, outcome. rules/02-titles.md]",
   "facts": {
     "industry": "[from the source hero]",
     "headquarters": "[City, Country]",
