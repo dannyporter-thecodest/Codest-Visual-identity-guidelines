@@ -46,6 +46,7 @@
   "report": {
     "source_statistics": [],
     "source_quote": "[the quote exactly as on the source, or null]",
+    "claim_ids": {},
     "facts_left_out": [],
     "facts_missing": [],
     "questions_for_delivery": []

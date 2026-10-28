@@ -25,6 +25,7 @@ Paste this to Cody as is. To convert only some cases, change the "Scope" line.
    - Copy the quote exactly into both `quote.text` and `report.source_quote`.
    - Formal, precise, professional register (`rules/03-writing-register.md`). British English. No em dashes.
    - Always add a question for Delivery to confirm the baseline and source of the statistics.
+   - Leave `report.claim_ids` empty unless Marketing has given you register IDs. Never create register entries. Statistics without an ID block publication; the report says so.
 5. Run `node case-studies/build.js case-studies/output/<slug>/content.json --shot`.
 6. Fix every error. Fix every warning, or explain it in `report.facts_missing` (for example, a section is short because the source has no more facts). Never pad a section to reach a word count.
 7. Look at `shot-1440.png` and `shot-375.png`. Nothing overlaps or is cut off.

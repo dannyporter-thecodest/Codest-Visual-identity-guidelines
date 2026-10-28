@@ -14,6 +14,7 @@
 - [ ] Stats figure has Industry, Headquarters and Tech stack. *(build)*
 - [ ] Stats band numbers were read after the counters stopped (two matching reads).
 - [ ] Every statistic on the source appears in Results or the stats band, exactly as written. *(build)*
+- [ ] Every statistic and the quote has a claims register ID in `report.claim_ids`, or is listed as "needs register entry" with publication blocked. *(build, warning)*
 - [ ] Any figure in the title, hook or impact statement is also in Results. *(build)*
 - [ ] Results has 3 to 5 bullets; stats band has 0 or 2 to 4 figures. *(build)*
 - [ ] Quote matches the source exactly. *(build)*

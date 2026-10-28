@@ -42,6 +42,15 @@ Use capability bullets: a bold phrase for what now exists, then what it does for
 
 Never write a vague result ("significantly improved efficiency"). Either a figure from the source or a precise statement of what changed.
 
+## Claims register before publication
+
+The messaging guidelines (`05-claims.md`, `claims-register.json`) rule that no fact, number, testimonial or case study is used publicly without a claims register entry. Old website statistics are named there as not reusable until they have one. So:
+
+- Keep every source statistic in the draft and the report, exactly as above. The client confirms them at sign-off.
+- For each statistic and the quote, record its register ID in `report.claim_ids` (for example `{"60%": "CLM-023"}`) once Marketing has added it to the register.
+- Anything without an ID is listed in the report as **needs register entry**, and the report states **Publication: blocked**. The build warns for each one.
+- Cody never creates register entries. Marketing adds them after the client confirms the figure and its source.
+
 ## Flag for Delivery
 
 Most old statistics have no visible baseline or source. Keep them, and add one line to `report.questions_for_delivery`: "Confirm the baseline and source for: 60%, EUR 120K, ...". The case study goes to the client for sign-off, which is where they are confirmed.

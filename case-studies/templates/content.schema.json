@@ -309,6 +309,14 @@
           "items": {
             "type": "string"
           }
+        },
+        "claim_ids": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^CLM-[0-9]{3}$"
+          },
+          "description": "Claims register ID for each statistic (key: the statistic as written) and for the quote (key: \"quote\"). Added by Marketing once the register entry exists. Missing entries block publication"
         }
       }
     },

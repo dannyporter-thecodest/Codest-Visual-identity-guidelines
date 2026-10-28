@@ -40,7 +40,7 @@ One folder `case-studies/output/<slug>/` with:
 | `content.json` | The case study as data, following `templates/content.schema.json` | Input to the build |
 | `case-study.md` | The case study as plain text | Sent to the client for sign-off |
 | `page.html` | The case study page built from the design system | Web team, review |
-| `report.md` | Statistics used, facts left out, gaps, questions for Delivery, build warnings | Danny, Delivery |
+| `report.md` | Publication status, statistics used and their claims register status, facts left out, gaps, questions for Delivery, build warnings | Danny, Delivery |
 
 Cody writes `source.md` or `intake.md`, and `content.json`. The build generates the rest:
 

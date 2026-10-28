@@ -38,6 +38,7 @@ All the shared rules in `../rules/` apply. "The source" is the completed intake 
 - Show each figure from 6.1 as on the form ("60% faster occupancy tracking"). Do not calculate new figures from the before and after unless the form states them.
 - Strong figures (2 to 4) can also go in the stats band. With only one figure, use Results only.
 - List every figure in `report.source_statistics`. The build checks each one appears on the page.
+- New figures also need a claims register entry before publication, the same as converted ones (`../rules/04-statistics.md`). Leave `report.claim_ids` empty until Marketing provides the IDs.
 
 ## 5. Gaps and questions back to Delivery
 

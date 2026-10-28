@@ -2,6 +2,8 @@
 
 Source: https://thecodest.co/en/case-studies/scaling-iot-solutions-for-office-space-management/
 
+Publication: **blocked** until every statistic and the quote has a claims register entry
+
 ## Statistics carried over
 
 - 60%
@@ -9,6 +11,15 @@ Source: https://thecodest.co/en/case-studies/scaling-iot-solutions-for-office-sp
 - 1M+
 - 30%
 - 10+
+
+## Claims register
+
+- 60%: needs register entry
+- EUR 120K: needs register entry
+- 1M+: needs register entry
+- 30%: needs register entry
+- 10+: needs register entry
+- quote: needs register entry
 
 ## Facts left out
 
@@ -27,10 +38,16 @@ Source: https://thecodest.co/en/case-studies/scaling-iot-solutions-for-office-sp
 ## Build
 
 - Errors: 0
-- Warnings: 3
+- Warnings: 9
   - About: 34 words (target 40 to 65)
   - Project description: 86 words (target 100 to 150)
   - Approach: 94 words (target 100 to 160)
+  - Claims register: "60%" needs a register entry before publication (rules/04-statistics.md)
+  - Claims register: "EUR 120K" needs a register entry before publication (rules/04-statistics.md)
+  - Claims register: "1M+" needs a register entry before publication (rules/04-statistics.md)
+  - Claims register: "30%" needs a register entry before publication (rules/04-statistics.md)
+  - Claims register: "10+" needs a register entry before publication (rules/04-statistics.md)
+  - Claims register: "quote" needs a register entry before publication (rules/04-statistics.md)
 
 ## Word counts
 

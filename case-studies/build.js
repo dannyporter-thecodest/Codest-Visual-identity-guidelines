@@ -134,6 +134,12 @@ if (d.quote) {
   else if (d.quote.text.trim() !== d.report.source_quote.trim()) err("Client's opinion: quote does not match the source exactly");
 } else if (d.report.source_quote) err("The source has a quote but quote is null");
 
+// ---------- claims register ----------
+const claimIds = d.report.claim_ids || {};
+const needsEntry = [...(d.report.source_statistics || []), ...(d.quote ? ["quote"] : [])].filter((k) => !claimIds[k]);
+for (const k of needsEntry) warn(`Claims register: "${k}" needs a register entry before publication (rules/04-statistics.md)`);
+for (const [k, v] of Object.entries(claimIds)) if (!/^CLM-\d{3}$/.test(v)) err(`Claims register: "${k}" has an invalid ID "${v}" (expected CLM-000 format)`);
+
 finish();
 
 // ---------- outputs ----------
@@ -177,7 +183,9 @@ function report() {
   return [
     `# Conversion report: ${d.client.name || d.slug}`, "",
     `Source: ${d.source_url || d.intake + " (Delivery intake form)"}`, "",
+    `Publication: ${needsEntry.length ? "**blocked** until every statistic and the quote has a claims register entry" : "claims register entries complete"}`, "",
     "## Statistics carried over", "", list(d.report.source_statistics), "",
+    "## Claims register", "", ...[...(d.report.source_statistics || []), ...(d.quote ? ["quote"] : [])].map((k) => `- ${k}: ${claimIds[k] || "needs register entry"}`), ...((d.report.source_statistics || []).length || d.quote ? [] : ["- None"]), "",
     "## Facts left out", "", list(d.report.facts_left_out), "",
     "## Missing from the source", "", list(d.report.facts_missing), "",
     "## Questions for Delivery", "", list(d.report.questions_for_delivery), "",
