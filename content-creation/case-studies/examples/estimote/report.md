@@ -38,8 +38,9 @@ Publication: **blocked** until every statistic and the quote has a claims regist
 ## Build
 
 - Errors: 0
-- Warnings: 9
+- Warnings: 10
   - About: 34 words (target 40 to 65)
+  - Challenge: 139 words (target 150 to 220)
   - Project description: 86 words (target 100 to 150)
   - Approach: 94 words (target 100 to 160)
   - Claims register: "60%" needs a register entry before publication (rules/04-statistics.md)
@@ -57,7 +58,7 @@ Publication: **blocked** until every statistic and the quote has a claims regist
 | Problem hook | 27 |
 | Impact statement | 26 |
 | About | 34 |
-| Challenge | 159 |
+| Challenge | 139 |
 | Project description | 86 |
 | Approach | 94 |
-| Results | 67 |
+| Results | 64 |

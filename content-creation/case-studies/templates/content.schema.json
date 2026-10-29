@@ -98,8 +98,7 @@
       "type": "object",
       "required": [
         "paragraphs",
-        "key_challenges",
-        "stakes"
+        "key_challenges"
       ],
       "properties": {
         "paragraphs": {
@@ -131,7 +130,8 @@
           }
         },
         "stakes": {
-          "type": "string"
+          "type": "string",
+          "description": "Optional: one sentence on what failure or delay would have cost. Leave it out if the source does not support it."
         }
       }
     },
