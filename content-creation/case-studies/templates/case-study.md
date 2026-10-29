@@ -22,7 +22,7 @@ Industry: [industry] | Headquarters: [City, Country] | Tech stack: [main technol
 - **[Label]:** [one sentence]
 - **[Label]:** [one sentence]
 
-[Stakes: one sentence on what failure or delay would have cost]
+[Stakes (optional): one sentence on what failure or delay would have cost, only if the source supports it]
 
 **Stats band** (only if the source has one, figures copied exactly): [value] [label] · [value] [label] · [value] [label]
 

@@ -23,7 +23,7 @@ Estimote's sensor technology could already measure the distance between individu
 - **Scalability:** the application had to scale efficiently as the number of users, devices and data points increased.
 - **Data security:** the application processed health-related data, requiring strong encryption, strict access controls and ongoing regulatory compliance.
 
-Any delay in delivery would have reduced the application's value to organisations complying with social distancing guidelines during the pandemic.
+
 
 **Stats band:** 1M+ sensor data points processed daily · 30% reduction in manual facility tasks · 10+ locations managed via a unified platform
 
@@ -46,7 +46,7 @@ Estimote deployed its space management application during the peak of the pandem
 - **60% faster occupancy tracking** across the client's office spaces.
 - **EUR 120K saved annually** through the IoT office management platform.
 - **Automated proximity alerts and immediate contact tracing** enabled office managers to identify close contacts and issue quarantine notices faster.
-- **Delivered within three months,** from development to deployment, under pandemic deadlines.
+- **Delivered within three months,** from development to deployment.
 
 ## Client's opinion
 

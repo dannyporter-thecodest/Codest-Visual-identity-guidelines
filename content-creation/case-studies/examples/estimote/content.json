@@ -37,8 +37,7 @@
         "label": "Data security",
         "text": "the application processed health-related data, requiring strong encryption, strict access controls and ongoing regulatory compliance."
       }
-    ],
-    "stakes": "Any delay in delivery would have reduced the application's value to organisations complying with social distancing guidelines during the pandemic."
+    ]
   },
   "stats_band": [
     {
@@ -79,7 +78,7 @@
       },
       {
         "bold": "Delivered within three months,",
-        "text": "from development to deployment, under pandemic deadlines."
+        "text": "from development to deployment."
       }
     ]
   },

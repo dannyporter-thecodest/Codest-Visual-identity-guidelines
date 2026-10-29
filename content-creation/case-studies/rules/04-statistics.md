@@ -30,7 +30,7 @@ Every statistic in `report.source_statistics` must appear in Results or the stat
 - Bold the figure and what it measures; follow with the context in plain text.
   - "**60% faster occupancy tracking** across the client's office spaces."
   - "**EUR 120K saved annually** through the IoT office management platform."
-- A timeline from the source counts as a statistic: "**Delivered within three months,** from development to deployment, under pandemic deadlines."
+- A timeline from the source counts as a statistic: "**Delivered within three months,** from development to deployment."
 - Any figure in the title, hook or impact statement must also appear in Results. The build checks this.
 
 ## When there are no statistics
