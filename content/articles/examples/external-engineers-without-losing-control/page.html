@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to bring in external engineers without losing control</title>
+<meta name="description" content="Bring in external engineers when work cannot wait for hiring, and keep control by agreeing the people, access and exit first. With a comparison table.">
+<link rel="canonical" href="https://thecodest.co/en/blog/external-engineers-without-losing-control/">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to bring external engineers into your team without losing control">
+<meta property="og:description" content="Bring in external engineers when work cannot wait for hiring, and keep control by agreeing the people, access and exit first. With a comparison table.">
+<meta property="og:url" content="https://thecodest.co/en/blog/external-engineers-without-losing-control/">
+<meta property="article:published_time" content="2026-10-28">
+<meta property="article:modified_time" content="2026-10-28">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to bring external engineers into your team without losing control","alternativeHeadline":"Should you hire in-house or extend your engineering team?","description":"Bring in external engineers when work cannot wait for hiring, and keep control by agreeing the people, access and exit first. With a comparison table.","url":"https://thecodest.co/en/blog/external-engineers-without-losing-control/","mainEntityOfPage":{"@type":"WebPage","@id":"https://thecodest.co/en/blog/external-engineers-without-losing-control/"},"datePublished":"2026-10-28","dateModified":"2026-10-28","inLanguage":"en","wordCount":1379,"author":{"@type":"Person","name":"Danny Porter","jobTitle":"AI Marketing Automation Specialist, The Codest","worksFor":{"@type":"Organization","name":"The Codest"}},"publisher":{"@type":"Organization","name":"The Codest","url":"https://thecodest.co/"},"about":"external engineers","keywords":"external engineers, staff augmentation, team extension vs hiring, extend engineering team, hire developers in-house","articleSection":"Engineering capacity"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thecodest.co/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://thecodest.co/en/blog/"},{"@type":"ListItem","position":3,"name":"How to bring external engineers into your team without losing control","item":"https://thecodest.co/en/blog/external-engineers-without-losing-control/"}]}</script>
+<!--
+  ARTICLE PAGE TEMPLATE
+  Do not edit per article. build.js fills in the head tags, the article HTML and the design system path.
+  The article itself is plain HTML (no JavaScript needed to read it), so search engines and AI crawlers see the full text.
+  Only the site header, share bar, case study panel, CTA band and footer are drawn by the design system's React components.
+  Rules: content/articles/rules/.
+-->
+<link rel="stylesheet" href="../../../../brand/design-system/tokens/tokens.css">
+<link rel="stylesheet" href="../../../../brand/design-system/components/bundle.css">
+<link rel="stylesheet" href="../../../../brand/design-system/components/sections.css">
+<style>
+  body { margin: 0; background: var(--primary-white); }
+  .ar-top { background: var(--primary-navy); height: 96px; }
+  .ar-body { gap: 0 !important; }
+  .ar-body > * + * { margin-top: 30px; }
+  .ar-body h2 { margin: 0 !important; }
+  .ar-body > section { display: grid; gap: 16px; }
+  .ar-body > section + section { margin-top: 56px; }
+  .ar-body > section.ar-tldr { gap: 15px; }
+  .ar-body > .ar-tldr + section { margin-top: 56px; }
+  .ar-body h3 { margin: 10px 0 0; font-family: var(--font-display); font-weight: 900; font-size: 20px; line-height: 1.4; color: var(--primary-navy); }
+  .ar-head .cd-article-head__meta { flex-wrap: wrap; row-gap: 10px; }
+  .ar-people { display: flex; flex-wrap: wrap; gap: 20px 40px; }
+  .ar-people .cd-author__img { display: grid; place-items: center; font-family: var(--font-display); font-weight: 900; font-size: 16px; color: var(--primary-navy); }
+  .ar-updated { margin: -10px 0 0; font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--complementary-text); }
+  .ar-hook { margin-top: 30px !important; padding-left: 20px; border-left: 4px solid var(--primary-pink); font-family: var(--font-body); font-size: 22px !important; line-height: 1.45 !important; font-weight: 500; color: var(--primary-navy) !important; }
+  .ar-body > .ar-hook + .ar-lead { margin-top: 20px !important; }
+  .ar-lead { font-size: 20px !important; }
+  .ar-body > .ar-lead { margin-top: 30px !important; }
+  .ar-tldr { box-sizing: border-box; display: grid; gap: 15px; padding: 30px; background: var(--complementary-light-pink); }
+  .ar-tldr h2 { margin: 0 !important; font-size: 20px !important; }
+  .ar-answer { font-size: 17px !important; color: var(--primary-navy) !important; }
+  .ar-takeaway { padding: 4px 0 4px 20px; border-left: 4px solid var(--primary-pink); color: var(--primary-navy) !important; }
+  .ar-takeaway strong { font-weight: 700; }
+  .ar-body .cd-bullets a, .ar-body td a { color: var(--primary-pink); }
+  .ar-table-wrap { overflow-x: auto; }
+  .ar-table { width: 100%; border-collapse: collapse; font-family: var(--font-body); font-size: 15px; line-height: 1.45; color: var(--complementary-text); }
+  .ar-table caption { caption-side: top; text-align: left; padding-bottom: 12px; font-weight: 700; color: var(--primary-navy); }
+  .ar-table th { text-align: left; vertical-align: bottom; padding: 12px 14px; background: var(--primary-navy); color: var(--primary-white); font-weight: 700; }
+  .ar-table td { vertical-align: top; padding: 12px 14px; border-bottom: 1px solid rgba(13, 18, 76, .12); }
+  .ar-table tbody tr:nth-child(even) td { background: rgba(13, 18, 76, .03); }
+  .ar-table td:first-child { font-weight: 700; color: var(--primary-navy); }
+  .ar-faq { display: grid; gap: 20px; }
+  .ar-faq h3 { margin: 0; }
+  .ar-sources { font-size: 14px !important; }
+  .ar-sources ol { margin: 10px 0 0; padding-left: 20px; font-family: var(--font-body); font-size: 14px; line-height: 1.5; color: var(--complementary-text); }
+  .ar-sources a { color: var(--primary-pink); word-break: break-word; }
+  .ar-case { margin-bottom: 60px; }
+  @media (max-width: 760px) {
+    .cd-article-page__aside { display: none; }
+    .ar-lead { font-size: 18px !important; }
+    .ar-hook { font-size: 19px !important; }
+    .ar-head h1 { font-size: 28px; }
+    .ar-table { font-size: 14px; }
+    .ar-table th, .ar-table td { padding: 10px 8px; }
+  }
+</style>
+</head>
+<body>
+<div id="site-header" class="ar-top"></div>
+<main>
+<div class="cd-container">
+<div class="cd-article-page">
+  <div class="cd-article-page__aside"><div id="share"></div></div>
+  <article class="cd-article-page__body ar-body">
+    <header class="cd-article-head ar-head">
+      <div class="cd-article-head__meta"><span class="cd-meta"><img src="../../../../brand/design-system/assets/icons/calendar.svg" alt=""><time datetime="2026-10-28">28 Oct 2026</time></span><p class="cd-eyebrow cd-eyebrow--purple">Engineering capacity</p><span class="cd-meta"><img src="../../../../brand/design-system/assets/icons/time.svg" alt="">7 min read</span></div>
+      <h1 class="cd-h2">How to bring external engineers into your team without losing control</h1>
+      <div class="ar-people">
+        <div class="cd-author"><span class="cd-author__img" aria-hidden="true">DP</span><div><div class="cd-author__name">Danny Porter</div><div class="cd-author__role">AI Marketing Automation Specialist, The Codest</div></div></div>
+      </div>
+      <p class="ar-updated">Last updated <time datetime="2026-10-28">28 Oct 2026</time></p>
+    </header>
+    <p class="ar-hook">The roadmap is agreed and the funding is in, but the two engineers you need are still not hired. In Eurostat's last two surveys, more than half of EU companies recruiting tech specialists had the same problem.</p>
+    <p class="cd-lead ar-lead">Bring external engineers into your team when a roadmap item, a missing skill or a test of a new direction cannot wait for hiring, and hire in-house for work that stays core to your product for years. You keep control by agreeing the people, the access and the exit before anyone starts.</p>
+    <section class="ar-tldr" aria-label="TL;DR"><h2>TL;DR</h2><ul class="cd-bullets"><li>57.5% of EU enterprises that tried to recruit information and communication technology (ICT) specialists in 2023 found vacancies hard to fill.</li><li>Hire in-house for long-term product knowledge, a clear role and enough time to choose well.</li><li>Bring in external engineers when the work is urgent, needs a skill you lack, or is still uncertain.</li><li>The real risk of extending is losing control, so agree the people, the access and the exit first.</li><li>Handing over a whole defined area is a third option when you want one owner for an outcome.</li></ul></section>
+    <section>
+      <h2 id="why-is-hiring-engineers-in-house-so-slow">Why is hiring engineers in-house so slow in Europe?</h2>
+      <p class="ar-answer">Hiring is slow because engineering roles are hard to fill: in 2023, 57.5% of EU enterprises that recruited or tried to recruit ICT specialists had difficulties filling the vacancies, according to <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=ICT_specialists_-_statistics_on_hard-to-fill_vacancies_in_enterprises" rel="noopener" target="_blank">Eurostat</a>.</p>
+      <p>It is not a one-off. In Eurostat's previous survey, covering 2021, the share was 62.8%, according to <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20230712-1" rel="noopener" target="_blank">Eurostat's 2023 news release</a>.</p>
+      <p>The share is higher in Germany and Austria. Eurostat reports 72.41% for Germany and 67.26% for Austria in the same year.</p>
+      <p>The reasons are not only a lack of people. For Austrian enterprises that recruited or tried to recruit ICT specialists, the greatest difficulties were a lack of applications (82%), a lack of professional experience (72%) and applicants' high salary expectations (62%), according to <a href="https://www.statistik.at/fileadmin/announcement/2025/01/20250127IKTFachkraefteUnternehmen2024EN.pdf" rel="noopener" target="_blank">Statistics Austria</a>.</p>
+      <p>A hard-to-fill vacancy rarely stays a hiring problem. It becomes a roadmap problem: the feature waits, other engineers cover the gap, and the team loses focus on what matters most.</p>
+      <p class="ar-takeaway"><strong>What this means for you:</strong> Plan the roadmap on the people you have today, and treat every open role as a date you cannot rely on.</p>
+    </section>
+    <section>
+      <h2 id="when-should-you-bring-in-external-engineers-instead">When should you bring in external engineers instead of hiring?</h2>
+      <p class="ar-answer">Bring in external engineers when the need is urgent, specific or uncertain: a roadmap item that cannot slip, a skill your team does not have, or a direction you want to test before committing to permanent roles.</p>
+      <p>Team extension means adding external engineers who work inside your team, your process and your tools, while you keep control of the product. Our <a href="https://thecodest.co/en/services/staff-augmentation/">Staff Augmentation model</a> works this way. It adds capacity and skills, but adding a person does not fix an organisational problem, such as unclear priorities or missing product ownership.</p>
+      <p>SupplierPlus, an invoice financing platform based in Tallinn, is one example. It needed a secure platform for digital documents, electronic signatures and automatic data exchange, and <a href="https://thecodest.co/en/case-studies/providing-a-team-of-ruby-developers-for-a-fintech-company/">brought in a team of Ruby developers</a> from The Codest to build it.</p>
+      <p>Extension also works as a bridge. The extended team carries the roadmap while you hire, then hand over context to the people you bring in. Start with one bounded piece of work, and expand when it is working.</p>
+      <p class="ar-takeaway"><strong>What this means for you:</strong> Write down why the need cannot wait. If you cannot name the deadline or the missing skill, hiring may be the better route.</p>
+    </section>
+    <section>
+      <h2 id="when-is-hiring-in-house-the-better-choice">When is hiring in-house the better choice?</h2>
+      <p class="ar-answer">Hire in-house when the work is core to your product for years, when the knowledge must stay inside the company, and when the role is clear enough to hire for well.</p>
+      <ul class="cd-bullets"><li><strong>Core, long-lived knowledge.</strong> The people who own your architecture and product direction should usually be on your payroll.</li><li><strong>A stable, well-defined role.</strong> If you can describe the job for the next two years, you can hire for it.</li><li><strong>Time to choose well.</strong> A rushed permanent hire is harder to undo than an external engineer who is not the right fit.</li></ul>
+      <p>Expect the search to take effort. In the same Statistics Austria release, 72% of recruiting enterprises named a lack of qualifications as a difficulty, so a role that needs a rare skill is the hardest kind to hire for.</p>
+      <p>Hiring is also how a team builds its own culture and standards. An extended team can follow and strengthen them, but they should not be the only people who hold them.</p>
+    </section>
+    <section>
+      <h2 id="how-do-hiring-team-extension-and-handing-over">How do hiring, team extension and handing over an area compare?</h2>
+      <p class="ar-answer">Hiring gives you the most control and the slowest start, team extension adds capacity inside your own process, and handing over a defined area makes one external owner responsible for an agreed outcome.</p>
+      <div class="ar-table-wrap"><table class="ar-table"><caption>Three ways to add engineering capacity</caption><thead><tr><th scope="col">Option</th><th scope="col">Best when</th><th scope="col">Main risk</th><th scope="col">Agree before you start</th></tr></thead><tbody><tr><td>Hire in-house</td><td>The role is core, stable and worth waiting for</td><td>The roadmap waits while the vacancy stays open</td><td>Which work pauses until the hire starts</td></tr><tr><td>Extend your team</td><td>Work is urgent, needs a missing skill, or is still uncertain</td><td>Losing control of who works on what</td><td>Who joins, how work is reviewed, how you scale down</td></tr><tr><td>Hand over a defined area</td><td>You want one owner for a whole product area or system</td><td>Unclear scope and success criteria</td><td>Scope, success criteria, reporting and the exit plan</td></tr></tbody></table></div>
+      <p>The real difference is who is responsible for what. When you hire, you own everything. When you extend your team, you own the product and the outcome, and the partner owns selection, quality, onboarding and continuity of its engineers. When you hand over an area, the partner owns discovery, architecture, delivery and maintenance, as agreed.</p>
+      <p>The third option fits when you need an outcome rather than extra people. A major logistics company, for example, <a href="https://thecodest.co/en/case-studies/transforming-logistics-with-a-custom-digital-platform/">built a custom logistics platform</a> with The Codest to automate manual order processing and route planning. The same model applies to a payment platform or a marketplace module.</p>
+      <p>That is the <a href="https://thecodest.co/en/services/product-development/">Product Development</a> model. We do not promise business results we are not measuring together, so agree the success criteria first.</p>
+      <p class="ar-takeaway"><strong>What this means for you:</strong> Choose the model by the decision you need to make, not by the day rate. The cheapest option per month can be the most expensive per outcome.</p>
+    </section>
+    <section>
+      <h2 id="what-are-the-risks-of-extending-your-team">What are the risks of extending your team, and how do you reduce them?</h2>
+      <p class="ar-answer">The main risk of extending your team is losing control: people you did not choose, work you cannot see, and knowledge that leaves with the vendor. Agree the people, the access and the exit before anyone starts.</p>
+      <ul class="cd-bullets"><li><strong>The team in the pitch is not the team that delivers.</strong> The fix: meet and interview the engineers who will do the work, before you sign.</li><li><strong>Work happens out of sight.</strong> The fix: the engineers work in your repository, tools and rituals, not in a separate queue.</li><li><strong>Knowledge leaves with the vendor.</strong> The fix: agree documentation, code ownership and a handover period in the contract.</li><li><strong>Nobody owns the outcome.</strong> The fix: name one owner on each side for the agreed scope, and review it at a fixed rhythm.</li></ul>
+      <p>Financial companies have a formal version of this. Under DORA (the Digital Operational Resilience Act), exit plans for ICT providers identify contingency measures, alternative solutions and transition plans, and are tested and regularly checked, as Austria's <a href="https://www.fma.gv.at/en/?p=158458" rel="noopener" target="_blank">Financial Market Authority</a> explains. It is a useful standard even outside finance.</p>
+    </section>
+    <section>
+      <h2 id="key-insights">Key insights</h2>
+      <ul class="cd-bullets"><li>Engineering vacancies are hard to fill across the EU, so do not plan the roadmap on open roles.</li><li>Hire in-house for core, long-term roles you can describe and wait for.</li><li>Extend your team for urgent, specialist or uncertain work, and keep control of the product.</li><li>Hand over a defined area when you want one owner for an outcome.</li><li>Agree the people, access, ownership and exit before anyone joins from outside.</li></ul>
+    </section>
+    <section>
+      <h2 id="related-questions">Related questions</h2>
+      <div class="ar-faq">
+        <div><h3>Is extending a team cheaper than hiring?</h3><p>Not always per month. Compare the total cost: time to hire, recruitment fees, onboarding, and what it costs when a roadmap item waits. Ask any vendor how quickly you can scale the team down as well as up.</p></div>
+        <div><h3>Can external engineers work inside our own process?</h3><p>They should. Good team extension means the engineers you bring in use your repository, tickets, reviews and meetings, follow your standards, and report to your engineering lead. If a vendor insists on its own separate process, you are buying a project, not an extension.</p></div>
+      </div>
+    </section>
+    <section class="ar-sources">
+      <h2 id="sources">Sources</h2>
+      <ol><li>Eurostat, <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=ICT_specialists_-_statistics_on_hard-to-fill_vacancies_in_enterprises" rel="noopener" target="_blank">ICT specialists - statistics on hard-to-fill vacancies in enterprises</a>, Data extracted June 2025, reference year 2023.</li><li>Eurostat, <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20230712-1" rel="noopener" target="_blank">EU companies face difficulties in hiring ICT experts</a>, 12 July 2023, reference year 2021.</li><li>Statistics Austria, <a href="https://www.statistik.at/fileadmin/announcement/2025/01/20250127IKTFachkraefteUnternehmen2024EN.pdf" rel="noopener" target="_blank">20% of enterprises employ ICT specialists</a>, 27 January 2025, reference year 2023.</li><li>Financial Market Authority (FMA), Austria, <a href="https://www.fma.gv.at/en/?p=158458" rel="noopener" target="_blank">DORA - Managing of ICT third-party risk</a>, 2026 (register of information dates 16.02.2026 to 13.03.2026).</li></ol>
+    </section>
+  </article>
+</div>
+</div>
+<div id="related-case"></div>
+<div id="cta"></div>
+</main>
+<div id="site-footer"></div>
+<script>window.CodestConfig = { assetBase: "../../../../brand/design-system/assets/" };</script>
+<script id="page-data" type="application/json">{"url":"https://thecodest.co/en/blog/external-engineers-without-losing-control/","contact":"https://thecodest.co/en/contact/","related_case":{"title":"SupplierPlus built a secure invoice financing platform to release cash from unpaid invoices","category":"Fintech","href":"https://thecodest.co/en/case-studies/providing-a-team-of-ruby-developers-for-a-fintech-company/"},"cta":{"title":"Not sure which model fits?","text":"Talk it through with us first. You meet the people who would do the work, and get a straight answer, even if it is to hire in-house.","label":"Let's talk through the problem","href":"https://thecodest.co/en/contact/"}}</script>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="../../../../brand/design-system/components/bundle.js"></script>
+<script>
+  var h = React.createElement, F = React.Fragment, C = window.Codest;
+  var d = JSON.parse(document.getElementById("page-data").textContent);
+  var nav = [{ label: "About us", href: "#" }, { label: "Services", href: "#" }, { label: "Our team", href: "#" }, { label: "Case studies", href: "#" }, { label: "Know how", href: "#" }];
+  function mount(id, el) { ReactDOM.createRoot(document.getElementById(id)).render(el); }
+
+  mount("site-header", h(C.Header, { dark: true, links: nav, secondary: { label: "Careers", href: "#" }, primary: { label: "Get in touch", href: d.contact } }));
+  mount("share", h(C.ShareBar, { items: [
+    { icon: "linkedin", label: "Share on LinkedIn", href: "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(d.url) },
+    { icon: "facebook", label: "Share on Facebook", href: "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(d.url) },
+    { icon: "twitter", label: "Share on X", href: "https://twitter.com/intent/tweet?url=" + encodeURIComponent(d.url) }
+  ] }));
+  mount("related-case", h(C.Section, { style: { paddingTop: 0 } }, h("div", { className: "ar-case" },
+    h("h2", { className: "cd-h2", style: { marginBottom: 30 } }, "Related case study"),
+    h(C.CasePanel, { category: d.related_case.category, title: d.related_case.title, href: d.related_case.href }))));
+  mount("cta", h(C.CtaBand, { title: d.cta.title, text: d.cta.text, cta: { label: d.cta.label, href: d.cta.href } }));
+  mount("site-footer", h(C.Footer, {
+    newsletterTitle: "Subscribe to our knowledge base and stay up to date on the expertise from the IT sector.",
+    consent: "I agree to receive marketing and sales communications from The Codest and to allow The Codest to store and process my personal data as explained in our Privacy Policy.",
+    about: "We take responsibility for the systems your business makes money on, as if they were our own.",
+    offices: [
+      { place: "United Kingdom", address: h(F, null, "Office 303B, 182-184 High Street North E6 2JA", h("br"), "London, England") },
+      { place: "Poland", address: h(F, null, "Fabryczna Office Park, Aleja Pokoju 18, 31-564 Krak\u00f3w", h("br"), "Brain Embassy, Konstruktorska 11, 02-673 Warsaw") }
+    ],
+    columns: [
+      { title: "The Codest", links: nav },
+      { title: "Services", links: [{ label: "Staff Augmentation", href: "#" }, { label: "Product Development", href: "#" }, { label: "AI Services", href: "#" }] },
+      { title: "Know how", links: [{ label: "Blog", href: "#" }, { label: "Meetups", href: "#" }, { label: "Webinars", href: "#" }, { label: "Resources", href: "#" }] }
+    ],
+    legal: "Privacy policy \u00b7 Website terms of use",
+    copyright: "Copyright \u00a9 2026 The Codest. All rights reserved."
+  }));
+</script>
+</body>
+</html>

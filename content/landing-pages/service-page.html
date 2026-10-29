@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service page template · The Codest</title>
+<!--
+  REFERENCE SERVICE / CAMPAIGN PAGE
+  Built only from the design system. Structure follows Services/PHP_Developers in the Figma file (screenshot archived in the source repository).
+  Copy is PLACEHOLDER. Replace with copy from the messaging guidelines; every number needs a claims-register entry.
+-->
+<link rel="stylesheet" href="../../brand/design-system/tokens/tokens.css">
+<link rel="stylesheet" href="../../brand/design-system/components/bundle.css">
+<link rel="stylesheet" href="../../brand/design-system/components/sections.css">
+<style>body { margin: 0; background: var(--primary-white); }</style>
+</head>
+<body>
+<div id="root"></div>
+<script>window.CodestConfig = { assetBase: "../../brand/design-system/assets/" };</script>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="../../brand/design-system/components/bundle.js"></script>
+<script>
+  var h = React.createElement, C = window.Codest;
+  var ICON = function (n) { return "../../brand/design-system/assets/icons/" + n; };
+  var PH = "[Placeholder: one or two sentences from the messaging guidelines.]";
+  var nav = [{ label: "About us", href: "#" }, { label: "Services", href: "#" }, { label: "Our team", href: "#" }, { label: "Case studies", href: "#" }, { label: "Know how", href: "#" }];
+
+  function Page() {
+    return h(React.Fragment, null,
+      // 1. Dark hero: header sits on top of it in white
+      h("div", { style: { position: "relative" } },
+        h("div", { style: { position: "absolute", top: 0, left: 0, right: 0, zIndex: 3 } }, h(C.Header, { dark: true, links: nav, secondary: { label: "Careers", href: "#" }, primary: { label: "Get in touch", href: "#" } })),
+        h(C.HeroPage, { title: "[Service headline on up to two lines]", text: PH, cta: { label: "[Primary action]", href: "#" }, orb: true })),
+
+      // 2. Advantages: centred heading, 3-column cards with check icon
+      h(C.Section, { tone: "pink", orb: { color: "orange", style: { right: -132, bottom: -95, top: "auto" } } },
+        h(C.SectionHead, { center: true, title: "[Why this service, as a question]", text: PH }),
+        h("div", { className: "cd-cards" }, [1, 2, 3, 4, 5, 6].map(function (i) { return h(C.ContentCard, { key: i, iconSrc: ICON("check.svg"), title: "[Advantage]", text: PH, raised: i === 1 }); }))),
+
+      // 3. Stats band with caption: sourced numbers only
+      h(C.StatsBand, { caption: "[Optional caption]", stats: [{ value: "[00]", label: "[Sourced claim]" }, { value: "[00]", label: "[Sourced claim]" }, { value: "[00]", label: "[Sourced claim]" }, { value: "[00%]", label: "[Sourced claim]", plus: false }] }),
+
+      // 4. Frameworks / tools
+      h(C.Section, { tone: "blue" }, h(C.SectionHead, { center: true, title: "[Technologies heading]", text: PH }),
+        h("div", { className: "cd-tiles" }, ["[Tool]", "[Tool]", "[Tool]", "[Tool]", "[Tool]", "[Tool]"].map(function (n, i) { return h(C.FrameworkTile, { key: i, label: n }); }))),
+
+      // 5. Expertise: alternating image and text
+      h(C.Section, null, h("div", { style: { display: "grid", gap: 120 } },
+        h(C.ImageText, { small: true, title: "[Expertise point]", text: PH }),
+        h(C.ImageText, { small: true, reverse: true, title: "[Expertise point]", text: PH, cta: { label: "[Secondary action]", href: "#", variant: "secondary" } }))),
+
+      // 6. Expert opinion: named person, cleared quote
+      h(C.Section, null, h(C.Opinion, { quote: "“[Cleared quote from a named expert]”", name: "[Name]", role: "[Role]" })),
+
+      // 7. Process
+      h(C.Section, null, h(C.ProcessSection, { title: "[How we work]", text: PH, cta: { label: "Let's talk", href: "#" },
+        steps: [{ title: "[Step]", meta: "([duration])", text: PH }, { title: "[Step]", meta: "([duration])", text: PH }, { title: "[Step]", text: PH }, { title: "[Step]", text: PH }] })),
+
+      // 8. Banner
+      h(C.Section, { style: { paddingTop: 0 } }, h(C.Banner, { title: "[Mid-page call to action]", cta: { label: "Let's talk", href: "#" } })),
+
+      // 9. Related case study
+      h(C.Section, { style: { paddingTop: 0 } },
+        h("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", gap: 20, flexWrap: "wrap", marginBottom: 60 } }, h("h2", { className: "cd-h2" }, "[Related projects]"), h(C.TextLink, { href: "#" }, "All case studies")),
+        h(C.CasePanel, { category: "[Industry]", title: "[Case study outcome headline]", href: "#" })),
+
+      // 10. Testimonials
+      h(C.Section, null, h(C.Carousel, { title: "[Testimonials heading]", link: { label: "Read all reviews", href: "#" } },
+        [1, 2, 3].map(function (i) { return h("div", { key: i, style: { width: 486, maxWidth: "85vw" } }, h(C.TestimonialCard, { quote: "[Cleared client quote]", name: "[Client name]", role: "[Role, Company]" })); }))),
+
+      // 11. Closing CTA and footer
+      h(C.CtaBand, { title: "[Closing call to action]", text: PH, cta: { label: "Contact us", href: "#" } }),
+      h(C.Footer, { newsletterTitle: "[Newsletter invitation]", consent: "[Consent text from legal]", about: PH, offices: [{ place: "[Country]", address: "[Office address]" }],
+        columns: [{ title: "The Codest", links: nav }, { title: "Services", links: [{ label: "[Service]", href: "#" }] }, { title: "Resources", links: [{ label: "Press kit", href: "#" }] }],
+        legal: "Privacy policy · Website terms of use", copyright: "Copyright \u00a9 [year] The Codest. All rights reserved." })
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(h(Page));
+</script>
+</body>
+</html>
