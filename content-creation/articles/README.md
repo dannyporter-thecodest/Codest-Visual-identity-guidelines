@@ -6,7 +6,7 @@ This workflow **creates** articles. It does not publish them. Publishing is hand
 
 **What the blog is for:** bringing buyers from our ICP to the website and moving them towards a conversation. Every article answers one question a buyer asks while deciding whether to bring in outside help.
 
-**The format:** answer articles, following The Software House's (tsh.io) blog, with additions from Modeso, Netguru and Zuehlke. An outcome-led title and a short hook earn the click, in the style of the LiftPilot blog. Then the answer comes first, in the lead and under every question heading. Substance comes from independent primary sources, The Codest's own public material (case studies, service pages, published posts), and an information gain element: something the article adds that none of its sources has on its own.
+**The format:** answer articles, following The Software House's (tsh.io) blog, with additions from Modeso, Netguru and Zuehlke. An outcome-led title and a short hook earn the click. Then the answer comes first, in the lead and under every question heading. Substance comes from independent primary sources, The Codest's own public material (case studies, service pages, published posts), and an information gain element: something the article adds that none of its sources has on its own.
 
 ## Two categories, one format
 
